@@ -466,6 +466,11 @@ elMain.addEventListener('touchend', e => {
   const dy = e.changedTouches[0].clientY - ty;
   if (Math.abs(dx) >= 50 && Math.abs(dy) <= 100) go(dx > 0 ? -1 : 1);
 }, { passive: true });
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowLeft')  go(-1);
+  if (e.key === 'ArrowRight') go(1);
+});
 `.trim();
 
 // ── assemble HTML ─────────────────────────────────────────────────────────────
