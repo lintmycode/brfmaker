@@ -1,0 +1,2556 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Briefings">
+  <title>00 · Índice | Briefings País Basco · Euskadi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+:root {
+  color-scheme: light dark;
+  --bg:      #fdf8e0;
+  --surface: #f5ecaa;
+  --border:  #dcc860;
+  --text:    #2a1e00;
+  --text2:   #6b5000;
+  --accent:  #b87800;
+  --link:    #005a8a;
+  --code-bg: #f0e080;
+  --bar-h:   calc(52px + env(safe-area-inset-top, 0px));
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --bg:      #181200;
+    --surface: #261c00;
+    --border:  #3d2e00;
+    --text:    #f0d878;
+    --text2:   #a89050;
+    --accent:  #f0c000;
+    --link:    #70b8f0;
+    --code-bg: #261c00;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg:      #181200;
+  --surface: #261c00;
+  --border:  #3d2e00;
+  --text:    #f0d878;
+  --text2:   #a89050;
+  --accent:  #f0c000;
+  --link:    #70b8f0;
+  --code-bg: #261c00;
+}
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg:      #fdf8e0;
+  --surface: #f5ecaa;
+  --border:  #dcc860;
+  --text:    #2a1e00;
+  --text2:   #6b5000;
+  --accent:  #b87800;
+  --link:    #005a8a;
+  --code-bg: #f0e080;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; overflow: hidden; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 300;
+  font-size: clamp(16px, 4vw, 19px);
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* ── status bar ── */
+#bar {
+  position: fixed; inset: 0 0 auto 0;
+  height: var(--bar-h);
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-left:  max(6px, env(safe-area-inset-left, 0px));
+  padding-right: max(6px, env(safe-area-inset-right, 0px));
+  display: flex; align-items: center; gap: 2px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  z-index: 100;
+}
+#bar button {
+  flex-shrink: 0;
+  -webkit-appearance: none; appearance: none;
+  background: transparent; border: none;
+  color: var(--text);
+  font-size: 22px; line-height: 1;
+  min-width: 44px; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 8px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+#bar button:active { background: var(--border); }
+#bar-title {
+  flex: 1; overflow: hidden;
+  text-overflow: ellipsis; white-space: nowrap;
+  text-align: center; padding: 0 4px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  font-size: 13px; color: var(--text2);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ── content ── */
+#main {
+  position: fixed;
+  top: var(--bar-h); left: 0; right: 0; bottom: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+article {
+  display: none;
+  max-width: 68ch;
+  margin: 0 auto;
+  padding: 28px 20px 80px;
+}
+article.visible { display: block; }
+@media (min-width: 600px) { article { padding: 40px 32px 100px; } }
+
+/* ── typography ── */
+article h1 {
+  font-size: 1.55em; line-height: 1.25;
+  font-weight: 700; color: var(--accent);
+  margin-bottom: 0.25em;
+}
+article h2 { font-size: 1.15em; font-weight: 700; margin: 2em 0 0.4em; }
+article h3 { font-size: 1em;    font-weight: 700; margin: 1.6em 0 0.3em; }
+article p  { margin-bottom: 0.9em; }
+article ul, article ol { margin: 0.4em 0 0.9em 1.5em; }
+article li { margin-bottom: 0.25em; }
+article a  { color: var(--link); text-decoration: underline; text-underline-offset: 2px; }
+article hr { border: none; border-top: 1px solid var(--border); margin: 1.8em 0; }
+article strong { font-weight: 700; }
+article em     { font-style: italic; }
+article blockquote {
+  border-left: 3px solid var(--accent);
+  margin: 1em 0; padding: 0.25em 0 0.25em 1em;
+  color: var(--text2); font-style: italic;
+}
+article img {
+  max-width: 100%; height: auto;
+  display: block; margin: 1.5em auto;
+  border-radius: 4px;
+}
+article code {
+  font-family: 'Menlo', Monaco, 'Courier New', monospace;
+  font-size: 0.85em;
+  background: var(--code-bg);
+  padding: 0.1em 0.35em; border-radius: 3px;
+}
+article pre {
+  background: var(--code-bg);
+  border-radius: 6px; padding: 1em;
+  overflow-x: auto; margin: 1em 0;
+}
+article pre code { background: none; padding: 0; font-size: 0.82em; line-height: 1.6; }
+article table   { width: 100%; border-collapse: collapse; margin: 1.2em 0; font-size: 0.88em; }
+article th, article td {
+  border: 1px solid var(--border);
+  padding: 0.45em 0.65em; text-align: left; vertical-align: top;
+}
+article th { background: var(--surface); font-weight: 700; }
+
+/* ── toc overlay ── */
+#toc-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 200; display: flex;
+}
+#toc-overlay[hidden] { display: none; }
+#toc-panel {
+  background: var(--bg);
+  width: min(300px, 84vw);
+  display: flex; flex-direction: column;
+  box-shadow: 4px 0 24px rgba(0,0,0,0.3);
+  padding-top: env(safe-area-inset-top, 0px);
+}
+#btn-toc-close {
+  -webkit-appearance: none; appearance: none;
+  background: transparent; border: none;
+  color: var(--text2); font-size: 18px;
+  min-width: 44px; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  align-self: flex-end;
+  border-radius: 8px; margin: 4px 4px 0;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+#btn-toc-close:active { background: var(--border); }
+#toc-list {
+  list-style: none;
+  overflow-y: auto; -webkit-overflow-scrolling: touch;
+  flex: 1;
+}
+#toc-list li button {
+  -webkit-appearance: none; appearance: none;
+  background: transparent; border: none;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  display: block; width: 100%;
+  padding: 14px 20px;
+  text-align: left; line-height: 1.4;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+#toc-list li button:active  { background: var(--surface); }
+#toc-list li button.active  { background: var(--surface); color: var(--accent); font-weight: 600; }
+  </style>
+</head>
+<body>
+  <header id="bar">
+    <button id="btn-toc" aria-label="Índice">&#9776;</button>
+    <span id="bar-title"></span>
+    <button id="btn-theme" aria-label="Alternar tema">&#9788;</button>
+    <button id="btn-prev" aria-label="Anterior">&#8249;</button>
+    <button id="btn-next" aria-label="Seguinte">&#8250;</button>
+  </header>
+
+  <div id="toc-overlay" hidden>
+    <div id="toc-panel">
+      <button id="btn-toc-close" aria-label="Fechar">&#x2715;</button>
+      <ul id="toc-list">
+        <li><button data-idx="0">00 · Índice | Briefings País Basco · Euskadi</button></li>
+        <li><button data-idx="1">01 · Briefing Inicial | País Basco · Euskadi · EXVBAS</button></li>
+        <li><button data-idx="2">02 · História Basca | Da pré-história ao século XX</button></li>
+        <li><button data-idx="3">03 · ETA | Euskadi Ta Askatasuna — história, contexto, fim</button></li>
+        <li><button data-idx="4">04 · Fonética | Termos Locais — Pronúncia para Guias</button></li>
+        <li><button data-idx="5">05 · Game of Thrones | Dragonstone em dois pedaços — e a mitologia que já lá estava</button></li>
+        <li><button data-idx="6">06 · País Basco | Euskadi — O território e a sua identidade</button></li>
+        <li><button data-idx="7">07 · Euskera | A língua que não veio de lado nenhum</button></li>
+        <li><button data-idx="8">08 · Ícones Bascos | Os símbolos que definem um povo</button></li>
+        <li><button data-idx="9">10 · Dia 1 | Salto del Nervión — A entrada pela montanha</button></li>
+        <li><button data-idx="10">11 · Salto del Nervión | A maior cascata da Península Ibérica</button></li>
+        <li><button data-idx="11">12 · Fojo do Lobo | A armadilha que precisava de uma aldeia inteira</button></li>
+        <li><button data-idx="12">13 · Flora de Montanha | D1 — O que cresce no planalto e no canhão</button></li>
+        <li><button data-idx="13">14 · Fauna de Montanha | D1 — O que vive no planalto e no canhão</button></li>
+        <li><button data-idx="14">20 · Dia 2 | Costa Flysch + Guernica + Gaztelugatxe — O Atlântico e as suas feridas</button></li>
+        <li><button data-idx="15">21 · Flysch | 60 milhões de anos em corte vertical</button></li>
+        <li><button data-idx="16">22 · Trilho Deba–Zumaia | O percurso do flysch</button></li>
+        <li><button data-idx="17">23 · Zumaia | A vila no fim do flysch</button></li>
+        <li><button data-idx="18">24 · Fauna Costeira | D2 — O que vive nas rochas e no mar</button></li>
+        <li><button data-idx="19">25 · Flora Costeira | D2 — O que cresce nas falésias</button></li>
+        <li><button data-idx="20">26 · Guernica | 26 de Abril de 1937</button></li>
+        <li><button data-idx="21">27 · Gaztelugatxe | 231 degraus até ao fim do mundo</button></li>
+        <li><button data-idx="22">30 · Dia 3 | Monte Txindoki — A montanha sagrada de Mari</button></li>
+        <li><button data-idx="23">31 · Txindoki | A montanha de Mari</button></li>
+        <li><button data-idx="24">32 · Mari e a Mitologia Basca | Os deuses que vivem na montanha</button></li>
+        <li><button data-idx="25">33 · Getaria | A aldeia que deu a volta ao mundo duas vezes</button></li>
+        <li><button data-idx="26">34 · Elkano | O primeiro a dar a volta ao mundo</button></li>
+        <li><button data-idx="27">35 · Balenciaga | O costureiro de Getaria</button></li>
+        <li><button data-idx="28">36 · Queijo Idiazabal | DOP de ovelha latxa</button></li>
+        <li><button data-idx="29">37 · Txakoli | O vinho que se verte em fio</button></li>
+        <li><button data-idx="30">40 · Dia 4 | City Trekking Bilbau — A cidade que se reinventou</button></li>
+        <li><button data-idx="31">41 · Bilbau | Da fundação medieval à reinvenção pós-industrial</button></li>
+        <li><button data-idx="32">42 · City Trekking Bilbau | Os pontos do percurso</button></li>
+        <li><button data-idx="33">43 · Guggenheim Bilbao | O edifício que mudou uma cidade</button></li>
+        <li><button data-idx="34">44 · Puppy e Maman | As duas esculturas do Guggenheim</button></li>
+        <li><button data-idx="35">45 · Gastronomia Basca | O essencial para comer bem</button></li>
+        <li><button data-idx="36">46 · Tradições de Bilbau | Festivais e figuras populares</button></li>
+        <li><button data-idx="37">90 · Altimetria | Análise técnica dos 4 dias — EXVBAS</button></li>
+        <li><button data-idx="38">91 · Média | Imagens de referência — EXVBAS</button></li>
+      </ul>
+    </div>
+  </div>
+
+  <main id="main">
+    <article data-id="0">
+<h1>Índice | Briefings País Basco · Euskadi</h1>
+<p><strong>Viagem:</strong> EXVBAS — 25 a 28 Junho 2026<br><strong>Base:</strong> Bilbau (3 noites)<br><strong>Guia:</strong> NM<br><strong>Programa:</strong> <a href="https://borealis.travel/viagens/pais-basco-euskadi/">borealis.travel/viagens/pais-basco-euskadi</a></p>
+<hr>
+<h2>Sistema de Numeração</h2>
+<table>
+<thead>
+<tr>
+<th>Intervalo</th>
+<th>Conteúdo</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>00</code></td>
+<td>Índice (fixo)</td>
+</tr>
+<tr>
+<td><code>01–09</code></td>
+<td>Briefings gerais — identidade, língua, cultura, política</td>
+</tr>
+<tr>
+<td><code>10</code></td>
+<td><code>10-d1.md</code> — resumo Dia 1</td>
+</tr>
+<tr>
+<td><code>11–19</code></td>
+<td>Temáticos Dia 1</td>
+</tr>
+<tr>
+<td><code>20</code></td>
+<td><code>20-d2.md</code> — resumo Dia 2</td>
+</tr>
+<tr>
+<td><code>21–29</code></td>
+<td>Temáticos Dia 2</td>
+</tr>
+<tr>
+<td><code>30</code></td>
+<td><code>30-d3.md</code> — resumo Dia 3</td>
+</tr>
+<tr>
+<td><code>31–39</code></td>
+<td>Temáticos Dia 3</td>
+</tr>
+<tr>
+<td><code>40</code></td>
+<td><code>40-d4.md</code> — resumo Dia 4</td>
+</tr>
+<tr>
+<td><code>41–49</code></td>
+<td>Temáticos Dia 4</td>
+</tr>
+<tr>
+<td><code>90</code></td>
+<td><code>90-altimetria.md</code> — análise técnica de terreno (fixo)</td>
+</tr>
+<tr>
+<td><code>91–99</code></td>
+<td>Anexos — media, imagens, referências visuais</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Gerais (01–09)</h2>
+<table>
+<thead>
+<tr>
+<th>Ficheiro</th>
+<th>Tema</th>
+<th>Estado</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>01-briefing-inicial.md</code></td>
+<td>Boas-vindas, equipa, regras, fio narrativo</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>02-historia-basca.md</code></td>
+<td>Pré-história, Roma, Carlismo, GC, autonomia</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>03-eta.md</code></td>
+<td>ETA — Contexto histórico, franquismo, dissolução 2018</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>04-fonetica-euskera.md</code></td>
+<td>Fonética — Pronúncia de todos os termos locais</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>05-got-dragonstone.md</code></td>
+<td>Game of Thrones + paralelos mitologia basca</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>06-pais-basco.md</code></td>
+<td>Euskadi — Geografia, autonomia, ikurriña, sistema foral</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>07-euskera.md</code></td>
+<td>Língua basca — Isolado linguístico, história, frases úteis</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>08-icones-bascos.md</code></td>
+<td>Txapela, makila, harrijasotzaile, pelota, lauburu</td>
+<td>✅</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Dia 1 — Salto del Nervión (1x)</h2>
+<table>
+<thead>
+<tr>
+<th>Ficheiro</th>
+<th>Tema</th>
+<th>Estado</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>10-d1.md</code></td>
+<td>Resumo do dia — itinerário, dados técnicos, fio narrativo</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>11-salto-del-nervion.md</code></td>
+<td>A cascata — 222m, fluviocársico, maior da PI</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>12-fojo-do-lobo.md</code></td>
+<td>Armadilha para lobos — função, colectivo, história</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>13-flora-montana.md</code></td>
+<td>Faia, azinheira, urze, tojo, zimbro, espinheiro</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>14-fauna-montana.md</code></td>
+<td>Grifo, falcão, gato bravo, texugo, marta, javali, lobo</td>
+<td>✅</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Dia 2 — Costa Flysch + Guernica + Gaztelugatxe (2x)</h2>
+<table>
+<thead>
+<tr>
+<th>Ficheiro</th>
+<th>Tema</th>
+<th>Estado</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>20-d2.md</code></td>
+<td>Resumo do dia — itinerário, dados técnicos, fio narrativo</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>21-flysch-geologia.md</code></td>
+<td>Flysch — Geoparque UNESCO, 60M anos, limite K-Pg</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>22-trilho-deba-zumaia.md</code></td>
+<td>O trilho costeiro — percurso, paisagem, logística</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>23-zumaia.md</code></td>
+<td>Vila + Praia Itzurun (GOT) + Praia Santiago</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>24-fauna-costeira.md</code></td>
+<td>Poças de maré, corvos-marinhos, mergulhões</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>25-flora-costeira.md</code></td>
+<td>Funcho-do-mar, armeria, algas intertidais</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>26-guernica.md</code></td>
+<td>Bombardeamento 1937, Árvore dos Foros, Picasso</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>27-gaztelugatxe.md</code></td>
+<td>231 degraus, ermida séc. IX, Drake 1596, GoT</td>
+<td>✅</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Dia 3 — Monte Txindoki (3x)</h2>
+<table>
+<thead>
+<tr>
+<th>Ficheiro</th>
+<th>Tema</th>
+<th>Estado</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>30-d3.md</code></td>
+<td>Resumo do dia — itinerário, dados técnicos, fio narrativo</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>31-txindoki.md</code></td>
+<td>Serra de Aralar, 1342m, megalíticos, casa de Mari</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>32-mari-mitologia.md</code></td>
+<td>Mari, Sugaar, jentilak, lamiak, sorginak</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>33-getaria.md</code></td>
+<td>Vila, El Ratón, anchovas, porto</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>34-elkano.md</code></td>
+<td>Primeira circum-navegação 1522, Magalhães vs Elkano</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>35-balenciaga.md</code></td>
+<td>O costureiro, Paris, museu, marca actual</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>36-queijo-idiazabal.md</code></td>
+<td>DOP, ovelha latxa, 60 dias, fumado</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>37-txakoli.md</code></td>
+<td>Vinho branco basco, ritual da verta, vs vinho verde</td>
+<td>✅</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Dia 4 — City Trekking Bilbau (4x)</h2>
+<table>
+<thead>
+<tr>
+<th>Ficheiro</th>
+<th>Tema</th>
+<th>Estado</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>40-d4.md</code></td>
+<td>Resumo do dia — itinerário, dados técnicos, fio narrativo</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>41-bilbau-historia.md</code></td>
+<td>Fundação 1300, Carta Puebla, Cidade do Ferro</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>42-city-trekking-pontos.md</code></td>
+<td>Mercado Ribeira, San Anton, Câmara, Catedral</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>43-guggenheim.md</code></td>
+<td>Frank Gehry, 1997, titânio, efeito Bilbau</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>44-puppy-maman.md</code></td>
+<td>Jeff Koons (Puppy) + Louise Bourgeois (Maman)</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>45-gastronomia.md</code></td>
+<td>Pintxos, bacalhau pil pil, txakoli, Carolina</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>46-tradicoes-bilbau.md</code></td>
+<td>Aste Nagusia, Marijaia, Olentzero</td>
+<td>✅</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Anexos (9x)</h2>
+<table>
+<thead>
+<tr>
+<th>Ficheiro</th>
+<th>Tema</th>
+<th>Estado</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>90-altimetria.md</code></td>
+<td>Todos os dias — perfil, fases, estratégia de grupo</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>91-media.md</code></td>
+<td>Imagens e fotos de referência por tema</td>
+<td>✅</td>
+</tr>
+</tbody></table>
+<hr>
+<p><em>Fontes base: PDFs EXVBAS2301 (4 dias) · <a href="https://borealis.travel/viagens/pais-basco-euskadi/">borealis.travel</a></em></p>
+    </article>
+    <article data-id="1">
+<h1>Briefing Inicial | País Basco · Euskadi · EXVBAS</h1>
+<p><strong>Dia:</strong> D1 · 25 Junho 2026 · Bilbau</p>
+<hr>
+<h3>A equipa</h3>
+<p><em>[Apresentação da equipa]</em></p>
+<hr>
+<h3>O que é esta viagem</h3>
+<p>Quatro dias no País Basco: uma civilização com língua própria sem paralelo conhecido, encravada entre montanha e oceano. Vamos caminhar onde o Nervión nasce, atravessar a costa onde 60 milhões de anos de história da Terra estão expostos a olho nu, subir o monte sagrado da mitologia basca, e terminar na cidade que se reinventou com arte depois de décadas de ferro e conflito.</p>
+<p>Não é uma viagem de alta montanha. É uma viagem de intensidade média com um dia exigente (D3 — Monte Txindoki, 1.292 m, 1.233 m de desnível acumulado). Os outros dias são acessíveis a qualquer pessoa em boa condição física.</p>
+<p>Não é turismo passivo. Cada paragem tem contexto, e o contexto é parte da experiência.</p>
+<hr>
+<h3>Gestão de expectativas</h3>
+<p>O que vão encontrar: trilhos de montanha e costa com alguma exposição, terreno calcário, piso que pode ser escorregadio, e dois dias sem café ou WC no percurso.</p>
+<p><strong>Meteo:</strong> esperado tempo seco e quente todos os dias, 26–30°C. Protecção solar, chapéu e água são obrigatórios — não opcionais.</p>
+<p>O D3 é o dia mais exigente — a descida em calcário húmido exige mais do que a subida. Quem tiver dúvidas sobre os joelhos, falar antes.</p>
+<p>O que não vão encontrar: hotel de spa ao final de cada dia, trilhos pavimentados, ou um guia que ignora o mau tempo. Se as condições mudarem, o plano muda.</p>
+<hr>
+<h3>Regras de segurança</h3>
+<p><strong>No trilho:</strong></p>
+<ul>
+<li>Velocidade do grupo = velocidade do mais lento. Sempre.</li>
+<li>Parar antes de tirar fotografias. Nunca em movimento em terreno exposto.</li>
+<li>Comunicar qualquer mal-estar imediatamente — dor, tonturas, cansaço extremo.</li>
+<li>Não se afastar do trilho marcado sem indicação do guia.</li>
+<li>Água: beber antes de ter sede. Nos dias de trilho sem reabastecimento, sair com o mínimo de 1,5 L.</li>
+</ul>
+<p><strong>Emergências:</strong></p>
+<ul>
+<li>Número de emergências europeu: <strong>112</strong></li>
+<li>Guardar o número do guia no telemóvel antes de partir.</li>
+<li>Em caso de separação do grupo: parar, ficar no sítio, ligar.</li>
+</ul>
+<hr>
+<h3>Regras de protecção ambiental</h3>
+<p>Todos os percursos atravessam espaços naturais protegidos — incluindo o Parque Natural de Valderejo (D1) e o Parque Natural de Aralar (D3) — sujeitos à <strong>Lei 42/2007 do Património Natural e da Biodiversidade</strong> (Espanha).</p>
+<ul>
+<li>Não abandonar lixo. Nenhum. O que entra, sai.</li>
+<li>Não colher plantas, flores, cogumelos ou minerais.</li>
+<li>Não alimentar animais silvestres — em particular os grifos do D1.</li>
+<li>Não perturbar fauna: silêncio nas proximidades de ninhos, não aproximar de crias.</li>
+<li>Manter-se nos trilhos marcados. O pisoteio fora de trilho destrói solo e vegetação.</li>
+<li>Fogueiros proibidos em toda a área de percurso.</li>
+</ul>
+<hr>
+<h3>O fio da viagem</h3>
+<p>O Nervión nasce no planalto de Valderejo e corre até ao mar. Vamos acompanhá-lo — do nascimento (D1) ao litoral onde a terra e o oceano se encontram há milhões de anos (D2), à montanha onde os bascos colocaram os seus deuses (D3), até à cidade onde o rio morre no Atlântico e um povo decidiu recomeçar (D4).</p>
+<blockquote>
+<p>&quot;Não conhecemos a origem do euskera. Não sabemos de onde vêm estes povos. O que sabemos é que estão aqui há mais tempo do que qualquer outra nação europeia — e que continuam.&quot;</p>
+</blockquote>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a href="https://borealis.travel/viagens/pais-basco-euskadi/">borealis.travel/viagens/pais-basco-euskadi</a></li>
+<li>Lei 42/2007 do Património Natural e da Biodiversidade (ES)</li>
+<li>PDFs EXVBAS2301 — Briefings D1–D4</li>
+</ul>
+    </article>
+    <article data-id="2">
+<h1>História Basca | Da pré-história ao século XX</h1>
+<p><strong>Geral · transversal a todos os dias</strong></p>
+<hr>
+<h3>Pré-história</h3>
+<p>Os bascos são o povo mais antigo da Europa Ocidental sem ascendência clara noutros grupos europeus. A língua — o euskera — é um <strong>isolado linguístico</strong>: sem parentesco conhecido com nenhuma outra língua viva ou morta. A teoria mais aceite é que os bascos descendem dos primeiros <em>Homo sapiens</em> que habitaram a Península Ibérica após a última glaciação, há c. 15.000 anos. Os megalíticos da Serra de Aralar (D3) datam de 3.000–2.000 a.C.</p>
+<hr>
+<h3>Roma e a Reconquista</h3>
+<p>Roma chegou ao território basco mas nunca o assimilou completamente. As tribos bascocantábricas resistiram à romanização — sem latinizar a língua, sem adoptar o panteão romano. Na Idade Média, o País Basco manteve autonomia relativa sob os reinos cristãos ibéricos, negociando os seus próprios <strong>foros</strong> (direitos e leis próprias) com Castela. O carvalho de Guernica era o símbolo desse pacto: os reis de Castela vinham jurar debaixo da sua sombra que respeitariam os direitos bascos.</p>
+<hr>
+<h3>Guerras Carlistas (séc. XIX)</h3>
+<p>Duas guerras civis espanholas (1833–1840 e 1872–1876) em que o País Basco apoiou o pretendente carlista — em parte para defender os foros contra a centralização liberal de Madrid. A derrota carlista levou à abolição dos foros em 1876. O ressentimento resultante alimentou o nacionalismo basco moderno.</p>
+<hr>
+<h3>Industrialização e nacionalismo</h3>
+<p>O século XIX trouxe a industrialização acelerada — Bilbau tornou-se a <strong>&quot;Cidade do Ferro&quot;</strong>. Com ela veio imigração massiva de outras regiões de Espanha, gerando tensão identitária. <strong>Sabino Arana</strong> fundou o Partido Nacionalista Basco (PNV) em 1895 e criou a ikurriña. O projecto era a independência de um País Basco racialmente puro — uma visão que o PNV moderno abandonou há muito.</p>
+<hr>
+<h3>Guerra Civil e franquismo</h3>
+<p>O País Basco apoiou a República contra Franco. <strong>Guernica</strong> foi bombardeada a 26 de Abril de 1937. O governo basco foi para o exílio. Sob Franco (1939–1975) o euskera foi proibido em público, os símbolos bascos ilegais, a identidade cultural suprimida. A resistência armada tomou a forma da <strong>ETA</strong>, fundada em 1959 (ver <code>03-eta.md</code>).</p>
+<hr>
+<h3>Democracia e autonomia</h3>
+<p>Com a morte de Franco em 1975 e a transição democrática, o País Basco negociou um <strong>Estatuto de Autonomia</strong> (1979) com poderes excepcionais: parlamento, polícia própria (Ertzaintza) e o <strong>Concierto Económico</strong> — o sistema fiscal que permite ao País Basco cobrar os seus próprios impostos e pagar uma quota acordada ao Estado espanhol. É o modelo mais avançado de autonomia regional na Europa.</p>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Basque_people">Wikipedia EN — Basque people</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Historia_del_Pa%C3%ADs_Vasco">Wikipedia ES — Historia del País Vasco</a></li>
+</ul>
+    </article>
+    <article data-id="3">
+<h1>ETA | Euskadi Ta Askatasuna — história, contexto, fim</h1>
+<p><strong>Relevância:</strong> Geral · usar com cuidado; ler antes de apresentar ao grupo</p>
+<hr>
+<h3>O nome</h3>
+<p><strong>ETA</strong> — <em>Euskadi Ta Askatasuna</em>: &quot;País Basco e Liberdade&quot; em euskera. Organização armada nacionalista vasca, fundada em <strong>1958</strong>, dissolvida em <strong>3 de Maio de 2018</strong>. Responsável pelo assassínio de <strong>864 pessoas</strong> em 60 anos.</p>
+<hr>
+<h3>Contexto: o franquismo</h3>
+<p>A ETA nasceu numa ditadura. Em 1939, Franco suprimiu activamente a identidade basca: o euskera proibido no espaço público, os símbolos banidos, a autonomia de 1936 abolida. Os bascos tinham estado maioritariamente do lado da República — e pagaram caro. Jovens nacionalistas insatisfeitos com a passividade do <strong>PNV</strong> criaram a ETA em 1958, inicialmente como movimento cultural. A violência viria depois.</p>
+<hr>
+<h3>Os momentos-chave</h3>
+<p><strong>1973</strong> — Assassínio do Almirante <strong>Carrero Blanco</strong>, Presidente do Governo e sucessor natural de Franco. A bomba lançou o carro por cima de um edifício de cinco andares. Acelerou a transição democrática.</p>
+<p><strong>1979</strong> — O <strong>Estatuto de Guernica</strong> concede ampla autonomia ao País Basco. A ETA continua — o objectivo era a independência completa, não a autonomia.</p>
+<p><strong>1987</strong> — Atentado do <strong>Hipercor</strong> em Barcelona: <strong>21 mortos</strong>, incluindo crianças. Manifestações massivas contra a ETA no próprio País Basco. Ponto de viragem da opinião pública.</p>
+<p><strong>2011</strong> — &quot;Cesse definitivo da actividade armada.&quot;<br><strong>2018</strong> — Dissolução total.</p>
+<hr>
+<h3>Hoje</h3>
+<p>A ETA acabou; o debate político não. O <strong>EH Bildu</strong> (coligação pós-abertzale, <em>abertzale</em> = patriota) é a segunda força no parlamento basco. O PNV governa. A independência debate-se hoje exclusivamente por via eleitoral.</p>
+<hr>
+<h3>Nota para o guia</h3>
+<p>Contextualizar sem tomar partido: franquismo → repressão → resposta armada. Distinguir claramente ETA do nacionalismo basco legítimo — a maioria dos bascos nunca apoiou a violência. Se o grupo perguntar &quot;os bascos querem ser independentes?&quot;: <em>&quot;uns sim, outros não, e hoje esse debate faz-se com boletins de voto.&quot;</em></p>
+<hr>
+<h3>Se perguntarem</h3>
+<p><strong>&quot;Foi terrorismo ou luta pela liberdade?&quot;</strong> — Não existe &quot;ou&quot;. Foi classificada como organização terrorista pela UE, EUA e Espanha. O contexto de origem é real — e não justifica 864 mortos. Os dois factos coexistem.</p>
+<p><strong>&quot;Os bascos apoiavam a ETA?&quot;</strong> — A maioria, não. Mesmo entre independentistas. O Hipercor (1987) gerou manifestações massivas contra a ETA no próprio País Basco.</p>
+<p><strong>&quot;A questão da independência está resolvida?&quot;</strong> — Não. A ETA acabou; o debate político continua. O EH Bildu é a segunda força eleita no parlamento basco.</p>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a href="https://es.wikipedia.org/wiki/Euskadi_Ta_Askatasuna">Wikipedia ES — Euskadi Ta Askatasuna</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Nacionalismo_vasco">Wikipedia ES — Nacionalismo vasco</a></li>
+</ul>
+    </article>
+    <article data-id="4">
+<h1>Fonética | Termos Locais — Pronúncia para Guias</h1>
+<p><strong>Como ler os nomes bascos, espanhóis e internacionais em campo</strong></p>
+<hr>
+<h3>Regras do Euskera (o essencial)</h3>
+<p>O Euskera tem sons que não existem em português. As regras que mais importam para um guia:</p>
+<ul>
+<li><strong>tx</strong> → &quot;tch&quot; (como em &quot;tcheco&quot; ou &quot;chave&quot; mais enfático) — ex.: Txindoki = <em>Tchin-DÓ-ki</em></li>
+<li><strong>x</strong> → &quot;ch&quot; ou &quot;sh&quot; suave (como no inglês <em>shoe</em>) — ex.: Itzurun = <em>Itz-u-RUN</em> (o tz = &quot;ts&quot;)</li>
+<li><strong>tz</strong> → &quot;ts&quot; (como em &quot;tsunami&quot;) — ex.: Gaztelugatze / Gaztelugatxe = <em>Gas-te-lu-GA-tche</em></li>
+<li><strong>z</strong> → &quot;s&quot; (nunca &quot;z&quot; sonora como em português) — ex.: Zumaia = <em>Su-MA-ia</em></li>
+<li><strong>j</strong> → &quot;i&quot; ou &quot;y&quot; suave (nunca &quot;j&quot; castelhana, nunca &quot;j&quot; inglesa) — ex.: Jentilak = <em>Yen-ti-LAK</em></li>
+<li><strong>Acento</strong> → geralmente na penúltima sílaba, mas há exceções</li>
+<li><strong>Vogais</strong> → sempre puras, sem ditongos reduzidos. O &quot;e&quot; é sempre aberto.</li>
+</ul>
+<hr>
+<h3>Glossário Fonético</h3>
+<table>
+<thead>
+<tr>
+<th>Termo</th>
+<th>Língua</th>
+<th>Pronúncia original</th>
+<th>Aproximação PT</th>
+<th>Notas</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Euskadi</strong></td>
+<td>Euskera</td>
+<td>eus-KA-di</td>
+<td>euz-KÁ-di</td>
+<td>&quot;eu&quot; como &quot;eu&quot; PT; &quot;k&quot; seco</td>
+</tr>
+<tr>
+<td><strong>Euskera</strong></td>
+<td>Euskera</td>
+<td>eus-KE-ra</td>
+<td>euz-KÉ-ra</td>
+<td>a língua basca</td>
+</tr>
+<tr>
+<td><strong>Euskal Herria</strong></td>
+<td>Euskera</td>
+<td>eus-KAL HÉ-ri-a</td>
+<td>euz-KÁL É-ria</td>
+<td>&quot;o povo basco&quot; (nome cultural)</td>
+</tr>
+<tr>
+<td><strong>Nervión</strong></td>
+<td>Castelhano</td>
+<td>ner-BIÓN</td>
+<td>ner-BIÓN</td>
+<td>&quot;v&quot; → &quot;b&quot;; ó nasal não existe: diz-se &quot;bion&quot;</td>
+</tr>
+<tr>
+<td><strong>Bilbao</strong></td>
+<td>Castelhano</td>
+<td>bil-BAO</td>
+<td>Bilbau (PT)</td>
+<td>em espanhol o &quot;ao&quot; é ditongo; em PT diz-se Bilbau</td>
+</tr>
+<tr>
+<td><strong>Txindoki</strong></td>
+<td>Euskera</td>
+<td>tchin-DÓ-ki</td>
+<td>xin-DÓ-ki</td>
+<td><strong>tx</strong> = tch; aceitar também &quot;chin-&quot;</td>
+</tr>
+<tr>
+<td><strong>Txakoli / Txakolina</strong></td>
+<td>Euskera</td>
+<td>tcha-ko-LI / tcha-ko-LÍ-na</td>
+<td>xa-ko-LÍ</td>
+<td><strong>tx</strong> = tch; vinho verde basco</td>
+</tr>
+<tr>
+<td><strong>Gaztelugatxe</strong></td>
+<td>Euskera</td>
+<td>gas-te-lu-GA-tche</td>
+<td>gaz-te-lu-GÁ-tche</td>
+<td><strong>tx</strong> = tch no final; é uma palavra longa — treinar!</td>
+</tr>
+<tr>
+<td><strong>Itzurun</strong></td>
+<td>Euskera</td>
+<td>its-u-RUN</td>
+<td>itz-u-RUN</td>
+<td><strong>tz</strong> = ts; praia de Zumaia / GOT</td>
+</tr>
+<tr>
+<td><strong>Zumaia</strong></td>
+<td>Euskera</td>
+<td>su-MA-ia</td>
+<td>su-MÁ-ia</td>
+<td><strong>z</strong> em euskera = &quot;s&quot;</td>
+</tr>
+<tr>
+<td><strong>Deba</strong></td>
+<td>Euskera</td>
+<td>DÉ-ba</td>
+<td>DÉ-ba</td>
+<td>simples; &quot;b&quot; bilabial</td>
+</tr>
+<tr>
+<td><strong>Urola</strong></td>
+<td>Euskera</td>
+<td>u-RÓ-la</td>
+<td>u-RÓ-la</td>
+<td>rio que desagua em Zumaia</td>
+</tr>
+<tr>
+<td><strong>Getaria</strong></td>
+<td>Euskera</td>
+<td>ge-TÁ-ria</td>
+<td>ge-TÁ-ria</td>
+<td>&quot;g&quot; sempre velar (como &quot;gato&quot;)</td>
+</tr>
+<tr>
+<td><strong>Idiazabal</strong></td>
+<td>Euskera</td>
+<td>i-dia-SÁ-bal</td>
+<td>i-dia-SÁ-bal</td>
+<td><strong>z</strong> = &quot;s&quot;; queijo DOP</td>
+</tr>
+<tr>
+<td><strong>Aralar</strong></td>
+<td>Euskera</td>
+<td>a-ra-LÁR</td>
+<td>a-ra-LÁR</td>
+<td>serra onde fica o Txindoki</td>
+</tr>
+<tr>
+<td><strong>Anboto</strong></td>
+<td>Euskera</td>
+<td>an-BÓ-to</td>
+<td>an-BÓ-to</td>
+<td>outra casa de Mari</td>
+</tr>
+<tr>
+<td><strong>Mari</strong></td>
+<td>Euskera</td>
+<td>MÁ-ri</td>
+<td>MÁ-ri</td>
+<td>deusa; &quot;a&quot; aberto</td>
+</tr>
+<tr>
+<td><strong>Sugaar</strong></td>
+<td>Euskera</td>
+<td>su-GÁR</td>
+<td>su-GÁR</td>
+<td>marido de Mari; serpente masculina</td>
+</tr>
+<tr>
+<td><strong>Jentilak</strong></td>
+<td>Euskera</td>
+<td>yen-ti-LÁK</td>
+<td>yen-ti-LÁK</td>
+<td><strong>j</strong> = &quot;y&quot;; gigantes pré-cristãos</td>
+</tr>
+<tr>
+<td><strong>Lamiak</strong></td>
+<td>Euskera</td>
+<td>LÁ-mi-ak</td>
+<td>LÁ-mi-ak</td>
+<td>sereias dos rios; pl. de &quot;lami&quot;</td>
+</tr>
+<tr>
+<td><strong>Iratxoak</strong></td>
+<td>Euskera</td>
+<td>i-rat-CHOÁK</td>
+<td>i-rat-XOÁK</td>
+<td><strong>tx</strong> = tch; duendes; pl. de &quot;iratxo&quot;</td>
+</tr>
+<tr>
+<td><strong>Sorginak</strong></td>
+<td>Euskera</td>
+<td>sor-GÍ-nak</td>
+<td>sor-GÍ-nak</td>
+<td>feiticeiras; pl. de &quot;sorgin&quot;</td>
+</tr>
+<tr>
+<td><strong>Pintxos</strong></td>
+<td>Euskera</td>
+<td>PINT-chos</td>
+<td>PINT-xos</td>
+<td><strong>tx</strong> = tch; o &quot;s&quot; final soa; ≠ &quot;pincho&quot; castelhano</td>
+</tr>
+<tr>
+<td><strong>Aste Nagusia</strong></td>
+<td>Euskera</td>
+<td>ÁS-te na-GÚ-sia</td>
+<td>ÁS-te na-GÚ-zia</td>
+<td>Semana Grande de Bilbau; &quot;g&quot; velar</td>
+</tr>
+<tr>
+<td><strong>Marijaia</strong></td>
+<td>Euskera</td>
+<td>ma-ri-YÁ-ia</td>
+<td>ma-ri-YÁ-ia</td>
+<td><strong>j</strong> = &quot;y&quot;; a boneca da Semana Grande</td>
+</tr>
+<tr>
+<td><strong>Olentzero</strong></td>
+<td>Euskera</td>
+<td>o-len-TSÉ-ro</td>
+<td>o-len-TSÉ-ro</td>
+<td><strong>tz</strong> = ts; o Pai Natal basco</td>
+</tr>
+<tr>
+<td><strong>Makila</strong></td>
+<td>Euskera</td>
+<td>ma-KÍ-la</td>
+<td>ma-KÍ-la</td>
+<td>bengala basca; símbolo de autoridade</td>
+</tr>
+<tr>
+<td><strong>Harrijasotzaile</strong></td>
+<td>Euskera</td>
+<td>a-ri-ya-sot-SÁI-le</td>
+<td>a-ri-ya-SOT-sai-le</td>
+<td>levantador de pedras; desporto rural</td>
+</tr>
+<tr>
+<td><strong>Latxa</strong></td>
+<td>Euskera</td>
+<td>LÁT-cha</td>
+<td>LÁT-xa</td>
+<td><strong>x</strong> = ch/sh; raça ovina autóctone</td>
+</tr>
+<tr>
+<td><strong>Sagardotegia</strong></td>
+<td>Euskera</td>
+<td>sa-gar-do-TE-gia</td>
+<td>sa-gar-do-TÉ-gia</td>
+<td>sidreria; pl. sagardotegiak</td>
+</tr>
+<tr>
+<td><strong>Txalaparta</strong></td>
+<td>Euskera</td>
+<td>tcha-la-PÁR-ta</td>
+<td>xa-la-PÁR-ta</td>
+<td>instrumento de percussão basco</td>
+</tr>
+<tr>
+<td><strong>Guernica</strong></td>
+<td>Castelhano</td>
+<td>GUÉR-ni-ka</td>
+<td>GUÉR-ni-ka</td>
+<td>&quot;g&quot; duro (como &quot;guerra&quot;); não &quot;guérnitcha&quot;</td>
+</tr>
+<tr>
+<td><strong>Vizcaína</strong></td>
+<td>Castelhano</td>
+<td>bis-ka-Í-na</td>
+<td>viz-ka-Í-na</td>
+<td>molho do bacalhau; de Vizcaya</td>
+</tr>
+<tr>
+<td><strong>Chuletón</strong></td>
+<td>Castelhano</td>
+<td>chu-le-TÓN</td>
+<td>chu-le-TÓN</td>
+<td>entrecosto grelhado</td>
+</tr>
+<tr>
+<td><strong>Pil pil</strong></td>
+<td>Culinário</td>
+<td>pil PÍL</td>
+<td>pil PÍL</td>
+<td>técnica de emulsão do bacalhau</td>
+</tr>
+<tr>
+<td><strong>Flysch</strong></td>
+<td>Geológico (inglês)</td>
+<td>FLITCH</td>
+<td>FLICH</td>
+<td>itch como em &quot;itch&quot;; ch final suave</td>
+</tr>
+<tr>
+<td><strong>Balenciaga</strong></td>
+<td>Basco/cast.</td>
+<td>ba-len-SIÁGA</td>
+<td>ba-len-SIÁA-ga</td>
+<td>&quot;ci&quot; = &quot;sia&quot;; não &quot;balenzaga&quot;</td>
+</tr>
+<tr>
+<td><strong>Elkano</strong></td>
+<td>Basco/cast.</td>
+<td>el-KÁ-no</td>
+<td>el-KÁ-no</td>
+<td>Juan Sebastián Elkano</td>
+</tr>
+<tr>
+<td><strong>Guggenheim</strong></td>
+<td>Alemão/inglês</td>
+<td>GU-gen-haim</td>
+<td>GÚ-gen-jaim</td>
+<td>o &quot;h&quot; em &quot;haim&quot; é aspirado; PT: jaim</td>
+</tr>
+<tr>
+<td><strong>Gehry</strong></td>
+<td>Inglês</td>
+<td>GEH-ri</td>
+<td>GÉ-ri</td>
+<td>Frank Gehry; &quot;g&quot; suave; não &quot;geri&quot;</td>
+</tr>
+<tr>
+<td><strong>Koons</strong></td>
+<td>Inglês</td>
+<td>KUNZ</td>
+<td>KUNZ</td>
+<td>Jeff Koons; rima com &quot;moons&quot;</td>
+</tr>
+<tr>
+<td><strong>Bourgeois</strong></td>
+<td>Francês</td>
+<td>bur-ZHWÁ</td>
+<td>bur-JHUÁ</td>
+<td>Louise Bourgeois; &quot;zh&quot; = j suave PT</td>
+</tr>
+<tr>
+<td><strong>Maman</strong></td>
+<td>Francês</td>
+<td>ma-MÃ</td>
+<td>ma-MÃ</td>
+<td>&quot;mãe&quot; em francês; nasal</td>
+</tr>
+</tbody></table>
+<hr>
+<h3>Dicas de pronúncia em campo</h3>
+<p><strong>Txindoki</strong> é a que mais falha — treinar devagar: <em>Tchin · DÓ · ki</em>. O grupo vai pedir para repetir.</p>
+<p><strong>Gaztelugatxe</strong> parece assustador mas tem ritmo: <em>Gaz · te · lu · GÁ · tche</em>. Dividir em sílabas e dizer devagar na primeira vez.</p>
+<p><strong>Pintxos</strong> não é &quot;pintchos&quot; (castelhano) nem &quot;pinxos&quot; (PT) — em Euskera é PINT-chos, com o &quot;t&quot; audível antes do &quot;ch&quot;.</p>
+<p><strong>Guernica</strong> tem &quot;g&quot; duro. Um falante de português tende a suavizar: dizer &quot;guér&quot; como em &quot;guerra&quot; e o resto flui.</p>
+<p><strong>Zumaia e Zumarraga</strong>: o <strong>Z inicial</strong> em Euskera é sempre S. Dizer &quot;Su-MAI-a&quot;, nunca &quot;Zu-MAI-a&quot; com som de &quot;z&quot; português.</p>
+<p><strong>Flysch</strong>: muitos dizem &quot;flaish&quot; ou &quot;fleish&quot; — o correto é próximo de &quot;flich&quot; (uma sílaba só, &quot;fl&quot; + &quot;ich&quot; como em &quot;itch&quot;).</p>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a href="https://www.euskaltzaindia.eus/">Euskaltzaindia — Academia da Língua Basca</a></li>
+<li><a href="https://www.omniglot.com/language/pronunciation/basque.htm">Omniglot — Basque Pronunciation</a></li>
+<li>PDFs EXVBAS2301 (termos identificados em contexto)</li>
+</ul>
+    </article>
+    <article data-id="5">
+<h1>Game of Thrones | Dragonstone em dois pedaços — e a mitologia que já lá estava</h1>
+<p><strong>Relevância:</strong> D2 (Itzurun + Gaztelugatxe) · D3 (Txindoki / Mari)</p>
+<hr>
+<h3>Os dois Dragonstone</h3>
+<p>A série usou dois sítios bascos separados por 80 km para construir um único local fictício: <strong>Dragonstone</strong> na Temporada 7 (2017).</p>
+<p><strong>Praia de Itzurun</strong> (Zumaia) — a praia onde Daenerys desembarca com a frota. Os paredões verticais de flysch em fundo são o cenário por detrás da cena — rocha estratificada que o grupo vê de manhã no trilho.</p>
+<p><strong>San Juan de Gaztelugatxe</strong> — a subida em ziguezague representa a aproximação ao castelo. A escadaria de 231 degraus, o promontório destacado do continente, a ermida no cimo: tudo sem alterações. Em edição, a subida chega ao topo e &quot;entra&quot; num interior filmado noutro sítio.</p>
+<p>O grupo esteve de manhã numa metade de Dragonstone. Agora está na outra.</p>
+<hr>
+<h3>Sugaar — o dragão que já existia</h3>
+<p>Em Euskera, <em>suge</em> = serpente/dragão. <strong>Sugaar</strong> é o marido de Mari — ser ctónico em forma de serpente ou dragão de fogo que habita cavernas e percorre o interior da terra. Em algumas versões, voa e cospe fogo. Quando se encontra com Mari na montanha, a tempestade é inevitável.</p>
+<p>É um dragão basco anterior ao Cristianismo, guardado dentro de montanhas — a mesma ideia de Dragonstone: o fogo antigo dorme na rocha, até ser despertado.</p>
+<hr>
+<h3>Mari — a mãe dos dragões que já existia</h3>
+<p><strong>Mari</strong> atravessa o céu em forma de <strong>bola de fogo ou mulher em chamas</strong>. Controla tempestades, granizo, o tempo. Vive no interior de montanhas. Entidade feminina de poder absoluto — temida, respeitada, não malévola. Pune o orgulho e a mentira.</p>
+<p>Quando o grupo sobe o Txindoki (D3) e o guia diz que Mari vive lá dentro — e atravessa para o Anboto em forma de bola de fogo — a referência a Daenerys a voar em Drogon não é forçada. É a mesma imagem com 3.000 anos de diferença.</p>
+<hr>
+<h3>Jentilak — os filhos da floresta que já existiam</h3>
+<p>Os <strong>jentilak</strong> são os gigantes pré-cristãos da mitologia basca: construíram os megalíticos, habitaram o mundo antes dos humanos actuais, desapareceram quando chegou o Cristianismo. Ficou o eco — os dólmenes e menhires que se vêem em Aralar.</p>
+<p>Em GoT, os <strong>Filhos da Floresta</strong> são os seres originais, quase apagados com a chegada dos Ândalos. A estrutura é idêntica: um povo antes do tempo histórico, obliterado pela religião organizada, cuja presença persiste nos lugares sagrados.</p>
+<hr>
+<h3>O que a língua protegeu</h3>
+<p>A maioria das mitologias europeias foi assimilada pelo Cristianismo entre os sécs. IV e VIII. A basca sobreviveu — por uma razão concreta.</p>
+<p>O Euskera não partilha raízes com o latim, o grego, o gótico nem qualquer língua de evangelização. Quando os missionários chegaram, os conceitos cristãos chegavam às comunidades como corpos estranhos, sem peso cultural. A língua funcionou como membrana: deixava passar o rito superficial, retinha o substrato mítico por baixo.</p>
+<p>Resultado: uma das mitologias pré-cristãs <strong>mais intactas da Europa ocidental</strong> — não foi reescrita por monges, não foi latinizada. É isso que o território ressoa.</p>
+<hr>
+<h3>Mensagem para o grupo</h3>
+<blockquote>
+<p>&quot;Estão a subir a escada de Dragonstone. Mas o sítio existia antes de GoT, e o imaginário de GoT existia antes da série — em Mari, em Sugaar, nos jentilak. A série filmou aqui porque o sítio já parecia de fantasia. O País Basco é assim: a mitologia não foi inventada para os livros. Nasceu aqui, na rocha, há três mil anos.&quot;</p>
+</blockquote>
+<hr>
+<h3>Se perguntarem</h3>
+<p><strong>&quot;Em que episódios?&quot;</strong> — Temporada 7, episódios 1–3. Itzurun na chegada de Daenerys; Gaztelugatxe na subida ao castelo.</p>
+<p><strong>&quot;O GRRM baseou-se na mitologia basca?&quot;</strong> — Não há confirmação. As fontes declaradas são mitologia nórdica e a Guerra das Rosas. Os paralelos são reais mas provavelmente coincidência estrutural.</p>
+<p><strong>&quot;GoT foi todo filmado aqui?&quot;</strong> — Não. Irlanda do Norte (principal), Islândia, Croácia, Malta, Espanha (Sevilha, Almeria, Girona, e aqui). O País Basco aparece só na T7.</p>
+<p><strong>&quot;O interior da ermida aparece na série?&quot;</strong> — O interior e o &quot;castelo&quot; foram construídos em set noutro sítio. Só a escada e o ilhéu são reais.</p>
+<hr>
+<p><strong>Nota para o guia:</strong> Guardar a revelação &quot;os dois sítios são o mesmo Dragonstone&quot; para Gaztelugatxe, no final do D2. O grupo esteve em Itzurun de manhã sem saber — a ligação ao subir as escadas funciona como fechamento do dia.</p>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a href="https://es.wikipedia.org/wiki/Sugaar">Wikipedia — Sugaar</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Mitolog%C3%ADa_vasca">Wikipedia — Mitología vasca</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Jentilak">Wikipedia — Jentilak</a></li>
+<li>PDFs EXVBAS2301 — Briefings D2 e D3</li>
+</ul>
+    </article>
+    <article data-id="6">
+<h1>País Basco | Euskadi — O território e a sua identidade</h1>
+<p><strong>Relevância:</strong> Geral · contexto de arranque da viagem</p>
+<hr>
+<h3>O que é o País Basco</h3>
+<p><strong>Euskadi</strong> — em euskera, o nome oficial — é uma comunidade autónoma de Espanha composta por três <strong>territórios históricos</strong> (não se diz &quot;províncias&quot; em contexto basco): <strong>Álava</strong> (<em>Araba</em>), <strong>Gipuzkoa</strong> e <strong>Bizkaia</strong>. Área total: cerca de <strong>7.234 km²</strong>. População: aproximadamente <strong>2,2 milhões de habitantes</strong>. Capital institucional e sede do governo autónomo: <strong>Vitória-Gasteiz</strong> (Álava). Capital económica e cultural de facto: <strong>Bilbau</strong> (Bizkaia). Capital de Gipuzkoa: <strong>San Sebastián</strong> (<em>Donostia</em>).</p>
+<p>O País Basco tem um dos <strong>PIB per capita mais altos de Espanha</strong> — historicamente sustentado pela indústria siderúrgica e naval (século XIX e XX) e hoje pela indústria avançada, turismo e gastronomia.</p>
+<hr>
+<h3>O sistema foral — autonomia real</h3>
+<p>O traço político mais distintivo do País Basco não é apenas a autonomia política: é o <strong>Concerto Económico</strong> (<em>Concierto Económico</em>). Ao contrário de qualquer outra comunidade autónoma espanhola, os territórios históricos bascos <strong>cobram os seus próprios impostos</strong> — IRS, IRC, IVA — e transferem uma parte acordada para Madrid (o &quot;cupo&quot;). É um sistema de finanças próprias com raízes nos <em>fueros</em> medievais (direitos consuetudinários que os reis de Castela juravam respeitar debaixo da Árvore de Guernica). O Estatuto de Autonomia actual — o <strong>Estatuto de Guernica</strong> — foi aprovado em <strong>1979</strong>, quatro anos após a morte de Franco.</p>
+<hr>
+<h3>Euskal Herria — os sete territórios</h3>
+<p>O conceito de <strong>Euskal Herria</strong> (&quot;o povo basco&quot; ou &quot;a terra do povo basco&quot;) vai além das fronteiras administrativas. Para o nacionalismo basco, Euskal Herria inclui <strong>sete territórios</strong>: os três da comunidade autónoma + Navarra (que tem estatuto próprio) + três territórios do lado francês: <strong>Labourd</strong> (<em>Lapurdi</em>), <strong>Soule</strong> (<em>Zuberoa</em>) e <strong>Basse-Navarre</strong> (<em>Nafarroa Beherea</em>). O lema: <em>Zazpiak Bat</em> — &quot;Os sete, um&quot;. Esta visão é partilhada com diferentes graus de intensidade: há quem a entenda como identidade cultural, há quem a entenda como projecto político.</p>
+<hr>
+<h3>A bandeira: Ikurriña</h3>
+<p>A <strong>Ikurriña</strong> — a bandeira basca — foi desenhada por <strong>Sabino Arana</strong> em <strong>1894</strong>: fundo vermelho (o povo basco), cruz verde diagonais (o carvalho de Guernica, símbolo dos <em>fueros</em>), cruz branca em sobreposição (a fé cristã). A estrutura inspira-se na Union Jack britânica. Durante o franquismo foi proibida e exibida em clandestinidade; hoje é omnipresente.</p>
+<hr>
+<h3>Três províncias, três caracteres</h3>
+<p>O grupo atravessa as três em quatro dias. Álava (D1) é o interior seco, agrícola, mais castelhano na paisagem mas inequivocamente basco na identidade. Gipuzkoa (D2 e D3) é a costa verde, o flysch, os portos piscatórios, a montanha sagrada — o País Basco de postal. Bizkaia (D2 parcial e D4) é Bilbau: a cidade que se transformou, o Guggenheim, os pintxos, o estuário. São três faces do mesmo povo.</p>
+<hr>
+<h3>Mensagem para o grupo</h3>
+<blockquote>
+<p>&quot;Estão numa comunidade que cobra os seus próprios impostos, tem a sua própria polícia, a sua própria língua co-oficial, e uma bandeira desenhada em 1894 que sobreviveu a uma ditadura. Não é uma região com sotaque diferente. É um povo com memória própria.&quot;</p>
+</blockquote>
+<hr>
+<h3>Se perguntarem</h3>
+<p><strong>&quot;O País Basco é independente?&quot;</strong> — Não. É comunidade autónoma de Espanha com autonomia excepcionalmente alta: impostos próprios, polícia própria (<em>Ertzaintza</em>), língua co-oficial. A independência é um projecto político de uma parte da população — não um facto.</p>
+<p><strong>&quot;E Navarra também é basca?&quot;</strong> — Depende de quem se pergunta. Navarra tem autonomia própria e identidade mista — parte da população considera-se basca, parte não. Politicamente sensível.</p>
+<p><strong>&quot;O Concierto Económico é único em Espanha?&quot;</strong> — Sim. É a única região que cobra os seus próprios impostos e transfere uma parte acordada para Madrid. Todas as outras comunidades autónomas recebem transferências do estado central.</p>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a href="https://es.wikipedia.org/wiki/Pa%C3%ADs_Vasco">Wikipedia ES — País Vasco</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Euskal_Herria">Wikipedia ES — Euskal Herria</a></li>
+<li><a href="https://www.euskadi.eus/gobierno-vasco/-/el-estatuto-de-autonomia-la-norma-institucional-basica-del-pais-vasco/">Estatuto de Autonomia — Euskadi.eus</a></li>
+<li><a href="https://turismo.euskadi.eus/guia-sobre-euskadi/geografia-vasca/">Turismo Euskadi — Geografia</a></li>
+</ul>
+    </article>
+    <article data-id="7">
+<h1>Euskera | A língua que não veio de lado nenhum</h1>
+<p><strong>Relevância:</strong> Geral · apresentar no D1 ou no briefing inicial</p>
+<hr>
+<h3>O isolado linguístico da Europa</h3>
+<p>O <strong>euskera</strong> é a única <strong>língua isolada</strong> da Europa ocidental: não tem parentesco comprovado com nenhuma outra língua do mundo. Não é indo-europeu — precede a chegada das línguas indo-europeias à Península Ibérica há mais de 4.000 anos. Todas as tentativas de relacioná-la com outras famílias linguísticas falharam. É uma língua que chegou até hoje sem antepassados conhecidos.</p>
+<hr>
+<h3>Como funciona</h3>
+<p>O euskera é <strong>ergativo e aglutinante</strong>. <em>Ergativo</em>: o sujeito de um verbo transitivo é marcado diferente do sujeito de um intransitivo (o contrário do português). <em>Aglutinante</em>: palavras formam-se encadeando sufixos — um único &quot;vocábulo&quot; pode conter o que em português exigiria 5-6 palavras. Ordem básica: <strong>SOV</strong> (sujeito-objeto-verbo).</p>
+<p>Exemplo: <em>Etxera noa</em> = &quot;Vou para casa&quot; (<em>etxe</em> = casa + <em>ra</em> = para + <em>noa</em> = vou).</p>
+<hr>
+<h3>História e sobrevivência</h3>
+<p>Primeiro texto extenso em euskera: <strong>&quot;Linguae Vasconum Primitiae&quot;</strong> de Bernard Etxepare (<strong>1545</strong>). Durante séculos sobreviveu principalmente na oralidade — família, aldeia, convívio.</p>
+<p>Sob o franquismo (<strong>1939–1975</strong>) o euskera foi <strong>proibido no espaço público</strong>. Os bascos chamam a este período <em>Isilarazi</em> (&quot;silenciado&quot;). A repressão não extinguiu a língua — tornou-a símbolo de resistência. As <strong>ikastolak</strong> (escolas em euskera) funcionavam em clandestinidade nos anos 60; hoje integram o sistema público.</p>
+<p>Em <strong>1968</strong>, a <strong>Euskaltzaindia</strong> criou o <strong>euskera batua</strong> — a variante unificada, que permitiu usar a língua em media, escola e administração com a chegada da democracia. Hoje é <strong>co-oficial</strong> com o espanhol na Comunidade Autónoma Basca. Cerca de <strong>800.000 falantes nativos</strong> (2025).</p>
+<hr>
+<h3>Frases úteis</h3>
+<table>
+<thead>
+<tr>
+<th>Euskera</th>
+<th>PT</th>
+<th>Pronúncia</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><em>Kaixo</em></td>
+<td>Olá</td>
+<td>kai-XO</td>
+</tr>
+<tr>
+<td><em>Agur</em></td>
+<td>Adeus</td>
+<td>a-GUR</td>
+</tr>
+<tr>
+<td><em>Eskerrik asko</em></td>
+<td>Obrigado/a</td>
+<td>es-KE-rik AS-ko</td>
+</tr>
+<tr>
+<td><em>Bai</em></td>
+<td>Sim</td>
+<td>bai</td>
+</tr>
+<tr>
+<td><em>Ez</em></td>
+<td>Não</td>
+<td>ez (= &quot;es&quot;)</td>
+</tr>
+<tr>
+<td><em>Mesedez</em></td>
+<td>Por favor</td>
+<td>me-SE-dez</td>
+</tr>
+<tr>
+<td><em>Gora Euskadi!</em></td>
+<td>Viva o País Basco!</td>
+<td>GO-ra eus-KA-di</td>
+</tr>
+</tbody></table>
+<hr>
+<h3>Mensagem para o grupo</h3>
+<blockquote>
+<p>&quot;Esta língua não veio de lado nenhum. Não tem primo nem avô. Estava aqui antes de Roma, antes dos celtas, antes de qualquer palavra que reconheçam noutra língua europeia. Quando ouvirem alguém falar euskera, estão a ouvir o som mais antigo da Europa ocidental.&quot;</p>
+</blockquote>
+<hr>
+<h3>Se perguntarem</h3>
+<p><strong>&quot;Quando surgiu esta língua?&quot;</strong> — Não se sabe. Está no território pelo menos desde o período eneolítico (4.000+ anos atrás). Não existe língua ancestral conhecida — não é possível ir mais atrás.</p>
+<p><strong>&quot;Quantas pessoas ainda a falam?&quot;</strong> — Cerca de 800.000 falantes nativos no lado espanhol. A língua está em recuperação — a geração jovem é mais bilingue do que os seus pais.</p>
+<p><strong>&quot;É difícil de aprender?&quot;</strong> — Muito. Para falantes de línguas indo-europeias, o euskera não partilha nada — nem raízes de palavras, nem gramática, nem estrutura de frase. É recomeçar do zero.</p>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a href="https://es.wikipedia.org/wiki/Euskera">Wikipedia ES — Euskera</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Historia_externa_del_euskera">Wikipedia ES — Historia externa del euskera</a></li>
+<li><a href="https://www.euskaltzaindia.eus/">Euskaltzaindia — Academia da Língua Basca</a></li>
+</ul>
+    </article>
+    <article data-id="8">
+<h1>Ícones Bascos | Os símbolos que definem um povo</h1>
+<p><strong>Relevância:</strong> Geral · bom para D1 (caminhada mais longa, tempo de conversa)</p>
+<hr>
+<h3>Txapela — o chapéu que é um troféu</h3>
+<p>A <strong>txapela</strong> (boina em castelhano) é o símbolo mais imediato da identidade basca masculina tradicional. Mas o que a torna singular não é o objecto em si — é o que significa ganhar uma. Em qualquer competição basca, desportiva ou cultural, o prémio supremo é a <strong>txapela</strong>: o vencedor passa a chamar-se <strong>txapeldun</strong> (&quot;o que tem a txapela&quot;). O campeão de bertsolaris? <em>Txapeldun</em>. O vencedor de harrijasotzaile? <em>Txapeldun</em>. O eleito de uma assembleia? <em>Txapeldun</em>. O chapéu é a coroa — e usar uma txapela inclinada para a esquerda, puxada para o lado, é um gesto carregado de intenção.</p>
+<hr>
+<h3>Makila — o bordão que é uma arma</h3>
+<p>A <strong>makila</strong> (<em>makil</em> = pau, bastão) é a bengala tradicional basca — mas chamar-lhe &quot;bengala&quot; é redutivo. É um objecto artesanal com séculos de história: fabricada com madeira de nespereira (<em>Mespilus germanica</em>), colhida ainda verde e torcida em espiral à medida que seca. A ponteira e a empunhadura são em metal trabalhado — e a ponteira é afiada o suficiente para funcionar como arma. A makila era o sinal de autoridade dos <em>batzarretxeak</em> (assembleias de aldeia) e hoje é oferta protocolar a chefes de Estado, reis e visitantes ilustres. Quando alguém oferece uma makila, é o sinal máximo de respeito.</p>
+<hr>
+<h3>Harrijasotzaile — levantar pedra como desporto nacional</h3>
+<p>O <strong>harrijasotzaile</strong> (&quot;levantador de pedra&quot;) é uma das <em>Herri Kirolak</em> (desportos rurais bascos) — um conjunto de provas que nasceram do trabalho agrícola e se tornaram competição. As pedras pesam entre <strong>100 e 300 kg</strong>; o atleta levanta-as do chão e apoia-as no ombro, repetindo o movimento o maior número de vezes possível dentro do tempo. A padronização das pedras foi estabelecida por <strong>Victor Zabala &quot;Arteondo&quot;</strong>, nascido em 1886. Outros desportos rurais: <em>aizkolariak</em> (corte de troncos com machado), <em>soka-tira</em> (cabo de guerra), <em>Giza-abere proba</em> (prova de bois — os atletas puxam uma pedra enorme amarrada a um carro). Todos derivam de trabalhos reais da vida pastoril e agrícola.</p>
+<hr>
+<h3>Pelota Vasca — o desporto que atravessou o Atlântico</h3>
+<p>A <strong>pelota vasca</strong> é o desporto basco por excelência. Joga-se num <strong>frontón</strong> — um recinto com uma parede frontal (<em>frontis</em>) e linhas no chão. As modalidades principais: <em>mano</em> (com a mão nua), <em>pala</em> (raquete de madeira), <strong>cesta punta</strong> (cesto de verga curvado preso ao braço — permite velocidades de mais de 300 km/h, tornando-a a bola mais rápida do mundo no desporto). A cesta punta exportou-se para a América Latina e os EUA sob o nome <strong>jai alai</strong> — foi durante décadas associada a casas de apostas na Florida e em Havana. O frontón mais famoso: <strong>Frontón Euskal Jai</strong> em Madrid.</p>
+<hr>
+<h3>Lauburu — a cruz basca</h3>
+<p>O <strong>lauburu</strong> (&quot;quatro cabeças&quot;) é um símbolo em forma de cruz com quatro braços curvos em espiral — visualmente semelhante a uma suástica mas de origem completamente distinta e anterior. Aparece em monumentos funerários bascos desde o século XVI e em arquitectura tradicional desde o século XVII. O seu significado exacto é debatido: vida, movimento, as quatro províncias históricas, os quatro elementos. Hoje está em todo o lado: joias, t-shirts, fachadas, viaturas. É o símbolo gráfico mais omnipresente de Euskadi.</p>
+<hr>
+<h3>Mensagem para o grupo</h3>
+<blockquote>
+<p>&quot;Num país onde o maior prémio é um chapéu, onde se oferece uma bengala como sinal de respeito máximo, e onde se levanta pedras de 300 kg como desporto — percebem que estão num lugar com a sua própria lógica de valores. Não é excentricidade. É identidade.&quot;</p>
+</blockquote>
+<hr>
+<h3>Se perguntarem</h3>
+<p><strong>&quot;Jai alai é o mesmo que pelota?&quot;</strong> — Sim. A cesta punta exportou-se para a América Latina e os EUA sob o nome <em>jai alai</em> (&quot;festa alegre&quot; em euskera). Foi durante décadas associada a casas de apostas na Florida e em Havana. A bola pode atingir 300 km/h — o projéctil mais rápido de qualquer desporto.</p>
+<p><strong>&quot;Quem é o melhor harrijasotzaile da história?&quot;</strong> — Iñaki Perurena, considerado o maior de sempre. Ganhou o campeonato nacional 10 vezes. Pesava ~120 kg e levantava pedras de 300 kg durante horas.</p>
+<p><strong>&quot;O lauburu é uma suástica?&quot;</strong> — Visualmente parecido, mas de origem completamente distinta e anterior ao nazismo. Aparece em monumentos funerários bascos desde o séc. XVI — tem provavelmente origem pré-histórica. Não tem qualquer relação ideológica com o símbolo nazi.</p>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a href="https://turismo.euskadi.eus/webtur00-pagcont/es/contenidos/informacion/deporte_vasco/es_def/levantamiento_de_piedra.html">Turismo Euskadi — Desporto Vasco</a></li>
+<li><a href="https://turismo.euskadi.eus/webtur00-pagcont/es/contenidos/informacion/deporte_vasco/es_def/pelota_Vasca.html">Turismo Euskadi — Pelota Vasca</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Boina">Wikipedia ES — Boina</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Indumentaria_tradicional_del_Pa%C3%ADs_Vasco">Wikipedia ES — Indumentaria tradicional del País Vasco</a></li>
+<li><a href="https://turismo.euskadi.eus/guia-sobre-euskadi/cultura-vasca/">Turismo Euskadi — Cultura Vasca</a></li>
+</ul>
+    </article>
+    <article data-id="9">
+<h1>Dia 1 | Salto del Nervión — A entrada pela montanha</h1>
+<p><strong>Data:</strong> 25 Junho 2026<br><strong>Dificuldade:</strong> Médio baixo (2/5)<br><strong>Distância:</strong> 13 km · <strong>Alt. máx.:</strong> 926 m · <strong>Asc. acumulada:</strong> 833 m<br><strong>Dormida:</strong> Bilbau</p>
+<hr>
+<h3>O que é este dia</h3>
+<p>Primeiro contacto com o País Basco — e o território faz-se anunciar com força. O dia começa nas fragas do Alto Nervión, entre canhões calcários e planaltos ventuosos onde o Rio Nervión nasce antes de chegar a Bilbau, 130 km a norte. A recompensa central é o <strong>Salto del Nervión</strong>: com os seus <strong>222 metros de queda</strong>, é a maior cascata da Península Ibérica em condições de caudal. O enquadramento é dramático — uma fenda no planalto por onde a água cai para o vazio num teatro de rocha calcária. No percurso cruzam-se ravinas, cumes com vistas para Castela e Álava, e os vestígios silenciosos de um <strong>fojo do lobo</strong> — armadilha em pedra seca usada durante séculos para caçar lobo-ibérico.</p>
+<hr>
+<h3>Contexto geográfico e cultural</h3>
+<p>O País Basco — em euskera <strong>Euskadi</strong> — é uma comunidade autónoma de Espanha com identidade própria fortíssima: língua pré-indo-europeia (o <strong>euskera</strong>), símbolos únicos (a boina, a makila), desportos rurais, gastronomia singular. Chegamos pelo interior, pela Álava — a mais castelhana das três províncias bascas — e subimos para o planalto de <strong>Valderejo</strong>, parque natural semi-árido a 800-900m de altitude. Este não é o País Basco verde e costeiro que se vê nas fotografias: é o País Basco seco, áspero, de pastores e lobos. É uma entrada pela porta dos fundos — e por isso é a entrada certa.</p>
+<hr>
+<h3>Pontos de interesse no trilho</h3>
+<p><strong>Salto del Nervión</strong> — 222m de queda livre, origem fluviocárstica: a água filtra pelo calcário do planalto e emerge na falésia. Em época seca pode reduzir-se a um fio. Em época húmida, o troar ouve-se antes de se ver. O Nervión que chega a Bilbau começa aqui.</p>
+<p><strong>Fojo do Lobo</strong> — estrutura em pedra seca em forma de funil ou corredor. Aldeões conduziam manadas de lobo para dentro, fechavam a saída e abatiam os animais. Era solução comunitária — precisava de dezenas de pessoas a bater o mato. Testemunha de uma relação antiga e violenta entre pastores e predadores.</p>
+<p><strong>Flora</strong> — Faia (<em>Fagus sylvatica</em>), azinheira, urze (<em>Calluna vulgaris</em>), tojo, zimbro, espinheiro branco. Nas zonas de calcário o manto vegetal é rasteiro e resistente.</p>
+<p><strong>Fauna</strong> — Grifo (<em>Gyps fulvus</em>) em correntes térmicas sobre os canhões, falcão peregrino, águia de Bonelli. Nos matagais densos: gato bravo, texugo ibérico, marta, javali. O lobo ibérico ocorre na região mas raramente se avista.</p>
+<hr>
+<h3>Fio narrativo do dia</h3>
+<p>O grupo parte de Portugal com um País Basco feito de imagem — Guggenheim, pintxos, festa. Hoje vêem outra coisa: a Euskadi que formou essa identidade, a dureza do planalto interior, a água que cai como se o planalto abrisse por dentro. Amanhã vem o oceano. Hoje, a montanha.</p>
+<hr>
+<h3>Mensagem para o grupo</h3>
+<blockquote>
+<p>&quot;O Rio Nervión nasce aqui em cima — 222 metros de queda — e chega a Bilbau depois de 130 km. Hoje caminham na nascente. No último dia, chegam à foz. É a mesma água. É o mesmo País Basco, visto dos dois extremos.&quot;</p>
+</blockquote>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a href="https://borealis.travel/viagens/pais-basco-euskadi/">Borealis — Itinerário País Basco</a></li>
+<li>PDF EXVBAS2301 — Briefing D1 (edição anterior)</li>
+<li><a href="https://www.euskadi.eus/parque-natural-de-valderejo/web01-a2inguru/es/">Parque Natural de Valderejo</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Salto_del_Nervi%C3%B3n">Wikipedia ES — Salto del Nervión</a></li>
+</ul>
+    </article>
+    <article data-id="10">
+<h1>Salto del Nervión | A maior cascata da Península Ibérica</h1>
+<p><strong>Dia:</strong> D1 · Parque Natural de Valderejo, Álava</p>
+<hr>
+<h3>O que é</h3>
+<p>O <strong>Salto del Nervión</strong> é uma queda de água de <strong>222 metros</strong> — a maior da Península Ibérica. Cai entre a cota dos 790 m (bordo do planalto) e os 578 m (base do canhão de Délica), no município de Amurrio, Álava. É também chamado <em>Cola de Caballo</em> (&quot;cauda de cavalo&quot;) pela forma como a água se dispersa ao cair. O rio que cai aqui é o <strong>Délica</strong> — afluente nascente do Nervión — e é neste ponto que o Nervión, depois de descer 130 km até ao mar, começa a existir.</p>
+<hr>
+<h3>Origem fluviocársica — porque existe esta cascata</h3>
+<p>O planalto de Álava assenta sobre rocha calcária. A água da chuva e do degelo não forma rios à superfície: infiltra-se pelas fissuras do calcário, percorre galerias subterrâneas e emerge apenas onde a rocha termina abruptamente — no bordo do canhão. É um sistema <strong>fluviocársico</strong>: a água chega ao precipício já vinda de baixo da terra, não de um rio visível a montante. Por isso o Salto parece nascer do nada — a parede de calcário abre-se e a água aparece suspensa a 790 metros.</p>
+<hr>
+<h3>Sazonal — não está sempre lá</h3>
+<p>Este é o dado que o grupo precisa de conhecer: o Salto del Nervión <strong>só existe com caudal apreciável em época húmida</strong> — inverno e primavera, e em anos com neve abundante. Em verão seco pode reduzir-se a um fio de água ou desaparecer completamente. Em Junho de 2026, o caudal depende do inverno anterior. Se o grupo chegar e a queda estiver fraca — a geologia, o canhão, o voo dos grifos e a imensidão do planalto continuam a justificar o dia inteiramente. O anfiteatro de rocha é extraordinário com ou sem água.</p>
+<hr>
+<h3>O canhão de Délica</h3>
+<p>A cascata cai para o interior de um <strong>canhão de paredes verticais</strong> — o <em>Cañón del Délica</em> — escavado ao longo de milénios pela água na rocha calcária. Paredes de 200+ metros com estratos horizontais visíveis na pedra. Sítio de nidificação de grifos: as correntes térmicas que sobem do fundo são ideais para o voo planado.</p>
+<hr>
+<h3>O Nervión — do cume à cidade</h3>
+<p>A curiosidade narrativa para o grupo: o rio Nervión, que atravessa Bilbau e chega ao mar em Getxo, <strong>começa aqui</strong>. O grupo parte da nascente no D1 e chega à foz no D4. São 130 km de história entre a pedra calcária de Álava e o Guggenheim. Bilbau deve o seu nome ao Nervión: <em>bil</em> (confluência) + <em>bao</em> (vau) — o ponto onde o rio se atravessava.</p>
+<hr>
+<h3>Mensagem para o grupo</h3>
+<blockquote>
+<p>&quot;Estão no início. Esta água que cai aqui vai chegar a Bilbau em quatro dias — nós chegamos mais depressa. O Salto del Nervión não é um ponto turístico. É o começo de tudo o que vamos ver.&quot;</p>
+</blockquote>
+<hr>
+<h3>Se perguntarem</h3>
+<p><strong>&quot;Porquê é que a água parece sair da rocha?&quot;</strong> — Sistema fluviocársico: a água da chuva infiltra-se pelo calcário do planalto, percorre galerias subterrâneas e emerge no bordo do canhão. Por isso não há rio visível a montante — a água vem de baixo da pedra.</p>
+<p><strong>&quot;A cascata está sempre assim?&quot;</strong> — Não. Em verão seco pode reduzir-se a um fio ou desaparecer. Em Junho de 2026, o caudal depende do inverno anterior. Sem água, o anfiteatro e os grifos justificam o dia na mesma.</p>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a href="https://es.wikipedia.org/wiki/Salto_del_Nervi%C3%B3n">Wikipedia ES — Salto del Nervión</a></li>
+<li><a href="https://turismo.euskadi.eus/es/rutas/mirador-salto-nervion/webtur00-contrutas/es/">Turismo Euskadi — Mirador Salto del Nervión</a></li>
+<li><a href="https://www.euskadi.eus/web01-a2inguru/eu/contenidos/informacion/lig/es_def/adjuntos/069.pdf">Euskadi.eus — LIG 69 Salto del Nervión en el cañón de Délica (PDF)</a></li>
+<li>PDF EXVBAS2301 — Briefing D1</li>
+</ul>
+    </article>
+    <article data-id="11">
+<h1>Fojo do Lobo | A armadilha que precisava de uma aldeia inteira</h1>
+<p><strong>Dia:</strong> D1 · Planalto de Valderejo, Álava</p>
+<hr>
+<h3>O que é</h3>
+<p>Um <strong>fojo do lobo</strong> (em castelhano <em>foso de lobo</em> ou <em>lobera</em>) é uma armadilha colectiva em pedra seca construída para capturar e abater lobos. Encontram-se em todo o norte da Península Ibérica — Galiza, Astúrias, Cantábria, País Basco, Navarra — em zonas de pastoreio onde o lobo-ibérico era predador activo de rebanhos. A estrutura encontrada no percurso do D1 é um destes fojos: pedra sobre pedra, sem argamassa, construída por mãos de aldeia que já não existem.</p>
+<hr>
+<h3>Como funcionava</h3>
+<p>O modelo de <strong>convergência</strong>: duas paredes longas de pedra (65 a 1.300 metros cada) que se abrem em ângulo largo e convergem para um corredor estreito. Os aldeões espalhavam-se em linha e avançavam a gritar (<em>batida</em>), forçando o lobo a fugir em frente. A geometria das paredes guiava o animal para o funil, onde era abatido.</p>
+<hr>
+<h3>Porquê era colectivo</h3>
+<p>Um fojo não é uma armadilha individual. A batida de convergência exigia dezenas de pessoas — homens, mulheres e crianças de várias aldeias a coordenar a perseguição ao longo de muitos quilómetros de terreno. Era um evento comunitário obrigatório, convocado pelas autoridades locais (<em>concejos</em>) e registado em documentos medievais. Quem faltasse à batida pagava multa. O lobo era uma ameaça económica real — uma alcateia podia destruir um rebanho inteiro numa noite, e um rebanho era a sobrevivência de uma família.</p>
+<hr>
+<h3>O lobo-ibérico hoje</h3>
+<p>O lobo foi sendo eliminado durante os sécs. XIX e XX — caça, veneno, redução das presas. A partir de 1970 a população recuperou no noroeste ibérico. No País Basco a presença é irregular mas documentada. Os fojos já não são usados — o lobo ibérico tem protecção total em Espanha desde 2021 — mas o conflito com pastores continua.</p>
+<hr>
+<h3>Mensagem para o grupo</h3>
+<blockquote>
+<p>&quot;Esta estrutura precisou de cem pessoas e três aldeias para funcionar. Não é uma armadilha — é um sistema de organização comunitária. A pedra seca que estão a ver é a evidência de que aqui, antes de haver câmaras municipais, havia assembleia.&quot;</p>
+</blockquote>
+<hr>
+<h3>Se perguntarem</h3>
+<p><strong>&quot;Ainda existem lobos aqui?&quot;</strong> — No País Basco a presença é irregular mas documentada, sobretudo em zonas de montanha. A população ibérica recuperou bem desde os anos 70.</p>
+<p><strong>&quot;Os fojos ainda são usados?&quot;</strong> — Não. Estão protegidos como estruturas históricas, e o lobo ibérico tem protecção total em toda a Espanha desde 2021.</p>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a href="https://es.wikipedia.org/wiki/Foso_de_lobo">Wikipedia ES — Foso de lobo</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Fosos_de_trampas">Wikipedia ES — Fosos de trampas</a></li>
+<li>PDF EXVBAS2301 — Briefing D1</li>
+</ul>
+    </article>
+    <article data-id="12">
+<h1>Flora de Montanha | D1 — O que cresce no planalto e no canhão</h1>
+<p><strong>Dia:</strong> D1 · Planalto de Valderejo + Canhão do Délica, Álava</p>
+<hr>
+<h3>Contexto — dois andares de vegetação</h3>
+<p>O percurso do D1 atravessa dois andares botânicos distintos. No <strong>planalto calcário</strong> (800–930 m) domina a vegetação de mato aberto — urze, tojo, zimbro — adaptada a solos rasos, ventuosos e secos no verão. Nas <strong>encostas e bordos do canhão</strong>, onde a humidade é maior e o solo mais profundo, aparecem a faia e a azinheira. O contraste é visível: de um lado o mato rasteiro do planalto, de outro o verde denso da floresta ripícola no fundo do canhão.</p>
+<hr>
+<h3>Faia — <em>Fagus sylvatica</em></h3>
+<p>A <strong>faia</strong> é a árvore dominante das encostas húmidas do País Basco e Cantábrica, incluindo o bordo do canhão de Délica. Caduca, copa densa e regular, tronco liso e cinzento que parece sempre acabado de lavar. Em Junho está no auge — folha verde brilhante, sombra densa, o chão coberto de folhagem do outono anterior ainda a decompor. Os faiais (em galego-português <em>faieda</em>; em espanhol <em>hayedo</em>) foram durante séculos a fonte de madeira de alta qualidade do norte ibérico: usada em carpintaria, carvão e construção naval. A faia produz as <strong>faias</strong> — frutos pequenos e triangulares com alto teor de óleo, comidos por javali, corço e aves.</p>
+<hr>
+<h3>Azinheira — <em>Quercus ilex</em></h3>
+<p>A <strong>azinheira</strong> ocorre nas zonas de calcário mais seco e exposto, onde a faia não consegue estabelecer-se. É uma das árvores mais resistentes da Península: perene, folha coriácea e esclerofíla (resistente à seca), copa densa e escura. Produz bolotas (<em>bellotas</em>) em abundância — alimento fundamental para javali e para a montaria tradicional. No planalto de Valderejo a azinheira aparece em mosaico com o mato calcário, formando pequenos bosquetes isolados nos locais mais abrigados.</p>
+<hr>
+<h3>Urze — <em>Calluna vulgaris</em></h3>
+<p>A <strong>urze</strong> (ou queiroga) é a planta dominante do mato calcário do planalto — uma erica baixa e ramificada que floresce em roxo-rosa intenso de Agosto a Outubro. Em Junho o grupo apanha-a antes da floração, em verde escuro. Cobre extensões imensas nos planaltos do norte ibérico, dando ao verão tardio e ao outono uma tonalidade violeta característica. É planta melífera: o <strong>mel de urze</strong> é um dos produtos apícolas mais valorizados do norte de Espanha.</p>
+<hr>
+<h3>Tojo — <em>Ulex europaeus</em></h3>
+<p>O <strong>tojo</strong> é o arbusto espinhoso de flores amarelas que pontua o mato entre a urze. Floresce quase todo o ano em climas atlânticos — em Junho estará ainda com algumas flores. Associado a solos ácidos e pobres, é colonizador agressivo de terrenos perturbados. Historicamente era cortado para cama de gado (a decomposição produzia adubo) e para combustível nos fornos de pão. Os espinhos são tão densos que formam barreiras impenetráveis — foi usado como sebe viva em torno de campos.</p>
+<hr>
+<h3>Zimbro — <em>Juniperus communis</em></h3>
+<p>O <strong>zimbro</strong> é um arbusto (ou pequena árvore) da família das cupressáceas, com folhas em agulha e bagas azul-escuro — as <em>zimbras</em> usadas em gin e em cozinha. No planalto calcário aparece em exemplares isolados ou pequenos grupos, resistente ao frio, ao vento e à seca. Os frutos são tecnicamente cones — mas parecem bagas. Em Junho estão verdes (ficam azuis no segundo ano de amadurecimento).</p>
+<hr>
+<h3>Espinheiro branco — <em>Crataegus monogyna</em></h3>
+<p>O <strong>espinheiro branco</strong> (<em>majuelo</em> em castelhano) é um arbusto ou pequena árvore de borda de bosque, cheio de espinhos longos e folhagem profundamente recortada. Em Maio-Junho cobre-se de flores brancas perfumadas — pode ainda estar em flor no início do percurso. No outono produz as <em>maginas</em> — frutos vermelhos pequenos, comidos por tordo, estorninho e outras aves migradoras. Os espinheiros brancos isolados em campo aberto são frequentemente ninhos de rapinas: o emaranhado de espinhos protege as posturas.</p>
+<hr>
+<h3>Mensagem para o grupo</h3>
+<blockquote>
+<p>&quot;Cada planta que vêem aqui resolveu um problema diferente: a faia escolheu a encosta húmida, a azinheira ficou com o calcário seco, a urze tomou conta do planalto ventoso, o tojo fechou as bordas. Não é decoração — é cada uma a ocupar o nicho que mais ninguém quis.&quot;</p>
+</blockquote>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a href="https://es.wikipedia.org/wiki/Ove">Wikipedia ES — Fagus sylvatica</a> <em>(Fagus sylvatica)</em></li>
+<li><a href="https://es.wikipedia.org/wiki/Calluna_vulgaris">Wikipedia ES — Calluna vulgaris</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Ulex_europaeus">Wikipedia ES — Ulex europaeus</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Juniperus_communis">Wikipedia ES — Juniperus communis</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Crataegus_monogyna">Wikipedia ES — Crataegus monogyna</a></li>
+<li>PDF EXVBAS2301 — Briefing D1</li>
+</ul>
+    </article>
+    <article data-id="13">
+<h1>Fauna de Montanha | D1 — O que vive no planalto e no canhão</h1>
+<p><strong>Dia:</strong> D1 · Planalto de Valderejo + Canhão do Délica, Álava</p>
+<hr>
+<h3>Grifo — <em>Gyps fulvus</em></h3>
+<p>O <strong>grifo</strong> (buitre leonado em castelhano) é a ave mais provável de avistar no D1 — e a mais impressionante. Com uma <strong>envergadura até 260 cm</strong> e peso até <strong>10 kg</strong>, é uma das maiores aves de voo planado da Europa. A plumagem é cor de camurça no corpo, com cabeça e pescoço cobertos de penugem branca e um colarinho de penas mais claras. Voa em correntes térmicas — praticamente sem bater as asas — descrevendo círculos lentos sobre o canhão. O canhão de Délica é zona de nidificação: as paredes verticais têm ninhos em cornijas inacessíveis.</p>
+<p>O grifo é carniceiro obrigatório: alimenta-se exclusivamente de carcaças. O bico em gancho serve para rasgar tecidos duros; a cabeça sem penas evita o acúmulo de matéria orgânica durante a alimentação. Quando localiza uma carcaça, chama outros grifos — pode juntar-se uma colónia de dezenas em poucos minutos. Em Espanha a população é de <strong>31.000 a 37.000 casais reprodutores</strong> (censo SEO/BirdLife 2019), um dos maiores números do mundo.</p>
+<hr>
+<h3>Falcão peregrino — <em>Falco peregrinus</em></h3>
+<p>O <strong>falcão peregrino</strong> é a ave mais rápida do planeta — em mergulho (<em>estocada</em>) pode atingir <strong>380 km/h</strong>. Menor que o grifo (envergadura 90–110 cm), é reconhecível pelo capacete escuro, bigodes negros e ventre estriado. Nidifica em paredões de rocha — o canhão de Délica oferece sítios ideais. Caça pombos, estorninhos e outras aves em voo, abatendo-as com o impacto do mergulho. A sua presença num canhão é sinal de ecossistema saudável.</p>
+<hr>
+<h3>Águia de Bonelli — <em>Aquila fasciata</em></h3>
+<p>A <strong>águia de Bonelli</strong> é uma das rapinas mais raras da Europa ocidental — espécie em declínio com menos de 1.000 casais na Península Ibérica. Predador activo (não carniceiro), caça coelhos, lebres, perdizes e outros vertebrados. Voo poderoso e rápido, silhueta de asa rectangular. Pode ser avistada sobrevoando as encostas acima do canhão em busca de presas. A sua presença é indicador de ecossistema com presas abundantes e perturbação humana baixa.</p>
+<hr>
+<h3>Gato bravo — <em>Felis silvestris</em></h3>
+<p>O <strong>gato bravo</strong> (gato selvagem) parece um gato doméstico grande e robusto — mas não é domesticável nem é ancestral do gato doméstico europeu (esse veio do Médio Oriente). Pesa 3 a 8 kg, pelagem atigrada, cauda com anéis e ponta preta romba. Nocturno e extremamente esquivo — a probabilidade de avistamento em caminhada é baixa, mas os rastos (pegadas, arranhados em troncos) podem ser encontrados. Habita bosques densos com mato e zonas de ecótono (borda de floresta). Alimenta-se de rato, coelho, lagarto, pássaro.</p>
+<hr>
+<h3>Texugo ibérico — <em>Meles meles</em></h3>
+<p>O <strong>texugo</strong> é um mamífero da família dos mustelídeos — parente da lontra, da marta e da fuinha. Corpo robusto (até 12 kg), pernas curtas, cabeça com listras brancas e negras inconfundíveis. Nocturno e omnívoro: come minhocas, insectos, frutos, bolbos, ovos, ratos e carniça. Constrói sistemas de tocas (<em>setts</em>) complexos com câmaras e corredores — algumas tocas têm dezenas de entradas e são usadas por gerações durante séculos. De dia, dorme; à noite, percorre até 10 km em busca de comida. Os rastos no barro ou a toca em encosta de mato são a evidência mais comum.</p>
+<hr>
+<h3>Marta — <em>Martes martes</em></h3>
+<p>A <strong>marta</strong> (marta comum) é um mustelídeo esguio e ágil, de pelagem castanha com mancha cor-de-mel na garganta. Trepa com facilidade — vive tanto no chão como nas árvores, onde caça esquilos, pássaros e ovos. É uma das poucas predadoras de esquilo-vermelho. No planalto de Valderejo habita os faiais e azinhais mais densos. Raramente se avista — é tímida e de actividade crepuscular. O avistamento de uma marta em movimento é uma das melhores surpresas que uma caminhada de montanha pode dar.</p>
+<hr>
+<h3>Javali — <em>Sus scrofa</em></h3>
+<p>O <strong>javali</strong> é o mamífero selvagem mais abundante do percurso e o mais provável de deixar rastos visíveis: terreno revolto onde fuçou à procura de bolbos, minhocas e larvas (comportamento chamado <em>hozar</em>). Os foçados são inconfundíveis — manchas de terra revolvida ao longo do trilho ou em clareiras. Crepuscular e nocturno por hábito, mas pode ser visto ao amanhecer ou final da tarde. As fêmeas com leitões são os únicos momentos de risco — manter distância, não se interpor entre a fêmea e os leitões.</p>
+<hr>
+<h3>Lobo ibérico — <em>Canis lupus signatus</em></h3>
+<p>O <strong>lobo ibérico</strong> existe na região mas o avistamento é improvável — nocturno, extremamente desconfiado, evita activamente o contacto humano. Os rastos (pegadas de 7–9 cm, pisada em linha, marcação de território) podem aparecer em trilhos de terra. A presença do fojo do lobo no percurso é o melhor testemunho da relação histórica entre pastores e lobo neste território. Hoje o lobo está protegido em toda a Espanha (desde 2021, a norte do Rio Douro a protecção total foi alargada, criando conflito com pastores).</p>
+<hr>
+<h3>Mensagem para o grupo</h3>
+<blockquote>
+<p>&quot;Aqui em cima vivem grifos de 10 kg, falcões que mergulham a 380 km/h e lobos que evitam toda a gente. Não é um parque temático — é um ecossistema que funciona sem nós. O privilégio não é ver tudo. É caminhar dentro de um sistema que não precisa de nós para existir.&quot;</p>
+</blockquote>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a href="https://es.wikipedia.org/wiki/Gyps_fulvus">Wikipedia ES — Gyps fulvus</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Falco_peregrinus">Wikipedia ES — Falco peregrinus</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Aquila_fasciata">Wikipedia ES — Aquila fasciata</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Felis_silvestris">Wikipedia ES — Felis silvestris</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Martes_martes">Wikipedia ES — Martes martes</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Meles_meles">Wikipedia ES — Meles meles</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Sus_scrofa">Wikipedia ES — Sus scrofa</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Canis_lupus_signatus">Wikipedia ES — Canis lupus signatus</a></li>
+<li>PDF EXVBAS2301 — Briefing D1</li>
+</ul>
+    </article>
+    <article data-id="14">
+<h1>Dia 2 | Costa Flysch + Guernica + Gaztelugatxe — O Atlântico e as suas feridas</h1>
+<p><strong>Data:</strong> 26 Junho 2026<br><strong>Dificuldade:</strong> Médio baixo (2/5)<br><strong>Distância:</strong> 10 km · <strong>Alt. máx.:</strong> 224 m · <strong>Asc. acumulada:</strong> 401 m<br><strong>Dormida:</strong> Bilbau · <strong>Regime:</strong> PA incluído</p>
+<hr>
+<h3>O que é este dia</h3>
+<p>O dia mais denso da viagem — três sítios completamente distintos cosidos num único dia. Começa num trilho costeiro entre Deba e Zumaia onde se caminha sobre <strong>60 milhões de anos de história geológica</strong> expostos em faixas horizontais de rocha. Continua com uma paragem em <strong>Guernica</strong>, símbolo mundial da barbárie do século XX. Termina com a subida dos <strong>231 degraus</strong> de <strong>San Juan de Gaztelugatxe</strong>, uma ermida pendurada numa ilha rochosa no Atlântico. É um dia de horizontes: o mar, a memória, o sagrado.</p>
+<hr>
+<h3>Trilho Deba–Zumaia: o Flysch</h3>
+<p>O <strong>Flysch</strong> é o nome dado a uma formação geológica de camadas alternadas de calcário e argilito — depositadas no fundo do oceano durante dezenas de milhões de anos, depois tombadas para a vertical pelo movimento tectónico, e hoje expostas a pique sobre o mar Cantábrico. Entre Deba e Zumaia o corte geológico é contínuo e legível: cada faixa escura ou clara é um período diferente da história da Terra. A sequência cobre o <strong>final do Cretácico</strong> (era dos dinossauros) até ao Eocénico, incluindo a camada correspondente ao <strong>impacto do meteorito</strong> que extinguiu os dinossauros há 66 milhões de anos — identificável como uma linha de argila clara. É <strong>Geoparque da UNESCO desde 2010</strong>.</p>
+<p>Em Zumaia ficam a <strong>Praia de Itzurun</strong> (palco de filmagens de <em>Game of Thrones</em> — a costa de Pedra do Dragão) e a <strong>Praia de Santiago</strong>, onde o Rio Urola desagua sobre dunas brancas.</p>
+<hr>
+<h3>Guernica y Luno</h3>
+<p><strong>26 de Abril de 1937.</strong> A aviação alemã (Legião Côndor) e italiana bombardeia Guernica durante três horas num mercado semanal. Morre entre 150 e 1.600 pessoas — os números ainda são disputados. É o primeiro bombardeamento sistemático de uma população civil europeia na era moderna. Picasso, que vive em Paris, recebe a notícia e em poucos meses pinta um dos quadros mais reconhecidos do século XX: <strong>Guernica</strong>, óleo sobre tela, <strong>349 × 776 cm</strong>, hoje no Museu Reina Sofía em Madrid. Guernica é também o símbolo histórico do <strong>povo basco</strong> — é aqui que os reis de Castela juravam respeitar os foros (direitos e autonomia) bascos debaixo da Árvore de Guernica, o carvalho sagrado.</p>
+<hr>
+<h3>San Juan de Gaztelugatxe — Reservas ✅</h3>
+<p><strong>31 pax · 26 Jun · 17h35</strong></p>
+<table>
+<thead>
+<tr>
+<th>Lote</th>
+<th>Pax</th>
+<th>Código de reserva</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A</td>
+<td>11</td>
+<td><code>840000102734-10236</code></td>
+</tr>
+<tr>
+<td>B</td>
+<td>20</td>
+<td><code>840000102734-10235</code></td>
+</tr>
+</tbody></table>
+<p>Entrada dividida em dois grupos com o mesmo horário. Confirmar códigos no acesso.</p>
+<hr>
+<h3>San Juan de Gaztelugatxe</h3>
+<p>Do Euskera: <em>gaztelu</em> (castelo) + <em>aitz</em> (rocha). Um ilhéu ligado ao continente por uma ponte e uma calçada em ziguezague com <strong>231 degraus</strong> até ao cume. No topo: a ermida de <strong>San Juan Bautista</strong>, fundada no século IX, reconstruída várias vezes. Tradição: ao chegar, tocar o sino três vezes e pedir um desejo. Em 1596, <strong>Francis Drake</strong> — na campanha inglesa de pilhagem à costa ibérica — atacou e saqueou a ermida. Mais recentemente serviu de cenário em <em>Game of Thrones</em> (Rocadragão). A vista do cume para o Atlântico, com os paredões de flysch a oeste e a costa basca a leste, é uma das imagens mais fortes da viagem.</p>
+<hr>
+<h3>Fauna costeira</h3>
+<p>Nos paredões de rocha e poças de maré: polvo, lapas, caracóis-do-mar, estrelas-do-mar, ouriços-do-mar. Nas águias: mergulhões, corvos-marinhos, gaivotões. A flora costeira é dominada pelo <strong>funcho-do-mar</strong> (<em>Crithmum maritimum</em>) — planta suculenta e aromática que cresce nas fendas da rocha a poucas dezenas de centímetros da rebentação.</p>
+<hr>
+<h3>Fio narrativo do dia</h3>
+<p>Ontem a terra dura do interior; hoje o Atlântico. O flysch conta o tempo em rocha — 60 milhões de anos de paciência geológica. Guernica lembra o que os humanos fazem ao tempo — e uns aos outros. Gaztelugatxe fecha o dia com 231 degraus e um sino: o sagrado sobrevive à pedra e à guerra.</p>
+<hr>
+<h3>Mensagem para o grupo</h3>
+<blockquote>
+<p>&quot;Três coisas hoje: 60 milhões de anos de rocha, 1937, e 231 degraus. Cada uma fala de resistência — a rocha ao mar, o povo ao bombardeamento, a ermida ao tempo. São todos o mesmo país.&quot;</p>
+</blockquote>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a href="https://borealis.travel/viagens/pais-basco-euskadi/">Borealis — Itinerário País Basco</a></li>
+<li>PDF EXVBAS2301 — Briefing D2</li>
+<li><a href="https://www.geoparkea.eus/en/">Geoparque Basque Coast UNESCO</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Bombardeo_de_Guernica">Wikipedia ES — Bombardeo de Guernica</a></li>
+<li><a href="https://www.euskadi.eus/san-juan-de-gaztelugatxe/web01-a2turism/es/">San Juan de Gaztelugatxe — Turismo Euskadi</a></li>
+</ul>
+    </article>
+    <article data-id="15">
+<h1>Flysch | 60 milhões de anos em corte vertical</h1>
+<p><strong>Dia:</strong> D2 · Costa Basca, Gipuzkoa</p>
+<hr>
+<h3>O que é</h3>
+<p>Flysch é o nome geológico para sequências alternadas de <strong>calcário e argilito</strong> depositadas no fundo do oceano e depois tombadas para a vertical pelo movimento tectónico. Na costa entre Deba e Zumaia o corte é contínuo e legível a olho nu: cada faixa clara = calcário (águas quentes, organismos); cada faixa escura = argilito (sedimento fino, águas frias, pouca vida). Uma faixa = alguns milhares de anos.</p>
+<p>A sequência cobre do <strong>Cretácico superior ao Eocénico</strong> — cerca de 60 milhões de anos de história da Terra expostos em 13 km de falésia.</p>
+<hr>
+<h3>A linha do meteorito</h3>
+<p>Dentro da sequência existe uma camada de argila muito específica, fina e clara: o <strong>limite K-Pg</strong> (Cretácico-Paleogénico), correspondente ao impacto do meteorito que extinguiu os dinossauros há <strong>66 milhões de anos</strong>. Identificável por técnicos; não é óbvia ao olhar não treinado, mas está lá.</p>
+<hr>
+<h3>Geoparque UNESCO</h3>
+<p>Reconhecido como <strong>Geoparque da UNESCO em 2010</strong> — um dos primeiros em Espanha. A designação abrange toda a costa entre Zumaia e Mutriku. A erosão marinha activa expõe novos estratos continuamente: a costa está literalmente a ser lida pelo mar.</p>
+<hr>
+<h3>Para o grupo</h3>
+<blockquote>
+<p>&quot;Cada passo no trilho avança milhares de anos. A faixa escura que estão a passar agora pode corresponder a uma extinção em massa. Não é metáfora — é o registo físico do tempo.&quot;</p>
+</blockquote>
+<hr>
+<h3>Se perguntarem</h3>
+<p><strong>&quot;Posso ver o limite do meteorito?&quot;</strong> — É visível como uma linha de argila clara entre as camadas. Os guias do Geoparque mostram o ponto exacto — não é óbvio sem indicação.</p>
+<p><strong>&quot;O flysch existe noutros sítios?&quot;</strong> — Sim, mas raramente com esta qualidade de exposição. A costa entre Deba e Zumaia tem o corte mais limpo e contínuo da Europa.</p>
+<p><strong>&quot;Quando é que as rochas ficaram na vertical?&quot;</strong> — Gradualmente, ao longo de dezenas de milhões de anos, pela compressão tectónica que formou os Pirenéus.</p>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a href="https://www.geoparkea.eus/en/">Geoparque Costa Basca UNESCO</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Flysch_del_flysch">Wikipedia ES — Flysch del Flysch</a></li>
+<li>PDF EXVBAS2301 — Briefing D2</li>
+</ul>
+    </article>
+    <article data-id="16">
+<h1>Trilho Deba–Zumaia | O percurso do flysch</h1>
+<p><strong>Dia:</strong> D2 · 10 km · Dif. médio baixo · Alt. máx. 224 m · Asc. 401 m</p>
+<hr>
+<h3>O percurso</h3>
+<p>Trilho costeiro entre <strong>Deba</strong> e <strong>Zumaia</strong>, sempre sobre o bordo da falésia de flysch. Sentido oeste→este, com o mar à direita. O trilho alterna entre topos de falésia (vistas amplas sobre o Cantábrico) e descidas a pequenas enseadas. Sinalização clara; terreno de terra batida e rocha, sem dificuldade técnica. Termina em Zumaia.</p>
+<hr>
+<h3>Pontos no percurso</h3>
+<ul>
+<li><strong>Saída em Deba</strong> — vila piscatória com porto activo. Igreja gótica de Santa María (séc. XV).</li>
+<li><strong>Falésias centrais</strong> — o trecho com mais exposição de flysch em paredão vertical. Aqui os estratos são perpendiculares ao mar — corte transversal perfeito.</li>
+<li><strong>Enseadas</strong> — pequenas praias de seixo inacessíveis excepto pela água; ninhos de corvo-marinho nas cornijas.</li>
+<li><strong>Chegada a Zumaia</strong> — vila com duas praias, centro histórico compacto, acesso à praia de Itzurun (ver <code>23-zumaia.md</code>).</li>
+</ul>
+<hr>
+<h3>Logística</h3>
+<p>Início e fim em vilas com serviços. Água disponível em Deba e Zumaia; sem pontos intermédios. Em dia de vento forte do norte o trilho pode ser muito exposto nos troços de falésia — manter distância do bordo.</p>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a href="https://turismo.euskadi.eus/">Turismo Euskadi — Ruta Flysch Deba-Zumaia</a></li>
+<li>PDF EXVBAS2301 — Briefing D2</li>
+</ul>
+    </article>
+    <article data-id="17">
+<h1>Zumaia | A vila no fim do flysch</h1>
+<p><strong>Dia:</strong> D2 · Gipuzkoa</p>
+<hr>
+<h3>A vila</h3>
+<p>Vila piscatória de ~10.000 hab. no estuário do Rio Urola. Centro histórico medieval com Igreja de San Pedro (séc. XIV). Ponto de chegada do trilho Deba–Zumaia e base de dois cenários de Game of Thrones.</p>
+<hr>
+<h3>Praia de Itzurun</h3>
+<p>Praia encaixada entre paredões de flysch verticais — a mais fotografada da costa basca. <strong>Cenário de GoT Temporada 7</strong>: a praia onde Daenerys desembarca com a frota ao regressar a Westeros (Dragonstone). As paredes de flysch em fundo são os &quot;muros&quot; do castelo. Acesso por escadaria desde a vila. Em maré alta a praia fica parcialmente submersa.</p>
+<hr>
+<h3>Praia de Santiago</h3>
+<p>A norte da vila, onde o Rio Urola encontra o mar. Faixa de areia com dunas, protegida pelo estuário. Mais tranquila e menos visitada que Itzurun. O Rio Urola vem de Zumarraga (60 km interior) e cruza toda a Gipuzkoa.</p>
+<hr>
+<h3>Para o grupo</h3>
+<blockquote>
+<p>&quot;A praia que estão a ver foi Dragonstone. As paredes de rocha em fundo são as mesmas do episódio — sem CGI, sem set de rodagem. Só flysch.&quot;</p>
+</blockquote>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a href="https://turismo.euskadi.eus/es/localidades/zumaia/">Turismo Euskadi — Zumaia</a></li>
+<li>PDF EXVBAS2301 — Briefing D2</li>
+</ul>
+    </article>
+    <article data-id="18">
+<h1>Fauna Costeira | D2 — O que vive nas rochas e no mar</h1>
+<p><strong>Dia:</strong> D2 · Costa flysch, Gipuzkoa</p>
+<hr>
+<h3>Poças de maré — observar, não tocar</h3>
+<p>As poças que ficam expostas na maré baixa são ecossistemas completos. O que encontrar:</p>
+<ul>
+<li><strong>Lapas</strong> (<em>Patella</em> spp.) — gastrópodes que se agarram à rocha com força de sucção; a remoção danifica permanentemente a rocha e o animal</li>
+<li><strong>Caracóis-do-mar</strong> (<em>Littorina</em> spp.) — pequenos, abundantes, percorrem a rocha em busca de algas</li>
+<li><strong>Estrelas-do-mar</strong> (<em>Asterias rubens</em>) — nas poças mais fundas; predadoras de bivalves</li>
+<li><strong>Ouriços-do-mar</strong> (<em>Paracentrotus lividus</em>) — espinhos longos, nas fendas da rocha; comestíveis (ovas), protegidos fora de época</li>
+<li><strong>Polvo</strong> (<em>Octopus vulgaris</em>) — esconde-se em fendas; avistamento raro mas possível em poças grandes</li>
+</ul>
+<hr>
+<h3>Aves marinhas — nas falésias e no ar</h3>
+<ul>
+<li><strong>Corvo-marinho</strong> (<em>Phalacrocorax aristotelis</em>) — preto, pescoço comprido, voa rente à água; nidifica nas cornijas da falésia de flysch</li>
+<li><strong>Mergulhão</strong> (<em>Phalacrocorax carbo</em>) — maior que o corvo-marinho; mergulha até 6 metros em busca de peixe; visto com asas abertas a secar (não tem glândula uropigial eficiente)</li>
+<li><strong>Gaivota-de-costas-negras</strong> (<em>Larus marinus</em>) — a maior gaivota europeia; oportunista agressiva</li>
+</ul>
+<hr>
+<h3>Para o grupo</h3>
+<blockquote>
+<p>&quot;As poças de maré são aquários naturais — mais ricos do que parecem à primeira vista. Agachar, olhar devagar, não tocar. O polvo esconde-se em menos de um segundo.&quot;</p>
+</blockquote>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a href="https://es.wikipedia.org/wiki/Crithmum_maritimum">Wikipedia ES — Crithmum maritimum</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Phalacrocorax_aristotelis">Wikipedia ES — Phalacrocorax aristotelis</a></li>
+<li>PDF EXVBAS2301 — Briefing D2</li>
+</ul>
+    </article>
+    <article data-id="19">
+<h1>Flora Costeira | D2 — O que cresce nas falésias</h1>
+<p><strong>Dia:</strong> D2 · Costa flysch, Gipuzkoa</p>
+<hr>
+<h3>Funcho-do-mar — <em>Crithmum maritimum</em></h3>
+<p>A planta mais característica desta costa. Suculenta, folhas carnudas em forma de agulha, flores amarelo-esverdeadas em umbela. Cresce em fendas de rocha a poucos metros da rebentação — sobrevive à salsugem, ao spray marinho e à rocha quase nua. Aroma intenso a funcho e limão. Historicamente colhida por pescadores como condimento e conservada em salmoura. Hoje usada em gastronomia de autor basca.</p>
+<hr>
+<h3>Vegetação de falésia</h3>
+<p>Acima da zona de spray, onde o solo começa a existir (raso, ácido, exposto):</p>
+<ul>
+<li><strong>Armeria maritima</strong> (espiguinha-do-mar) — pequenas flores rosa em haste fina, forma almofadas sobre a rocha; floresce Maio–Julho</li>
+<li><strong>Silene maritima</strong> — branca, pétalas recortadas; colónias nas fissuras verticais</li>
+<li><strong>Festuca</strong> spp. — gramínea de touceira resistente ao vento; domina os topos de falésia</li>
+</ul>
+<hr>
+<h3>Algas — na zona intertidal</h3>
+<p>Nas rochas entre marés, visíveis em maré baixa:</p>
+<ul>
+<li><strong>Fucus vesiculosus</strong> (bodelha) — castanha, com bolsas de ar, cobre a rocha em faixas horizontais segundo a altura da maré</li>
+<li><strong>Ulva lactuca</strong> (alface-do-mar) — verde brilhante, folha fina, nas poças mais baixas</li>
+</ul>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a href="https://es.wikipedia.org/wiki/Crithmum_maritimum">Wikipedia ES — Crithmum maritimum</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Armeria_maritima">Wikipedia ES — Armeria maritima</a></li>
+<li>PDF EXVBAS2301 — Briefing D2</li>
+</ul>
+    </article>
+    <article data-id="20">
+<h1>Guernica | 26 de Abril de 1937</h1>
+<p><strong>Dia:</strong> D2 · Guernica y Luno, Bizkaia</p>
+<hr>
+<h3>Contexto — Guerra Civil Espanhola, não WWII</h3>
+<p><strong>Não é a Segunda Guerra Mundial</strong> — é a <strong>Guerra Civil Espanhola (1936–1939)</strong>, dois anos antes. Em Julho de 1936, o general Franco iniciou um golpe militar contra o governo republicano eleito. O País Basco tinha-se alinhado com a República. Alemanha e Itália apoiavam Franco: Hitler enviou a <strong>Legião Côndor</strong> (aviadores e material da Luftwaffe) e Mussolini a <em>Aviazione Legionaria</em> — em parte para apoiar Franco, em parte para testar equipamento e tácticas em combate real. A WWII começa em Setembro de 1939; Guernica arde em Abril de 1937.</p>
+<hr>
+<h3>O bombardeamento</h3>
+<p><strong>26 de Abril de 1937, segunda-feira</strong> — dia de mercado semanal. A Legião Côndor e a Aviazione Legionaria bombardeiam Guernica durante <strong>três horas</strong>. Bombas incendiárias e de fragmentação; depois caças metralham as ruas para impedir a fuga. Estimativa de mortos: entre 150 e 1.600 (números disputados; os registos foram destruídos). A maior parte da vila é destruída.</p>
+<p>Guernica não tinha valor militar. Era símbolo político e histórico basco — e foi escolhida por isso. O bombardeamento testou também a eficácia da destruição de moral civil, táctica que a Luftwaffe usaria depois em Varsóvia, Roterdão e Londres.</p>
+<hr>
+<h3>A Árvore e os Foros</h3>
+<p>Guernica é também o símbolo histórico da autonomia basca. Sob a <strong>Árvore de Guernica</strong> (um carvalho centenário junto à Casa de Juntas) os reis de Castela juravam respeitar os <em>foros</em> — os direitos e privilégios históricos do povo basco. A árvore sobreviveu ao bombardeamento. A actual é um rebento da original; a original morreu em 1892 e está conservada num pavilhão adjacente.</p>
+<hr>
+<h3>O quadro</h3>
+<p>Pablo Picasso, residente em Paris, soube do bombardeamento pelos jornais. Em seis semanas pintou <strong>Guernica</strong> — óleo sobre tela, <strong>349 × 776 cm</strong>. Monocromático (preto, branco, cinzento). Figuras em agonia: touro, cavalo, mulher com criança morta, soldado partido, grito. Foi exposto em Paris em 1937 e passou décadas no MoMA de Nova Iorque (Picasso recusou que regressasse a Espanha enquanto houvesse ditadura). Está hoje no <strong>Museu Reina Sofía, Madrid</strong>.</p>
+<hr>
+<h3>Se perguntarem</h3>
+<p><strong>&quot;Mas isto foi na Segunda Guerra?&quot;</strong> — Não. Guerra Civil Espanhola, 1936–39. A WWII começa em Setembro de 1939, dois anos depois. Os aviões alemães estavam aqui a apoiar Franco e a testar tácticas.</p>
+<p><strong>&quot;O quadro está aqui em Guernica?&quot;</strong> — Não, está em Madrid no Museo Reina Sofía. Picasso exigiu que só regressasse a Espanha quando houvesse democracia. Regressou em 1981, já depois da morte de Franco.</p>
+<p><strong>&quot;Quantas pessoas morreram?&quot;</strong> — Não se sabe ao certo. Entre 150 e 1.600 — os registos foram destruídos no bombardeamento. O número exacto continua a ser disputado por historiadores.</p>
+<p><strong>&quot;Franco era de cá?&quot;</strong> — Não, era galego (nasceu em El Ferrol). O País Basco esteve maioritariamente do lado da República contra Franco.</p>
+<p><strong>&quot;A Árvore de Guernica ainda existe?&quot;</strong> — A árvore original morreu em 1892 (antes do bombardeamento). Está conservada num pavilhão. O que se vê hoje é um rebento da original, plantado no mesmo sítio.</p>
+<hr>
+<h3>Para o grupo</h3>
+<blockquote>
+<p>&quot;O bombardeamento durou três horas. O quadro ficou para sempre. Picasso disse que enquanto o fascismo existisse, o quadro não regressaria a Espanha. Regressou em 1981, seis anos depois da morte de Franco.&quot;</p>
+</blockquote>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a href="https://es.wikipedia.org/wiki/Bombardeo_de_Guernica">Wikipedia ES — Bombardeo de Guernica</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Guernica_(Picasso)">Wikipedia ES — Guernica (Picasso)</a></li>
+<li><a href="https://www.museoreinasofia.es/coleccion/obra/guernica">Museo Reina Sofía — Guernica</a></li>
+<li>PDF EXVBAS2301 — Briefing D2</li>
+</ul>
+    </article>
+    <article data-id="21">
+<h1>Gaztelugatxe | 231 degraus até ao fim do mundo</h1>
+<p><strong>Dia:</strong> D2 · Bermeo, Bizkaia</p>
+<hr>
+<h3>O sítio</h3>
+<p>Ilhéu rochoso ligado ao continente por uma ponte e uma calçada em ziguezague com <strong>231 degraus</strong>. No cimo: a ermida de <strong>San Juan Bautista</strong>. Em Euskera: <em>gaztelu</em> (castelo) + <em>aitz</em> (rocha). A vista do cume para o Atlântico é a imagem mais forte do D2.</p>
+<hr>
+<h3>História</h3>
+<ul>
+<li><strong>Séc. IX</strong> — primeira referência à ermida; documentos medievais registam uma capelania.</li>
+<li><strong>1334</strong> — doada pelos reis de Castela aos cavaleiros de São João de Jerusalém.</li>
+<li><strong>1596</strong> — <strong>Francis Drake</strong> ataca e saqueia a ermida durante a campanha inglesa de pilhagem à costa ibérica.</li>
+<li>Destruída e reconstruída várias vezes por tempestades e incêndios. O edifício actual é do séc. XIX.</li>
+</ul>
+<hr>
+<h3>A tradição</h3>
+<p>Ao chegar ao cimo: tocar o sino <strong>três vezes</strong> e pedir um desejo. É uma das tradições mais antigas do litoral basco — os pescadores faziam-no antes de partir para o mar.</p>
+<hr>
+<h3>Game of Thrones</h3>
+<p>A subida de Gaztelugatxe foi usada na <strong>Temporada 7</strong> como a aproximação a Dragonstone. Em edição, a escada chega ao topo e &quot;entra&quot; no interior filmado noutro sítio. Ver <code>05-got-dragonstone.md</code> para o contexto completo — incluindo a ligação com Itzurun (Zumaia), a outra metade de Dragonstone visitada de manhã.</p>
+<hr>
+<h3>Para o grupo</h3>
+<blockquote>
+<p>&quot;231 degraus. No topo, batem o sino três vezes. Os pescadores faziam-no há séculos antes de partir. Façam o mesmo — é o mesmo sino, o mesmo Atlântico.&quot;</p>
+</blockquote>
+<hr>
+<h3>Se perguntarem</h3>
+<p><strong>&quot;Posso entrar na ermida?&quot;</strong> — Sim, está aberta. Interior simples, uma nave. Não há colecção — é espaço de culto activo.</p>
+<p><strong>&quot;Drake veio aqui porquê?&quot;</strong> — Pilhagem sistemática à costa ibérica em 1596 — atacou Cádiz, Faro e vários pontos do norte. A ermida tinha ofertas votivas de pescadores (ouro, prata, ex-votos). Drake era corsário autorizado pela rainha Isabel I para atacar navios e portos espanhóis.</p>
+<p><strong>&quot;É preciso reservar para subir?&quot;</strong> — Sim, a partir de certa época do ano há sistema de reservas e limite de visitantes por dia. Verificar com antecedência.</p>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a href="https://es.wikipedia.org/wiki/San_Juan_de_Gaztelugatxe">Wikipedia ES — San Juan de Gaztelugatxe</a></li>
+<li><a href="https://turismo.euskadi.eus/es/patrimonio-cultural/san-juan-de-gaztelugatxe/aa30-contpgen/es/">Turismo Euskadi — Gaztelugatxe</a></li>
+<li>PDF EXVBAS2301 — Briefing D2</li>
+</ul>
+    </article>
+    <article data-id="22">
+<h1>Dia 3 | Monte Txindoki — A montanha sagrada de Mari</h1>
+<p><strong>Data:</strong> 27 Junho 2026<br><strong>Dificuldade:</strong> Médio (3/5)<br><strong>Distância:</strong> 11 km · <strong>Alt. máx.:</strong> 1.292 m · <strong>Asc. acumulada:</strong> 1.233 m<br><strong>Dormida:</strong> Bilbau · <strong>Regime:</strong> PA incluído</p>
+<hr>
+<h3>O que é este dia</h3>
+<p>O dia mais exigente da viagem — quase 1.300m de desnível acumulado num pico que os bascos consideram sagrado há milénios. O <strong>Monte Txindoki</strong> (também chamado <em>Larrunarri</em> ou <em>Ñañarri</em>), na <strong>Serra de Aralar</strong>, ergue-se a <strong>1.342 metros</strong> com uma silhueta inconfundível: a ponta aguçada em calcário branco que domina o horizonte a leste de San Sebastián. Não é o pico mais alto do País Basco, mas é o mais carregado de significado — é a casa da deusa <strong>Mari</strong>, a divindade suprema da cosmogonia basca. A encosta é dura, o terreno calcário irregular, a recompensa é a vista de 360° sobre o Cantábrico, os Pirenéus e a Meseta. O dia completa-se com a visita a <strong>Getaria</strong>, aldeia piscatória no litoral Guipúscoa, terra natal de dois dos maiores bascos da história.</p>
+<hr>
+<h3>Txindoki e a Serra de Aralar</h3>
+<p>A Serra de Aralar é um maciço calcário com pastagens de altitude, dolinas, fontes e vestígios megalíticos — mámoas e dólmenes que confirmam ocupação humana desde o Neolítico. O Txindoki é o pico mais emblemático: a subida é um ascenso por encostas abertas com inclinações progressivamente acentuadas e terreno de calcário fragmentado nos últimos metros antes do cume. Não há exposição técnica mas o esforço é real — o desnível acumulado ultrapassa o de muitos 2.000s dos Picos de Europa.</p>
+<hr>
+<h3>Mari — A deusa que vive no Txindoki</h3>
+<p>Na mitologia basca pré-cristã, <strong>Mari</strong> é a divindade da natureza, senhora do tempo e do mundo subterrâneo. Vive no interior de montanhas — preferencialmente no Txindoki e no <strong>Anboto</strong> (a 50 km a oeste) — e atravessa o céu entre as duas em forma de bola de fogo, árvore ardente ou mulher de chamas. O seu marido é <strong>Sugaar</strong> (<em>suge</em> = serpente + <em>ar</em> = masculino), um ser ctónico em forma de serpente que percorre as entranhas da terra. Quando os dois se encontram, há tempestade. Mari não é malévola — é justa. Pune o orgulho, a mentira e o desrespeito pela natureza; protege quem age com honestidade. O Txindoki é literalmente o seu tecto.</p>
+<p>Outros seres da mitologia basca visíveis no caminho: os <strong>jentilak</strong> (gigantes pré-cristãos que construíram os megalíticos), as <strong>lamiak</strong> (sereias dos rios, meio mulher meio peixe ou pato), os <strong>iratxoak</strong> (duendes travessos) e as <strong>sorginak</strong> (feiticeiras que serviram de base à bruxa europeia).</p>
+<hr>
+<h3>Getaria — Onde os bascos mudaram o mundo</h3>
+<p><strong>Getaria</strong> é uma aldeia piscatória com um promontório em forma de baleia (<em>El Ratón</em>) que fecha o porto. Dois filhos desta aldeia cambiaram o que se sabia do mundo.</p>
+<p><strong>Juan Sebastián Elkano</strong> (c. 1486–1526): partiu com Magalhães em 1519 e, após a morte deste nas Filipinas, foi ele quem trouxe a expedição de volta a Sevilha em Setembro de 1522 — <strong>a primeira circum-navegação completa da Terra</strong>. O brasão que lhe foi concedido: um globo com a inscrição <em>Primus circumdedisti me</em> (&quot;foste o primeiro a circundar-me&quot;). Em Getaria há uma estátua e um museu no Balneário.</p>
+<p><strong>Cristóbal Balenciaga</strong> (1895–1972): nasceu numa casa de costureira de Getaria e tornou-se o couturier mais influente do século XX. Coco Chanel disse dele: &quot;É o único que sabe cortar, montar e coser.&quot; O <strong>Museo Balenciaga</strong> em Getaria (2011) é um dos espaços de moda mais visitados da Espanha.</p>
+<p>A aldeia é também berço do <strong>txakoli</strong> (<em>Getariako Txakolina</em>, DO) — o vinho branco ácido e ligeiramente efervescente que se verte em fio alto para oxigenar, típico das <em>sagardotegiak</em> (sidrerias) bascas — e famosa pelas <strong>conservas de anchova</strong> curadas em sal, uma tradição piscatória de séculos.</p>
+<hr>
+<h3>Queijo Idiazabal</h3>
+<p>Ao longo do percurso é possível cruzar rebanhos de <strong>ovelha latxa</strong> — a raça autóctone basca e navarra, identificável pelas orelhas compridas e a lã áspera. O leite desta ovelha (também da <em>carranzana</em>) produz o <strong>queijo Idiazabal</strong>, com Denominação de Origem Protegida desde 1996. Cura mínima de 60 dias, pasta semi-dura, sabor amanteigado com notas de fumeiro. São necessários <strong>7 litros de leite</strong> por cada quilograma de queijo.</p>
+<hr>
+<h3>Fio narrativo do dia</h3>
+<p>É o dia da profundidade — da terra para baixo (Mari vive nas montanhas) e da história para trás (Elkano deu uma volta ao mundo em 1522). O Txindoki exige o corpo: a encosta não perdoa preguiça. Em Getaria, ao final do dia, o grupo entende que os bascos não foram apenas pastores e pescadores — foram os primeiros a provar que o mundo era redondo por baixo dos pés.</p>
+<hr>
+<h3>Mensagem para o grupo</h3>
+<blockquote>
+<p>&quot;Subiram a casa da deusa Mari. Agora estão em Getaria — terra do homem que deu a volta ao mundo antes de qualquer outro. Os bascos olham para o horizonte há muito tempo. Hoje também vocês olharam.&quot;</p>
+</blockquote>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a href="https://borealis.travel/viagens/pais-basco-euskadi/">Borealis — Itinerário País Basco</a></li>
+<li>PDF EXVBAS2301 — Briefing D3</li>
+<li><a href="https://es.wikipedia.org/wiki/Txindoki">Wikipedia ES — Monte Txindoki</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Mitolog%C3%ADa_vasca">Mitologia Vasca — Wikipedia</a></li>
+<li><a href="https://www.cristobalbalenciagamuseoa.com/">Museo Balenciaga Getaria</a></li>
+<li><a href="https://www.quesoidiazabal.eus/">Queso Idiazabal DOP</a></li>
+</ul>
+    </article>
+    <article data-id="23">
+<h1>Txindoki | A montanha de Mari</h1>
+<p><strong>Dia:</strong> D3 · Serra de Aralar, Gipuzkoa · 1.342 m</p>
+<hr>
+<h3>O pico</h3>
+<p><strong>Monte Txindoki</strong>, também chamado <em>Larrunarri</em> ou <em>Ñañarri</em> — a silhueta mais reconhecida do País Basco interior: ponta aguçada em calcário branco que domina o horizonte a leste de San Sebastián. Faz parte da <strong>Serra de Aralar</strong>, maciço calcário na fronteira entre Gipuzkoa e Navarra. O percurso do D3 sobe até <strong>1.292 m</strong> (dados Borealis 2026); o cume fica a <strong>1.342 m</strong>.</p>
+<p>Terreno de calcário fragmentado nos últimos metros. Sem exposição técnica mas desnível acumulado de <strong>1.233 m</strong> — o dia mais exigente da viagem.</p>
+<hr>
+<h3>O planalto de Aralar — arqueologia</h3>
+<p>No planalto em torno do Txindoki encontram-se alguns dos <strong>megalíticos mais densos do País Basco</strong>: dólmenes e menhires do Neolítico e Idade do Bronze (3.000–1.500 a.C.). São os vestígios dos <em>jentilak</em> — os gigantes pré-históricos da mitologia basca (ver <code>32-mari-mitologia.md</code>). A presença humana neste planalto é anterior em milénios à chegada dos bascos históricos.</p>
+<hr>
+<h3>Porquê este pico importa</h3>
+<p>Para além da dificuldade, o Txindoki é a <strong>casa da deusa Mari</strong> — a divindade suprema da cosmogonia basca. Não é folclore decorativo: é uma crença transmitida oralmente durante séculos numa língua que não tem parentes. Subir o Txindoki não é só fazer km — é entrar no território sagrado de uma das mitologias pré-cristãs mais intactas da Europa.</p>
+<hr>
+<h3>Se perguntarem</h3>
+<p><strong>&quot;Quantos metros tem mesmo?&quot;</strong> — O cume é 1.342 m; o percurso do Borealis atinge 1.292 m. Pode não ir ao pico absoluto.</p>
+<p><strong>&quot;É difícil?&quot;</strong> — É o dia mais duro dos quatro. Quase 1.200 m de desnível acumulado. Tecnicamente sem escalada, mas exige ritmo e condição física.</p>
+<p><strong>&quot;O nome quer dizer alguma coisa?&quot;</strong> — <em>Larrunarri</em> = &quot;pedra pelada/rapada&quot; em euskera. <em>Txindoki</em> é de origem menos clara; pode derivar de <em>txin</em> (pequeno?) + <em>doki</em> (lugar).</p>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a href="https://es.wikipedia.org/wiki/Txindoki">Wikipedia ES — Txindoki</a></li>
+<li><a href="https://turismo.euskadi.eus/es/naturaleza/sierra-de-aralar/">Turismo Euskadi — Serra de Aralar</a></li>
+<li>PDF EXVBAS2301 — Briefing D3</li>
+</ul>
+    </article>
+    <article data-id="24">
+<h1>Mari e a Mitologia Basca | Os deuses que vivem na montanha</h1>
+<p><strong>Dia:</strong> D3 · Txindoki / Serra de Aralar</p>
+<hr>
+<h3>Mari — a deusa</h3>
+<p>Divindade suprema da cosmogonia basca pré-cristã. Controla o tempo — chuva, granizo, tempestade, vento. Aparece em várias formas: <strong>bola de fogo</strong>, mulher em chamas, árvore ardente, mulher com foice de ouro. Vive no interior de montanhas — principalmente <strong>Txindoki</strong> e <strong>Anboto</strong> (Bizkaia, 50 km a oeste). Quando atravessa o céu entre as duas, há tempestade.</p>
+<p>Não é malévola. Pune o orgulho, a mentira e o desrespeito pela natureza. Protege quem age com integridade. É uma divindade justa, não caprichosa.</p>
+<hr>
+<h3>Sugaar — o marido</h3>
+<p><em>Suge</em> = serpente/dragão; <em>ar</em> = masculino. Ser ctónico em forma de serpente ou dragão que habita cavernas e percorre o interior da terra. Quando se encontra com Mari na montanha, geram tempestade. É a contraparte subterrânea de Mari (que é celeste). Juntos representam o ciclo completo: céu e terra, fogo e rocha.</p>
+<hr>
+<h3>Os outros seres</h3>
+<ul>
+<li><strong>Jentilak</strong> — gigantes pré-cristãos que construíram os dólmenes e menhires. Desapareceram quando o Cristianismo chegou — fugiram ou morreram. Um deles ficou: <strong>Olentzero</strong>, o carvoneiro gigante que hoje é o Pai Natal basco.</li>
+<li><strong>Lamiak</strong> — sereias dos rios, metade mulher metade peixe (ou pato). Penteiam o cabelo nas margens dos rios. Benevolentes se tratadas com respeito; vingativas se perturbadas.</li>
+<li><strong>Iratxoak</strong> — duendes travessos: azedavam o leite, embaraçavam o cabelo, confundiam viajantes à noite.</li>
+<li><strong>Sorginak</strong> — feiticeiras, servidoras de Mari. Considera-se que foram a base do arquétipo da bruxa europeia medievalizada pela Inquisição.</li>
+</ul>
+<hr>
+<h3>Porquê sobreviveu</h3>
+<p>A maioria das mitologias pré-cristãs europeias foi reescrita ou apagada pelo Cristianismo entre os sécs. IV–VIII. A basca resistiu mais porque o <strong>euskera</strong> não tem parentesco com o latim — os missionários não conseguiam traduzir conceitos cristãos de forma que enraizasse. A língua funcionou como barreira cultural. Ver <code>07-euskera.md</code>.</p>
+<hr>
+<h3>Se perguntarem</h3>
+<p><strong>&quot;As pessoas acreditavam mesmo nisto?&quot;</strong> — Sim, durante séculos. Não como &quot;superstição&quot; — como explicação do mundo tão real quanto qualquer outra. Algumas comunidades rurais mantiveram práticas associadas a Mari até ao séc. XX.</p>
+<p><strong>&quot;Tem a ver com outras mitologias europeias?&quot;</strong> — Não directamente. O euskera não é indo-europeu, por isso a mitologia basca desenvolveu-se de forma independente das mitologias celtas, nórdicas ou greco-romanas. Os paralelos estruturais (deusa da natureza, dragão subterrâneo) são coincidência de arquétipo humano.</p>
+<p><strong>&quot;Olentzero é mesmo o Pai Natal basco?&quot;</strong> — Sim. Chega na véspera de Natal com carvão e comida, desce das montanhas onde vive sozinho. É um dos exemplos mais claros de figura pré-cristã absorvida e resignificada pelo calendário cristão.</p>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a href="https://es.wikipedia.org/wiki/Mitolog%C3%ADa_vasca">Wikipedia ES — Mitología vasca</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Mari_(mitolog%C3%ADa_vasca)">Wikipedia ES — Mari (mitología vasca)</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Sugaar">Wikipedia ES — Sugaar</a></li>
+<li>PDF EXVBAS2301 — Briefing D3</li>
+</ul>
+    </article>
+    <article data-id="25">
+<h1>Getaria | A aldeia que deu a volta ao mundo duas vezes</h1>
+<p><strong>Dia:</strong> D3 · Gipuzkoa · costa de Guipúscoa</p>
+<hr>
+<h3>A vila</h3>
+<p>Vila piscatória de ~2.500 hab. com porto activo e centro histórico medieval. Identificável pelo promontório em forma de rato/baleia — <strong>El Ratón</strong> — que fecha o porto a sul. A rua principal desce em rampa até ao porto; os barcos de pesca atracam onde atracavam há séculos. Duas razões para estar no mapa mundial: Elkano e Balenciaga.</p>
+<hr>
+<h3>O que produz</h3>
+<ul>
+<li><strong>Anchovas em conserva</strong> — tradição centenária; os barcos de Getaria pescavam anchova no Cantábrico e na costa africana. As conservas de Getaria são referência nacional.</li>
+<li><strong>Txakoli</strong> — vinho branco ácido e ligeiramente efervescente, DO <em>Getariako Txakolina</em>. Ver <code>37-txakoli.md</code>.</li>
+<li><strong>Peixe grelhado</strong> — os restaurantes do porto servem besugo, rodaballo e lubina na brasa. É gastronomia simples e cara.</li>
+</ul>
+<hr>
+<h3>Se perguntarem</h3>
+<p><strong>&quot;El Ratón é um rato ou uma baleia?&quot;</strong> — Depende do ângulo. De frente parece um rato; do mar parece uma baleia encalhada. O nome oficial é Isla de San Antón, mas toda a gente diz El Ratón.</p>
+<p><strong>&quot;Getaria é famosa por quê?&quot;</strong> — Por dois homens: Elkano (primeiro a dar a volta ao mundo, 1522) e Balenciaga (o costureiro mais influente do séc. XX). Dois filhos da mesma rua de pescadores.</p>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a href="https://turismo.euskadi.eus/es/localidades/getaria/">Turismo Euskadi — Getaria</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Guetaria">Wikipedia ES — Guetaria</a></li>
+<li>PDF EXVBAS2301 — Briefing D3</li>
+</ul>
+    </article>
+    <article data-id="26">
+<h1>Elkano | O primeiro a dar a volta ao mundo</h1>
+<p><strong>Dia:</strong> D3 · Getaria, Gipuzkoa</p>
+<hr>
+<h3>Os factos</h3>
+<ul>
+<li><strong>Nome:</strong> Juan Sebastián de Elkano (basco) / Elcano (castelhano)</li>
+<li><strong>Nascimento:</strong> c. 1486–87, Getaria</li>
+<li><strong>Morte:</strong> 4 de Agosto de 1526, Oceano Pacífico (segunda viagem)</li>
+</ul>
+<p><strong>20 de Setembro de 1519</strong> — parte de Sevilha com Fernão de Magalhães: 5 navios, ~270 homens.</p>
+<p><strong>27 de Abril de 1521</strong> — Magalhães morre nas Filipinas, na Batalha de Mactan, morto por guerreiros de Lapulapu. Elkano assume o comando.</p>
+<p><strong>6 de Setembro de 1522</strong> — a nau <strong>Victoria</strong> chega a Sevilha. É o único navio dos cinco a regressar. A bordo: <strong>18 sobreviventes</strong> de 270.</p>
+<p>Três anos de viagem. Primeira circum-navegação completa da Terra.</p>
+<hr>
+<h3>O brasão</h3>
+<p>Carlos I de Espanha concedeu a Elkano um brasão com um <strong>globo</strong> e a inscrição em latim: <em><strong>Primus circumdedisti me</strong></em> — &quot;Foste o primeiro a circundar-me&quot;. É o reconhecimento oficial de que deu a volta ao mundo.</p>
+<hr>
+<h3>Magalhães ou Elkano?</h3>
+<p>Magalhães planeou a expedição e chegou ao Pacífico. Mas morreu nas Filipinas, a meio caminho. <strong>Quem completou a viagem e regressou foi Elkano.</strong> A primeira circum-navegação é de Elkano — o que Magalhães iniciou, Elkano terminou.</p>
+<hr>
+<h3>Se perguntarem</h3>
+<p><strong>&quot;Mas não foi Magalhães a dar a volta ao mundo?&quot;</strong> — Magalhães morreu nas Filipinas. Nunca regressou. Quem completou o percurso e chegou a Sevilha foi Elkano. A expedição é &quot;Magalhães-Elcano&quot; precisamente porque os dois tiveram papéis essenciais em momentos diferentes.</p>
+<p><strong>&quot;Quantos morreram?&quot;</strong> — De 270 homens, regressaram 18 na Victoria. Outros pereceram ao longo da viagem, alguns desertaram, alguns ficaram presos.</p>
+<p><strong>&quot;Há um museu?&quot;</strong> — Sim, em Getaria. Pequeno mas com boa contextualização da viagem.</p>
+<p><strong>&quot;Porque é que foi em nome da Espanha e não do País Basco?&quot;</strong> — Em 1519 o País Basco fazia parte da Coroa de Castela. Não havia &quot;Espanha&quot; moderna ainda — era a coroa de Carlos I (que era também Carlos V do Sacro Império). Elkano era basco a servir a coroa castelhana, como muitos marinheiros do norte.</p>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a href="https://es.wikipedia.org/wiki/Juan_Sebasti%C3%A1n_Elcano">Wikipedia ES — Juan Sebastián Elcano</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Expedici%C3%B3n_Magallanes-Elcano">Wikipedia ES — Expedición Magallanes-Elcano</a></li>
+<li>PDF EXVBAS2301 — Briefing D3</li>
+</ul>
+    </article>
+    <article data-id="27">
+<h1>Balenciaga | O costureiro de Getaria</h1>
+<p><strong>Dia:</strong> D3 · Getaria / Museo Balenciaga</p>
+<hr>
+<h3>Os factos</h3>
+<ul>
+<li><strong>Nome:</strong> Cristóbal Balenciaga Eizaguirre</li>
+<li><strong>Nascimento:</strong> 21 de Janeiro de 1895, Getaria (filho de uma costureira)</li>
+<li><strong>Morte:</strong> 23 de Março de 1972, Xàbia (Alicante)</li>
+</ul>
+<p>Abriu o primeiro atelier em <strong>San Sebastián em 1919</strong>. Em <strong>1937</strong>, com a Guerra Civil, mudou-se para <strong>Paris</strong> — onde se tornou a figura central da alta costura mundial durante três décadas. Fechou a maison em <strong>1968</strong> sem explicação pública.</p>
+<hr>
+<h3>Porque era diferente</h3>
+<p>Balenciaga não seguia tendências — criava-as. As suas inovações técnicas:</p>
+<ul>
+<li><strong>Casaco-balão</strong> e <strong>casaco-saco</strong> — afastou o vestuário do corpo, libertando a mulher da silhueta ajustada dos anos 50</li>
+<li><strong>Manga de uma peça</strong> — costura que elimina a junção do ombro, dando fluidez total ao movimento</li>
+<li><strong>Vestido de noiva sem costas</strong> (1967) — o último grande trabalho antes do encerramento</li>
+</ul>
+<p>Coco Chanel disse dele: <em>&quot;É o único costureiro no verdadeiro sentido da palavra. Os outros são apenas criadores de moda.&quot;</em> Christian Dior disse o mesmo com outras palavras.</p>
+<hr>
+<h3>O Museu</h3>
+<p><strong>Museo Balenciaga</strong>, Getaria — inaugurado em <strong>Junho de 2011</strong>. Instalado num palacete do séc. XVI junto à vila histórica. Colecção de ~1.200 peças de roupa e acessórios. Um dos museus de moda mais visitados da Península.</p>
+<hr>
+<h3>Se perguntarem</h3>
+<p><strong>&quot;A marca Balenciaga ainda existe?&quot;</strong> — Sim, mas não tem nada a ver com Cristóbal. A marca foi vendida depois da sua morte e é hoje um grupo de luxo (Kering) com criadores diferentes. Cristóbal nunca licenciou o nome em vida.</p>
+<p><strong>&quot;Ele era famoso em vida?&quot;</strong> — Sim, era o costureiro mais respeitado de Paris durante os anos 50–60. Os seus clientes incluíam a família real espanhola e celebridades internacionais. Era conhecido por ser inacessível — raramente dava entrevistas ou aparecia publicamente.</p>
+<p><strong>&quot;Porque fechou em 1968?&quot;</strong> — Nunca explicou completamente. Disse que a moda tinha mudado de uma forma que não reconhecia. 1968 foi o ano das revoltas estudantis em Paris e da explosão do prêt-à-porter — o fim da era da alta costura como centro do mundo da moda.</p>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a href="https://es.wikipedia.org/wiki/Crist%C3%B3bal_Balenciaga">Wikipedia ES — Cristóbal Balenciaga</a></li>
+<li><a href="https://www.cristobalbalenciagamuseoa.com/">Museo Balenciaga Getaria</a></li>
+<li>PDF EXVBAS2301 — Briefing D3</li>
+</ul>
+    </article>
+    <article data-id="28">
+<h1>Queijo Idiazabal | DOP de ovelha latxa</h1>
+<p><strong>Dia:</strong> D3 · País Basco e Navarra</p>
+<hr>
+<h3>Os factos</h3>
+<ul>
+<li><strong>DOP</strong> (Denominação de Origem Protegida) desde <strong>1996</strong></li>
+<li><strong>Leite:</strong> ovelha <strong>latxa</strong> e/ou <strong>carranzana</strong> — as duas raças autóctones bascas</li>
+<li><strong>Maturação mínima:</strong> 60 dias</li>
+<li><strong>Rendimento:</strong> ~<strong>7 litros</strong> de leite por kg de queijo</li>
+<li><strong>Zona de produção:</strong> País Basco e Navarra</li>
+</ul>
+<hr>
+<h3>O queijo</h3>
+<p>Pasta semi-dura, cor marfim a amarelo-pálido. Sabor amanteigado com acidez suave e ligeiro amargor no final. Pode ser <strong>fumado</strong> (defumado com madeira de cereja, faia ou pinho) ou <strong>sem fumo</strong>. O fumado é mais escuro no exterior e tem notas adicionais de madeira.</p>
+<p>A ovelha <strong>latxa</strong> (ver fauna D3) produz pouco leite mas de alta qualidade — elevado teor de gordura e proteína, ideal para queijo. É a raça que se vê nos prados de Aralar durante o percurso.</p>
+<hr>
+<h3>Se perguntarem</h3>
+<p><strong>&quot;É parecido com algum queijo português?&quot;</strong> — Textura próxima do Serpa ou São João da Pesqueira — pasta semi-dura de ovelha. Mais seco e menos picante que o queijo da Serra.</p>
+<p><strong>&quot;Posso comprar aqui?&quot;</strong> — Sim. Em Getaria e em qualquer mercado ou loja de produtos regionais do País Basco. Melhor comprar no fim da viagem (D4 Bilbau) para não carregar.</p>
+<p><strong>&quot;O fumado é original ou é marketing?&quot;</strong> — Original. A fumagem era método de conservação antes da refrigeração — os pastores defumavam os queijos nas cabanas de montanha para durarem mais tempo.</p>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a href="https://www.quesoidiazabal.eus/">Consejo Regulador DOP Idiazabal</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Queso_Idiazabal">Wikipedia ES — Queso Idiazabal</a></li>
+<li>PDF EXVBAS2301 — Briefing D3</li>
+</ul>
+    </article>
+    <article data-id="29">
+<h1>Txakoli | O vinho que se verte em fio</h1>
+<p><strong>Dia:</strong> D3 · Getaria / País Basco</p>
+<hr>
+<h3>Os factos</h3>
+<ul>
+<li><strong>Tipo:</strong> vinho branco, muito seco, ligeiramente efervescente</li>
+<li><strong>Álcool:</strong> 9,5–11,5% — dos mais baixos dos vinhos ibéricos</li>
+<li><strong>Uva principal:</strong> <em>Hondarrabi Zuri</em> (branca); alguma <em>Hondarrabi Beltza</em> (tinta, para rosé)</li>
+<li><strong>DO Getariako Txakolina</strong> — a DO específica de Getaria; as mais conhecidas</li>
+<li>Existem também DO <strong>Bizkaiko Txakolina</strong> (Bizkaia) e <strong>Arabako Txakolina</strong> (Álava)</li>
+</ul>
+<hr>
+<h3>O ritual da verta</h3>
+<p>O txakoli serve-se vertendo de altura — o copo fica baixo, a garrafa sobe até ~50 cm acima. O fio fino de vinho ao cair oxigena o líquido e activa o CO₂ natural, criando efervescência no copo. É um gesto com história: os taberneiros bascos faziam-no para &quot;abrir&quot; o vinho. Hoje é ritual e espectáculo ao mesmo tempo.</p>
+<p>Beber-se frio, em copos baixos de boca larga. Combina com pintxos, anchovas e marisco — a acidez corta a gordura do peixe.</p>
+<hr>
+<h3>Se perguntarem</h3>
+<p><strong>&quot;É como vinho verde português?&quot;</strong> — Muito parecido. Mesma lógica: baixo álcool, alta acidez, ligeira efervescência, para beber jovem e fresco. O txakoli tende a ser ainda mais seco e mineral.</p>
+<p><strong>&quot;Posso levar uma garrafa?&quot;</strong> — Sim, mas bebê-lo cá é melhor — perde a frescura em poucos meses. Se levar, beber dentro de um ano.</p>
+<p><strong>&quot;Produz-se muito?&quot;</strong> — Pouco. A DO Getariako é das menores de Espanha — poucos produtores, produção limitada, quase tudo consumido localmente e no País Basco. O que aparece em Portugal é raro e caro.</p>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a href="https://es.wikipedia.org/wiki/Txakolina">Wikipedia ES — Txakoli</a></li>
+<li><a href="https://getariakotxakolina.eus/">DO Getariako Txakolina</a></li>
+<li>PDF EXVBAS2301 — Briefing D3</li>
+</ul>
+    </article>
+    <article data-id="30">
+<h1>Dia 4 | City Trekking Bilbau — A cidade que se reinventou</h1>
+<p><strong>Data:</strong> 28 Junho 2026<br><strong>Dificuldade:</strong> Fácil (caminho urbano)<br><strong>Regime:</strong> PA incluído · <strong>Regresso a Portugal</strong></p>
+<hr>
+<h3>O que é este dia</h3>
+<p>O último dia não é de descanso — é de leitura. Bilbau é uma das maiores histórias de transformação urbana do século XX: uma cidade industrial de mineração e siderurgia, em declínio desde os anos 80, que apostou numa ideia improvável — a cultura como motor de regeneração. Funcionou. O <strong>Guggenheim Bilbao</strong> (1997) desencadeou o que os urbanistas chamam o <strong>&quot;Efeito Bilbau&quot;</strong>: um museu que muda uma cidade. O city trekking percorre os dois Bilbaus — o histórico, com sete ruas medievais e mercados do início do séc. XX, e o moderno, com titânio, aço e flores gigantes. O dia termina com pintxos e regresso a Portugal.</p>
+<hr>
+<h3>Bilbau — breve história</h3>
+<p>Fundada em <strong>1300</strong> por <strong>Diego López V de Haro</strong>, senhor de Biscaia, com a <em>Carta Puebla</em> que estabelecia os direitos dos habitantes da nova vila. O nome vem provavelmente de <em>bil</em> (confluência) + <em>bao</em> (vau/passo de rio) — a cidade nasceu onde o estuário do Nervión era atravessável. A posição no estuário tornou-a porto comercial do interior castelhano e, mais tarde, capital siderúrgica do norte de Espanha. No século XIX e início do XX era a <strong>&quot;Cidade do Ferro&quot;</strong> — minério extraído nos montes circundantes, fundições ao longo do Nervión, proletariado industrial, greve geral de 1890. A reconversão pós-industrial iniciada nos anos 90 transformou docas e fábricas em museus, parques e universidades.</p>
+<hr>
+<h3>Pontos do City Trekking</h3>
+<p><strong>Mercado da Ribeira</strong> (<em>Mercado de La Ribeira</em>) — Construído em 1928 junto ao estuário, com <strong>10.000 m²</strong> de área coberta é o maior mercado coberto da Europa. Em 1990 entrou no <em>Guinness World Records</em>. Três pisos: peixaria no rés-do-chão (com tudo o que o Cantábrico produz), frutas e legumes no primeiro, restaurantes e tascos no segundo.</p>
+<p><strong>Igreja de San Antón</strong> e <strong>Ponte de San Antón</strong> — A ponte é anterior à fundação da cidade — existia antes de 1300, servindo a travessia do Nervión. Aparece no brasão oficial de Bilbau. Destruída durante a Guerra Civil (1937), foi reconstruída em pedra. A igreja gótica adjacente data do século XV.</p>
+<p><strong>Catedral de Santiago</strong> — Gótica, construída entre os séculos XIV e XVI, sede da Diocese de Bilbau desde 1949. Integra o Caminho de Santiago do Norte. Claustro de pedra, fachada sóbria, interior de três naves.</p>
+<p><strong>Câmara Municipal</strong> (<em>Ayuntamiento</em>) — Edifício neoclássico de 1892, projeto do arquiteto <strong>Joaquín Rucoba</strong>. Fachada sobre o Paseo del Arenal com colunata de granito.</p>
+<p><strong>Maman</strong> — Escultura de <strong>Louise Bourgeois</strong> (1999), aranha em aço e bronze de <strong>9 metros de altura e 22 toneladas</strong>, com um saco de ovos de mármore branco suspenso no abdómen. Instalada permanentemente em frente ao Guggenheim. Bourgeois dedicou a escultura à mãe, tecedeira: &quot;A minha mãe era deliberada, inteligente, paciente, tranquilizadora e útil como uma aranha.&quot;</p>
+<p><strong>Puppy</strong> — <strong>Jeff Koons</strong> (1992), terrier de flores vivas de <strong>12 metros de altura</strong>, plantado sobre uma estrutura de aço com sistema de irrigação interior. Flores trocadas sazonalmente. Koons escolheu o motivo pela sua &quot;inocência total&quot; — é a primeira coisa que se vê ao chegar ao Guggenheim.</p>
+<p><strong>Museu Guggenheim Bilbao</strong> ⏰ <strong>Entrada: 10h15</strong> — <strong>Frank Gehry</strong>, construção de <strong>1992 a 1997</strong>, inauguração em <strong>Outubro de 1997</strong>. Estrutura em titânio, calcário e vidro — as escamas de titânio brilham de forma diferente consoante a luz. Vista do Rio Nervión: parece um navio atracado. Interior: <strong>atrium de 50 metros</strong> de altura, galerias que se organizam em torno de um vazio central. O edifício em si é a obra de arte mais fotografada do País Basco.</p>
+<hr>
+<h3>Gastronomia — o fecho do ciclo</h3>
+<p>Bilbau é a capital não oficial da gastronomia basca. Os <strong>pintxos</strong> (<em>pinchos</em> em castelhano) são a versão basca das tapas — fatias de pão com ingredientes em cima, presos com um palito (<em>pincho</em> = espeto). O protocolo: circula-se de bar em bar, cada um especializado num pintxo. A dose come-se de pé, acompanhada de txakoli ou cerveja, e paga-se ao saír contando os palitos. Outros pratos incontornáveis: <strong>bacalhau al pil pil</strong> (técnica de gelatina do colagénio do bacalhau em azeite e alho), <strong>bacalhau à vizcaína</strong> (com molho de pimento choricero), <strong>chuletón</strong> (entrecosto de vaca maronesa grelhado em brasas), <strong>pescada en salsa verde</strong>. Doces: <strong>Carolina</strong> (brioche com creme e chocolate), <strong>bolos de manteiga</strong>, <strong>pastéis de arroz</strong>.</p>
+<hr>
+<h3>Fio narrativo do dia</h3>
+<p>Começámos a viagem no planalto onde o Nervión nasce. Hoje caminhamos na foz — o rio que nasceu nos canhões calcários de Álava chega ao mar depois de atravessar esta cidade. Bilbau regenerou-se com arte onde havia ferro. O grupo também fez o seu percurso: quatro dias, três montanhas, dois oceanos (interior e costeiro), uma cidade. O regresso a Portugal começa aqui.</p>
+<hr>
+<h3>Mensagem para o grupo</h3>
+<blockquote>
+<p>&quot;Há vinte anos isto eram docas abandonadas. Hoje é um dos museus mais visitados do mundo. Bilbau apostou na beleza quando toda a gente apostava na praticidade. Isso diz tudo sobre os bascos.&quot;</p>
+</blockquote>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a href="https://borealis.travel/viagens/pais-basco-euskadi/">Borealis — Itinerário País Basco</a></li>
+<li>PDF EXVBAS2301 — Briefing D4</li>
+<li><a href="https://www.guggenheim-bilbao.eus/">Guggenheim Bilbao — Website oficial</a></li>
+<li><a href="https://www.bilbaoturismo.net/BilbaoTurismo/es/Mercado+de+la+Ribera">Mercado de La Ribeira — Bilbao Turismo</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Bilbao">Wikipedia ES — Bilbao</a></li>
+</ul>
+    </article>
+    <article data-id="31">
+<h1>Bilbau | Da fundação medieval à reinvenção pós-industrial</h1>
+<p><strong>Dia:</strong> D4 · Bilbao, Bizkaia</p>
+<hr>
+<h3>Fundação</h3>
+<p><strong>1300</strong> — <strong>Diego López V de Haro</strong>, senhor de Biscaia, funda Bilbau com a <em>Carta Puebla</em> (carta de foral), estabelecendo direitos dos habitantes e ordenando o território. O nome vem de <em>bil</em> (confluência) + <em>bao</em> (vau/passo de rio) — o ponto onde o estuário do Nervión era atravessável a vau. Nascia como porto comercial do interior castelhano.</p>
+<hr>
+<h3>A Cidade do Ferro</h3>
+<p>Séc. XIX–XX: Bilbau torna-se a capital industrial do norte de Espanha. Minério de ferro extraído nos montes circundantes, fundições e estaleiros ao longo do Nervión. Proletariado industrial denso — a greve geral de 1890 foi das primeiras de Espanha. A cidade cresceu caoticamente com bairros operários nas encostas. O estuário estava negro de fumo e resíduos industriais.</p>
+<hr>
+<h3>A reinvenção</h3>
+<p>Anos 80–90: a indústria pesada colapsa. Estaleiros fecham, desemprego dispara, o Nervión continua poluído. A resposta da cidade: <strong>apostar na cultura e no espaço público</strong> como motor de regeneração. Limpeza do estuário, novo metro (Norman Foster, 1995), reconversão das docas, e o elemento central: o <strong>Guggenheim</strong> (1997). O resultado foi tão bem sucedido que os urbanistas passaram a chamar-lhe <strong>&quot;Efeito Bilbau&quot;</strong> — o modelo de regeneração urbana por equipamento cultural de referência. Em <strong>2010</strong>, Bilbau recebeu o <strong>Prémio Lee Kuan Yew</strong> para cidades inteligentes.</p>
+<hr>
+<h3>Se perguntarem</h3>
+<p><strong>&quot;Quem era Diego López de Haro?&quot;</strong> — O senhor feudal de Biscaia, vassalo da Coroa de Castela. Fundou Bilbau como vila com estatuto próprio para atrair comerciantes e desenvolvimento. Está representado no brasão da cidade.</p>
+<p><strong>&quot;O que é o Efeito Bilbau?&quot;</strong> — O fenómeno em que um único equipamento cultural de prestígio transforma a imagem e a economia de uma cidade. Replicado (com resultados variados) em dezenas de cidades depois de 1997.</p>
+<p><strong>&quot;O Nervión ainda está poluído?&quot;</strong> — Não. A limpeza do estuário foi um dos grandes projectos dos anos 90 — hoje há peixe, aves aquáticas e passeios ribeirinhos onde havia resíduos industriais.</p>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a href="https://es.wikipedia.org/wiki/Bilbao">Wikipedia ES — Bilbao</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Premio_Lee_Kuan_Yew_Ciudad_Mundial_Inteligente">Wikipedia ES — Premio Lee Kuan Yew</a></li>
+<li>PDF EXVBAS2301 — Briefing D4</li>
+</ul>
+    </article>
+    <article data-id="32">
+<h1>City Trekking Bilbau | Os pontos do percurso</h1>
+<p><strong>Dia:</strong> D4 · Centro histórico de Bilbau</p>
+<hr>
+<h3>Ponte e Igreja de San Antón</h3>
+<p>A <strong>Ponte de San Antón</strong> é anterior à própria cidade — existia antes de 1300. Aparece no <strong>brasão oficial de Bilbau</strong>. Destruída durante a Guerra Civil (1937), reconstruída em pedra. A <strong>Igreja de San Antón</strong> adjacente é gótica (séc. XV), construída sobre o limite da vila medieval. É o ponto de entrada histórico na cidade vinda do sul.</p>
+<hr>
+<h3>Mercado da Ribeira</h3>
+<p>Construído em <strong>1928</strong> junto ao estuário do Nervión. <strong>10.000 m²</strong> cobertos — o maior mercado coberto da Europa, reconhecido pelo <strong>Guinness em 1990</strong>. Três pisos: peixaria no rés-do-chão (corvina, besugo, anchova, bacalhau fresco, marisco), frutas e legumes no primeiro, restaurantes e bares no segundo. Activo de manhã; aos fins-de-semana enche de locais.</p>
+<hr>
+<h3>Catedral de Santiago</h3>
+<p>Gótica, construída entre os <strong>séculos XIV e XVI</strong>. Sede da <strong>Diocese de Bilbau desde 1949</strong> (antes era diocese de Vitória). Integra o <strong>Caminho de Santiago do Norte</strong> — os peregrinos passam por aqui. Claustro tranquilo, interior de três naves, torre que domina o casco viejo.</p>
+<hr>
+<h3>Câmara Municipal</h3>
+<p>Edifício <strong>neoclássico de 1892</strong>, projecto de <strong>Joaquín Rucoba</strong> (o mesmo arquitecto do Teatro Arriaga em frente). Colunata de granito sobre o Paseo del Arenal. Ainda em funcionamento como sede do governo municipal.</p>
+<hr>
+<h3>Se perguntarem</h3>
+<p><strong>&quot;O casco viejo é seguro?&quot;</strong> — Sim, completamente. Área turística e comercial muito frequentada. As sete ruas medievais originais (Las Siete Calles) são hoje bares, restaurantes e comércio local.</p>
+<p><strong>&quot;O mercado ainda é um mercado a sério ou é turístico?&quot;</strong> — É os dois. De manhã cedo é mercado local com preços locais. A partir das 10h enche de turistas. Vale a pena chegar cedo.</p>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a href="https://es.wikipedia.org/wiki/Mercado_de_la_Ribera_(Bilbao)">Wikipedia ES — Mercado de la Ribera (Bilbao)</a></li>
+<li><a href="https://www.bilbaoturismo.net/">Bilbao Turismo — Casco Viejo</a></li>
+<li>PDF EXVBAS2301 — Briefing D4</li>
+</ul>
+    </article>
+    <article data-id="33">
+<h1>Guggenheim Bilbao | O edifício que mudou uma cidade</h1>
+<p><strong>Dia:</strong> D4 · Abandoibarra, Bilbau</p>
+<hr>
+<h3>Os factos</h3>
+<ul>
+<li><strong>Arquitecto:</strong> Frank Gehry (canadiano-americano)</li>
+<li><strong>Construção:</strong> 1992–1997</li>
+<li><strong>Inauguração:</strong> 18 de Outubro de 1997</li>
+<li><strong>Materiais:</strong> titânio, calcário e vidro</li>
+<li><strong>Atrium central:</strong> 50 metros de altura</li>
+<li><strong>Área:</strong> ~24.000 m²</li>
+</ul>
+<hr>
+<h3>O edifício</h3>
+<p>As <strong>escamas de titânio</strong> mudam de cor com a luz — de prateado a dourado, a rosado ao pôr-do-sol. Do rio Nervión, o edifício parece um navio atracado — foi intencional: Gehry quis referenciar o passado industrial do estaleiro que ocupou aquele terreno. O interior organiza-se em torno de um vazio central de 50 m — o atrium de onde partem as galerias em espiral. A &quot;galeria peixe&quot; tem 130 metros de comprimento, sem colunas.</p>
+<p>O Guggenheim Bilbao não é uma réplica do Guggenheim de Nova Iorque — é um museu independente com colecção própria e programa próprio.</p>
+<hr>
+<h3>O Efeito Bilbau</h3>
+<p>Antes de 1997: zona de estaleiros abandonados, rio poluído, cidade em declínio industrial. Depois de 1997: 1 milhão de visitantes no primeiro ano (o dobro do previsto), hotéis cheios, aeroporto expandido, regeneração urbana em cascata. O Guggenheim gerou mais receita fiscal no primeiro ano do que custou a construir. Passou a ser citado em todo o mundo como prova de que a cultura pode ser motor económico.</p>
+<hr>
+<h3>Se perguntarem</h3>
+<p><strong>&quot;Quanto custou?&quot;</strong> — Cerca de 84 milhões de euros (valores de 1997). Recuperado em receitas fiscais no primeiro ano de funcionamento.</p>
+<p><strong>&quot;A colecção é boa?&quot;</strong> — Sim, mas o edifício rouba o protagonismo. A colecção permanente inclui Richard Serra, Jeff Koons, Mark Rothko, e artistas bascos. As temporárias são de nível internacional.</p>
+<p><strong>&quot;Gehry é famoso por outros edifícios?&quot;</strong> — Sim: Disney Concert Hall (Los Angeles), Fondation Louis Vuitton (Paris), Experience Music Project (Seattle). O estilo é inconfundível — formas deformadas, superfícies metálicas onduladas.</p>
+<p><strong>&quot;Posso entrar?&quot;</strong> — Sim, mas o bilhete não está incluído no programa Borealis. O exterior já justifica a paragem.</p>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a href="https://www.guggenheim-bilbao.eus/">Guggenheim Bilbao — Site oficial</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Museo_Guggenheim_Bilbao">Wikipedia ES — Museo Guggenheim Bilbao</a></li>
+<li>PDF EXVBAS2301 — Briefing D4</li>
+</ul>
+    </article>
+    <article data-id="34">
+<h1>Puppy e Maman | As duas esculturas do Guggenheim</h1>
+<p><strong>Dia:</strong> D4 · Guggenheim, Bilbau</p>
+<hr>
+<h3>Puppy — Jeff Koons (1992)</h3>
+<p>Terrier de flores vivas, <strong>12 metros de altura</strong>, estrutura de aço inoxidável com sistema de irrigação interior. As flores são trocadas sazonalmente — begónias, impatiens, petúnias, conforme a época. O Puppy foi criado em 1992 para uma exposição num castelo alemão; chegou a Bilbau em 1997 para a inauguração do Guggenheim e ficou definitivamente.</p>
+<p>Koons escolheu o motivo pela <strong>&quot;inocência total&quot;</strong> — um cachorro de flores como antídoto à seriedade da arte contemporânea. É a coisa mais fotografada de Bilbau.</p>
+<hr>
+<h3>Maman — Louise Bourgeois (1999)</h3>
+<p>Aranha em aço inoxidável e bronze, <strong>9 metros de altura, 22 toneladas</strong>. O abdómen contém um saco com <strong>26 ovos de mármore branco</strong>. Bourgeois fez várias versões — há Mamans em Ottawa, Londres, Tóquio, São Petersburgo e Bilbau.</p>
+<p>Dedicada à mãe da artista, tecedeira: <em>&quot;A minha mãe era deliberada, paciente, tranquilizadora e útil como uma aranha.&quot;</em> A aranha como figura maternal — protetora, construtora, criadora.</p>
+<hr>
+<h3>Se perguntarem</h3>
+<p><strong>&quot;O Puppy é de flores artificiais?&quot;</strong> — Não, são flores vivas. Há um sistema de rega automatizado dentro da estrutura. São replantadas várias vezes por ano.</p>
+<p><strong>&quot;Quem é Jeff Koons?&quot;</strong> — Artista americano (1955), um dos mais caros do mundo em leilão. Famoso por transformar objectos banais (balões, animais de peluche, aspiradores) em escultura de grande escala. Controverso — uns acham genial, outros acham vazio. O Puppy é a obra mais popular que fez.</p>
+<p><strong>&quot;Quem é Louise Bourgeois?&quot;</strong> — Artista franco-americana (1911–2010), uma das mais influentes do séc. XX. Trabalhou temas de memória, família, corpo e trauma. A Maman é o seu trabalho mais reconhecido publicamente.</p>
+<p><strong>&quot;Porquê uma aranha?&quot;</strong> — Para ela, a aranha era símbolo da mãe — tece, protege, constrói. Não é para dar medo; é homenagem.</p>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a href="https://es.wikipedia.org/wiki/Puppy_(escultura)">Wikipedia ES — Puppy (Koons)</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Maman_(escultura)">Wikipedia ES — Maman (Bourgeois)</a></li>
+<li>PDF EXVBAS2301 — Briefing D4</li>
+</ul>
+    </article>
+    <article data-id="35">
+<h1>Gastronomia Basca | O essencial para comer bem</h1>
+<p><strong>Dia:</strong> D4 · Bilbau — mas válido em toda a viagem</p>
+<hr>
+<h3>Pintxos — o protocolo</h3>
+<p>Fatia de pão com ingrediente em cima, preso com um palito (<em>pincho</em> = espeto). Circula-se de bar em bar — cada um especializado em um ou dois pintxos. Come-se de pé, paga-se ao sair contando os palitos. Preço médio: 2–4€ por pintxo. Acompanha txakoli, sidra ou cerveja. Os melhores bares têm fila — é bom sinal.</p>
+<hr>
+<h3>Bacalhau — dois clássicos</h3>
+<p><strong>Pil pil</strong> — bacalhau confitado em azeite e alho a baixa temperatura. O colagénio do bacalhau emulsiona com o azeite por movimento circular da caçarola, criando um molho gelatinoso branco sem adição de farinha ou nata. Técnica basca, sem paralelo noutras cozinhas.</p>
+<p><strong>Vizcaína</strong> — molho de pimento choricero (seco, doce, sem picante) com cebola e tomate. Cor vermelha intensa, sabor profundo. O pimento choricero é o ingrediente mais característico da cozinha de Bizkaia.</p>
+<hr>
+<h3>Outros pratos</h3>
+<ul>
+<li><strong>Chuletón</strong> — entrecosto de vaca maronesa, grelhado em brasas, servido com osso. Corte imenso, partilhado. Ponto: mal passado, sempre.</li>
+<li><strong>Pescada em molho verde</strong> — <em>merluza en salsa verde</em>; molho de salsa, alho e caldo de peixe, com amêijoas. Clássico simples.</li>
+<li><strong>Marmitako</strong> — ensopado de bonito (atum) com batata e pimento. Prato de pescadores, de Verão.</li>
+</ul>
+<hr>
+<h3>Doces de Bilbau</h3>
+<ul>
+<li><strong>Carolina</strong> — brioche redondo com creme de baunilha e cobertura de chocolate. Pastelaria Arrese, Bilbau.</li>
+<li><strong>Pantxineta</strong> — tarte de massa folhada com creme de pasteleiro e amêndoa laminada.</li>
+<li><strong>Pastéis de arroz</strong> — pequenos, crosta estaladiça, interior cremoso. Típicos das pastelarias do casco viejo.</li>
+</ul>
+<hr>
+<h3>Se perguntarem</h3>
+<p><strong>&quot;Pil pil é difícil de fazer?&quot;</strong> — É técnico. O movimento tem de ser contínuo e a temperatura controlada — se aquecer muito, o colagénio coagula e não emulsiona. Os cozinheiros bascos demoram anos a dominar.</p>
+<p><strong>&quot;Os pintxos são iguais às tapas espanholas?&quot;</strong> — Diferentes. Tapas são muitas vezes petiscos sem pão e o protocolo é mais informal. Pintxo tem sempre o pão como base e o palito como unidade de conta. Cultura e contexto distintos.</p>
+<p><strong>&quot;Onde comer pintxos em Bilbau?&quot;</strong> — Casco Viejo (Siete Calles) e bairro de Gros/Parte Vieja de San Sebastián (melhor cidade para pintxos). Em Bilbau: Rua Ledesma e Plaza Nueva.</p>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a href="https://es.wikipedia.org/wiki/Pintxo">Wikipedia ES — Pintxo</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Bacalao_al_pil-pil">Wikipedia ES — Bacalao al pil-pil</a></li>
+<li>PDF EXVBAS2301 — Briefing D4</li>
+</ul>
+    </article>
+    <article data-id="36">
+<h1>Tradições de Bilbau | Festivais e figuras populares</h1>
+<p><strong>Dia:</strong> D4 · Bilbau</p>
+<hr>
+<h3>Aste Nagusia — Semana Grande</h3>
+<p><strong>9 dias em Agosto</strong> (início no segundo sábado). A maior festa do País Basco e uma das maiores do norte de Espanha. Fundada em <strong>1978</strong>, no início da democracia espanhola — o primeiro festival popular depois da ditadura. Nome oficial em euskera: <em>Aste Nagusia</em> (semana grande). A cidade pára: txosnas (barracas) por toda a parte, concertos, corridas de touros, fogo-de-artifício diário ao anoitecer.</p>
+<p>Bilbautas emigrados voltam para a Semana Grande como os portugueses para o Santo António.</p>
+<hr>
+<h3>Marijaia — a boneca do festival</h3>
+<p>Figura de papier-maché com braços levantados e rosto sorridente, <strong>símbolo da Aste Nagusia desde 1978</strong>. Criada por Mari Paz Ercilla. Aparece no início do festival numa varanda da Câmara Municipal — os braços levantados significam que a festa começou. No último dia do festival, <strong>Marijaia é queimada</strong> em cerimónia pública, anunciando o fim do Verão. No ano seguinte, uma nova Marijaia é criada.</p>
+<hr>
+<h3>Olentzero</h3>
+<p>O &quot;Pai Natal&quot; basco — mas com outra lógica. <strong>Gigante carvoeiro das montanhas</strong>, rosto escuro de carvão, gordo e bonacheirão. Chega na <strong>véspera de Natal</strong> (24 de Dezembro) para trazer presentes às crianças. Origem: figura pagã pré-cristã que anunciava o solstício de inverno; adoptada pelo catolicismo como anúncio do nascimento de Cristo.</p>
+<p>Processos em todas as cidades bascas: Olentzero chega em cortejo, os miúdos cantam a canção (<em>Olentzero, buru handi…</em>), ele entrega os presentes. Coexiste com o Pai Natal convencional — os bascos ficam com os dois.</p>
+<hr>
+<h3>Se perguntarem</h3>
+<p><strong>&quot;A Semana Grande é perigosa?&quot;</strong> — Não mais do que qualquer grande festival europeu. É festa familiar e popular. O ambiente é exuberante mas tranquilo.</p>
+<p><strong>&quot;A Marijaia é uma tradição antiga?&quot;</strong> — Não, tem 47 anos (desde 1978). Foi criada depois do fim da ditadura, quando Bilbau pôde ter festas públicas novamente. Já parece antiga porque faz parte da identidade da cidade.</p>
+<p><strong>&quot;O Olentzero é basco ou europeu?&quot;</strong> — Especificamente basco. Não existe noutras regiões de Espanha nem de França com esta forma. A palavra pode ser pré-indo-europeia — mais um traço da singularidade da cultura basca.</p>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a href="https://es.wikipedia.org/wiki/Aste_Nagusia">Wikipedia ES — Aste Nagusia</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Olentzero">Wikipedia ES — Olentzero</a></li>
+<li><a href="https://es.wikipedia.org/wiki/Marijaia">Wikipedia ES — Marijaia</a></li>
+</ul>
+    </article>
+    <article data-id="37">
+<h1>Altimetria | Análise técnica dos 4 dias — EXVBAS</h1>
+<p><strong>Viagem:</strong> País Basco · Euskadi · 25–28 Junho 2026</p>
+<hr>
+<h3>Dados Gerais</h3>
+<table>
+<thead>
+<tr>
+<th>Dia</th>
+<th>Percurso</th>
+<th>km</th>
+<th>Dific.</th>
+<th>Alt. máx</th>
+<th>Asc. acum</th>
+<th>Tempo est.</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>D1</td>
+<td>Salto del Nervión</td>
+<td>13 km</td>
+<td>2/5</td>
+<td>926 m</td>
+<td>833 m</td>
+<td>~4–5 h</td>
+</tr>
+<tr>
+<td>D2</td>
+<td>Costa Flysch Deba–Zumaia</td>
+<td>10 km</td>
+<td>2/5</td>
+<td>224 m</td>
+<td>401 m</td>
+<td>~3–4 h</td>
+</tr>
+<tr>
+<td>D3</td>
+<td>Monte Txindoki</td>
+<td>11 km</td>
+<td>3/5</td>
+<td>1.292 m</td>
+<td>1.233 m</td>
+<td>~5–6 h</td>
+</tr>
+<tr>
+<td>D4</td>
+<td>City Trekking Bilbau</td>
+<td>~10 km</td>
+<td>1/5</td>
+<td>—</td>
+<td>—</td>
+<td>~4–5 h</td>
+</tr>
+</tbody></table>
+<p><em>Dados técnicos: website Borealis (autoridade). PDFs EXVBAS2301 usados para terreno e pontos críticos.</em></p>
+<hr>
+<h3>Leitura do Trilho por Dia</h3>
+<h4>D1 — Salto del Nervión · Planalto de Valderejo</h4>
+<p><strong>Fase 1 — Aproximação pelo planalto</strong> (0–5 km · ~600–800 m alt)
+Entrada suave em terreno aberto. Piso de terra e pedra, exposto ao vento. Bom momento para o briefing sobre grifos e o fio narrativo do Nervión a nascer.</p>
+<p><strong>Fase 2 — Descida ao vale</strong> (5–9 km · ~800–450 m alt) ⚠️
+Trilho aéreo com exposição lateral. Risco de vertigens. Piso escorregadio com humidade matinal. Manter distância entre participantes; proibir fotografias em movimento.</p>
+<p><strong>Fase 3 — Cascata e regresso</strong> (9–13 km)
+A cascata é sazonal — só activa com chuva prévia. Regresso pelo mesmo trilho. Sem café, sem WC em todo o percurso.</p>
+<hr>
+<h4>D2 — Costa Flysch Deba–Zumaia</h4>
+<p><strong>Fase 1 — Saída de Deba</strong> (0–2 km) ⚠️
+<strong>Ponto crítico imediato:</strong> troço inicial muito íngreme e escorregadio se molhado (lama + erva). Avisar o grupo antes de começar. Risco real de queda.</p>
+<p><strong>Fase 2 — Percurso costeiro</strong> (2–8 km · ~50–200 m alt, subidas/descidas repetidas)
+Miradouros, flysch e enseadas em alternância. Caminhar sobre o flysch depende das marés. Vacas e cavalos no trilho — passar com calma.</p>
+<p><strong>Fase 3 — Zumaia</strong> (8–10 km)
+Entrada na vila. Pausa: praia Itzurun (GoT) e centro histórico. Depois: transfere para Guernica e Gaztelugatxe.</p>
+<hr>
+<h4>D3 — Monte Txindoki · Serra de Aralar</h4>
+<p><strong>Fase 1 — Sopé e eremitério</strong> (0–3 km · ~500–900 m alt · +400 m)
+Subida em floresta de carvalho e faia. Calcário com raízes expostas. Passagem pelo eremitério de Nossa Senhora dos Remédios.</p>
+<p><strong>Fase 2 — Crista</strong> (3–7 km · ~900–1.200 m alt · +300 m) ⚠️
+Exposição lateral cresce. Terreno técnico. Crux psicológico — participantes com menos experiência sentem aqui. Ritmo controlado, guia na retaguarda.</p>
+<p><strong>Fase 3 — Cume Txindoki e descida</strong> (7–11 km · +92 m / descida total) ⚠️
+Cume a 1.292 m. Melhor vista da viagem. A descida em calcário húmido é onde acontece a maioria dos incidentes — concentração máxima. Não apressar o regresso.</p>
+<hr>
+<h4>D4 — City Trekking Bilbau</h4>
+<p>Sem perfil altimétrico relevante. Percurso em calçada e pavimento irregular no Casco Viejo. Exigência física mínima, exigência sensorial máxima. Atenção: calor urbano + ritmo de grupo em espaço citadino.</p>
+<hr>
+<h3>Metabolismo &amp; Energia</h3>
+<table>
+<thead>
+<tr>
+<th>Dia</th>
+<th>Kcal est.</th>
+<th>Água mínima</th>
+<th>Notas de campo</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>D1</td>
+<td>900–1.100</td>
+<td>1,5–2 L</td>
+<td>Sem reabastecimento no trilho — sair com tudo</td>
+</tr>
+<tr>
+<td>D2</td>
+<td>600–800</td>
+<td>1,5 L</td>
+<td>Almoço previsto em Zumaia</td>
+</tr>
+<tr>
+<td>D3</td>
+<td>1.100–1.400</td>
+<td>2–2,5 L</td>
+<td>Sem reabastecimento — snack no cume</td>
+</tr>
+<tr>
+<td>D4</td>
+<td>400–600</td>
+<td>1 L</td>
+<td>Bares disponíveis em todo o percurso</td>
+</tr>
+</tbody></table>
+<p><strong>Ritmo crítico D3:</strong> saída cedo — cume antes das 12h. Crista fica mais quente e ventosa após o meio-dia. Descida depois de paragem breve no cume, com tempo de folga para o regresso.</p>
+<hr>
+<h3>Comparação com Viagens Anteriores</h3>
+<table>
+<thead>
+<tr>
+<th>Viagem</th>
+<th>Dia mais exigente</th>
+<th>Alt. máx</th>
+<th>Asc. acum</th>
+<th>Dif.</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Peña Ubiña (Astúrias)</td>
+<td>D1 trekking</td>
+<td>~2.400 m</td>
+<td>&gt;1.000 m</td>
+<td>4/5</td>
+</tr>
+<tr>
+<td>Montanha do Pico (Açores)</td>
+<td>D1 vulcão</td>
+<td>~2.350 m</td>
+<td>~1.300 m</td>
+<td>4/5</td>
+</tr>
+<tr>
+<td><strong>País Basco D3</strong></td>
+<td><strong>Txindoki</strong></td>
+<td><strong>1.292 m</strong></td>
+<td><strong>1.233 m</strong></td>
+<td><strong>3/5</strong></td>
+</tr>
+<tr>
+<td>País Basco D1</td>
+<td>Nervión</td>
+<td>926 m</td>
+<td>833 m</td>
+<td>2/5</td>
+</tr>
+</tbody></table>
+<p>País Basco é uma viagem de nível médio. Para quem fez Pico ou Ubiña, o D3 é confortável mas não trivial. Para estreantes em montanha, é o dia de gestão de expectativas — a descida em calcário é mais exigente do que o cume parece prometer.</p>
+<hr>
+<h3>Estratégia de Grupo</h3>
+<p><strong>D1:</strong> Início cedo para ter a cascata com boa luz. Briefing sobre exposição e vertigens na partida — directo, sem drama. Ritmo moderado na descida. Se alguém tiver dificuldade com alturas, identificar na fase 2.</p>
+<p><strong>D2:</strong> Avisar do troço inicial íngreme ANTES de começar. Verificar marés se o grupo quiser caminhar sobre o flysch. Gaztelugatxe ao final — confirmar sistema de reservas com antecedência.</p>
+<p><strong>D3:</strong> É o dia técnico da viagem. Identificar participantes com menos experiência nos dois dias anteriores. Guia na retaguarda na crista. Não apressar a descida mesmo que o grupo queira acelerar.</p>
+<p><strong>D4:</strong> Gerir dispersão em pintxos e Guggenheim. Deixar tempo livre conforme o ritmo do grupo. Não sobrecarregar a manhã — o city trekking é imersivo, não maratona.</p>
+<hr>
+<h3>Atenção — Riscos por Dia</h3>
+<p><strong>D1 —</strong> Exposição aérea + piso húmido. Sem saída de emergência no trilho central. Grifos podem ser agressivos perto dos ninhos em época de reprodução (primavera/verão).</p>
+<p><strong>D2 —</strong> Saída de Deba é o ponto mais perigoso de D2. Lama + erva molhada = queda. Sem opção de recuar facilmente depois dos primeiros 2 km.</p>
+<p><strong>D3 —</strong> Calcário húmido na descida. É a fase com maior taxa de incidentes em trilhos deste tipo. Ritmo controlado obrigatório mesmo com pressão de tempo.</p>
+<p><strong>D4 —</strong> Risco de terreno mínimo. Atenção a trânsito, sol directo e gestão de tempo em espaço urbano.</p>
+<hr>
+<h3>Pitch</h3>
+<blockquote>
+<p>&quot;Esta viagem não tem um dia fácil — mas também não tem um dia impossível. O D3 é o mais exigente: mas chegar ao cume do Txindoki, depois de dois dias a perceber quem é este povo e esta terra, é o momento em que tudo encaixa.&quot;</p>
+</blockquote>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a href="https://borealis.travel/viagens/pais-basco-euskadi/">borealis.travel/viagens/pais-basco-euskadi</a> — dados técnicos (autoridade)</li>
+<li>PDFs EXVBAS2301 (D1, D2, D3, D4) — terreno, pontos críticos, avisos</li>
+</ul>
+    </article>
+    <article data-id="38">
+<h1>Média | Imagens de referência — EXVBAS</h1>
+<p><strong>Uso:</strong> mostrar ao grupo antes ou durante cada tema · brief de referência indicado em cada entrada</p>
+<hr>
+<h2>Identidade e Símbolos Bascos</h2>
+<h3>Ikurriña — Bandeira basca</h3>
+<p><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_the_Basque_Country.svg" alt="Ikurriña">
+Cruz verde de Santo André, cruz branca, fundo vermelho. Criada por Sabino Arana, 1894.
+→ <code>06-pais-basco.md</code></p>
+<hr>
+<h3>Lauburu — Cruz basca</h3>
+<p><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Lauburu.svg" alt="Lauburu">
+Símbolo pré-cristão de quatro cabeças em espiral. Presente em pedra, madeira e joalharia por todo o País Basco.
+→ <code>08-icones-bascos.md</code></p>
+<hr>
+<h3>Harrijasotzaile — Levantador de pedras</h3>
+<p><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Harrijasotzaile.jpg" alt="Harrijasotzaile">
+Prova de força basca: bloco de granito erguido ao ombro em repetição. Prova de resistência, não de velocidade.
+→ <code>08-icones-bascos.md</code></p>
+<hr>
+<h2>Dia 1 — Salto del Nervión</h2>
+<h3>Salto del Nervión</h3>
+<p><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Nervion_falls.jpg" alt="Salto del Nervión">
+222 m de queda livre — a maior cascata da Península Ibérica quando activa. Sazonal: depende de chuva prévia.
+→ <code>11-salto-del-nervion.md</code></p>
+<hr>
+<h3>Grifo (Gyps fulvus)</h3>
+<p><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gyps_fulvus_01.jpg" alt="Grifo">
+Envergadura até 2,8 m. Colónias nos penhascos do planalto de Valderejo. Podem ser agressivos em época de nidificação.
+→ <code>14-fauna-montana.md</code></p>
+<hr>
+<h2>Dia 2 — Costa Flysch · Guernica · Gaztelugatxe</h2>
+<h3>Flysch de Zumaia — falésia</h3>
+<p><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Flysch_en_Zumaia.jpg" alt="Flysch Zumaia">
+Estratos alternados de calcário (claro) e argilito (escuro) em corte vertical. Cada faixa = milhares de anos.
+→ <code>21-flysch-geologia.md</code></p>
+<hr>
+<h3>Praia Itzurun (Zumaia) — Dragonstone</h3>
+<p><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Itzurun_hondartza.jpg" alt="Itzurun">
+A praia onde Jon Snow chega a Dragonstone (GoT T7). Flysch visível em baixo-mar. Reconhecível ao instante pelo grupo.
+→ <code>05-got-dragonstone.md</code> · <code>23-zumaia.md</code></p>
+<hr>
+<h3>Guernica — Pablo Picasso (1937)</h3>
+<p><img src="https://upload.wikimedia.org/wikipedia/en/7/74/PicassoGuernica.jpg" alt="Guernica">
+349 × 776 cm, óleo sobre tela, preto/branco/cinza. Bombardeamento de 26 Abril 1937. Original no Reina Sofía, Madrid.
+→ <code>26-guernica.md</code></p>
+<hr>
+<h3>Gaztelugatxe — os 231 degraus</h3>
+<p><img src="https://commons.wikimedia.org/wiki/Special:FilePath/San_Juan_de_Gaztelugatxe_0.jpg" alt="Gaztelugatxe">
+Ilhéu ligado por ponte e calçada em ziguezague. Ermida no cume. Dragonstone na GoT T7.
+→ <code>27-gaztelugatxe.md</code></p>
+<hr>
+<h2>Dia 3 — Monte Txindoki</h2>
+<h3>Monte Txindoki — perfil</h3>
+<p><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Txindoki_mendia.jpg" alt="Txindoki">
+O pico cônico de calcário visto do vale. 1.342 m. Inconfundível — e sagrado na mitologia basca como segunda casa de Mari.
+→ <code>31-txindoki.md</code></p>
+<hr>
+<h3>Ovelha latxa</h3>
+<p><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Latxa_ardia.jpg" alt="Latxa">
+Raça autóctone basca: lã espessa, rosto escuro, carácter activo e desconfiado. O leite produz o Idiazabal.
+→ <code>36-queijo-idiazabal.md</code></p>
+<hr>
+<h3>Queijo Idiazabal</h3>
+<p><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Queso_idiazabal.jpg" alt="Idiazabal">
+Queijo prensado, casca fumada, maturação mínima 60 dias. DOP desde 1996. 7 litros de leite cru por kg.
+→ <code>36-queijo-idiazabal.md</code></p>
+<hr>
+<h2>Dia 4 — Bilbau</h2>
+<h3>Guggenheim Bilbau — exterior</h3>
+<p><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Guggenheim_Bilbao_Jan_2006.jpg" alt="Guggenheim">
+Fachada de titânio curvado. Visto do rio parece um barco. Frank Gehry, 1997. Transformou a cidade.
+→ <code>43-guggenheim.md</code></p>
+<hr>
+<h3>Puppy — Jeff Koons (1992)</h3>
+<p><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Puppy_Guggenheim_Bilbao.jpg" alt="Puppy">
+West Highland Terrier de 12 m revestido de flores vivas sazonais. Aço inoxidável + solo + plantas.
+→ <code>44-puppy-maman.md</code></p>
+<hr>
+<h3>Maman — Louise Bourgeois (1999)</h3>
+<p><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Maman_Guggenheim_Bilbao.jpg" alt="Maman">
+Aranha de bronze de 9 m. Ovos de mármore no saco abdominal. Tributo à mãe da artista.
+→ <code>44-puppy-maman.md</code></p>
+<hr>
+<h3>Pintxos — balcão de bar</h3>
+<p><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Pinchos_en_Estella.jpg" alt="Pintxos">
+Fatias de pão com montagens variadas. A imagem mais reconhecível da gastronomia basca — e o fecho do D4.
+→ <code>45-gastronomia.md</code></p>
+<hr>
+<h2>Tradições de Bilbau</h2>
+<h3>Marijaia</h3>
+<p><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Marijaia_2012.jpg" alt="Marijaia">
+Boneca gigante de papier-maché com os braços erguidos — símbolo da Aste Nagusia desde 1978. Criada por Mari Paz Ercilla. Queimada no último dia da festa.
+→ <code>46-tradicoes-bilbau.md</code></p>
+<hr>
+<p><em>Fontes: Wikimedia Commons (licença CC ou domínio público). Verificar licença individual antes de reprodução impressa. Guernica: © Successió Picasso — uso em contexto educativo.</em></p>
+    </article>
+  </main>
+
+  <script>
+const meta = [{"f":"00-index.md","t":"00 · Índice | Briefings País Basco · Euskadi"},{"f":"01-briefing-inicial.md","t":"01 · Briefing Inicial | País Basco · Euskadi · EXVBAS"},{"f":"02-historia-basca.md","t":"02 · História Basca | Da pré-história ao século XX"},{"f":"03-eta.md","t":"03 · ETA | Euskadi Ta Askatasuna — história, contexto, fim"},{"f":"04-fonetica-euskera.md","t":"04 · Fonética | Termos Locais — Pronúncia para Guias"},{"f":"05-got-dragonstone.md","t":"05 · Game of Thrones | Dragonstone em dois pedaços — e a mitologia que já lá estava"},{"f":"06-pais-basco.md","t":"06 · País Basco | Euskadi — O território e a sua identidade"},{"f":"07-euskera.md","t":"07 · Euskera | A língua que não veio de lado nenhum"},{"f":"08-icones-bascos.md","t":"08 · Ícones Bascos | Os símbolos que definem um povo"},{"f":"10-d1.md","t":"10 · Dia 1 | Salto del Nervión — A entrada pela montanha"},{"f":"11-salto-del-nervion.md","t":"11 · Salto del Nervión | A maior cascata da Península Ibérica"},{"f":"12-fojo-do-lobo.md","t":"12 · Fojo do Lobo | A armadilha que precisava de uma aldeia inteira"},{"f":"13-flora-montana.md","t":"13 · Flora de Montanha | D1 — O que cresce no planalto e no canhão"},{"f":"14-fauna-montana.md","t":"14 · Fauna de Montanha | D1 — O que vive no planalto e no canhão"},{"f":"20-d2.md","t":"20 · Dia 2 | Costa Flysch + Guernica + Gaztelugatxe — O Atlântico e as suas feridas"},{"f":"21-flysch-geologia.md","t":"21 · Flysch | 60 milhões de anos em corte vertical"},{"f":"22-trilho-deba-zumaia.md","t":"22 · Trilho Deba–Zumaia | O percurso do flysch"},{"f":"23-zumaia.md","t":"23 · Zumaia | A vila no fim do flysch"},{"f":"24-fauna-costeira.md","t":"24 · Fauna Costeira | D2 — O que vive nas rochas e no mar"},{"f":"25-flora-costeira.md","t":"25 · Flora Costeira | D2 — O que cresce nas falésias"},{"f":"26-guernica.md","t":"26 · Guernica | 26 de Abril de 1937"},{"f":"27-gaztelugatxe.md","t":"27 · Gaztelugatxe | 231 degraus até ao fim do mundo"},{"f":"30-d3.md","t":"30 · Dia 3 | Monte Txindoki — A montanha sagrada de Mari"},{"f":"31-txindoki.md","t":"31 · Txindoki | A montanha de Mari"},{"f":"32-mari-mitologia.md","t":"32 · Mari e a Mitologia Basca | Os deuses que vivem na montanha"},{"f":"33-getaria.md","t":"33 · Getaria | A aldeia que deu a volta ao mundo duas vezes"},{"f":"34-elkano.md","t":"34 · Elkano | O primeiro a dar a volta ao mundo"},{"f":"35-balenciaga.md","t":"35 · Balenciaga | O costureiro de Getaria"},{"f":"36-queijo-idiazabal.md","t":"36 · Queijo Idiazabal | DOP de ovelha latxa"},{"f":"37-txakoli.md","t":"37 · Txakoli | O vinho que se verte em fio"},{"f":"40-d4.md","t":"40 · Dia 4 | City Trekking Bilbau — A cidade que se reinventou"},{"f":"41-bilbau-historia.md","t":"41 · Bilbau | Da fundação medieval à reinvenção pós-industrial"},{"f":"42-city-trekking-pontos.md","t":"42 · City Trekking Bilbau | Os pontos do percurso"},{"f":"43-guggenheim.md","t":"43 · Guggenheim Bilbao | O edifício que mudou uma cidade"},{"f":"44-puppy-maman.md","t":"44 · Puppy e Maman | As duas esculturas do Guggenheim"},{"f":"45-gastronomia.md","t":"45 · Gastronomia Basca | O essencial para comer bem"},{"f":"46-tradicoes-bilbau.md","t":"46 · Tradições de Bilbau | Festivais e figuras populares"},{"f":"90-altimetria.md","t":"90 · Altimetria | Análise técnica dos 4 dias — EXVBAS"},{"f":"91-media.md","t":"91 · Média | Imagens de referência — EXVBAS"}];
+const KEY       = 'briefings_current';
+const THEME_KEY = 'briefings_theme';
+
+(function initTheme() {
+  const root   = document.documentElement;
+  const btn    = document.getElementById('btn-theme');
+  const saved  = localStorage.getItem(THEME_KEY);
+  const isDark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  function applyTheme(dark) {
+    root.setAttribute('data-theme', dark ? 'dark' : 'light');
+    btn.textContent = dark ? '☀' : '☽';
+    localStorage.setItem(THEME_KEY, dark ? 'dark' : 'light');
+  }
+
+  applyTheme(isDark);
+  btn.addEventListener('click', () => applyTheme(root.getAttribute('data-theme') !== 'dark'));
+})();
+
+const elMain  = document.getElementById('main');
+const elTitle = document.getElementById('bar-title');
+const elToc   = document.getElementById('toc-overlay');
+const arts    = elMain.querySelectorAll('article');
+const tocBtns = document.querySelectorAll('#toc-list li button');
+
+let cur = parseInt(localStorage.getItem(KEY) || '0', 10);
+if (!Number.isFinite(cur) || cur < 0 || cur >= meta.length) cur = 0;
+
+function show(idx) {
+  arts.forEach((a, i) => a.classList.toggle('visible', i === idx));
+  tocBtns.forEach((b, i) => b.classList.toggle('active', i === idx));
+  elTitle.textContent = meta[idx].t;
+  document.title = meta[idx].t;
+  elMain.scrollTo(0, 0);
+  cur = idx;
+  try { localStorage.setItem(KEY, cur); } catch (_) {}
+}
+
+function go(d) { show((cur + d + meta.length) % meta.length); }
+
+show(cur);
+
+document.getElementById('btn-prev').onclick = () => go(-1);
+document.getElementById('btn-next').onclick = () => go(1);
+
+document.getElementById('btn-toc').onclick = () => {
+  elToc.hidden = false;
+  const active = elToc.querySelector('button.active');
+  if (active) setTimeout(() => active.scrollIntoView({ block: 'nearest' }), 0);
+};
+document.getElementById('btn-toc-close').onclick = () => { elToc.hidden = true; };
+elToc.addEventListener('click', e => { if (e.target === elToc) elToc.hidden = true; });
+document.getElementById('toc-list').addEventListener('click', e => {
+  const b = e.target.closest('[data-idx]');
+  if (!b) return;
+  elToc.hidden = true;
+  show(parseInt(b.dataset.idx, 10));
+});
+
+let tx = 0, ty = 0;
+elMain.addEventListener('touchstart', e => {
+  tx = e.touches[0].clientX;
+  ty = e.touches[0].clientY;
+}, { passive: true });
+elMain.addEventListener('touchend', e => {
+  const dx = e.changedTouches[0].clientX - tx;
+  const dy = e.changedTouches[0].clientY - ty;
+  if (Math.abs(dx) >= 50 && Math.abs(dy) <= 100) go(dx > 0 ? -1 : 1);
+}, { passive: true });
+  </script>
+</body>
+</html>

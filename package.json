@@ -1,0 +1,14 @@
+{
+  "name": "brfmaker",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "basco": "node brfmaker.js -i input/basco -o output/basco.html"
+  },
+  "dependencies": {
+    "marked": "^12.0.0"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}
