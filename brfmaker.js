@@ -62,7 +62,12 @@ const articles = files.map((filename, idx) => {
   const rawTitle = m ? m[1].replace(/[*_`]/g, '').trim() : filename.replace(/\.md$/, '');
   const prefix   = filename.match(/^(\d+)/)?.[1] ?? '';
   const title    = prefix ? `${prefix} · ${rawTitle}` : rawTitle;
-  return { idx, filename, title, html: marked.parse(md) };
+  let html = marked.parse(md);
+  // external links open in a new tab
+  html = html.replace(/<a href="(https?:\/\/[^"]+)"/g, '<a target="_blank" rel="noopener" href="$1"');
+  // Maps / Meteoblue links match the body text color
+  html = html.replace(/<a ([^>]*href="[^"]*(?:google\.com\/maps|meteoblue\.com)[^"]*"[^>]*)>/g, '<a class="ext-link" $1>');
+  return { idx, filename, title, html };
 });
 
 // ── embed external images as base64 ──────────────────────────────────────────
@@ -290,6 +295,7 @@ article p  { margin-bottom: 0.9em; }
 article ul, article ol { margin: 0.4em 0 0.9em 1.5em; }
 article li { margin-bottom: 0.25em; }
 article a  { color: var(--link); text-decoration: underline; text-underline-offset: 2px; }
+article a.ext-link { color: var(--text); }
 article hr { border: none; border-top: 1px solid var(--border); margin: 1.8em 0; }
 article strong { font-weight: 700; }
 article em     { font-style: italic; }
@@ -351,11 +357,26 @@ article th { background: var(--surface); font-weight: 700; }
   touch-action: manipulation;
 }
 #btn-toc-close:active { background: var(--border); }
+#toc-search-wrap { padding: 4px 16px 12px; }
+#toc-search {
+  -webkit-appearance: none; appearance: none;
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  padding: 10px 12px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  font-size: 14px;
+  outline: none;
+}
+#toc-search:focus { border-color: var(--accent); }
 #toc-list {
   list-style: none;
   overflow-y: auto; -webkit-overflow-scrolling: touch;
   flex: 1;
 }
+#toc-list li[hidden] { display: none; }
 #toc-list li button {
   -webkit-appearance: none; appearance: none;
   background: transparent; border: none;
@@ -372,6 +393,25 @@ article th { background: var(--surface); font-weight: 700; }
 }
 #toc-list li button:active  { background: var(--surface); }
 #toc-list li button.active  { background: var(--surface); color: var(--accent); font-weight: 600; }
+#toc-list li button .toc-preview {
+  display: block;
+  margin-top: 4px;
+  color: var(--text2);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#toc-list li button .toc-preview:empty { display: none; }
+#toc-list li button .toc-preview mark {
+  background: transparent;
+  color: #FFC107;
+  font-weight: 700;
+  border-radius: 2px;
+  padding: 0 1px;
+}
 `.trim();
 
 // ── icons (Lucide, inline SVG) ────────────────────────────────────────────────
@@ -441,18 +481,59 @@ show(cur);
 document.getElementById('btn-prev').onclick = () => go(-1);
 document.getElementById('btn-next').onclick = () => go(1);
 
+const elTocSearch = document.getElementById('toc-search');
+const norm = s => s.normalize('NFD').replace(/[\\u0300-\\u036f]/g, '').toLowerCase();
+const tocIndex = Array.from(tocBtns).map(b => {
+  const li = b.closest('li');
+  const art = arts[parseInt(b.dataset.idx, 10)];
+  const bodyText = art.textContent.replace(/\\s+/g, ' ').trim();
+  return { li, preview: b.querySelector('.toc-preview'), text: norm(b.textContent + ' ' + bodyText), bodyText };
+});
+
+const escHtml = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+function snippetFor(text, q) {
+  const i = norm(text).indexOf(q);
+  if (i === -1) return '';
+  const start = Math.max(0, i - 40);
+  const end   = Math.min(text.length, i + q.length + 60);
+  const before = text.slice(start, i);
+  const match  = text.slice(i, i + q.length);
+  const after  = text.slice(i + q.length, end);
+  const prefix = start > 0 ? '…' : '';
+  const suffix = end < text.length ? '…' : '';
+  return prefix + escHtml(before) + '<mark>' + escHtml(match) + '</mark>' + escHtml(after) + suffix;
+}
+
+function filterToc() {
+  const raw = elTocSearch.value.trim();
+  const q = raw.length > 1 ? norm(raw) : '';
+  tocIndex.forEach(({ li, preview, text, bodyText }) => {
+    const match = q && text.includes(q);
+    li.hidden = q && !match;
+    preview.innerHTML = match ? snippetFor(bodyText, q) : '';
+  });
+}
+elTocSearch.addEventListener('input', filterToc);
+
+function resetTocSearch() {
+  elTocSearch.value = '';
+  tocIndex.forEach(({ li, preview }) => { li.hidden = false; preview.innerHTML = ''; });
+}
+
 const openToc = () => {
   elToc.hidden = false;
   const active = elToc.querySelector('button.active');
   if (active) setTimeout(() => active.scrollIntoView({ block: 'nearest' }), 0);
 };
 document.getElementById('bar-title').onclick = openToc;
-document.getElementById('btn-toc-close').onclick = () => { elToc.hidden = true; };
-elToc.addEventListener('click', e => { if (e.target === elToc) elToc.hidden = true; });
+document.getElementById('btn-toc-close').onclick = () => { elToc.hidden = true; resetTocSearch(); };
+elToc.addEventListener('click', e => { if (e.target === elToc) { elToc.hidden = true; resetTocSearch(); } });
 document.getElementById('toc-list').addEventListener('click', e => {
   const b = e.target.closest('[data-idx]');
   if (!b) return;
   elToc.hidden = true;
+  resetTocSearch();
   show(parseInt(b.dataset.idx, 10));
 });
 
@@ -479,7 +560,7 @@ const metaJson = JSON.stringify(articles.map(a => ({ f: a.filename, t: a.title }
 const inlineJs = JS.replace('__META__', metaJson);
 
 const tocItems = articles
-  .map(a => `        <li><button data-idx="${a.idx}">${esc(a.title)}</button></li>`)
+  .map(a => `        <li><button data-idx="${a.idx}"><span class="toc-title">${esc(a.title)}</span><span class="toc-preview"></span></button></li>`)
   .join('\n');
 
 const articleBlocks = articles
@@ -514,6 +595,9 @@ ${CSS}
   <div id="toc-overlay" hidden>
     <div id="toc-panel">
       <button id="btn-toc-close" aria-label="Fechar">${ICO_CLOSE}</button>
+      <div id="toc-search-wrap">
+        <input id="toc-search" type="search" placeholder="Procurar…" aria-label="Procurar">
+      </div>
       <ul id="toc-list">
 ${tocItems}
       </ul>
