@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Briefing PUGLIA">
+  <title>00 · Índice | Mini-briefings Puglia</title>
+  <link rel="apple-touch-icon" href="https://borealis.travel/app/uploads/2025/01/Bari-Puglia-Giovinazzo-Trani-Matera-Alberobello-Borealis-On-Trekking-Italia-7.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+:root {
+  color-scheme: light dark;
+  --bg:      #f2f5ee;
+  --surface: #e4ede0;
+  --border:  #c0d0b8;
+  --text:    #1c2e1c;
+  --text2:   #4e6650;
+  --accent:  #2d6a2d;
+  --link:    #6a3d8a;
+  --code-bg: #dce8d4;
+  --bar-bg:  rgba(228, 237, 224, 0.75);
+  --bar-h:   calc(52px + env(safe-area-inset-top, 0px));
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --bg:      #0c150c;
+    --surface: #142014;
+    --border:  #2a3e2a;
+    --text:    #c8dcc8;
+    --text2:   #7a9c7a;
+    --accent:  #6abf6a;
+    --link:    #b07ad0;
+    --code-bg: #142014;
+    --bar-bg:  rgba(20, 32, 20, 0.75);
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg:      #0c150c;
+  --surface: #142014;
+  --border:  #2a3e2a;
+  --text:    #c8dcc8;
+  --text2:   #7a9c7a;
+  --accent:  #6abf6a;
+  --link:    #b07ad0;
+  --code-bg: #142014;
+  --bar-bg:  rgba(20, 32, 20, 0.75);
+}
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg:      #f2f5ee;
+  --surface: #e4ede0;
+  --border:  #c0d0b8;
+  --text:    #1c2e1c;
+  --text2:   #4e6650;
+  --accent:  #2d6a2d;
+  --link:    #6a3d8a;
+  --code-bg: #dce8d4;
+  --bar-bg:  rgba(228, 237, 224, 0.75);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; overflow: hidden; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 300;
+  font-size: clamp(16px, 4vw, 19px);
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* ── status bar ── */
+#bar {
+  position: fixed; inset: 0 0 auto 0;
+  height: var(--bar-h);
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-left:  max(6px, env(safe-area-inset-left, 0px));
+  padding-right: max(6px, env(safe-area-inset-right, 0px));
+  display: flex; align-items: center; gap: 2px;
+  background: var(--bar-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border-bottom: 1px solid var(--border);
+  z-index: 100;
+}
+#bar button {
+  flex-shrink: 0;
+  -webkit-appearance: none; appearance: none;
+  background: transparent; border: none;
+  color: var(--text);
+  font-size: 13px; line-height: 1;
+  min-width: 44px; height: 40px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 8px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+#bar button:active { background: var(--border); }
+#bar-title {
+  flex: 1; gap: 8px;
+  text-align: left; justify-content: flex-start !important; padding: 0;
+  -webkit-appearance: none; appearance: none;
+  background: transparent; border: none;
+  height: 44px; border-radius: 8px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+#bar-title:active { background: var(--border); }
+#bar-title-text {
+  overflow: hidden;
+  text-overflow: ellipsis; white-space: nowrap;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 400;
+  color: var(--text);
+}
+#bar-title-icon {
+  display: flex; align-items: center; justify-content: center;
+  width: 40px; flex-shrink: 0;
+}
+/* ── content ── */
+#main {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  transition: opacity 0.08s ease;
+}
+#main.fade-out { opacity: 0; }
+article {
+  display: none;
+  max-width: 68ch;
+  margin: 0 auto;
+  padding: 28px 20px 80px;
+  padding-top: calc(var(--bar-h) + 16px);
+}
+article.visible { display: block; }
+@media (min-width: 600px) { article { padding: 40px 32px 100px; padding-top: calc(var(--bar-h) + 24px); } }
+
+/* ── typography ── */
+article h1 {
+  font-size: 1.55em; line-height: 1.25;
+  font-weight: 700; color: var(--accent);
+  margin-bottom: 0.25em;
+}
+article h2 { font-size: 1.15em; font-weight: 700; margin: 2em 0 0.4em; }
+article h3 { font-size: 1em;    font-weight: 700; margin: 1.6em 0 0.3em; }
+article p  { margin-bottom: 0.9em; }
+article ul, article ol { margin: 0.4em 0 0.9em 1.5em; }
+article li { margin-bottom: 0.25em; }
+article a  { color: var(--link); text-decoration: underline; text-underline-offset: 2px; }
+article a.ext-link { color: var(--text); }
+article hr { border: none; border-top: 1px solid var(--border); margin: 1.8em 0; }
+article strong { font-weight: 700; }
+article em     { font-style: italic; }
+article blockquote {
+  border-left: 3px solid var(--accent);
+  margin: 1em 0; padding: 0.25em 0 0.25em 1em;
+  color: var(--text2); font-style: italic;
+}
+article img {
+  max-width: 100%; height: auto;
+  display: block; margin: 1.5em auto;
+  border-radius: 4px;
+  max-height: 500px;
+}
+article code {
+  font-family: 'Menlo', Monaco, 'Courier New', monospace;
+  font-size: 0.85em;
+  background: var(--code-bg);
+  padding: 0.1em 0.35em; border-radius: 3px;
+}
+article pre {
+  background: var(--code-bg);
+  border-radius: 6px; padding: 1em;
+  overflow-x: auto; margin: 1em 0;
+}
+article pre code { background: none; padding: 0; font-size: 0.82em; line-height: 1.6; }
+article table   { width: 100%; border-collapse: collapse; margin: 1.2em 0; font-size: 0.88em; }
+article th, article td {
+  border: 1px solid var(--border);
+  padding: 0.45em 0.65em; text-align: left; vertical-align: top;
+}
+article th { background: var(--surface); font-weight: 700; }
+
+/* ── toc overlay ── */
+#toc-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 200; display: flex;
+}
+#toc-overlay[hidden] { display: none; }
+#toc-panel {
+  background: var(--bg);
+  width: min(500px, 84vw);
+  display: flex; flex-direction: column;
+  box-shadow: 4px 0 24px rgba(0,0,0,0.3);
+  padding-top: env(safe-area-inset-top, 0px);
+  letter-spacing: 0.02em;
+}
+#btn-toc-close {
+  -webkit-appearance: none; appearance: none;
+  background: transparent; border: none;
+  color: var(--text2); font-size: 18px;
+  min-width: 44px; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  align-self: flex-start;
+  border-radius: 8px; margin: 4px 4px 0;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+#btn-toc-close:active { background: var(--border); }
+#toc-search-wrap { padding: 4px 16px 12px; }
+#toc-search {
+  -webkit-appearance: none; appearance: none;
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  padding: 10px 12px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  font-size: 14px;
+  outline: none;
+}
+#toc-search:focus { border-color: var(--accent); }
+#toc-list {
+  list-style: none;
+  overflow-y: auto; -webkit-overflow-scrolling: touch;
+  flex: 1;
+}
+#toc-list li[hidden] { display: none; }
+#toc-list li button {
+  -webkit-appearance: none; appearance: none;
+  background: transparent; border: none;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  display: block; width: 100%;
+  padding: 14px 20px;
+  text-align: left; line-height: 1.4;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+#toc-list li button:active  { background: var(--surface); }
+#toc-list li button.active  { background: var(--surface); color: var(--accent); font-weight: 600; }
+#toc-list li button .toc-preview {
+  display: block;
+  margin-top: 4px;
+  color: var(--text2);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#toc-list li button .toc-preview:empty { display: none; }
+#toc-list li button .toc-preview mark {
+  background: transparent;
+  color: #FFC107;
+  font-weight: 700;
+  border-radius: 2px;
+  padding: 0 1px;
+}
+  </style>
+</head>
+<body>
+  <header id="bar">
+    <button id="bar-title" aria-label="Índice"><span id="bar-title-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h.01"/><path d="M3 12h.01"/><path d="M3 19h.01"/><path d="M8 5h13"/><path d="M8 12h13"/><path d="M8 19h13"/></svg></span><span id="bar-title-text"></span></button>
+    <button id="btn-theme" aria-label="Alternar tema"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg></button>
+    <button id="btn-prev" aria-label="Anterior"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+    <button id="btn-next" aria-label="Seguinte"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
+  </header>
+
+  <div id="toc-overlay" hidden>
+    <div id="toc-panel">
+      <button id="btn-toc-close" aria-label="Fechar"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+      <div id="toc-search-wrap">
+        <input id="toc-search" type="search" placeholder="Procurar…" aria-label="Procurar">
+      </div>
+      <ul id="toc-list">
+        <li><button data-idx="0"><span class="toc-title">00 · Índice | Mini-briefings Puglia</span><span class="toc-preview"></span></button></li>
+        <li><button data-idx="1"><span class="toc-title">01 · Briefing Inicial | Puglia · O Segredo Mais Bem Guardado do Sul de Itália · TURPUG041026</span><span class="toc-preview"></span></button></li>
+        <li><button data-idx="2"><span class="toc-title">02 · Route Details | Puglia · TURPUG041026</span><span class="toc-preview"></span></button></li>
+        <li><button data-idx="3"><span class="toc-title">03 · Azeite e Xylella | A economia e a ferida da Puglia</span><span class="toc-preview"></span></button></li>
+        <li><button data-idx="4"><span class="toc-title">10 · Dia 1 | Chegada a Bari e charme da cidade velha</span><span class="toc-preview"></span></button></li>
+        <li><button data-idx="5"><span class="toc-title">11 · Cultural | Basílica de São Nicolau</span><span class="toc-preview"></span></button></li>
+        <li><button data-idx="6"><span class="toc-title">20 · Dia 2 | Giovinazzo, Trani e a rota do azeite</span><span class="toc-preview"></span></button></li>
+        <li><button data-idx="7"><span class="toc-title">21 · Cultural | Catedral de Trani</span><span class="toc-preview"></span></button></li>
+        <li><button data-idx="8"><span class="toc-title">30 · Dia 3 | Matera, a cidade de pedra e cenário de cinema</span><span class="toc-preview"></span></button></li>
+        <li><button data-idx="9"><span class="toc-title">31 · Natural/histórico | Sassi di Matera</span><span class="toc-preview"></span></button></li>
+        <li><button data-idx="10"><span class="toc-title">40 · Dia 4 | Alberobello (UNESCO) e Polignano a Mare</span><span class="toc-preview"></span></button></li>
+        <li><button data-idx="11"><span class="toc-title">41 · Etnográfico | Trulli de Alberobello</span><span class="toc-preview"></span></button></li>
+        <li><button data-idx="12"><span class="toc-title">42 · Natural/cultural | Polignano a Mare</span><span class="toc-preview"></span></button></li>
+        <li><button data-idx="13"><span class="toc-title">50 · Dia 5 | Despedida em Bari e regresso</span><span class="toc-preview"></span></button></li>
+      </ul>
+    </div>
+  </div>
+
+  <main id="main">
+    <article data-id="0">
+<h1>Índice | Mini-briefings Puglia</h1>
+<p><strong>Viagem:</strong> TURPUG041026 — 4 a 8 Outubro 2026
+<strong>Base:</strong> Bari (2 noites) + Trani (1 noite)
+<strong>Guia:</strong> NM
+<strong>Programa:</strong> <a target="_blank" rel="noopener" href="https://borealis.travel/viagens/o-segredo-mais-bem-guardado-do-sul-de-italia-puglia/">borealis.travel/viagens/o-segredo-mais-bem-guardado-do-sul-de-italia-puglia</a></p>
+<table>
+<thead>
+<tr>
+<th>Ficheiro</th>
+<th>Tema</th>
+<th>Estado</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>01-briefing-inicial.md</code></td>
+<td>Briefing inicial</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>02-route-details.md</code></td>
+<td>Ficha técnica por dia</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>03-azeite-e-xylella.md</code></td>
+<td>Azeite, tradição e a crise da Xylella</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>10-d1.md</code></td>
+<td>Dia 1 — Chegada a Bari</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>11-basilica-sao-nicolau.md</code></td>
+<td>Basílica de São Nicolau</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>20-d2.md</code></td>
+<td>Dia 2 — Giovinazzo, Trani e a rota do azeite</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>21-catedral-de-trani.md</code></td>
+<td>Catedral de Trani</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>30-d3.md</code></td>
+<td>Dia 3 — Matera, a cidade de pedra</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>31-sassi-di-matera.md</code></td>
+<td>Sassi di Matera</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>40-d4.md</code></td>
+<td>Dia 4 — Alberobello e Polignano a Mare</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>41-trulli-de-alberobello.md</code></td>
+<td>Trulli de Alberobello</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>42-polignano-a-mare.md</code></td>
+<td>Polignano a Mare e Modugno</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>50-d5.md</code></td>
+<td>Dia 5 — Despedida em Bari</td>
+<td>✅</td>
+</tr>
+</tbody></table>
+<p><strong>Pendente:</strong> fonética de topónimos italianos e ficheiro de média — a criar depois de confirmação de horários e reservas com a Borealis.</p>
+    </article>
+    <article data-id="1">
+<h1>Briefing Inicial | Puglia · O Segredo Mais Bem Guardado do Sul de Itália · TURPUG041026</h1>
+<p>D1 · 4 Outubro 2026 · Bari</p>
+<hr>
+<h3>A equipa</h3>
+<p><em>[Apresentação da equipa]</em></p>
+<hr>
+<h3>O que é esta viagem</h3>
+<p>Cinco dias no calcanhar da Itália: a Puglia (Apúlia), a região mais a sul da bota adriática, entre o mar e um planalto calcário esburacado de grutas. Não é montanha — é touring cultural e gastronómico de ritmo baixo, dificuldade 1/5, pensado para caminhar, comer bem e olhar com atenção.</p>
+<p>O fio é a pedra: a pedra branca de Trani com que se ergueu uma catedral à beira-mar, a pedra escavada de Matera onde se vive há 9.000 anos, a pedra empilhada sem argamassa dos trulli de Alberobello. Uma região pobre em água e rica em calcário que transformou a limitação em identidade.</p>
+<p>Não é uma viagem de praia, apesar do litoral. É uma viagem de cidades e vilas — cada dia muda de base, cada base ensina algo diferente sobre como se vive na Puglia.</p>
+<hr>
+<h3>Gestão de expectativas</h3>
+<p>O que vão encontrar: cidades pequenas caminháveis, ruas de pedra irregular (calçada apuliana, escorregadia com chuva), calor ainda presente em outubro (20–26°C), pouca sombra ao meio-dia nas ruas de Matera e Alberobello.</p>
+<p>O que não vão encontrar: trekking, desníveis significativos, transporte alternativo ao autocarro do grupo — os deslocamentos entre paragens são sempre em autocarro dedicado.</p>
+<p>Voos não incluídos — cada participante trata da sua viagem até Bari (aeroporto Karol Wojtyła, IATA: BRI). O transfer de e para o aeroporto está incluído, mas é um único transfer por sentido, coordenado com o horário de início/fim do programa.</p>
+<hr>
+<h3>Regras de segurança</h3>
+<p><strong>Durante os passeios:</strong></p>
+<ul>
+<li>Mantenham-se dentro do grupo nas zonas de trânsito de veículos — os centros históricos de Bari, Trani e Matera têm ruas estreitas partilhadas com carros e scooters.</li>
+<li>Piso irregular é a constante da viagem — calçado fechado e confortável, mesmo nos dias &quot;de cidade&quot;.</li>
+<li>Em Matera e Alberobello há escadas e desníveis de rua sem corrimão — atenção redobrada com chuva.</li>
+</ul>
+<p><strong>Emergências:</strong></p>
+<ul>
+<li>A equipa tem contactos de emergência locais e seguro de assistência em viagem activo (Liberty RNA).</li>
+<li>Em caso de mal-estar ou lesão, avisar de imediato o guia mais próximo.</li>
+<li>Se se afastarem do grupo num centro histórico: <strong>parem, fiquem visíveis, esperem</strong> — as ruas de Matera e dos Sassi confundem até quem já lá foi.</li>
+</ul>
+<hr>
+<h3>Regras de protecção ambiental</h3>
+<ul>
+<li>Puglia enfrenta uma crise agrícola grave com a <strong>Xylella fastidiosa</strong>, bactéria que já matou milhões de oliveiras na região — não trazer plantas, sementes ou material vegetal de fora, nem levar amostras de plantas locais.</li>
+<li>Respeitar os Sassi de Matera como património habitado, não museu vazio — muitas casas têm moradores.</li>
+<li>Sem lixo deixado no trilho ou na rua — a Puglia vive do turismo cultural, e isso começa por respeitar o espaço.</li>
+</ul>
+<hr>
+<h3>O fio da viagem</h3>
+<p>Bari abre e fecha a viagem — é o ponto de chegada, o ponto de partida, e o contraponto urbano a tudo o resto. No meio, a Puglia mostra-se em camadas: o azeite e o mar em Giovinazzo e Trani (D2), a pedra pré-histórica em Matera (D3), a arquitetura vernacular em Alberobello e o teatro natural de Polignano (D4).</p>
+<blockquote>
+<p>&quot;Cada paragem desta viagem é uma resposta diferente à mesma pergunta: como se vive numa terra sem grande relevo, sem grandes rios, mas com pedra calcária a perder de vista? A resposta muda a cada dia — e é sempre engenhosa.&quot;</p>
+</blockquote>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://borealis.travel/viagens/o-segredo-mais-bem-guardado-do-sul-de-italia-puglia/">Borealis — Puglia</a></li>
+<li>Programa técnico Borealis TURPUG041026</li>
+</ul>
+    </article>
+    <article data-id="2">
+<h1>Route Details | Puglia · TURPUG041026</h1>
+<p>Ficha técnica por dia. Viagem de touring cultural, dificuldade geral <strong>1/5 (Baixo)</strong> — sem trekking técnico, apenas caminhada urbana em piso irregular.</p>
+<hr>
+<h3>Dia 1 — 4 Outubro — Chegada e Bari Vecchia</h3>
+<ul>
+<li>Partida: chegada individual ao Aeroporto de Bari-Palese (BRI), transfer incluído</li>
+<li>Percurso a pé: centro histórico de Bari Vecchia, curto e plano</li>
+<li>Dormida: Bari</li>
+</ul>
+<hr>
+<h3>Dia 2 — 5 Outubro — Giovinazzo, Trani</h3>
+<ul>
+<li>Deslocamento em autocarro dedicado</li>
+<li>Giovinazzo: paragem de degustação de azeite</li>
+<li>Trani: visita à Catedral e ao centro histórico junto ao mar</li>
+<li>Refeições incluídas: pequeno-almoço</li>
+<li>Dormida: Trani</li>
+</ul>
+<hr>
+<h3>Dia 3 — 6 Outubro — Matera</h3>
+<ul>
+<li>Deslocamento em autocarro dedicado (Trani → Matera → Bari)</li>
+<li>Percurso a pé nos Sassi (Caveoso e Barisano) — ruas de pedra, escadarias, sem sombra significativa</li>
+<li>Refeições incluídas: pequeno-almoço</li>
+<li>Dormida: Bari</li>
+</ul>
+<hr>
+<h3>Dia 4 — 7 Outubro — Alberobello e Polignano a Mare</h3>
+<ul>
+<li>Deslocamento em autocarro dedicado</li>
+<li>Alberobello: percurso a pé pelo Rione Monti (zona classificada dos trulli)</li>
+<li>Polignano a Mare: percurso a pé pelo centro histórico sobre as falésias</li>
+<li>Refeições incluídas: pequeno-almoço</li>
+<li>Dormida: Bari</li>
+</ul>
+<hr>
+<h3>Dia 5 — 8 Outubro — Despedida em Bari</h3>
+<ul>
+<li>Manhã livre em Bari (porto / centro histórico)</li>
+<li>Transfer para o aeroporto conforme horário de partida</li>
+<li>Refeições incluídas: pequeno-almoço</li>
+</ul>
+<hr>
+<h3>Pontos críticos gerais</h3>
+<ul>
+<li><strong>Piso:</strong> calçada de pedra apuliana, lisa e escorregadia com chuva, presente em todos os centros históricos do roteiro.</li>
+<li><strong>Calor residual:</strong> outubro na Puglia ainda registra 20–26°C, sol forte ao meio-dia sem sombra nas ruas de Matera e Alberobello — protecção solar necessária mesmo fora de trekking.</li>
+<li><strong>Horários de voo:</strong> dependem da notificação de saída garantida da Borealis; transfer único por sentido — pedir dados de voo dos pax com antecedência.</li>
+</ul>
+<p><strong>Fonte:</strong> Programa Borealis TURPUG041026, <a target="_blank" rel="noopener" href="https://borealis.travel/viagens/o-segredo-mais-bem-guardado-do-sul-de-italia-puglia/">página da viagem</a>.</p>
+    </article>
+    <article data-id="3">
+<h1>Azeite e Xylella | A economia e a ferida da Puglia</h1>
+<h3>Porquê importa</h3>
+<p>A Puglia produz cerca de <strong>40% do azeite italiano</strong> — é a maior região olivícola do país, com olivais que em muitos casos têm séculos e alguns exemplares milenares, sobretudo no Salento. O azeite não é só produto de exportação: é a base da cozinha local e uma parte central da identidade da região.</p>
+<hr>
+<h3>A crise da Xylella fastidiosa</h3>
+<p>Em <strong>2013</strong>, foi identificada no sul da Puglia (perto de Gallipoli) a bactéria <strong>Xylella fastidiosa</strong>, transmitida por uma cigarrinha (a <em>cigarrinha-espumadeira</em>, <em>Philaenus spumarius</em>). A bactéria obstrui os vasos que transportam água na árvore, causando o <strong>&quot;Complexo do Declínio Rápido da Oliveira&quot;</strong> — seca progressiva da copa até à morte da árvore.</p>
+<p>Desde então, mais de <strong>21 milhões de oliveiras</strong> foram perdidas na região, incluindo muitos exemplares centenários e milenares. Não há cura — apenas contenção (corte de árvores infetadas, controlo do inseto vetor) e investigação em variedades resistentes (como a Leccino e a FS-17).</p>
+<p>Apesar da devastação, a Puglia continua a ser a maior região produtora de azeite de Itália — replantação com variedades resistentes está em curso, sobretudo mais a sul.</p>
+<hr>
+<h3>O que se vê no terreno</h3>
+<p>Nos olivais entre Bari e Trani (zona ainda menos afetada do que o Salento), é possível ver a paisagem de oliveiras contígua ao litoral — parte do que torna a rota do azeite em Giovinazzo relevante como experiência de degustação e não só de paisagem.</p>
+<hr>
+<h3>Para o grupo</h3>
+<p><em>&quot;O azeite que vão provar hoje é também uma história de sobrevivência — a Puglia está a travar, há mais de dez anos, a maior crise agrícola da sua história recente, e continua a ser a maior produtora de azeite de Itália.&quot;</em></p>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://pt.oliveoiltimes.com/topic/puglia">Olive Oil Times — Puglia</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.oliveoiltimes.com/topic/xylella-fastidiosa">Olive Oil Times — Xylella fastidiosa</a></li>
+</ul>
+    </article>
+    <article data-id="4">
+<h1>Dia 1 | Chegada a Bari e charme da cidade velha</h1>
+<p><strong>Data:</strong> 4 Outubro 2026
+<strong>Regime:</strong> sem refeição incluída (chegada)
+<strong>Dormida:</strong> Bari</p>
+<p><a class="ext-link" target="_blank" rel="noopener" href="https://www.google.com/maps/place/Bari+Vecchia">Google Maps</a> · <a class="ext-link" target="_blank" rel="noopener" href="https://www.meteoblue.com/en/weather/week/bari_italy">Meteoblue</a></p>
+<hr>
+<h3>O que é este dia</h3>
+<p>Dia de chegada e primeiro contacto. O grupo aterra em Bari, capital da Puglia, e entra directamente na cidade velha (Bari Vecchia) — um labirinto medieval de ruas estreitas encostado ao mar Adriático, onde ainda se vê senhoras a fazer orecchiette à porta de casa.</p>
+<hr>
+<h3>Contexto geográfico e cultural</h3>
+<p>Bari é a maior cidade da Puglia (mais de 300.000 habitantes) e o principal porto do Adriático sul — histórico ponto de ligação com os Balcãs e o Médio Oriente. A cidade velha, murada, conserva o traçado medieval quase intacto: ruas que se cruzam em ângulos imprevisíveis, desenhadas em parte para confundir invasores.</p>
+<hr>
+<h3>Pontos de interesse</h3>
+<ul>
+<li><strong>Bari Vecchia</strong> — centro histórico murado, entre o Teatro Petruzzelli e o mar</li>
+<li><strong>Basílica de São Nicolau</strong> — ver ficheiro temático dedicado</li>
+<li><strong>Muraglia</strong> — o passeio junto à antiga muralha, com vista sobre o Adriático</li>
+<li><strong>Bairro das orecchiette</strong> — Via Arco Basso e ruas vizinhas, onde a massa é feita à mão e seca ao sol nas portas</li>
+</ul>
+<hr>
+<h3>Fio narrativo do dia</h3>
+<p>Este é o primeiro contacto com a lógica da Puglia inteira: cidade compacta, virada para o mar, construída em pedra clara. Tudo o que o grupo vai ver nos próximos dias — Trani, Matera, Alberobello — é variação sobre este mesmo tema.</p>
+<hr>
+<h3>Mensagem para o grupo</h3>
+<blockquote>
+<p>&quot;Bem-vindos à Puglia. Esta noite é só para respirar — passeiem sem pressa pela cidade velha, sigam o cheiro do peixe grelhado, e deixem-se perder um bocadinho. É seguro, e é a melhor forma de entrar no ritmo daqui.&quot;</p>
+</blockquote>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://borealis.travel/viagens/o-segredo-mais-bem-guardado-do-sul-de-italia-puglia/">Borealis — Puglia</a></li>
+<li><a target="_blank" rel="noopener" href="https://pt.wikipedia.org/wiki/Bari">Wikipédia PT — Bari</a></li>
+</ul>
+    </article>
+    <article data-id="5">
+<h1>Cultural | Basílica de São Nicolau</h1>
+<p>D1 · Bari Vecchia
+<a class="ext-link" target="_blank" rel="noopener" href="https://www.google.com/maps/place/Basilica+di+San+Nicola">Google Maps</a> · <a class="ext-link" target="_blank" rel="noopener" href="https://www.meteoblue.com/en/weather/week/bari_italy">Meteoblue</a></p>
+<hr>
+<h3>O que veem</h3>
+<p>Uma fachada românica sóbria, quase austera, contrastando com a densidade decorativa que se vai encontrar dentro. É a igreja-mãe do estilo <strong>românico apuliano</strong> — modelo copiado depois em Trani e por toda a região.</p>
+<hr>
+<h3>Porquê importa</h3>
+<p>Construída entre <strong>1087 e 1197</strong> para guardar as relíquias de <strong>São Nicolau de Myra</strong> (o &quot;Papai Noel&quot; histórico), trazidas por marinheiros de Bari da cidade de Myra, na actual Turquia, em 1087. A cripta guarda as relíquias e é ponto de peregrinação tanto de católicos como de <strong>ortodoxos</strong> — um dos raros locais de culto partilhado entre as duas igrejas, o que faz de Bari um destino de peregrinação russa e grega relevante até hoje.</p>
+<p>O trono episcopal do final do século XI e os mosaicos da cripta estão entre os elementos mais preciosos.</p>
+<hr>
+<h3>Se perguntarem</h3>
+<p><strong>&quot;É o mesmo São Nicolau do Pai Natal?&quot;</strong> — Sim, é a mesma figura histórica na origem da lenda de Santa Claus/São Nicolau, bispo de Myra no século IV, conhecido pela generosidade com os pobres.</p>
+<p><strong>&quot;Porque está aqui e não na Turquia?&quot;</strong> — Marinheiros de Bari roubaram (ou &quot;trasladaram&quot;, na versão oficial) as relíquias em 1087, numa época em que trazer relíquias de santos para a cidade era prestígio e negócio religioso.</p>
+<hr>
+<h3>Para o grupo</h3>
+<p><em>&quot;Esta basílica é um dos poucos lugares do mundo cristão onde católicos e ortodoxos rezam ao mesmo santo, no mesmo espaço — vale a pena reparar em quem está lá dentro, não só na arquitetura.&quot;</em></p>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://italytripper.com/pt/place/basilica-de-sao-nicolau-bari/">Italy Tripper — Basílica de São Nicolau</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cestee.pt/destinos/italia/bari/basilica-san-nicola">Cestee — Basilica San Nicola</a></li>
+</ul>
+    </article>
+    <article data-id="6">
+<h1>Dia 2 | Giovinazzo, Trani e a rota do azeite</h1>
+<p><strong>Data:</strong> 5 Outubro 2026
+<strong>Distância:</strong> percurso urbano, sem trekking
+<strong>Dormida:</strong> Trani · <strong>Regime:</strong> PA incluído</p>
+<p><a class="ext-link" target="_blank" rel="noopener" href="https://www.google.com/maps/place/Trani">Google Maps</a> · <a class="ext-link" target="_blank" rel="noopener" href="https://www.meteoblue.com/en/weather/week/trani_italy">Meteoblue</a></p>
+<hr>
+<h3>O que é este dia</h3>
+<p>Dia costeiro, de sabores e pedra. Sai-se de Bari rumo a <strong>Giovinazzo</strong> para uma degustação de azeite, e segue-se para <strong>Trani</strong>, onde está a mais bela catedral românica da Puglia — literalmente à beira-mar.</p>
+<hr>
+<h3>Contexto geográfico e cultural</h3>
+<p>Todo este troço costeiro entre Bari e Trani vive da mesma trilogia: mar, pedra calcária e azeite. Giovinazzo é uma pequena cidade portuária com centro histórico murado, menos visitada que os destinos maiores — boa paragem para experiência gastronómica sem massificação turística.</p>
+<hr>
+<h3>Pontos de interesse</h3>
+<ul>
+<li><strong>Giovinazzo</strong> — centro histórico e degustação de azeite local (ver ficheiro <code>03-azeite-e-xylella.md</code>)</li>
+<li><strong>Trani</strong> — Catedral de São Nicolau Peregrino (ver ficheiro temático dedicado)</li>
+<li><strong>Porto de Trani</strong> — um dos mais fotogénicos da costa apuliana, com o castelo suevo a um lado e a catedral a outro</li>
+</ul>
+<hr>
+<h3>Fio narrativo do dia</h3>
+<p>Depois da imersão urbana de Bari, este dia mostra a Puglia rural e costeira — a economia do azeite que sustenta a região há séculos, e a arquitetura religiosa que a mesma pedra calcária permitiu construir à beira-mar.</p>
+<hr>
+<h3>Mensagem para o grupo</h3>
+<blockquote>
+<p>&quot;Hoje é dia de duas coisas que definem esta terra: o azeite que sai da terra, e a pedra que sai da pedreira e vira catedral. Reparem como a mesma cor de pedra aparece em todo o lado — é a pedra de Trani, quase branca.&quot;</p>
+</blockquote>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://borealis.travel/viagens/o-segredo-mais-bem-guardado-do-sul-de-italia-puglia/">Borealis — Puglia</a></li>
+<li><a target="_blank" rel="noopener" href="https://pt.wikipedia.org/wiki/Trani">Wikipédia PT — Trani</a></li>
+</ul>
+    </article>
+    <article data-id="7">
+<h1>Cultural | Catedral de Trani</h1>
+<p>D2 · Trani, à beira-mar
+<a class="ext-link" target="_blank" rel="noopener" href="https://www.google.com/maps/place/Cattedrale+di+Trani">Google Maps</a> · <a class="ext-link" target="_blank" rel="noopener" href="https://www.meteoblue.com/en/weather/week/trani_italy">Meteoblue</a></p>
+<hr>
+<h3>O que veem</h3>
+<p>A catedral está literalmente sobre o mar — construída junto ao cais, com o Adriático a bater na base. A maior expressão do <strong>estilo românico apuliano</strong>, iniciada em <strong>1099</strong> para abrigar as relíquias de <strong>São Nicolau Pellegrino</strong> (não confundir com o São Nicolau de Bari — este é um segundo santo homónimo, um jovem grego peregrino morto em Trani em 1094).</p>
+<hr>
+<h3>Porquê importa</h3>
+<p>Construída em <strong>pedra de Trani</strong> — um calcarenito local de cor rosa muito claro, quase branco, extraído das pedreiras da própria cidade. É essa pedra que dá à catedral, e a boa parte da Puglia costeira, o tom claro e luminoso característico.</p>
+<p>A estrutura combina três elementos sobrepostos: a igreja superior, a cripta, e um hipogeu mais antigo — uma síntese vertical de fases de construção. A torre sineira alta e destacada é um dos marcos visuais mais reconhecíveis da costa.</p>
+<hr>
+<h3>Se perguntarem</h3>
+<p><strong>&quot;Porque está construída em cima do mar?&quot;</strong> — Posição estratégica e simbólica: as catedrais marítimas apulianas (Trani, Bari, Bisceglie) eram também faróis de identidade para quem chegava por mar.</p>
+<hr>
+<h3>Para o grupo</h3>
+<p><em>&quot;Reparem na cor da pedra — é extraída aqui mesmo, das pedreiras de Trani. É a mesma pedra que dá à cidade inteira este tom quase branco, rosado à luz do fim da tarde.&quot;</em></p>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.italia.it/pt/apulia/catedral-basilica-de-trani">Italia.it — Catedral de Trani</a></li>
+<li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Trani_Cathedral">Wikipedia — Trani Cathedral</a></li>
+</ul>
+    </article>
+    <article data-id="8">
+<h1>Dia 3 | Matera, a cidade de pedra e cenário de cinema</h1>
+<p><strong>Data:</strong> 6 Outubro 2026
+<strong>Regime:</strong> PA incluído
+<strong>Dormida:</strong> Bari</p>
+<p><a class="ext-link" target="_blank" rel="noopener" href="https://www.google.com/maps/place/Sassi+di+Matera">Google Maps</a> · <a class="ext-link" target="_blank" rel="noopener" href="https://www.meteoblue.com/en/weather/week/matera_italy">Meteoblue</a></p>
+<hr>
+<h3>O que é este dia</h3>
+<p>O ponto alto histórico da viagem. Matera não é tecnicamente Puglia — fica em Basilicata, a região vizinha — mas está a menos de uma hora de Bari e é parte incontornável de qualquer roteiro do sul. Os <strong>Sassi</strong>, o centro histórico escavado na rocha, são habitados desde o <strong>Paleolítico</strong>, com evidências de ocupação desde 7000 a.C.</p>
+<hr>
+<h3>Contexto geográfico e cultural</h3>
+<p>Os Sassi dividem-se em dois bairros — <strong>Sasso Caveoso</strong> e <strong>Sasso Barisano</strong> — construídos sobre um desfiladeiro (Gravina) de calcário. Património Mundial da UNESCO desde <strong>1993</strong>, foram durante décadas o símbolo da pobreza extrema do sul de Itália (famosamente descritos como &quot;a vergonha nacional&quot; nos anos 1950, antes de um programa de realojamento forçado). Hoje são um dos centros históricos mais restaurados e visitados da Europa.</p>
+<hr>
+<h3>Pontos de interesse</h3>
+<ul>
+<li><strong>Sasso Caveoso</strong> e vista da Santa Maria di Idris</li>
+<li><strong>Casas-gruta (case grotta)</strong> — habitações escavadas na rocha, algumas ainda habitadas</li>
+<li><strong>Igrejas rupestres</strong> — mais de 150 igrejas escavadas na região, parte da mesma inscrição UNESCO</li>
+<li><strong>Locais de filmagem de 007 – Skyfall</strong> (2012) e de <em>A Paixão de Cristo</em> de Mel Gibson (2004) — as ruelas serviram de cenário a ambos</li>
+</ul>
+<hr>
+<h3>Fio narrativo do dia</h3>
+<p>Se Bari e Trani mostram a Puglia virada para o mar, Matera mostra a resposta oposta: uma civilização inteira escavada para dentro da terra. É o contraponto perfeito no meio da viagem — da pedra construída para a pedra escavada.</p>
+<hr>
+<h3>Mensagem para o grupo</h3>
+<blockquote>
+<p>&quot;O que vão ver hoje não é um cenário recriado — é uma cidade habitada há 9.000 anos, quase ininterruptamente. Poucos lugares na Europa têm esta continuidade.&quot;</p>
+</blockquote>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://pt.wikipedia.org/wiki/Sassi_di_Matera">Wikipédia PT — Sassi di Matera</a></li>
+<li><a target="_blank" rel="noopener" href="https://whc.unesco.org/en/list/670">UNESCO — The Sassi and the Park of the Rupestrian Churches of Matera</a></li>
+</ul>
+    </article>
+    <article data-id="9">
+<h1>Natural/histórico | Sassi di Matera</h1>
+<p>D3 · Matera, Basilicata
+<a class="ext-link" target="_blank" rel="noopener" href="https://www.google.com/maps/place/Sassi+di+Matera">Google Maps</a> · <a class="ext-link" target="_blank" rel="noopener" href="https://www.meteoblue.com/en/weather/week/matera_italy">Meteoblue</a></p>
+<hr>
+<h3>O que veem</h3>
+<p>Casas escavadas directamente na rocha calcária local — chamada &quot;tufo&quot; (não é tufo vulcânico, apesar do nome). As ruas em muitas zonas passam por cima de casas mais antigas — um urbanismo sobreposto, quase tridimensional, que confunde qualquer sentido normal de orientação.</p>
+<hr>
+<h3>Porquê importa</h3>
+<p>Habitados desde o Paleolítico, os Sassi representam um dos exemplos mais antigos e contínuos de habitação humana na Europa. Nos anos 1950, as condições de vida (sem água corrente, sem saneamento) levaram o governo italiano a realojar à força cerca de <strong>15.000 pessoas</strong>, esvaziando os Sassi por décadas. A recuperação começou nos anos 80–90 e culminou na inscrição UNESCO de 1993 — hoje muitas das antigas casas-gruta são hotéis, restaurantes e residências restauradas.</p>
+<hr>
+<h3>Cinema</h3>
+<p>Matera foi cenário de <strong>007 – Skyfall</strong> (2012) — as perseguições finais do filme — e também de <em>A Paixão de Cristo</em> (2004, Mel Gibson), que usou os Sassi como Jerusalém antiga pela atmosfera atemporal do lugar.</p>
+<hr>
+<h3>Se perguntarem</h3>
+<p><strong>&quot;As pessoas ainda vivem aqui?&quot;</strong> — Sim, depois da recuperação pós-UNESCO, uma parte dos Sassi voltou a ser habitada, incluindo hotéis-gruta.</p>
+<p><strong>&quot;Porque foram abandonados?&quot;</strong> — Condições sanitárias precárias levaram a um realojamento forçado nos anos 1950, não a um abandono voluntário.</p>
+<hr>
+<h3>Para o grupo</h3>
+<p><em>&quot;Andem devagar e olhem para cima e para baixo — o que parece ser uma rua pode ser o telhado da casa do vizinho de baixo. É essa sobreposição que torna Matera única.&quot;</em></p>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://pt.wikipedia.org/wiki/Sassi_di_Matera">Wikipédia PT — Sassi di Matera</a></li>
+<li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Sassi_di_Matera">Wikipedia EN — Sassi di Matera</a></li>
+</ul>
+    </article>
+    <article data-id="10">
+<h1>Dia 4 | Alberobello (UNESCO) e Polignano a Mare</h1>
+<p><strong>Data:</strong> 7 Outubro 2026
+<strong>Regime:</strong> PA incluído
+<strong>Dormida:</strong> Bari</p>
+<p><a class="ext-link" target="_blank" rel="noopener" href="https://www.google.com/maps/place/Alberobello">Google Maps</a> · <a class="ext-link" target="_blank" rel="noopener" href="https://www.meteoblue.com/en/weather/week/alberobello_italy">Meteoblue</a></p>
+<hr>
+<h3>O que é este dia</h3>
+<p>O dia mais &quot;cartão-postal&quot; da viagem: manhã em <strong>Alberobello</strong>, entre as icónicas casas-trulli, tarde em <strong>Polignano a Mare</strong>, cidade construída literalmente sobre falésias sobre o Adriático.</p>
+<hr>
+<h3>Contexto geográfico e cultural</h3>
+<p>Alberobello (Vale d&#39;Itria) é conhecida pela concentração única de <strong>trulli</strong> — construções cónicas em pedra seca, sem argamassa. Polignano fica na costa, a cerca de 40 minutos de Bari, e é conhecida pelas suas falésias, grutas marinhas visíveis a partir do centro histórico, e por ser a terra natal do cantor Domenico Modugno.</p>
+<hr>
+<h3>Pontos de interesse</h3>
+<ul>
+<li><strong>Rione Monti, Alberobello</strong> — mais de 1.000 trulli concentrados, zona classificada Património Mundial (ver ficheiro temático)</li>
+<li><strong>Centro histórico de Polignano</strong> — construído sobre as falésias, com a praia Lama Monachile visível do alto da ponte antiga</li>
+<li><strong>Estátua de Domenico Modugno</strong> — no passeio marítimo de Polignano (ver ficheiro temático)</li>
+</ul>
+<hr>
+<h3>Fio narrativo do dia</h3>
+<p>Depois da pedra escavada de Matera, este dia mostra duas soluções arquitetónicas opostas: os trulli, construção vernacular quase pré-industrial, e Polignano, onde a cidade se agarra literalmente ao penhasco. Ambos são exemplos de como a Puglia constrói em resposta à pedra que tem debaixo dos pés.</p>
+<hr>
+<h3>Mensagem para o grupo</h3>
+<blockquote>
+<p>&quot;Hoje é dia de duas fotos que já viram mil vezes em revistas — mas que só se percebem de verdade ao caminhar entre elas. Reparem na engenharia: nenhum trullo tem argamassa, e Polignano está pendurada sobre o vazio.&quot;</p>
+</blockquote>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://borealis.travel/viagens/o-segredo-mais-bem-guardado-do-sul-de-italia-puglia/">Borealis — Puglia</a></li>
+<li><a target="_blank" rel="noopener" href="https://pt.wikipedia.org/wiki/Alberobello">Wikipédia PT — Alberobello</a></li>
+<li><a target="_blank" rel="noopener" href="https://pt.wikipedia.org/wiki/Polignano_a_Mare">Wikipédia PT — Polignano a Mare</a></li>
+</ul>
+    </article>
+    <article data-id="11">
+<h1>Etnográfico | Trulli de Alberobello</h1>
+<p>D4 · Rione Monti, Alberobello
+<a class="ext-link" target="_blank" rel="noopener" href="https://www.google.com/maps/place/Rione+Monti+Trulli">Google Maps</a> · <a class="ext-link" target="_blank" rel="noopener" href="https://www.meteoblue.com/en/weather/week/alberobello_italy">Meteoblue</a></p>
+<hr>
+<h3>O que veem</h3>
+<p>Casas de planta circular ou quadrada com telhado cónico em pedra calcária empilhada <strong>a seco</strong>, sem argamassa nem cimento. Muitos telhados têm símbolos pintados a cal — cruzes, luas, motivos zodiacais, pré-cristãos e cristãos misturados.</p>
+<hr>
+<h3>Porquê importa</h3>
+<p>Património Mundial da UNESCO desde <strong>1996</strong>. A técnica de construção sem argamassa é o cerne da sua importância histórica: existe a teoria (contestada mas persistente) de que os feudatários locais impunham esta técnica para que as casas pudessem ser <strong>desmontadas rapidamente</strong> e assim escapar aos impostos reais sobre construções permanentes — uma &quot;casa efémera&quot; fiscal, na Nápoles espanhola dos séculos XV–XVI.</p>
+<p>Alberobello tem mais de <strong>1.000 trulli</strong> concentrados no Rione Monti, a maior aglomeração de sempre — muitos hoje são lojas, casas de hóspedes ou residências ainda ocupadas.</p>
+<hr>
+<h3>Se perguntarem</h3>
+<p><strong>&quot;Porque não têm argamassa?&quot;</strong> — A teoria mais aceite é fiscal: casas &quot;desmontáveis&quot; evitavam impostos sobre construção permanente sob o domínio espanhol.</p>
+<p><strong>&quot;Ainda vivem lá pessoas?&quot;</strong> — Sim, uma parte do Rione Monti continua habitada, apesar da forte vocação turística actual.</p>
+<hr>
+<h3>Para o grupo</h3>
+<p><em>&quot;Cada pedra destas está encaixada sem cimento nenhum — é engenharia pura de equilíbrio, passada de geração em geração. Alguns destes telhados têm mais de 300 anos.&quot;</em></p>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://pt.wikipedia.org/wiki/Alberobello">Wikipédia PT — Alberobello</a></li>
+<li>UNESCO World Heritage List, ref. 787</li>
+</ul>
+    </article>
+    <article data-id="12">
+<h1>Natural/cultural | Polignano a Mare</h1>
+<p>D4 · Costa adriática, província de Bari
+<a class="ext-link" target="_blank" rel="noopener" href="https://www.google.com/maps/place/Polignano+a+Mare">Google Maps</a> · <a class="ext-link" target="_blank" rel="noopener" href="https://www.meteoblue.com/en/weather/week/polignano_a_mare_italy">Meteoblue</a></p>
+<hr>
+<h3>O que veem</h3>
+<p>Um centro histórico construído em cima de falésias de calcário perfuradas por grutas marinhas visíveis a partir das varandas e miradouros da cidade. A praia <strong>Lama Monachile</strong>, encaixada numa pequena enseada entre duas pontes (uma romana, uma moderna), é a imagem mais fotografada de Polignano.</p>
+<hr>
+<h3>Porquê importa</h3>
+<p>Polignano é terra natal de <strong>Domenico Modugno</strong> (1928–1994), o cantor e compositor de <strong>&quot;Nel blu dipinto di blu&quot;</strong> (conhecida internacionalmente como &quot;Volare&quot;), vencedora do Festival de San Remo de 1958 e um dos maiores êxitos da música italiana no mundo. Há uma estátua de bronze do artista no passeio marítimo, de braços abertos, virada para o mar.</p>
+<p>A cidade é também conhecida por ser palco anual de uma etapa da <strong>Red Bull Cliff Diving World Series</strong> — saltos de grande altura a partir das próprias falésias urbanas.</p>
+<hr>
+<h3>Se perguntarem</h3>
+<p><strong>&quot;Quem é o senhor da estátua?&quot;</strong> — Domenico Modugno, compositor de &quot;Volare&quot;, nascido nesta cidade.</p>
+<p><strong>&quot;Dá para nadar nas grutas?&quot;</strong> — Algumas grutas são acessíveis por passeio de barco/caiaque, fora do programa da viagem.</p>
+<hr>
+<h3>Para o grupo</h3>
+<p><em>&quot;Reparem como a cidade literalmente se agarra à falésia — não há separação entre pedra e construção. É um dos poucos sítios da Puglia onde a arquitetura e a geologia parecem a mesma coisa.&quot;</em></p>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://pt.wikipedia.org/wiki/Polignano_a_Mare">Wikipédia PT — Polignano a Mare</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.modugnostatue.com/en">Modugno Statue — official site</a></li>
+</ul>
+    </article>
+    <article data-id="13">
+<h1>Dia 5 | Despedida em Bari e regresso</h1>
+<p><strong>Data:</strong> 8 Outubro 2026
+<strong>Regime:</strong> PA incluído</p>
+<p><a class="ext-link" target="_blank" rel="noopener" href="https://www.google.com/maps/place/Bari">Google Maps</a> · <a class="ext-link" target="_blank" rel="noopener" href="https://www.meteoblue.com/en/weather/week/bari_italy">Meteoblue</a></p>
+<hr>
+<h3>O que é este dia</h3>
+<p>Fecho de círculo — última manhã livre em Bari antes do transfer para o aeroporto, à medida do horário de partida de cada participante.</p>
+<hr>
+<h3>Contexto geográfico e cultural</h3>
+<p>Não há paragens novas programadas — é tempo livre para o porto ou o centro histórico, revisitar a Bari Vecchia com outros olhos, comprar as últimas orecchiette ou uma garrafa de azeite para levar.</p>
+<hr>
+<h3>Pontos de interesse</h3>
+<ul>
+<li><strong>Porto de Bari</strong> — movimento de ferries para a Grécia e os Balcãs, boa imagem de despedida</li>
+<li><strong>Bari Vecchia</strong> — última oportunidade para o centro histórico com calma</li>
+</ul>
+<hr>
+<h3>Fio narrativo do dia</h3>
+<p>A viagem fecha onde começou — Bari continua a ser o único ponto fixo entre cinco dias de deslocação constante. É um bom momento para o grupo perceber que percorreu, em poucos dias, quase todas as respostas possíveis à mesma pergunta: pedra, mar e engenho.</p>
+<hr>
+<h3>Mensagem para o grupo</h3>
+<blockquote>
+<p>&quot;Última manhã — aproveitem para fechar as malas com um azeite bom lá dentro. Obrigado por terem caminhado esta Puglia comigo, do mar de Trani à pedra de Matera.&quot;</p>
+</blockquote>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://borealis.travel/viagens/o-segredo-mais-bem-guardado-do-sul-de-italia-puglia/">Borealis — Puglia</a></li>
+</ul>
+    </article>
+  </main>
+
+  <script>
+const meta = [{"f":"00-index.md","t":"00 · Índice | Mini-briefings Puglia"},{"f":"01-briefing-inicial.md","t":"01 · Briefing Inicial | Puglia · O Segredo Mais Bem Guardado do Sul de Itália · TURPUG041026"},{"f":"02-route-details.md","t":"02 · Route Details | Puglia · TURPUG041026"},{"f":"03-azeite-e-xylella.md","t":"03 · Azeite e Xylella | A economia e a ferida da Puglia"},{"f":"10-d1.md","t":"10 · Dia 1 | Chegada a Bari e charme da cidade velha"},{"f":"11-basilica-sao-nicolau.md","t":"11 · Cultural | Basílica de São Nicolau"},{"f":"20-d2.md","t":"20 · Dia 2 | Giovinazzo, Trani e a rota do azeite"},{"f":"21-catedral-de-trani.md","t":"21 · Cultural | Catedral de Trani"},{"f":"30-d3.md","t":"30 · Dia 3 | Matera, a cidade de pedra e cenário de cinema"},{"f":"31-sassi-di-matera.md","t":"31 · Natural/histórico | Sassi di Matera"},{"f":"40-d4.md","t":"40 · Dia 4 | Alberobello (UNESCO) e Polignano a Mare"},{"f":"41-trulli-de-alberobello.md","t":"41 · Etnográfico | Trulli de Alberobello"},{"f":"42-polignano-a-mare.md","t":"42 · Natural/cultural | Polignano a Mare"},{"f":"50-d5.md","t":"50 · Dia 5 | Despedida em Bari e regresso"}];
+const KEY       = 'briefings_current';
+const THEME_KEY = 'briefings_theme';
+
+(function initTheme() {
+  const root   = document.documentElement;
+  const btn    = document.getElementById('btn-theme');
+  const saved  = localStorage.getItem(THEME_KEY);
+  const isDark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const SVG_SUN  = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 3v1"/><path d="M12 20v1"/><path d="M3 12h1"/><path d="M20 12h1"/><path d="m18.364 5.636-.707.707"/><path d="m6.343 17.657-.707.707"/><path d="m5.636 5.636.707.707"/><path d="m17.657 17.657.707.707"/></svg>';
+  const SVG_MOON = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>';
+
+  function applyTheme(dark) {
+    root.setAttribute('data-theme', dark ? 'dark' : 'light');
+    btn.innerHTML = dark ? SVG_SUN : SVG_MOON;
+    localStorage.setItem(THEME_KEY, dark ? 'dark' : 'light');
+  }
+
+  applyTheme(isDark);
+  btn.addEventListener('click', () => applyTheme(root.getAttribute('data-theme') !== 'dark'));
+})();
+
+const elMain  = document.getElementById('main');
+const elTitle = document.getElementById('bar-title-text');
+const elToc   = document.getElementById('toc-overlay');
+const arts    = elMain.querySelectorAll('article');
+const tocBtns = document.querySelectorAll('#toc-list li button');
+
+let cur = parseInt(localStorage.getItem(KEY) || '0', 10);
+if (!Number.isFinite(cur) || cur < 0 || cur >= meta.length) cur = 0;
+
+function show(idx) {
+  arts.forEach((a, i) => a.classList.toggle('visible', i === idx));
+  tocBtns.forEach((b, i) => b.classList.toggle('active', i === idx));
+  elTitle.textContent = meta[idx].t;
+  document.title = meta[idx].t;
+  elMain.scrollTo(0, 0);
+  cur = idx;
+  try { localStorage.setItem(KEY, cur); } catch (_) {}
+}
+
+function go(d) {
+  elMain.classList.add('fade-out');
+  setTimeout(() => {
+    show((cur + d + meta.length) % meta.length);
+    elMain.classList.remove('fade-out');
+  }, 80);
+}
+
+show(cur);
+
+document.getElementById('btn-prev').onclick = () => go(-1);
+document.getElementById('btn-next').onclick = () => go(1);
+
+const elTocSearch = document.getElementById('toc-search');
+const norm = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+const tocIndex = Array.from(tocBtns).map(b => {
+  const li = b.closest('li');
+  const art = arts[parseInt(b.dataset.idx, 10)];
+  const bodyText = art.textContent.replace(/\s+/g, ' ').trim();
+  return { li, preview: b.querySelector('.toc-preview'), text: norm(b.textContent + ' ' + bodyText), bodyText };
+});
+
+const escHtml = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+function snippetFor(text, q) {
+  const i = norm(text).indexOf(q);
+  if (i === -1) return '';
+  const start = Math.max(0, i - 40);
+  const end   = Math.min(text.length, i + q.length + 60);
+  const before = text.slice(start, i);
+  const match  = text.slice(i, i + q.length);
+  const after  = text.slice(i + q.length, end);
+  const prefix = start > 0 ? '…' : '';
+  const suffix = end < text.length ? '…' : '';
+  return prefix + escHtml(before) + '<mark>' + escHtml(match) + '</mark>' + escHtml(after) + suffix;
+}
+
+function filterToc() {
+  const raw = elTocSearch.value.trim();
+  const q = raw.length > 1 ? norm(raw) : '';
+  tocIndex.forEach(({ li, preview, text, bodyText }) => {
+    const match = q && text.includes(q);
+    li.hidden = q && !match;
+    preview.innerHTML = match ? snippetFor(bodyText, q) : '';
+  });
+}
+elTocSearch.addEventListener('input', filterToc);
+
+function resetTocSearch() {
+  elTocSearch.value = '';
+  tocIndex.forEach(({ li, preview }) => { li.hidden = false; preview.innerHTML = ''; });
+}
+
+const openToc = () => {
+  elToc.hidden = false;
+  const active = elToc.querySelector('button.active');
+  if (active) setTimeout(() => active.scrollIntoView({ block: 'nearest' }), 0);
+};
+document.getElementById('bar-title').onclick = openToc;
+document.getElementById('btn-toc-close').onclick = () => { elToc.hidden = true; resetTocSearch(); };
+elToc.addEventListener('click', e => { if (e.target === elToc) { elToc.hidden = true; resetTocSearch(); } });
+document.getElementById('toc-list').addEventListener('click', e => {
+  const b = e.target.closest('[data-idx]');
+  if (!b) return;
+  elToc.hidden = true;
+  resetTocSearch();
+  show(parseInt(b.dataset.idx, 10));
+});
+
+let tx = 0, ty = 0;
+elMain.addEventListener('touchstart', e => {
+  tx = e.touches[0].clientX;
+  ty = e.touches[0].clientY;
+}, { passive: true });
+elMain.addEventListener('touchend', e => {
+  const dx = e.changedTouches[0].clientX - tx;
+  const dy = e.changedTouches[0].clientY - ty;
+  if (Math.abs(dx) >= 50 && Math.abs(dy) <= 100) go(dx > 0 ? -1 : 1);
+}, { passive: true });
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowLeft')  go(-1);
+  if (e.key === 'ArrowRight') go(1);
+});
+  </script>
+</body>
+</html>
