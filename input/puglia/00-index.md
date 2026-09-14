@@ -9,6 +9,7 @@
 | `01-briefing-inicial.md` | Briefing inicial | ✅ |
 | `02-route-details.md` | Ficha técnica por dia | ✅ |
 | `03-azeite-e-xylella.md` | Azeite, tradição e a crise da Xylella | ✅ |
+| `04-italiano-para-guias.md` | Italiano essencial: fonética e frases | ✅ |
 | `10-d1.md` | Dia 1 — Chegada a Bari | ✅ |
 | `11-basilica-sao-nicolau.md` | Basílica de São Nicolau | ✅ |
 | `20-d2.md` | Dia 2 — Giovinazzo, Trani e a rota do azeite | ✅ |
