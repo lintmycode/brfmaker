@@ -17,8 +17,11 @@ Um refúgio de montanha guardado, construído em 1972, encostado à Laguna Grand
 
 ---
 
+### Quem foi José Antonio Elola
+José Antonio Elola-Olaso (1911–1990) foi um dirigente falangista espanhol, primeiro delegado nacional da Frente de Juventudes durante o franquismo e figura influente no desporto e montanhismo espanhóis da época. O refúgio foi construído entre 1970 e 1972 pela Federação Espanhola de Montanhismo (presidida então por Félix Méndez) e baptizado em sua honra na inauguração, em outubro de 1972.
+
 ### Se perguntarem
-**"Este refúgio sempre se chamou assim?"** — É conhecido pelos dois nomes, José Antonio Elola e refúgio da Laguna Grande, consoante a fonte. *[verificar detalhe histórico do nome]*
+**"Este refúgio sempre se chamou assim?"** — Não. Por causa da Lei da Memória Histórica espanhola, o nome oficial mudou para "Refúgio de Alta Montanha Laguna Grande de Gredos", retirando a referência a Elola. Na prática continua a ser conhecido por ambos os nomes, sobretudo entre montanhistas mais antigos.
 **"Há mais gente aqui ou é isolado?"** — É o principal ponto de apoio da serra, por isso recebe montanhistas regularmente, sobretudo em época de ascensões ao Almanzor.
 
 ---

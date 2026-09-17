@@ -4,8 +4,8 @@
 
 | Dia | Distância | Desnível | Altitude máx. | Tempo estimado |
 |---|---|---|---|---|
-| D1 — Plataforma → Barrerones → Laguna Grande | 6,4 km | *[verificar]* | 2210 m | *[verificar]* |
-| D2 — Almanzor + Galana | 8 km | 900 m | 2592 m | *[verificar]* |
+| D1 — Plataforma → Barrerones → Laguna Grande | 10,5 km | +664 m / -477 m | 2210 m | *[verificar]* |
+| D2 — Almanzor + Galana | 12,5 km | +1120 m / -934 m | 2592 m | *[verificar]* |
 
 ---
 
