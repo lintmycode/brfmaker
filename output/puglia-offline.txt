@@ -1,0 +1,739 @@
+PUGLIA — BRIEFING DE GUIA OFFLINE (TURPUG041026, 4-8 Out 2026)
+Gerado 2026-09-23 — backup caveman, sem net, sem HTML.
+============================================================
+
+
+########## 00-index.md ##########
+
+# Índice | Mini-briefings Puglia
+**Viagem:** TURPUG041026 — 4 a 8 Outubro 2026
+**Base:** Bari (2 noites) + Trani (1 noite)
+**Guia:** NM
+**Programa:** [borealis.travel/viagens/o-segredo-mais-bem-guardado-do-sul-de-italia-puglia](https://borealis.travel/viagens/o-segredo-mais-bem-guardado-do-sul-de-italia-puglia/)
+
+| Ficheiro | Tema | Estado |
+|----------|------|--------|
+| `01-briefing-inicial.md` | Briefing inicial | ✅ |
+| `02-route-details.md` | Ficha técnica por dia | ✅ |
+| `03-azeite-e-xylella.md` | Azeite, tradição e a crise da Xylella | ✅ |
+| `04-italiano-para-guias.md` | Italiano essencial: fonética e frases | ✅ |
+| `10-d1.md` | Dia 1 — Chegada a Bari | ✅ |
+| `11-basilica-sao-nicolau.md` | Basílica de São Nicolau | ✅ |
+| `20-d2.md` | Dia 2 — Giovinazzo, Trani e a rota do azeite | ✅ |
+| `21-catedral-de-trani.md` | Catedral de Trani | ✅ |
+| `30-d3.md` | Dia 3 — Matera, a cidade de pedra | ✅ |
+| `31-sassi-di-matera.md` | Sassi di Matera | ✅ |
+| `40-d4.md` | Dia 4 — Alberobello e Polignano a Mare | ✅ |
+| `41-trulli-de-alberobello.md` | Trulli de Alberobello | ✅ |
+| `42-polignano-a-mare.md` | Polignano a Mare e Modugno | ✅ |
+| `50-d5.md` | Dia 5 — Despedida em Bari | ✅ |
+
+**Pendente:** fonética de topónimos italianos e ficheiro de média — a criar depois de confirmação de horários e reservas com a Borealis.
+
+
+########## 01-briefing-inicial.md ##########
+
+# Briefing Inicial | Puglia · O Segredo Mais Bem Guardado do Sul de Itália · TURPUG041026
+D1 · 4 Outubro 2026 · Bari
+
+---
+
+### A equipa
+
+*[Apresentação da equipa]*
+
+---
+
+### O que é esta viagem
+
+Cinco dias no calcanhar da Itália: a Puglia (Apúlia), a região mais a sul da bota adriática, entre o mar e um planalto calcário esburacado de grutas. Não é montanha — é touring cultural e gastronómico de ritmo baixo, dificuldade 1/5, pensado para caminhar, comer bem e olhar com atenção.
+
+O fio é a pedra: a pedra branca de Trani com que se ergueu uma catedral à beira-mar, a pedra escavada de Matera onde se vive há 9.000 anos, a pedra empilhada sem argamassa dos trulli de Alberobello. Uma região pobre em água e rica em calcário que transformou a limitação em identidade.
+
+Não é uma viagem de praia, apesar do litoral. É uma viagem de cidades e vilas — cada dia muda de base, cada base ensina algo diferente sobre como se vive na Puglia.
+
+---
+
+### Gestão de expectativas
+
+O que vão encontrar: cidades pequenas caminháveis, ruas de pedra irregular (calçada apuliana, escorregadia com chuva), calor ainda presente em outubro (20–26°C), pouca sombra ao meio-dia nas ruas de Matera e Alberobello.
+
+O que não vão encontrar: trekking, desníveis significativos, transporte alternativo ao autocarro do grupo — os deslocamentos entre paragens são sempre em autocarro dedicado.
+
+Voos não incluídos — cada participante trata da sua viagem até Bari (aeroporto Karol Wojtyła, IATA: BRI). O transfer de e para o aeroporto está incluído, mas é um único transfer por sentido, coordenado com o horário de início/fim do programa.
+
+---
+
+### Regras de segurança
+
+**Durante os passeios:**
+- Mantenham-se dentro do grupo nas zonas de trânsito de veículos — os centros históricos de Bari, Trani e Matera têm ruas estreitas partilhadas com carros e scooters.
+- Piso irregular é a constante da viagem — calçado fechado e confortável, mesmo nos dias "de cidade".
+- Em Matera e Alberobello há escadas e desníveis de rua sem corrimão — atenção redobrada com chuva.
+
+**Emergências:**
+- A equipa tem contactos de emergência locais e seguro de assistência em viagem activo (Liberty RNA).
+- Em caso de mal-estar ou lesão, avisar de imediato o guia mais próximo.
+- Se se afastarem do grupo num centro histórico: **parem, fiquem visíveis, esperem** — as ruas de Matera e dos Sassi confundem até quem já lá foi.
+
+---
+
+### Regras de protecção ambiental
+
+- Puglia enfrenta uma crise agrícola grave com a **Xylella fastidiosa**, bactéria que já matou milhões de oliveiras na região — não trazer plantas, sementes ou material vegetal de fora, nem levar amostras de plantas locais.
+- Respeitar os Sassi de Matera como património habitado, não museu vazio — muitas casas têm moradores.
+- Sem lixo deixado no trilho ou na rua — a Puglia vive do turismo cultural, e isso começa por respeitar o espaço.
+
+---
+
+### O fio da viagem
+
+Bari abre e fecha a viagem — é o ponto de chegada, o ponto de partida, e o contraponto urbano a tudo o resto. No meio, a Puglia mostra-se em camadas: o azeite e o mar em Giovinazzo e Trani (D2), a pedra pré-histórica em Matera (D3), a arquitetura vernacular em Alberobello e o teatro natural de Polignano (D4).
+
+> "Cada paragem desta viagem é uma resposta diferente à mesma pergunta: como se vive numa terra sem grande relevo, sem grandes rios, mas com pedra calcária a perder de vista? A resposta muda a cada dia — e é sempre engenhosa."
+
+---
+
+**Fontes:**
+- [Borealis — Puglia](https://borealis.travel/viagens/o-segredo-mais-bem-guardado-do-sul-de-italia-puglia/)
+- Programa técnico Borealis TURPUG041026
+
+
+########## 02-route-details.md ##########
+
+# Route Details | Puglia · TURPUG041026
+
+Ficha técnica por dia. Viagem de touring cultural, dificuldade geral **1/5 (Baixo)** — sem trekking técnico, apenas caminhada urbana em piso irregular.
+
+---
+
+### Dia 1 — 4 Outubro — Chegada e Bari Vecchia
+- Partida: chegada individual ao Aeroporto de Bari-Palese (BRI), transfer incluído
+- Percurso a pé: centro histórico de Bari Vecchia, curto e plano
+- Dormida: Bari
+
+---
+
+### Dia 2 — 5 Outubro — Giovinazzo, Trani
+- Deslocamento em autocarro dedicado
+- Giovinazzo: paragem de degustação de azeite
+- Trani: visita à Catedral e ao centro histórico junto ao mar
+- Refeições incluídas: pequeno-almoço
+- Dormida: Trani
+
+---
+
+### Dia 3 — 6 Outubro — Matera
+- Deslocamento em autocarro dedicado (Trani → Matera → Bari)
+- Percurso a pé nos Sassi (Caveoso e Barisano) — ruas de pedra, escadarias, sem sombra significativa
+- Refeições incluídas: pequeno-almoço
+- Dormida: Bari
+
+---
+
+### Dia 4 — 7 Outubro — Alberobello e Polignano a Mare
+- Deslocamento em autocarro dedicado
+- Alberobello: percurso a pé pelo Rione Monti (zona classificada dos trulli)
+- Polignano a Mare: percurso a pé pelo centro histórico sobre as falésias
+- Refeições incluídas: pequeno-almoço
+- Dormida: Bari
+
+---
+
+### Dia 5 — 8 Outubro — Despedida em Bari
+- Manhã livre em Bari (porto / centro histórico)
+- Transfer para o aeroporto conforme horário de partida
+- Refeições incluídas: pequeno-almoço
+
+---
+
+### Pontos críticos gerais
+- **Piso:** calçada de pedra apuliana, lisa e escorregadia com chuva, presente em todos os centros históricos do roteiro.
+- **Calor residual:** outubro na Puglia ainda registra 20–26°C, sol forte ao meio-dia sem sombra nas ruas de Matera e Alberobello — protecção solar necessária mesmo fora de trekking.
+- **Horários de voo:** dependem da notificação de saída garantida da Borealis; transfer único por sentido — pedir dados de voo dos pax com antecedência.
+
+**Fonte:** Programa Borealis TURPUG041026, [página da viagem](https://borealis.travel/viagens/o-segredo-mais-bem-guardado-do-sul-de-italia-puglia/).
+
+
+########## 03-azeite-e-xylella.md ##########
+
+# Azeite e Xylella | A economia e a ferida da Puglia
+
+### Porquê importa
+
+A Puglia produz cerca de **40% do azeite italiano** — é a maior região olivícola do país, com olivais que em muitos casos têm séculos e alguns exemplares milenares, sobretudo no Salento. O azeite não é só produto de exportação: é a base da cozinha local e uma parte central da identidade da região.
+
+---
+
+### A crise da Xylella fastidiosa
+
+Em **2013**, foi identificada no sul da Puglia (perto de Gallipoli) a bactéria **Xylella fastidiosa**, transmitida por uma cigarrinha (a *cigarrinha-espumadeira*, *Philaenus spumarius*). A bactéria obstrui os vasos que transportam água na árvore, causando o **"Complexo do Declínio Rápido da Oliveira"** — seca progressiva da copa até à morte da árvore.
+
+Desde então, mais de **21 milhões de oliveiras** foram perdidas na região, incluindo muitos exemplares centenários e milenares. Não há cura — apenas contenção (corte de árvores infetadas, controlo do inseto vetor) e investigação em variedades resistentes (como a Leccino e a FS-17).
+
+Apesar da devastação, a Puglia continua a ser a maior região produtora de azeite de Itália — replantação com variedades resistentes está em curso, sobretudo mais a sul.
+
+---
+
+### O que se vê no terreno
+
+Nos olivais entre Bari e Trani (zona ainda menos afetada do que o Salento), é possível ver a paisagem de oliveiras contígua ao litoral — parte do que torna a rota do azeite em Giovinazzo relevante como experiência de degustação e não só de paisagem.
+
+---
+
+### Para o grupo
+
+*"O azeite que vão provar hoje é também uma história de sobrevivência — a Puglia está a travar, há mais de dez anos, a maior crise agrícola da sua história recente, e continua a ser a maior produtora de azeite de Itália."*
+
+---
+
+**Fontes:**
+- [Olive Oil Times — Puglia](https://pt.oliveoiltimes.com/topic/puglia)
+- [Olive Oil Times — Xylella fastidiosa](https://www.oliveoiltimes.com/topic/xylella-fastidiosa)
+
+
+########## 04-italiano-para-guias.md ##########
+
+# Italiano essencial | Fonética e frases para guiar
+
+### Regras de pronúncia
+
+Ao contrário do francês ou do inglês, o italiano lê-se quase como se escreve. As armadilhas:
+- `c` antes de `e`/`i` = "tch" (*ciao* → tchao); antes de `a`/`o`/`u` = "k" (*casa*)
+- `g` antes de `e`/`i` = "dj" (*gelato*); antes de `a`/`o`/`u` = "g" duro (*gatto*)
+- `gn` = "nh", como em "senhor" (*gnocchi* → nhôqui)
+- `gl` + `i` = "lh" (*famiglia* → familha)
+- `z` = "ts" ou "dz" (*pizza* → pítsa)
+- `r` é vibrante, batido com a língua — não gutural como em francês
+
+---
+
+### Tu ou Lei
+
+`Tu` é informal. `Lei` é o formal, equivalente ao "o senhor/a senhora" — usar com donos de restaurante, motoristas, receção de hotel. Errar para o lado formal é sempre mais seguro do que o contrário.
+
+Cuidado com falsos amigos: muita palavra "parece" português mas engana — *burro* é manteiga, não o animal; *salire* é subir, não sair.
+
+---
+
+### Verbos essenciais (presente)
+
+| Verbo | io | tu | lui/lei | noi | voi | loro |
+|---|---|---|---|---|---|---|
+| **essere** (ser/estar) | sono | sei | è | siamo | siete | sono |
+| **avere** (ter) | ho | hai | ha | abbiamo | avete | hanno |
+| **andare** (ir) | vado | vai | va | andiamo | andate | vanno |
+| **parlare** (falar, modelo -are) | parlo | parli | parla | parliamo | parlate | parlano |
+
+---
+
+### Cumprimentos e cortesia
+
+| Italiano | Português |
+|---|---|
+| Buongiorno / Buonasera | Bom dia / Boa tarde-noite |
+| Grazie mille | Muito obrigado |
+| Prego | De nada / Faz favor |
+| Scusi / Permesso | Desculpe / Com licença (para passar) |
+| Piacere | Prazer (em conhecer) |
+
+---
+
+### Para guiar o grupo
+
+| Italiano | Português |
+|---|---|
+| Seguitemi, per favore | Sigam-me, por favor |
+| Andiamo! | Vamos! |
+| Siamo un gruppo di [número] persone | Somos um grupo de [número] pessoas |
+| A che ora apre/chiude? | A que horas abre/fecha? |
+| Dov'è il bagno? | Onde é a casa de banho? |
+
+---
+
+### No restaurante
+
+| Italiano | Português |
+|---|---|
+| Un tavolo per [número], per favore | Uma mesa para [número] |
+| Cosa ci consiglia? | O que nos recomenda? |
+| Il conto, per favore | A conta, por favor |
+| È incluso il servizio? | O serviço está incluído? |
+
+---
+
+### Números 1–10
+
+uno, due, tre, quattro, cinque, sei, sette, otto, nove, dieci
+
+---
+
+### Emergência e prática
+
+| Italiano | Português |
+|---|---|
+| Non parlo italiano bene | Não falo bem italiano |
+| Parla inglese? | Fala inglês? |
+| Mi può aiutare? | Pode ajudar-me? |
+
+---
+
+### Dicas de campo
+
+Os termos que mais falham em grupo: **grazie mille** (não "grazie mila"), **gnocchi** ("nhôqui", não "guinóqui"), **bruschetta** (o `sch` é "sk", não "sh" — bruskêta), **orecchiette** ("orekiête", o `cchi` é "k").
+
+---
+
+**Fontes:** compilação de frases e gramática essencial de italiano para uso de guia, revista para o grupo Puglia (TURPUG041026).
+
+
+########## 10-d1.md ##########
+
+# Dia 1 | Chegada a Bari e charme da cidade velha
+
+**Data:** 4 Outubro 2026
+**Regime:** sem refeição incluída (chegada)
+**Dormida:** Bari
+
+[Google Maps](https://www.google.com/maps/place/Bari+Vecchia) · [Meteoblue](https://www.meteoblue.com/en/weather/week/bari_italy)
+
+---
+
+### O que é este dia
+
+Dia de chegada e primeiro contacto. O grupo aterra em Bari, capital da Puglia, e entra directamente na cidade velha (Bari Vecchia) — um labirinto medieval de ruas estreitas encostado ao mar Adriático, onde ainda se vê senhoras a fazer orecchiette à porta de casa.
+
+---
+
+### Contexto geográfico e cultural
+
+Bari é a maior cidade da Puglia (mais de 300.000 habitantes) e o principal porto do Adriático sul — histórico ponto de ligação com os Balcãs e o Médio Oriente. A cidade velha, murada, conserva o traçado medieval quase intacto: ruas que se cruzam em ângulos imprevisíveis, desenhadas em parte para confundir invasores.
+
+---
+
+### Pontos de interesse
+
+- **Bari Vecchia** — centro histórico murado, entre o Teatro Petruzzelli e o mar
+- **Basílica de São Nicolau** — ver ficheiro temático dedicado
+- **Muraglia** — o passeio junto à antiga muralha, com vista sobre o Adriático
+- **Bairro das orecchiette** — Via Arco Basso e ruas vizinhas, onde a massa é feita à mão e seca ao sol nas portas
+
+---
+
+### Fio narrativo do dia
+
+Este é o primeiro contacto com a lógica da Puglia inteira: cidade compacta, virada para o mar, construída em pedra clara. Tudo o que o grupo vai ver nos próximos dias — Trani, Matera, Alberobello — é variação sobre este mesmo tema.
+
+---
+
+### Mensagem para o grupo
+
+> "Bem-vindos à Puglia. Esta noite é só para respirar — passeiem sem pressa pela cidade velha, sigam o cheiro do peixe grelhado, e deixem-se perder um bocadinho. É seguro, e é a melhor forma de entrar no ritmo daqui."
+
+---
+
+**Fontes:**
+- [Borealis — Puglia](https://borealis.travel/viagens/o-segredo-mais-bem-guardado-do-sul-de-italia-puglia/)
+- [Wikipédia PT — Bari](https://pt.wikipedia.org/wiki/Bari)
+
+
+########## 11-basilica-sao-nicolau.md ##########
+
+# Cultural | Basílica de São Nicolau
+D1 · Bari Vecchia
+[Google Maps](https://www.google.com/maps/place/Basilica+di+San+Nicola) · [Meteoblue](https://www.meteoblue.com/en/weather/week/bari_italy)
+
+---
+
+### O que veem
+
+Uma fachada românica sóbria, quase austera, contrastando com a densidade decorativa que se vai encontrar dentro. É a igreja-mãe do estilo **românico apuliano** — modelo copiado depois em Trani e por toda a região.
+
+---
+
+### Porquê importa
+
+Construída entre **1087 e 1197** para guardar as relíquias de **São Nicolau de Myra** (o "Papai Noel" histórico), trazidas por marinheiros de Bari da cidade de Myra, na actual Turquia, em 1087. A cripta guarda as relíquias e é ponto de peregrinação tanto de católicos como de **ortodoxos** — um dos raros locais de culto partilhado entre as duas igrejas, o que faz de Bari um destino de peregrinação russa e grega relevante até hoje.
+
+O trono episcopal do final do século XI e os mosaicos da cripta estão entre os elementos mais preciosos.
+
+---
+
+### Se perguntarem
+
+**"É o mesmo São Nicolau do Pai Natal?"** — Sim, é a mesma figura histórica na origem da lenda de Santa Claus/São Nicolau, bispo de Myra no século IV, conhecido pela generosidade com os pobres.
+
+**"Porque está aqui e não na Turquia?"** — Marinheiros de Bari roubaram (ou "trasladaram", na versão oficial) as relíquias em 1087, numa época em que trazer relíquias de santos para a cidade era prestígio e negócio religioso.
+
+---
+
+### Para o grupo
+
+*"Esta basílica é um dos poucos lugares do mundo cristão onde católicos e ortodoxos rezam ao mesmo santo, no mesmo espaço — vale a pena reparar em quem está lá dentro, não só na arquitetura."*
+
+---
+
+**Fontes:**
+- [Italy Tripper — Basílica de São Nicolau](https://italytripper.com/pt/place/basilica-de-sao-nicolau-bari/)
+- [Cestee — Basilica San Nicola](https://www.cestee.pt/destinos/italia/bari/basilica-san-nicola)
+
+
+########## 20-d2.md ##########
+
+# Dia 2 | Giovinazzo, Trani e a rota do azeite
+
+**Data:** 5 Outubro 2026
+**Distância:** percurso urbano, sem trekking
+**Dormida:** Trani · **Regime:** PA incluído
+
+[Google Maps](https://www.google.com/maps/place/Trani) · [Meteoblue](https://www.meteoblue.com/en/weather/week/trani_italy)
+
+---
+
+### O que é este dia
+
+Dia costeiro, de sabores e pedra. Sai-se de Bari rumo a **Giovinazzo** para uma degustação de azeite, e segue-se para **Trani**, onde está a mais bela catedral românica da Puglia — literalmente à beira-mar.
+
+---
+
+### Contexto geográfico e cultural
+
+Todo este troço costeiro entre Bari e Trani vive da mesma trilogia: mar, pedra calcária e azeite. Giovinazzo é uma pequena cidade portuária com centro histórico murado, menos visitada que os destinos maiores — boa paragem para experiência gastronómica sem massificação turística.
+
+---
+
+### Pontos de interesse
+
+- **Giovinazzo** — centro histórico e degustação de azeite local (ver ficheiro `03-azeite-e-xylella.md`)
+- **Trani** — Catedral de São Nicolau Peregrino (ver ficheiro temático dedicado)
+- **Porto de Trani** — um dos mais fotogénicos da costa apuliana, com o castelo suevo a um lado e a catedral a outro
+
+---
+
+### Fio narrativo do dia
+
+Depois da imersão urbana de Bari, este dia mostra a Puglia rural e costeira — a economia do azeite que sustenta a região há séculos, e a arquitetura religiosa que a mesma pedra calcária permitiu construir à beira-mar.
+
+---
+
+### Mensagem para o grupo
+
+> "Hoje é dia de duas coisas que definem esta terra: o azeite que sai da terra, e a pedra que sai da pedreira e vira catedral. Reparem como a mesma cor de pedra aparece em todo o lado — é a pedra de Trani, quase branca."
+
+---
+
+**Fontes:**
+- [Borealis — Puglia](https://borealis.travel/viagens/o-segredo-mais-bem-guardado-do-sul-de-italia-puglia/)
+- [Wikipédia PT — Trani](https://pt.wikipedia.org/wiki/Trani)
+
+
+########## 21-catedral-de-trani.md ##########
+
+# Cultural | Catedral de Trani
+D2 · Trani, à beira-mar
+[Google Maps](https://www.google.com/maps/place/Cattedrale+di+Trani) · [Meteoblue](https://www.meteoblue.com/en/weather/week/trani_italy)
+
+---
+
+### O que veem
+
+A catedral está literalmente sobre o mar — construída junto ao cais, com o Adriático a bater na base. A maior expressão do **estilo românico apuliano**, iniciada em **1099** para abrigar as relíquias de **São Nicolau Pellegrino** (não confundir com o São Nicolau de Bari — este é um segundo santo homónimo, um jovem grego peregrino morto em Trani em 1094).
+
+---
+
+### Porquê importa
+
+Construída em **pedra de Trani** — um calcarenito local de cor rosa muito claro, quase branco, extraído das pedreiras da própria cidade. É essa pedra que dá à catedral, e a boa parte da Puglia costeira, o tom claro e luminoso característico.
+
+A estrutura combina três elementos sobrepostos: a igreja superior, a cripta, e um hipogeu mais antigo — uma síntese vertical de fases de construção. A torre sineira alta e destacada é um dos marcos visuais mais reconhecíveis da costa.
+
+---
+
+### Se perguntarem
+
+**"Porque está construída em cima do mar?"** — Posição estratégica e simbólica: as catedrais marítimas apulianas (Trani, Bari, Bisceglie) eram também faróis de identidade para quem chegava por mar.
+
+---
+
+### Para o grupo
+
+*"Reparem na cor da pedra — é extraída aqui mesmo, das pedreiras de Trani. É a mesma pedra que dá à cidade inteira este tom quase branco, rosado à luz do fim da tarde."*
+
+---
+
+**Fontes:**
+- [Italia.it — Catedral de Trani](https://www.italia.it/pt/apulia/catedral-basilica-de-trani)
+- [Wikipedia — Trani Cathedral](https://en.wikipedia.org/wiki/Trani_Cathedral)
+
+
+########## 30-d3.md ##########
+
+# Dia 3 | Matera, a cidade de pedra e cenário de cinema
+
+**Data:** 6 Outubro 2026
+**Regime:** PA incluído
+**Dormida:** Bari
+
+[Google Maps](https://www.google.com/maps/place/Sassi+di+Matera) · [Meteoblue](https://www.meteoblue.com/en/weather/week/matera_italy)
+
+---
+
+### O que é este dia
+
+O ponto alto histórico da viagem. Matera não é tecnicamente Puglia — fica em Basilicata, a região vizinha — mas está a menos de uma hora de Bari e é parte incontornável de qualquer roteiro do sul. Os **Sassi**, o centro histórico escavado na rocha, são habitados desde o **Paleolítico**, com evidências de ocupação desde 7000 a.C.
+
+---
+
+### Contexto geográfico e cultural
+
+Os Sassi dividem-se em dois bairros — **Sasso Caveoso** e **Sasso Barisano** — construídos sobre um desfiladeiro (Gravina) de calcário. Património Mundial da UNESCO desde **1993**, foram durante décadas o símbolo da pobreza extrema do sul de Itália (famosamente descritos como "a vergonha nacional" nos anos 1950, antes de um programa de realojamento forçado). Hoje são um dos centros históricos mais restaurados e visitados da Europa.
+
+---
+
+### Pontos de interesse
+
+- **Sasso Caveoso** e vista da Santa Maria di Idris
+- **Casas-gruta (case grotta)** — habitações escavadas na rocha, algumas ainda habitadas
+- **Igrejas rupestres** — mais de 150 igrejas escavadas na região, parte da mesma inscrição UNESCO
+- **Locais de filmagem de 007 – Skyfall** (2012) e de *A Paixão de Cristo* de Mel Gibson (2004) — as ruelas serviram de cenário a ambos
+
+---
+
+### Fio narrativo do dia
+
+Se Bari e Trani mostram a Puglia virada para o mar, Matera mostra a resposta oposta: uma civilização inteira escavada para dentro da terra. É o contraponto perfeito no meio da viagem — da pedra construída para a pedra escavada.
+
+---
+
+### Mensagem para o grupo
+
+> "O que vão ver hoje não é um cenário recriado — é uma cidade habitada há 9.000 anos, quase ininterruptamente. Poucos lugares na Europa têm esta continuidade."
+
+---
+
+**Fontes:**
+- [Wikipédia PT — Sassi di Matera](https://pt.wikipedia.org/wiki/Sassi_di_Matera)
+- [UNESCO — The Sassi and the Park of the Rupestrian Churches of Matera](https://whc.unesco.org/en/list/670)
+
+
+########## 31-sassi-di-matera.md ##########
+
+# Natural/histórico | Sassi di Matera
+D3 · Matera, Basilicata
+[Google Maps](https://www.google.com/maps/place/Sassi+di+Matera) · [Meteoblue](https://www.meteoblue.com/en/weather/week/matera_italy)
+
+---
+
+### O que veem
+
+Casas escavadas directamente na rocha calcária local — chamada "tufo" (não é tufo vulcânico, apesar do nome). As ruas em muitas zonas passam por cima de casas mais antigas — um urbanismo sobreposto, quase tridimensional, que confunde qualquer sentido normal de orientação.
+
+---
+
+### Porquê importa
+
+Habitados desde o Paleolítico, os Sassi representam um dos exemplos mais antigos e contínuos de habitação humana na Europa. Nos anos 1950, as condições de vida (sem água corrente, sem saneamento) levaram o governo italiano a realojar à força cerca de **15.000 pessoas**, esvaziando os Sassi por décadas. A recuperação começou nos anos 80–90 e culminou na inscrição UNESCO de 1993 — hoje muitas das antigas casas-gruta são hotéis, restaurantes e residências restauradas.
+
+---
+
+### Cinema
+
+Matera foi cenário de **007 – Skyfall** (2012) — as perseguições finais do filme — e também de *A Paixão de Cristo* (2004, Mel Gibson), que usou os Sassi como Jerusalém antiga pela atmosfera atemporal do lugar.
+
+---
+
+### Se perguntarem
+
+**"As pessoas ainda vivem aqui?"** — Sim, depois da recuperação pós-UNESCO, uma parte dos Sassi voltou a ser habitada, incluindo hotéis-gruta.
+
+**"Porque foram abandonados?"** — Condições sanitárias precárias levaram a um realojamento forçado nos anos 1950, não a um abandono voluntário.
+
+---
+
+### Para o grupo
+
+*"Andem devagar e olhem para cima e para baixo — o que parece ser uma rua pode ser o telhado da casa do vizinho de baixo. É essa sobreposição que torna Matera única."*
+
+---
+
+**Fontes:**
+- [Wikipédia PT — Sassi di Matera](https://pt.wikipedia.org/wiki/Sassi_di_Matera)
+- [Wikipedia EN — Sassi di Matera](https://en.wikipedia.org/wiki/Sassi_di_Matera)
+
+
+########## 40-d4.md ##########
+
+# Dia 4 | Alberobello (UNESCO) e Polignano a Mare
+
+**Data:** 7 Outubro 2026
+**Regime:** PA incluído
+**Dormida:** Bari
+
+[Google Maps](https://www.google.com/maps/place/Alberobello) · [Meteoblue](https://www.meteoblue.com/en/weather/week/alberobello_italy)
+
+---
+
+### O que é este dia
+
+O dia mais "cartão-postal" da viagem: manhã em **Alberobello**, entre as icónicas casas-trulli, tarde em **Polignano a Mare**, cidade construída literalmente sobre falésias sobre o Adriático.
+
+---
+
+### Contexto geográfico e cultural
+
+Alberobello (Vale d'Itria) é conhecida pela concentração única de **trulli** — construções cónicas em pedra seca, sem argamassa. Polignano fica na costa, a cerca de 40 minutos de Bari, e é conhecida pelas suas falésias, grutas marinhas visíveis a partir do centro histórico, e por ser a terra natal do cantor Domenico Modugno.
+
+---
+
+### Pontos de interesse
+
+- **Rione Monti, Alberobello** — mais de 1.000 trulli concentrados, zona classificada Património Mundial (ver ficheiro temático)
+- **Centro histórico de Polignano** — construído sobre as falésias, com a praia Lama Monachile visível do alto da ponte antiga
+- **Estátua de Domenico Modugno** — no passeio marítimo de Polignano (ver ficheiro temático)
+
+---
+
+### Fio narrativo do dia
+
+Depois da pedra escavada de Matera, este dia mostra duas soluções arquitetónicas opostas: os trulli, construção vernacular quase pré-industrial, e Polignano, onde a cidade se agarra literalmente ao penhasco. Ambos são exemplos de como a Puglia constrói em resposta à pedra que tem debaixo dos pés.
+
+---
+
+### Mensagem para o grupo
+
+> "Hoje é dia de duas fotos que já viram mil vezes em revistas — mas que só se percebem de verdade ao caminhar entre elas. Reparem na engenharia: nenhum trullo tem argamassa, e Polignano está pendurada sobre o vazio."
+
+---
+
+**Fontes:**
+- [Borealis — Puglia](https://borealis.travel/viagens/o-segredo-mais-bem-guardado-do-sul-de-italia-puglia/)
+- [Wikipédia PT — Alberobello](https://pt.wikipedia.org/wiki/Alberobello)
+- [Wikipédia PT — Polignano a Mare](https://pt.wikipedia.org/wiki/Polignano_a_Mare)
+
+
+########## 41-trulli-de-alberobello.md ##########
+
+# Etnográfico | Trulli de Alberobello
+D4 · Rione Monti, Alberobello
+[Google Maps](https://www.google.com/maps/place/Rione+Monti+Trulli) · [Meteoblue](https://www.meteoblue.com/en/weather/week/alberobello_italy)
+
+---
+
+### O que veem
+
+Casas de planta circular ou quadrada com telhado cónico em pedra calcária empilhada **a seco**, sem argamassa nem cimento. Muitos telhados têm símbolos pintados a cal — cruzes, luas, motivos zodiacais, pré-cristãos e cristãos misturados.
+
+---
+
+### Porquê importa
+
+Património Mundial da UNESCO desde **1996**. A técnica de construção sem argamassa é o cerne da sua importância histórica: existe a teoria (contestada mas persistente) de que os feudatários locais impunham esta técnica para que as casas pudessem ser **desmontadas rapidamente** e assim escapar aos impostos reais sobre construções permanentes — uma "casa efémera" fiscal, na Nápoles espanhola dos séculos XV–XVI.
+
+Alberobello tem mais de **1.000 trulli** concentrados no Rione Monti, a maior aglomeração de sempre — muitos hoje são lojas, casas de hóspedes ou residências ainda ocupadas.
+
+---
+
+### Se perguntarem
+
+**"Porque não têm argamassa?"** — A teoria mais aceite é fiscal: casas "desmontáveis" evitavam impostos sobre construção permanente sob o domínio espanhol.
+
+**"Ainda vivem lá pessoas?"** — Sim, uma parte do Rione Monti continua habitada, apesar da forte vocação turística actual.
+
+---
+
+### Para o grupo
+
+*"Cada pedra destas está encaixada sem cimento nenhum — é engenharia pura de equilíbrio, passada de geração em geração. Alguns destes telhados têm mais de 300 anos."*
+
+---
+
+**Fontes:**
+- [Wikipédia PT — Alberobello](https://pt.wikipedia.org/wiki/Alberobello)
+- UNESCO World Heritage List, ref. 787
+
+
+########## 42-polignano-a-mare.md ##########
+
+# Natural/cultural | Polignano a Mare
+D4 · Costa adriática, província de Bari
+[Google Maps](https://www.google.com/maps/place/Polignano+a+Mare) · [Meteoblue](https://www.meteoblue.com/en/weather/week/polignano_a_mare_italy)
+
+---
+
+### O que veem
+
+Um centro histórico construído em cima de falésias de calcário perfuradas por grutas marinhas visíveis a partir das varandas e miradouros da cidade. A praia **Lama Monachile**, encaixada numa pequena enseada entre duas pontes (uma romana, uma moderna), é a imagem mais fotografada de Polignano.
+
+---
+
+### Porquê importa
+
+Polignano é terra natal de **Domenico Modugno** (1928–1994), o cantor e compositor de **"Nel blu dipinto di blu"** (conhecida internacionalmente como "Volare"), vencedora do Festival de San Remo de 1958 e um dos maiores êxitos da música italiana no mundo. Há uma estátua de bronze do artista no passeio marítimo, de braços abertos, virada para o mar.
+
+A cidade é também conhecida por ser palco anual de uma etapa da **Red Bull Cliff Diving World Series** — saltos de grande altura a partir das próprias falésias urbanas.
+
+---
+
+### Se perguntarem
+
+**"Quem é o senhor da estátua?"** — Domenico Modugno, compositor de "Volare", nascido nesta cidade.
+
+**"Dá para nadar nas grutas?"** — Algumas grutas são acessíveis por passeio de barco/caiaque, fora do programa da viagem.
+
+---
+
+### Para o grupo
+
+*"Reparem como a cidade literalmente se agarra à falésia — não há separação entre pedra e construção. É um dos poucos sítios da Puglia onde a arquitetura e a geologia parecem a mesma coisa."*
+
+---
+
+**Fontes:**
+- [Wikipédia PT — Polignano a Mare](https://pt.wikipedia.org/wiki/Polignano_a_Mare)
+- [Modugno Statue — official site](https://www.modugnostatue.com/en)
+
+
+########## 50-d5.md ##########
+
+# Dia 5 | Despedida em Bari e regresso
+
+**Data:** 8 Outubro 2026
+**Regime:** PA incluído
+
+[Google Maps](https://www.google.com/maps/place/Bari) · [Meteoblue](https://www.meteoblue.com/en/weather/week/bari_italy)
+
+---
+
+### O que é este dia
+
+Fecho de círculo — última manhã livre em Bari antes do transfer para o aeroporto, à medida do horário de partida de cada participante.
+
+---
+
+### Contexto geográfico e cultural
+
+Não há paragens novas programadas — é tempo livre para o porto ou o centro histórico, revisitar a Bari Vecchia com outros olhos, comprar as últimas orecchiette ou uma garrafa de azeite para levar.
+
+---
+
+### Pontos de interesse
+
+- **Porto de Bari** — movimento de ferries para a Grécia e os Balcãs, boa imagem de despedida
+- **Bari Vecchia** — última oportunidade para o centro histórico com calma
+
+---
+
+### Fio narrativo do dia
+
+A viagem fecha onde começou — Bari continua a ser o único ponto fixo entre cinco dias de deslocação constante. É um bom momento para o grupo perceber que percorreu, em poucos dias, quase todas as respostas possíveis à mesma pergunta: pedra, mar e engenho.
+
+---
+
+### Mensagem para o grupo
+
+> "Última manhã — aproveitem para fechar as malas com um azeite bom lá dentro. Obrigado por terem caminhado esta Puglia comigo, do mar de Trani à pedra de Matera."
+
+---
+
+**Fontes:**
+- [Borealis — Puglia](https://borealis.travel/viagens/o-segredo-mais-bem-guardado-do-sul-de-italia-puglia/)
