@@ -7,7 +7,7 @@ Ficha técnica por dia. Viagem de touring cultural, dificuldade geral **1/5 (Bai
 ### Dia 1 — 4 Outubro — Chegada e Bari Vecchia
 - Partida: chegada individual ao Aeroporto de Bari-Palese (BRI), transfer incluído
 - Percurso a pé: centro histórico de Bari Vecchia, curto e plano
-- Dormida: Bari
+- Dormida: Bari (Hotel Boston)
 
 ---
 
@@ -16,15 +16,15 @@ Ficha técnica por dia. Viagem de touring cultural, dificuldade geral **1/5 (Bai
 - Giovinazzo: paragem de degustação de azeite
 - Trani: visita à Catedral e ao centro histórico junto ao mar
 - Refeições incluídas: pequeno-almoço
-- Dormida: Trani
+- Dormida: Trani (Ibis Styles)
 
 ---
 
-### Dia 3 — 6 Outubro — Matera
-- Deslocamento em autocarro dedicado (Trani → Matera → Bari)
+### Dia 3 — 6 Outubro — Altamura e Matera
+- Deslocamento em autocarro dedicado (Trani → Altamura → Matera → Altamura)
 - Percurso a pé nos Sassi (Caveoso e Barisano) — ruas de pedra, escadarias, sem sombra significativa
 - Refeições incluídas: pequeno-almoço
-- Dormida: Bari
+- Dormida: Altamura (Hotel San Nicola)
 
 ---
 
@@ -33,7 +33,7 @@ Ficha técnica por dia. Viagem de touring cultural, dificuldade geral **1/5 (Bai
 - Alberobello: percurso a pé pelo Rione Monti (zona classificada dos trulli)
 - Polignano a Mare: percurso a pé pelo centro histórico sobre as falésias
 - Refeições incluídas: pequeno-almoço
-- Dormida: Bari
+- Dormida: Bari (Hotel Majesty)
 
 ---
 
