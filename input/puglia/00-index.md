@@ -11,6 +11,7 @@
 | `03-azeite-e-xylella.md` | Azeite, tradição e a crise da Xylella | ✅ |
 | `04-italiano-para-guias.md` | Italiano essencial: fonética e frases | ✅ |
 | `05-curiosidades.md` | Curiosidades soltas do Sul | ✅ |
+| `06-media.md` | Média: imagens de referência | ✅ |
 | `10-d1.md` | Dia 1 — Chegada a Bari | ✅ |
 | `11-basilica-sao-nicolau.md` | Basílica de São Nicolau | ✅ |
 | `20-d2.md` | Dia 2 — Giovinazzo, Trani e a rota do azeite | ✅ |
@@ -25,4 +26,4 @@
 | `42-polignano-a-mare.md` | Polignano a Mare e Modugno | ✅ |
 | `50-d5.md` | Dia 5 — Regresso: Bari-Porto | ✅ |
 
-**Pendente:** média e altimetria. Itens marcados `[confirmar]` nos dias dependem de respostas ainda por receber (pizzaria D1, Santa Fame, hotel San Nicola, guia de Matera) e de células amarelas da folha de programa por terminar.
+**Pendente:** altimetria. Itens marcados `[confirmar]` nos dias dependem de respostas ainda por receber (pizzaria D1, Santa Fame, hotel San Nicola, guia de Matera) e de células amarelas da folha de programa por terminar.
