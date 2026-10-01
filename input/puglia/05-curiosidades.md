@@ -33,6 +33,16 @@ Muito celebradas no Sul, com procissões e fogos. A de São Pedro e São Paulo (
 
 ---
 
+### Cinema na Puglia e em Matera
+
+- **A Garota da Pistola** (Monicelli, 1968): passa-se na Sicília, mas foi filmado em Polignano a Mare, Conversano e Alta Murgia. Nomeado para o Óscar de filme estrangeiro.
+- **Quando Explode a Vingança** (Sergio Leone, 1971): cenas em Polignano a Mare e Alberobello [verificar, fonte única de viagens].
+- **A Vida pela Frente** (Netflix, com Sophia Loren) e a série *Le indagini di Lolita Lobosco*: filmadas em Bari.
+- **Matera faz de Jerusalém** desde os anos 1960: *O Evangelho Segundo São Mateus* (Pasolini, 1964), *A Paixão de Cristo* (Mel Gibson, 2004), *Ben-Hur* (2016). Também *007 – Sem Tempo para Morrer* (2021). *Wonder Woman* e *The Nativity Story* aparecem só numa fonte cada [verificar].
+- Lista da Puglia incompleta: a categoria "Films shot in Apulia" da Wikipédia tem 21 páginas e não foi lida.
+
+---
+
 ### Outras notas
 
 - Puglia e Basilicata estão entre as regiões menos povoadas e menos visitadas de Itália.
