@@ -18,7 +18,7 @@ Habitados desde o Paleolítico, os Sassi representam um dos exemplos mais antigo
 
 ### Cinema
 
-Matera foi cenário de **007 – Skyfall** (2012) — as perseguições finais do filme — e também de *A Paixão de Cristo* (2004, Mel Gibson), que usou os Sassi como Jerusalém antiga pela atmosfera atemporal do lugar.
+Matera foi cenário de **007 – Sem Tempo para Morrer** (*No Time to Die*, 2021), com a perseguição pelas ruas e pela estrada dos Sassi, e de *A Paixão de Cristo* (2004, Mel Gibson), que usou os Sassi como Jerusalém antiga. Já fizera de Jerusalém em *O Evangelho Segundo São Mateus* (Pasolini, 1964) e fez de novo em *Ben-Hur* (2016). Também aparece em *Wonder Woman* [verificar lista completa].
 
 ---
 
