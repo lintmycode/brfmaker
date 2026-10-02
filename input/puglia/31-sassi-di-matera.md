@@ -12,7 +12,7 @@ Casas escavadas directamente na rocha calcária local — chamada "tufo" (não �
 
 ### Porquê importa
 
-Habitados desde o Paleolítico, os Sassi representam um dos exemplos mais antigos e contínuos de habitação humana na Europa. Nos anos 1950, as condições de vida (sem água corrente, sem saneamento) levaram o governo italiano a realojar à força cerca de **15.000 pessoas**, esvaziando os Sassi por décadas. A recuperação começou nos anos 80–90 e culminou na inscrição UNESCO de 1993 — hoje muitas das antigas casas-gruta são hotéis, restaurantes e residências restauradas.
+Vestígios humanos desde o Paleolítico (c. 10.000 a.C.) e povoados estáveis desde o Neolítico (c. 7.000 a.C.): habitada há mais de **9.000 anos** [verificar datas]. Nos anos 1950, as condições de vida (sem água corrente, sem saneamento) levaram o governo italiano a realojar à força cerca de **15.000 pessoas** [verificar número], esvaziando os Sassi por cerca de 20 a 30 anos. A lei de 1952 mandou realojar; nos anos 70 estavam quase desabitados, com algumas pessoas a resistir; a lei de 1986 financiou a recuperação e o regresso foi gradual nos anos 80. A inscrição UNESCO é de 1993 — hoje muitas das antigas casas-gruta são hotéis, restaurantes e residências restauradas.
 
 ---
 
@@ -25,6 +25,8 @@ Matera foi cenário de **007 – Sem Tempo para Morrer** (*No Time to Die*, 2021
 ### Se perguntarem
 
 **"As pessoas ainda vivem aqui?"** — Sim, depois da recuperação pós-UNESCO, uma parte dos Sassi voltou a ser habitada, incluindo hotéis-gruta.
+
+**"Isto é habitado sem interrupção há 9.000 anos?"** — Dizer "habitada há mais de 9.000 anos, com abandono forçado nos anos 50/60 e regresso a partir dos anos 80". Evitar "continuamente habitada". Datas de memória [verificar].
 
 **"Porque foram abandonados?"** — Condições sanitárias precárias levaram a um realojamento forçado nos anos 1950, não a um abandono voluntário.
 
