@@ -66,6 +66,16 @@ Cuidado com falsos amigos: muita palavra "parece" português mas engana — *bur
 
 ---
 
+### Ordem do menu
+
+Antipasto (entrada fria ou leve, para partilhar: enchidos, queijos, legumes, bruschette; na Puglia, burrata, focaccia, marisco), depois primo (pasta ou arroz; na Puglia, orecchiette com cime di rapa), secondo (carne ou peixe), contorno (acompanhamento) e dolce.
+
+Ninguém é obrigado a pedir tudo: é normal só primo, ou antipasto e secondo. Plural de antipasto é *antipasti* ("antipasta" não existe).
+
+Trattoria e osteria são restaurantes simples e tradicionais (a osteria é mais rústica); tavola calda é comida já feita ao balcão. O *coperto* (1 a 3 EUR por pessoa, pão e mesa) é normal: avisar o grupo.
+
+---
+
 ### Números 1–10
 
 uno, due, tre, quattro, cinque, sei, sette, otto, nove, dieci
