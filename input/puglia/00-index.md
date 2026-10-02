@@ -26,4 +26,4 @@
 | `42-polignano-a-mare.md` | Polignano a Mare e Modugno | ✅ |
 | `50-d5.md` | Dia 5 — Regresso: Bari-Porto | ✅ |
 
-**Pendente:** altimetria. Itens marcados `[confirmar]` nos dias dependem de respostas ainda por receber (pizzaria D1, Santa Fame, hotel San Nicola, guia de Matera) e de células amarelas da folha de programa por terminar.
+**Pendente:** altimetria. Itens marcados `[confirmar]` nos dias dependem de respostas ainda por receber (Santa Fame, hotel San Nicola, guia de Matera) e de células amarelas da folha de programa por terminar.

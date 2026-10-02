@@ -53,7 +53,7 @@ Voos não incluídos — cada participante trata da sua viagem até Bari (aeropo
 
 ### O fio da viagem
 
-Bari abre e fecha a viagem — é o ponto de chegada, o ponto de partida, e o contraponto urbano a tudo o resto. No meio, a Puglia mostra-se em camadas: o azeite e o mar em Giovinazzo e Trani (D2), a pedra pré-histórica em Matera (D3), a arquitetura vernacular em Alberobello e o teatro natural de Polignano (D4).
+Bari abre e fecha a viagem — é o ponto de chegada, o ponto de partida, e o contraponto urbano a tudo o resto. No meio, a Puglia mostra-se em camadas: o azeite e o mar em Giovinazzo e Trani (D2), a pedra pré-histórica em Matera (D3), a arquitetura vernácula em Alberobello e o teatro natural de Polignano (D4).
 
 > "Cada paragem desta viagem é uma resposta diferente à mesma pergunta: como se vive numa terra sem grande relevo, sem grandes rios, mas com pedra calcária a perder de vista? A resposta muda a cada dia — e é sempre engenhosa."
 
