@@ -26,7 +26,7 @@ Regulamento de 2015 (PDF do ministério) [confirmar se houve alterações].
 - **Estacionar:** proibido parar fora de parques de estacionamento (públicos ou privados) e das bermas. Nunca em erva ou terra de cultivo.
 - **A pé:** fora dos percursos e áreas de paragem do Parque, o regulamento pede comunicação prévia ao CTA/CFS (guarda florestal) [confirmar se este trilho é percurso oficial].
 - **Grupos:** limite de 25 pessoas.
-- **Contacto do Parque:** info@parcoaltamurgia.it, +39 080 326 2268.
+- **Contacto do Parque:** info@parcoaltamurgia.it, +390803262268.
 
 ---
 
