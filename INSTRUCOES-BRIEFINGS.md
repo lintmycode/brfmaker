@@ -303,6 +303,7 @@ Exemplos passados:
 - Fontes com link sempre que possível — credibilidade do guia depende disso
 - Nunca inventar dados — se incerto, assinalar com `[verificar]`
 - **Sem emojis, em lado nenhum do brief** — nem nos títulos, nem no corpo, nem nas linhas de links (Maps/Meteoblue). Texto e markdown simples só.
+- **Telefones sempre com indicativo e algarismos seguidos, sem espaços, prontos a copiar** — `+390803105199`, não `080 3105199` nem `+39 080 310 5199`. Vale para todos os briefs, de todas as viagens (regra do Nuno, 2026-10-03).
 
 ---
 
