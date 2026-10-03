@@ -6,7 +6,7 @@ D3 · Calendano, Alta Murgia · 3 km · Dif. baixo (1/5) · Alt. máx. 377 m · 
 
 ### O percurso
 
-Caminhada curta no planalto da Alta Murgia, a partir de Calendano: cerca de 3 km (1,85 mi), 50 m de subida, entre 340 e 377 m de altitude. Passa pela **Grave della Scoparella** (ao km 1,5) e pelo **Jazzo del Demonio** (ao km 2,2). Fonte: Wikiloc 207289658 [confirmar o ponto de partida e onde estacionar; o Wikiloc não o diz].
+Caminhada curta no planalto da Alta Murgia, a partir de Calendano: cerca de 3 km (1,85 mi), 50 m de subida, entre 340 e 377 m de altitude. Passa pela **Grave della Scoparella** (ao km 1,5) e pelo **Jazzo del Demonio** (ao km 2,2). Fonte: Wikiloc 207289658 Há sítio para estacionar e fazer os 3 km (confirmado pelo Nuno, 03/10). [confirmar coordenadas do ponto de paragem]
 
 ---
 
@@ -24,7 +24,7 @@ Regulamento de 2015 (PDF do ministério) [confirmar se houve alterações].
 
 - **Circular:** nas zonas A e B só em estrada ordinária (estatal, provincial, comunal, interpoderale); na C também em caminhos rurais; na D em toda a rede existente. O Parque pode limitar ou fechar estradas por despacho fundamentado.
 - **Estacionar:** proibido parar fora de parques de estacionamento (públicos ou privados) e das bermas. Nunca em erva ou terra de cultivo.
-- **A pé:** fora dos percursos e áreas de paragem do Parque, o regulamento pede comunicação prévia ao CTA/CFS (guarda florestal) [confirmar se este trilho é percurso oficial e em que zona fica].
+- **A pé:** fora dos percursos e áreas de paragem do Parque, o regulamento pede comunicação prévia ao CTA/CFS (guarda florestal) [confirmar se este trilho é percurso oficial].
 - **Grupos:** limite de 25 pessoas.
 - **Contacto do Parque:** info@parcoaltamurgia.it, +39 080 326 2268.
 
