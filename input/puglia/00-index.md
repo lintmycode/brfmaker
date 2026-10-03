@@ -20,7 +20,8 @@
 | `23-trani-percurso.md` | Trani, porto e Giudecca | ✅ |
 | `30-d3.md` | Dia 3 — Altamura e Matera, a cidade de pedra | ✅ |
 | `31-sassi-di-matera.md` | Sassi di Matera | ✅ |
-| `32-altamura.md` | Altamura: pão, museus e o Uomo di Altamura | ✅ |
+| `32-altamura.md` | Altamura: pão, museus, claustri e o Uomo di Altamura | ✅ |
+| `33-grave-della-scoparella.md` | Trilho Alta Murgia: Grave della Scoparella e Jazzo | ✅ |
 | `40-d4.md` | Dia 4 — Alberobello, praia e Polignano a Mare | ✅ |
 | `41-trulli-de-alberobello.md` | Trulli de Alberobello | ✅ |
 | `42-polignano-a-mare.md` | Polignano a Mare e Modugno | ✅ |

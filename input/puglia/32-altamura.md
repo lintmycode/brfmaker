@@ -29,9 +29,24 @@ Esqueleto de Neandertal quase completo, encontrado em 1993 na gruta de Lamalunga
 
 ---
 
+### Percurso dos claustri
+
+Passeio circular a pé pelo centro histórico: cerca de 2,35 km, 7 m de desnível, fácil, cerca de 46 min em movimento (57 no total). Fonte: Wikiloc 220100165 [confirmar factos na Pro Loco].
+
+**O que é um claustro.** Pátio fechado, sem saída, rodeado de casas e com uma única entrada para a rua (do latim *claustrum*; "gnostre" em dialeto). Nasceram de forma espontânea na Idade Média. Há mais de oitenta no centro histórico. Arcos de pedra, varandas salientes, janelas emolduradas a tufo e, ao centro, uma cisterna comum de água da chuva. Serviam de vizinhança e de defesa. Nas portas há máscaras esculpidas (*facciòmn*) para afastar o mau olhar.
+
+**Paragens, por ordem:** Cicirelli, Pascale, Oreste, Marrullo, Patella, Giudecca, Ricchetti.
+
+**Giudecca (o mais interessante).** Na Via S. Lucia, no bairro judeu medieval. Planta em forma de menorá, vestígio da comunidade judaica presente desde a época aragonesa. À entrada, uma pequena cariátide a que chamam "Sinagoga", provavelmente apotropaica. É dos mais antigos e está aberto ao público, mas há comentários a dizer que está degradado [confirmar estado].
+
+**Cuidados.** Zonas residenciais habitadas: falar baixo, não entrar nas casas. A descrição do Wikiloc parece escrita por IA, por isso os factos finos precisam de confirmação. Influências normandas e angevinas referidas na descrição [confirmar].
+
+---
+
 ### Se perguntarem
 
 **"Posso ver a gruta?"** — Não, está fechada. O museu mostra um vídeo 3D e uma reconstrução.
+**"O que é um claustro?"** — Pátio fechado com uma só entrada, rodeado de casas, com cisterna ao centro. Nada a ver com claustro de convento.
 **"Quem o encontrou?"** — Um grupo de espeleólogos locais, em 1993.
 
 ---
