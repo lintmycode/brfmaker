@@ -92,10 +92,26 @@ uno, due, tre, quattro, cinque, sei, sette, otto, nove, dieci
 
 ---
 
+### Palavrões pugliesi
+
+Dialeto de Bari, grafia aproximada. Para rir no grupo, não para usar com estranhos.
+
+- **Murt ca tin**: "maldita a estirpe que te gerou". Também serve de intercalar. A versão pesadíssima é *stramilamurt ca tin*.
+- **Cagammèrd**: cagão, inepto.
+- **Faccje d pizz**: "cara de pila", às vezes afetuoso. *Faccje d ciol* é sempre ofensivo.
+- **Calandron / calascion**: tontinho / alto e burro. **Capacchion**: cabeçudo, teimoso.
+- **Chin d serchje**: cabeça cheia de porcaria. **Lurd**: sujo.
+- **Muèzzecalacirt**: "o que morde lagartixas", esperto e pouco de fiar.
+- **'Mbamacchion**: bufo, normalmente dito com carinho. **Vaiass**: brutamontes.
+- **Malanovedigghiavè**: "que recebas uma má notícia", praga leve.
+- **Mannaggia** e **porca miseria**: suaves e muito usados em toda a Puglia.
+
+---
+
 ### Dicas de campo
 
 Os termos que mais falham em grupo: **grazie mille** (não "grazie mila"), **gnocchi** ("nhôqui", não "guinóqui"), **bruschetta** (o `sch` é "sk", não "sh" — bruskêta), **orecchiette** ("orekiête", o `cchi` é "k").
 
 ---
 
-**Fontes:** compilação de frases e gramática essencial de italiano para uso de guia, revista para o grupo Puglia (TURPUG041026).
+**Fontes:** scuolissima.com e eccellenzemeridionali.it (palavrões); compilação de frases e gramática essencial de italiano para uso de guia, revista para o grupo Puglia (TURPUG041026).

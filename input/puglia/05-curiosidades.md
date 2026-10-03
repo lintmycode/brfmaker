@@ -43,6 +43,14 @@ Muito celebradas no Sul, com procissões e fogos. A de São Pedro e São Paulo (
 
 ---
 
+### Apúlia, a de Esposende
+
+Há uma Apúlia no Minho, concelho de Esposende. A tradição local diz que os romanos lhe deram o nome por semelhança com a Apúlia (Puglia) italiana, como porto e escala marítima. Nas fontes medievais aparece como Pulha, Pulla ou Puglia. Sem prova: os estudiosos discordam sobre a origem do nome.
+
+A semelhança visível é só a costa. Lá há sargaceiros e masseiras, cá oliveiras e azeite.
+
+---
+
 ### Outras notas
 
 - Puglia e Basilicata estão entre as regiões menos povoadas e menos visitadas de Itália.
@@ -59,4 +67,5 @@ Muito celebradas no Sul, com procissões e fogos. A de São Pedro e São Paulo (
 ---
 
 **Fontes:**
+- [Município de Esposende, Junta de Freguesia de Apúlia](https://www.municipio.esposende.pt/pages/764)
 - Notas pessoais do guia (puglia-notas), sem fonte primária citada. Verificar antes de usar em voz alta.
