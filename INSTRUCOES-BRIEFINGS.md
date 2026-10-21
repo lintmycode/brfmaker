@@ -159,6 +159,7 @@ Estrutura fixa:
 2. **O que é esta viagem** — síntese da viagem e gestão de expectativas (o que é e o que não é)
 3. **Regras de segurança** — trilho, emergências, o que esperar
 4. **Regras de proteção ambiental** — com portaria/lei relevante do país/região
+   - **Sempre** citar a **Portaria 651/2009** ("Na montanha, deixamos pegadas e levamos recordações."), em todas as viagens, e acrescentar a lei local se existir. Se parte do percurso for em área protegida de outro país, dizê-lo e indicar se há autorização (regra do Nuno, 2026-10-21).
 5. **O fio da viagem** — narrativa central, pitch de saída
 
 Tom: caloroso mas claro. A secção da equipa é sempre um placeholder — o guia apresenta-se ao vivo.
