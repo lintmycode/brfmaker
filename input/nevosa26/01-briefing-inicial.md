@@ -45,7 +45,9 @@ O que não é: um trilho sinalizado, com cafés pelo caminho. O almoço é volan
 ---
 ### 4. Regras de proteção ambiental
 
-Atravessamos o Parque Nacional da Peneda-Gerês e, do lado espanhol, o Parque Natural Baixa Limia–Serra do Xurés. Aplica-se o regime de proteção de ambos [confirmar diploma aplicável: plano de ordenamento do PNPG e regulamento do Xurés].
+Atravessamos património natural que merece o maior respeito: o Parque Nacional da Peneda-Gerês e, do lado espanhol, o Parque Natural Baixa Limia–Serra do Xurés, também zona protegida. A atividade em Espanha tem autorização. De acordo com a **Portaria 651/2009**:
+
+> "Na montanha, deixamos pegadas e levamos recordações."
 
 Na prática:
 - Nada de lixo: cascas de fruta e lenços de papel incluídos, tudo regressa na mochila.
