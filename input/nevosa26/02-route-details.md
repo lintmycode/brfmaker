@@ -4,7 +4,7 @@
 
 | Partida | Distância | Dificuldade | Altitude máx. | Ascendente | Duração |
 |---|---|---|---|---|---|
-| Ponte de Lima 07:30; trilho em A Regada (Lobios) | 16 km | 5/5 — alto | 1546 m | 800 m | 8 h (10:00 às 18:00, Espanha) |
+| Ponte de Lima 07:15; trilho em A Regada (Lobios) | 16 km | 5/5 — alto | 1546 m | 800 m | 8 h (10:00 às 18:00, Espanha) |
 
 ### Terreno
 
@@ -34,7 +34,7 @@ Subida pelo vale do rio Lobios, a partir de A Regada, por antigo trilho das cart
 
 ### Ponto de encontro e horários
 
-Ribeira, Ponte de Lima, 07:30. Trilho 10:00 a 18:00 (Espanha), regresso 18:30 (Portugal). Pôr do sol 19:44 (Espanha). Transporte opcional (+10 EUR).
+Ribeira, Ponte de Lima, 07:15. Trilho 10:00 a 18:00 (Espanha), regresso 18:30 (Portugal). Pôr do sol 19:44 (Espanha). Transporte opcional (+10 EUR).
 
 ### Nota de fontes
 

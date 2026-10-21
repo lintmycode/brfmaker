@@ -29,7 +29,7 @@ O que não é: um trilho sinalizado, com cafés pelo caminho. O almoço é volan
 **Fronteira, horários e meteo:**
 - Documento de identificação válido obrigatório (a rota passa por Espanha e cruza a raia).
 - Pôr do sol às 19:44 (hora de Espanha). Trilho das 10:00 às 18:00 (Espanha), regresso às 18:30 (Portugal).
-- Ponto de encontro: Ribeira, Ponte de Lima, 07:30. Todos no mesmo transporte.
+- Ponto de encontro: Ribeira, Ponte de Lima, 07:15. Todos no mesmo transporte.
 - Meteorologia prevista: sol encoberto, possibilidade de chuva ligeira, sem vento significativo, máximas de 8 ºC.
 
 **Equipamento recomendado:**
