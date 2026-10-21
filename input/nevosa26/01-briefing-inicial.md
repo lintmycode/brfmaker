@@ -6,7 +6,7 @@
 ---
 ### 2. O que é esta viagem
 
-Um dia inteiro de montanha a sério: cerca de 16 km e 800 m de desnível, 10 horas previstas, dificuldade 5/5. O Pico da Nevosa (1546 m) é a mais remota das montanhas dos 13 Cumes, no coração da Serra do Gerês, e o segundo ponto mais alto de Portugal continental.
+Um dia inteiro de montanha a sério: cerca de 16 km e 800 m de desnível, 8 horas de trilho (10:00 às 18:00, hora de Espanha), dificuldade 5/5. O Pico da Nevosa (1546 m) é a mais remota das montanhas dos 13 Cumes, no coração da Serra do Gerês, e o segundo ponto mais alto de Portugal continental.
 
 A rota arranca em Espanha, perto de Lobios, e sobe junto ao rio com o mesmo nome até à fronteira. Aí encontra-se a via de acesso ao Pico. Não é um passeio: é montanha pura, com troços sem trilho evidente, trepadas curtas em granito (grau I UIAA) e meteorologia que muda depressa.
 
@@ -26,9 +26,21 @@ O que não é: um trilho sinalizado, com cafés pelo caminho. O almoço é volan
 - Mal-estar, lesão ou dúvida: avisar de imediato o elemento da equipa mais próximo.
 - Quem se perder do grupo pára, fica visível e espera. Nunca tentar reorientar-se sozinho.
 
-**Fronteira e horários:**
+**Fronteira, horários e meteo:**
 - Documento de identificação válido obrigatório (a rota passa por Espanha e cruza a raia).
-- Dia longo em final de outubro: o ritmo é gerido para chegar de dia. Pôr do sol por volta das 18:40 [verificar].
+- Pôr do sol às 19:44 (hora de Espanha). Trilho das 10:00 às 18:00 (Espanha), regresso às 18:30 (Portugal).
+- Ponto de encontro: Ribeira, Ponte de Lima, 07:30. Todos no mesmo transporte.
+- Meteorologia prevista: sol encoberto, possibilidade de chuva ligeira, sem vento significativo, máximas de 8 ºC.
+
+**Equipamento recomendado:**
+- Botas e calças (há secção de mato alto e denso)
+- Corta-vento impermeável
+- Frontal
+- Proteção solar
+- Gorro ou chapéu
+- Bastões
+- Almoço leve e energético; snacks à mão
+- 1,5 L de água: não há nascentes na rota
 
 ---
 ### 4. Regras de proteção ambiental

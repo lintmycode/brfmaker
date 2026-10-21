@@ -1,6 +1,6 @@
 # Pico da Nevosa | O ponto mais alto do Gerês
 D1 · 16 km · Dif. alto · Alt. máx. 1546 m · Asc. 800 m
-[Google Maps](https://www.google.com/maps/search/?api=1&query=Pico+da+Nevosa+Geres) · [Meteoblue](https://www.meteoblue.com/en/weather/week/lobios_spain)
+[Google Maps](https://www.google.com/maps/search/?api=1&query=Pico+da+Nevosa+Geres) · [Meteoblue](https://www.meteoblue.com/pt/tempo/semana/serra-do-ger%C3%AAs---pico-da-nevosa_portugal_8504690)
 
 ### O que veem
 Cerca de 1546 m. Ponto mais alto da Serra do Gerês e segundo mais elevado de Portugal continental, na fronteira com Espanha, dentro do PNPG. Do cume vê-se o complexo montanhoso que se estende entre o Minho e a Galiza. Não há picos mais altos por perto: a vista é livre.

@@ -1,6 +1,6 @@
 # Cabra-montês | Capra pyrenaica
 D1 · Gerês-Xurés
-[Google Maps](https://www.google.com/maps/search/?api=1&query=Serra+do+Geres) · [Meteoblue](https://www.meteoblue.com/en/weather/week/lobios_spain)
+[Google Maps](https://www.google.com/maps/search/?api=1&query=Serra+do+Geres) · [Meteoblue](https://www.meteoblue.com/pt/tempo/semana/serra-do-ger%C3%AAs---pico-da-nevosa_portugal_8504690)
 
 ### O que é
 Caprino silvestre nativo da Península Ibérica (Capra pyrenaica), também chamado íbex-ibérico. Um dos grandes herbívoros das zonas montanhosas.

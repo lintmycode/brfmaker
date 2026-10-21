@@ -4,7 +4,7 @@
 
 | Dia | Distância | Desnível | Altitude máx. | Tempo estimado |
 |---|---|---|---|---|
-| D1 — A Regada, rio Lobios, Pico da Nevosa | 16 km | +800 m | 1546 m | 10 h |
+| D1 — A Regada, rio Lobios, Pico da Nevosa | 16 km | +800 m | 1546 m | 8 h |
 
 Referência do track Wikiloc: 19,03 km, +886 m / -886 m, cota mín. 699 m, máx. 1.550 m, 5h42 em movimento (grupo pequeno e rápido, 5 paragens).
 
@@ -21,9 +21,9 @@ Referência do track Wikiloc: 19,03 km, +886 m / -886 m, cota mín. 699 m, máx.
 
 ---
 ### Metabolismo e energia
-Dia de 10 horas, sem pontos de reabastecimento. Prever 2 a 3 L de água por pessoa [confirmar fontes no percurso: o track marca uma fonte no regresso]. Almoço volante: algo que se coma depressa e não congele de frio. Snacks pelo caminho, de hora a hora.
+Dia de 8 horas, sem pontos de reabastecimento. Água: 1,5 L por pessoa, não há nascentes na rota. Almoço volante: algo que se coma depressa e não congele de frio. Snacks pelo caminho, de hora a hora.
 
-Ritmo crítico: chegar ao Pico a meio do dia, com margem para a descida de dia. Pôr do sol por volta das 18:40 [verificar].
+Ritmo crítico: chegar ao Pico a meio do dia, com margem para a descida de dia. Pôr do sol às 19:44 (Espanha); trilho termina às 18:00.
 
 ---
 ### Estratégia de grupo
@@ -34,7 +34,7 @@ Ritmo constante e baixo na subida. Duas paragens longas e algumas curtas, como n
 - Rocha granítica molhada: escorregadia.
 - Nevoeiro e vento no topo: frequentes.
 - Cansaço acumulado na descida é a causa mais comum de entorses.
-- Fim de outubro: dias curtos, frio no topo.
+- Máximas de 8 ºC, encoberto, chuva ligeira possível: camadas e corta-vento impermeável. Secção de mato alto e denso: calças.
 
 ---
 ### Pitch

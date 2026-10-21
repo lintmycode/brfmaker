@@ -4,7 +4,7 @@
 
 | Partida | Distância | Dificuldade | Altitude máx. | Ascendente | Duração |
 |---|---|---|---|---|---|
-| A Regada, Lobios (Ourense) [ponto de encontro a definir] | 16 km | 5/5 — alto | 1546 m | 800 m | 10 h (com paragens) |
+| Ponte de Lima 07:30; trilho em A Regada (Lobios) | 16 km | 5/5 — alto | 1546 m | 800 m | 8 h (10:00 às 18:00, Espanha) |
 
 ### Terreno
 
@@ -32,13 +32,13 @@ Subida pelo vale do rio Lobios, a partir de A Regada, por antigo trilho das cart
 | Curral da Abelleira | 14,6 | — |
 | Chao das Casas | 15,8 | — |
 
-### Ponto de encontro
+### Ponto de encontro e horários
 
-A definir. As horas de embarque são comunicadas por e-mail ao grupo antes da viagem. Transporte opcional (+10 EUR).
+Ribeira, Ponte de Lima, 07:30. Trilho 10:00 a 18:00 (Espanha), regresso 18:30 (Portugal). Pôr do sol 19:44 (Espanha). Transporte opcional (+10 EUR).
 
 ### Nota de fontes
 
-Distância, desnível e duração são os da Borealis (16 km, 800 m, 10 h). O track Wikiloc que serve de base ao GPX tem 19,03 km, +886 m e 5h42 em movimento, porque inclui o Alto da Nevosa e o Penedo dos Bicos. Usar os valores Borealis nas comunicações ao grupo.
+Distância e desnível são os da Borealis (16 km, 800 m); a duração (8 h) é a do guia, a Borealis indica 10 h. O track Wikiloc que serve de base ao GPX tem 19,03 km, +886 m e 5h42 em movimento, porque inclui o Alto da Nevosa e o Penedo dos Bicos. Usar os valores Borealis nas comunicações ao grupo.
 
 ---
 **Fontes:**

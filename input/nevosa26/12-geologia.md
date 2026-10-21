@@ -1,6 +1,6 @@
 # Geologia | O granito do Gerês
 D1 · Serra do Gerês, PNPG
-[Google Maps](https://www.google.com/maps/search/?api=1&query=Serra+do+Geres+Rocalva) · [Meteoblue](https://www.meteoblue.com/en/weather/week/lobios_spain)
+[Google Maps](https://www.google.com/maps/search/?api=1&query=Serra+do+Geres+Rocalva) · [Meteoblue](https://www.meteoblue.com/pt/tempo/semana/serra-do-ger%C3%AAs---pico-da-nevosa_portugal_8504690)
 
 ### O que veem
 Granito, em grandes massas: cristas, paredes e blocos que definem o parque. O geossítio da Rocalva descreve estas estruturas como resultado da evolução do maciço granítico ao longo de milhões de anos, com fraturação, meteorização e destacamento de blocos.
