@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Briefing MULHACEN26">
+  <title>00 · Índice | Mini-briefings Serra Nevada — A conquista do Mulhacén</title>
+  <link rel="apple-touch-icon" href="https://borealis.travel/app/uploads/2025/12/serra-da-nevada-1-683x1024.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+:root {
+  color-scheme: light dark;
+  --bg:      #f2f5ee;
+  --surface: #e4ede0;
+  --border:  #c0d0b8;
+  --text:    #1c2e1c;
+  --text2:   #4e6650;
+  --accent:  #2d6a2d;
+  --link:    #6a3d8a;
+  --code-bg: #dce8d4;
+  --bar-bg:  rgba(228, 237, 224, 0.75);
+  --bar-h:   calc(52px + env(safe-area-inset-top, 0px));
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --bg:      #0c150c;
+    --surface: #142014;
+    --border:  #2a3e2a;
+    --text:    #c8dcc8;
+    --text2:   #7a9c7a;
+    --accent:  #6abf6a;
+    --link:    #b07ad0;
+    --code-bg: #142014;
+    --bar-bg:  rgba(20, 32, 20, 0.75);
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg:      #0c150c;
+  --surface: #142014;
+  --border:  #2a3e2a;
+  --text:    #c8dcc8;
+  --text2:   #7a9c7a;
+  --accent:  #6abf6a;
+  --link:    #b07ad0;
+  --code-bg: #142014;
+  --bar-bg:  rgba(20, 32, 20, 0.75);
+}
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg:      #f2f5ee;
+  --surface: #e4ede0;
+  --border:  #c0d0b8;
+  --text:    #1c2e1c;
+  --text2:   #4e6650;
+  --accent:  #2d6a2d;
+  --link:    #6a3d8a;
+  --code-bg: #dce8d4;
+  --bar-bg:  rgba(228, 237, 224, 0.75);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; overflow: hidden; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 300;
+  font-size: clamp(16px, 4vw, 19px);
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* ── status bar ── */
+#bar {
+  position: fixed; inset: 0 0 auto 0;
+  height: var(--bar-h);
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-left:  max(6px, env(safe-area-inset-left, 0px));
+  padding-right: max(6px, env(safe-area-inset-right, 0px));
+  display: flex; align-items: center; gap: 2px;
+  background: var(--bar-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border-bottom: 1px solid var(--border);
+  z-index: 100;
+}
+#bar button {
+  flex-shrink: 0;
+  -webkit-appearance: none; appearance: none;
+  background: transparent; border: none;
+  color: var(--text);
+  font-size: 13px; line-height: 1;
+  min-width: 44px; height: 40px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 8px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+#bar button:active { background: var(--border); }
+#bar-title {
+  flex: 1; gap: 8px;
+  text-align: left; justify-content: flex-start !important; padding: 0;
+  -webkit-appearance: none; appearance: none;
+  background: transparent; border: none;
+  height: 44px; border-radius: 8px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+#bar-title:active { background: var(--border); }
+#bar-title-text {
+  overflow: hidden;
+  text-overflow: ellipsis; white-space: nowrap;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 400;
+  color: var(--text);
+}
+#bar-title-icon {
+  display: flex; align-items: center; justify-content: center;
+  width: 40px; flex-shrink: 0;
+}
+/* ── content ── */
+#main {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  transition: opacity 0.08s ease;
+}
+#main.fade-out { opacity: 0; }
+article {
+  display: none;
+  max-width: 68ch;
+  margin: 0 auto;
+  padding: 28px 20px 80px;
+  padding-top: calc(var(--bar-h) + 16px);
+}
+article.visible { display: block; }
+@media (min-width: 600px) { article { padding: 40px 32px 100px; padding-top: calc(var(--bar-h) + 24px); } }
+
+/* ── typography ── */
+article h1 {
+  font-size: 1.55em; line-height: 1.25;
+  font-weight: 700; color: var(--accent);
+  margin-bottom: 0.25em;
+}
+article h2 { font-size: 1.15em; font-weight: 700; margin: 2em 0 0.4em; }
+article h3 { font-size: 1em;    font-weight: 700; margin: 1.6em 0 0.3em; }
+article p  { margin-bottom: 0.9em; }
+article ul, article ol { margin: 0.4em 0 0.9em 1.5em; }
+article li { margin-bottom: 0.25em; }
+article a  { color: var(--link); text-decoration: underline; text-underline-offset: 2px; }
+article a.ext-link { color: var(--text); }
+article hr { border: none; border-top: 1px solid var(--border); margin: 1.8em 0; }
+article strong { font-weight: 700; }
+article em     { font-style: italic; }
+article blockquote {
+  border-left: 3px solid var(--accent);
+  margin: 1em 0; padding: 0.25em 0 0.25em 1em;
+  color: var(--text2); font-style: italic;
+}
+article img {
+  max-width: 100%; height: auto;
+  display: block; margin: 1.5em auto;
+  border-radius: 4px;
+  max-height: 500px;
+}
+article code {
+  font-family: 'Menlo', Monaco, 'Courier New', monospace;
+  font-size: 0.85em;
+  background: var(--code-bg);
+  padding: 0.1em 0.35em; border-radius: 3px;
+}
+article pre {
+  background: var(--code-bg);
+  border-radius: 6px; padding: 1em;
+  overflow-x: auto; margin: 1em 0;
+}
+article pre code { background: none; padding: 0; font-size: 0.82em; line-height: 1.6; }
+article table   { width: 100%; border-collapse: collapse; margin: 1.2em 0; font-size: 0.88em; }
+article th, article td {
+  border: 1px solid var(--border);
+  padding: 0.45em 0.65em; text-align: left; vertical-align: top;
+}
+article th { background: var(--surface); font-weight: 700; }
+
+/* ── toc overlay ── */
+#toc-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 200; display: flex;
+}
+#toc-overlay[hidden] { display: none; }
+#toc-panel {
+  background: var(--bg);
+  width: min(500px, 84vw);
+  display: flex; flex-direction: column;
+  box-shadow: 4px 0 24px rgba(0,0,0,0.3);
+  padding-top: env(safe-area-inset-top, 0px);
+  letter-spacing: 0.02em;
+}
+#btn-toc-close {
+  -webkit-appearance: none; appearance: none;
+  background: transparent; border: none;
+  color: var(--text2); font-size: 18px;
+  min-width: 44px; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  align-self: flex-start;
+  border-radius: 8px; margin: 4px 4px 0;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+#btn-toc-close:active { background: var(--border); }
+#toc-search-wrap { padding: 4px 16px 12px; }
+#toc-search {
+  -webkit-appearance: none; appearance: none;
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  padding: 10px 12px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  font-size: 14px;
+  outline: none;
+}
+#toc-search:focus { border-color: var(--accent); }
+#toc-list {
+  list-style: none;
+  overflow-y: auto; -webkit-overflow-scrolling: touch;
+  flex: 1;
+}
+#toc-list li[hidden] { display: none; }
+#toc-list li button {
+  -webkit-appearance: none; appearance: none;
+  background: transparent; border: none;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  display: block; width: 100%;
+  padding: 14px 20px;
+  text-align: left; line-height: 1.4;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+#toc-list li button:active  { background: var(--surface); }
+#toc-list li button.active  { background: var(--surface); color: var(--accent); font-weight: 600; }
+#toc-list li button .toc-preview {
+  display: block;
+  margin-top: 4px;
+  color: var(--text2);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#toc-list li button .toc-preview:empty { display: none; }
+#toc-list li button .toc-preview mark {
+  background: transparent;
+  color: #FFC107;
+  font-weight: 700;
+  border-radius: 2px;
+  padding: 0 1px;
+}
+  </style>
+</head>
+<body>
+  <header id="bar">
+    <button id="bar-title" aria-label="Índice"><span id="bar-title-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h.01"/><path d="M3 12h.01"/><path d="M3 19h.01"/><path d="M8 5h13"/><path d="M8 12h13"/><path d="M8 19h13"/></svg></span><span id="bar-title-text"></span></button>
+    <button id="btn-theme" aria-label="Alternar tema"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg></button>
+    <button id="btn-prev" aria-label="Anterior"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+    <button id="btn-next" aria-label="Seguinte"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
+  </header>
+
+  <div id="toc-overlay" hidden>
+    <div id="toc-panel">
+      <button id="btn-toc-close" aria-label="Fechar"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+      <div id="toc-search-wrap">
+        <input id="toc-search" type="search" placeholder="Procurar…" aria-label="Procurar">
+      </div>
+      <ul id="toc-list">
+        <li><button data-idx="0"><span class="toc-title">00 · Índice | Mini-briefings Serra Nevada — A conquista do Mulhacén</span><span class="toc-preview"></span></button></li>
+        <li><button data-idx="1"><span class="toc-title">01 · Briefing inicial | Serra Nevada — A conquista do Mulhacén</span><span class="toc-preview"></span></button></li>
+        <li><button data-idx="2"><span class="toc-title">02 · Detalhes do percurso | Serra Nevada — A conquista do Mulhacén</span><span class="toc-preview"></span></button></li>
+        <li><button data-idx="3"><span class="toc-title">03 · Sierra Nevada | Parque, reserva da biosfera e regras</span><span class="toc-preview"></span></button></li>
+        <li><button data-idx="4"><span class="toc-title">04 · Altimetria | Serra Nevada — A conquista do Mulhacén</span><span class="toc-preview"></span></button></li>
+        <li><button data-idx="5"><span class="toc-title">05 · Média | Imagens de referência</span><span class="toc-preview"></span></button></li>
+        <li><button data-idx="6"><span class="toc-title">10 · Dia 1 | Via de la Plata e Antequera</span><span class="toc-preview"></span></button></li>
+        <li><button data-idx="7"><span class="toc-title">11 · Via de la Plata | Do eixo romano ao Caminho de Santiago</span><span class="toc-preview"></span></button></li>
+        <li><button data-idx="8"><span class="toc-title">12 · Dólmenes de Antequera | Património UNESCO</span><span class="toc-preview"></span></button></li>
+        <li><button data-idx="9"><span class="toc-title">20 · Dia 2 | Barranco de Poqueira e os pueblos blancos</span><span class="toc-preview"></span></button></li>
+        <li><button data-idx="10"><span class="toc-title">21 · Alpujarra | Os pueblos blancos</span><span class="toc-preview"></span></button></li>
+        <li><button data-idx="11"><span class="toc-title">22 · Acequias | A água do degelo</span><span class="toc-preview"></span></button></li>
+        <li><button data-idx="12"><span class="toc-title">23 · Mouriscos | A rebelião de 1568</span><span class="toc-preview"></span></button></li>
+        <li><button data-idx="13"><span class="toc-title">30 · Dia 3 | Mulhacén, o teto da Península</span><span class="toc-preview"></span></button></li>
+        <li><button data-idx="14"><span class="toc-title">31 · Mulhacén | Nome e lenda</span><span class="toc-preview"></span></button></li>
+        <li><button data-idx="15"><span class="toc-title">32 · Glaciares, flora e fauna | Vida acima dos 2500 m</span><span class="toc-preview"></span></button></li>
+        <li><button data-idx="16"><span class="toc-title">33 · Altitude em Novembro | Risco e hora limite</span><span class="toc-preview"></span></button></li>
+        <li><button data-idx="17"><span class="toc-title">40 · Dia 4 | Zafra e regresso</span><span class="toc-preview"></span></button></li>
+        <li><button data-idx="18"><span class="toc-title">41 · Zafra | Sevilla la Chica</span><span class="toc-preview"></span></button></li>
+      </ul>
+    </div>
+  </div>
+
+  <main id="main">
+    <article data-id="0">
+<h1>Índice | Mini-briefings Serra Nevada — A conquista do Mulhacén</h1>
+<p><strong>Viagem:</strong> [SKU a confirmar] — 5 a 8 Novembro 2026<br><strong>Base:</strong> Antequera / Granada (3 noites) <em>[confirmar: o site indica Granada no D2 e Antequera no D3]</em><br><strong>Guia:</strong> NM<br><strong>Programa:</strong> <a target="_blank" rel="noopener" href="https://borealis.travel/viagens/serra-nevada-a-conquista-do-mulhacen-o-teto-da-iberia/">borealis.travel/viagens/serra-nevada-a-conquista-do-mulhacen-o-teto-da-iberia</a></p>
+<table>
+<thead>
+<tr>
+<th>Ficheiro</th>
+<th>Tema</th>
+<th>Estado</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>00-index.md</code></td>
+<td>Índice</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>01-briefing-inicial.md</code></td>
+<td>Briefing inicial</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>02-route-details.md</code></td>
+<td>Detalhes do percurso</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>03-sierra-nevada-parque.md</code></td>
+<td>Sierra Nevada: parque, reserva da biosfera e regras</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>04-altimetria.md</code></td>
+<td>Altimetria</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>05-media.md</code></td>
+<td>Média — imagens de referência</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>10-d1.md</code></td>
+<td>Dia 1 — Via de la Plata e Antequera</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>11-via-de-la-plata.md</code></td>
+<td>Via de la Plata e Caminho de Santiago</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>12-dolmenes-antequera.md</code></td>
+<td>Dólmenes de Antequera</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>20-d2.md</code></td>
+<td>Dia 2 — Barranco de Poqueira</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>21-alpujarra-pueblos-blancos.md</code></td>
+<td>Alpujarra e pueblos blancos</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>22-acequias-poqueira.md</code></td>
+<td>Acequias e arquitetura do Poqueira</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>23-moriscos-1568.md</code></td>
+<td>Mouriscos e a rebelião de 1568</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>30-d3.md</code></td>
+<td>Dia 3 — Mulhacén</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>31-mulhacen-nome-lenda.md</code></td>
+<td>Mulhacén: nome e lenda</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>32-glaciares-flora-fauna.md</code></td>
+<td>Glaciares, flora e fauna de altitude</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>33-risco-altitude-novembro.md</code></td>
+<td>Altitude em Novembro: risco e hora limite</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>40-d4.md</code></td>
+<td>Dia 4 — Zafra e regresso</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>41-zafra.md</code></td>
+<td>Zafra, &quot;Sevilla la Chica&quot;</td>
+<td>✅</td>
+</tr>
+</tbody></table>
+<hr>
+<p><strong>Base:</strong> página pública Borealis (dados de 28/10/2026) + indicações do guia: viagem em carrinha conduzida pelo guia (sem autocarro), todos os trilhos circulares. A página não expõe SKU. Pontos de partida, traçados circulares e horas de condução marcados <code>[confirmar]</code> até haver reconhecimento ou documento operacional.</p>
+    </article>
+    <article data-id="1">
+<h1>Briefing inicial | Serra Nevada — A conquista do Mulhacén</h1>
+<h3>A equipa</h3>
+<p>[Apresentação da equipa]</p>
+<hr>
+<h3>O que é esta viagem</h3>
+<p>Quatro dias entre a Extremadura e a Andaluzia, em carrinha, com três trilhos circulares e um dia de cidade. O ponto alto é o Mulhacén (3479 m), o cume mais alto da Península Ibérica, no D3. Antes dele, uma etapa curta da Via de la Plata (D1) e o Barranco de Poqueira com os pueblos blancos (D2). No D4, Zafra e regresso.</p>
+<p>O que é: alta montanha em Novembro, com frio, vento e dias curtos. O que não é: não é técnico, mas o D3 é longo e a janela de luz é pequena. O cume é objetivo, não garantia: a hora limite manda.</p>
+<p>Muita estrada, pouco chão: o transporte é a carrinha do guia, por isso as horas de condução fazem parte do plano de cada dia. <code>[confirmar horas por dia]</code></p>
+<hr>
+<h3>Regras de segurança</h3>
+<p>Ninguém passa à frente do guia nem fica atrás do fecho. Em dúvida num cruzamento, esperam. Frio, tontura, dor de cabeça ou náusea acima dos 3000 m: dizem logo, não &quot;depois da subida&quot;.</p>
+<p>No D3 há hora de retorno fixada antes de sair e respeitada mesmo a 100 m do cume. Gelo, neve e vento podem mudar o plano; a decisão é do guia no terreno. Ver <code>33-risco-altitude-novembro.md</code>.</p>
+<p>Levam: camadas, corta-vento e impermeável, luvas, gorro, lanterna frontal, bastões, água, almoço volante (não incluído). Material de gelo <code>[confirmar conforme previsão]</code>.</p>
+<hr>
+<h3>Regras de proteção ambiental</h3>
+<p>O Mulhacén está dentro do Parque Nacional da Sierra Nevada (reserva da biosfera UNESCO desde 1986). Trilhos marcados, sem atalhos, sem recolher plantas nem pedras, lixo todo de volta (incluindo orgânico). Sem fogueiras nem acampada.</p>
+<p>&quot;Na montanha, deixamos pegadas e levamos recordações.&quot; (Portaria 651/2009.) Localmente: Parque Nacional Sierra Nevada, regras de uso público <code>[confirmar normas atuais e eventual autorização para grupos]</code>.</p>
+<hr>
+<h3>O fio da viagem</h3>
+<p>Dois mil anos de caminhos num só fim de semana alargado: a Via de la Plata romana, os dólmenes pré-históricos, os mouros nas acequias da Alpujarra, e por cima de tudo o Mulhacén, o rei mouro que a lenda deita no cume. Cada dia sobe um degrau de altitude e de história, até ao teto da Ibéria.</p>
+<p><em>Pitch de saída:</em> &quot;Começamos ao nível da planície e acabamos acima das nuvens. Três trilhos, todos de volta ao ponto de partida, um cume.&quot;</p>
+    </article>
+    <article data-id="2">
+<h1>Detalhes do percurso | Serra Nevada — A conquista do Mulhacén</h1>
+<p>Todos os trilhos são circulares (indicação do guia). Dados técnicos: página Borealis; o traçado exato de cada circuito é <code>[confirmar]</code>.</p>
+<h3>Dia 1 — Via de la Plata, Monesterio e Fuente de Cantos</h3>
+<p><strong>Partida:</strong> Monesterio (Badajoz) <code>[confirmar ponto]</code><br><strong>Distância:</strong> 5 km · <strong>Dificuldade:</strong> baixo (1/5)<br><strong>Alt. máx.:</strong> 735 m · <strong>Asc. acumulada:</strong> 78 m<br><strong>Dormida:</strong> Antequera</p>
+<p>Etapa curta sobre o Camino Mozárabe/Via de la Plata, em planície de dehesa. Na versão circular, ida e volta pelo mesmo eixo ou pequeno anel <code>[confirmar]</code>. Sem pontos críticos. O resto do dia é carrinha para Antequera.</p>
+<hr>
+<h3>Dia 2 — Barranco de Poqueira</h3>
+<p><strong>Partida:</strong> Capileira <code>[confirmar]</code><br><strong>Distância:</strong> 9 km · <strong>Dificuldade:</strong> médio baixo (2/5)<br><strong>Alt. máx.:</strong> 1494 m · <strong>Asc. acumulada:</strong> 825 m<br><strong>Dormida:</strong> Granada <code>[confirmar]</code></p>
+<p>Anel Capileira, Bubión, Pampaneira e regresso por caminhos de acequia <code>[confirmar traçado]</code>. Descida e subida pelas encostas do barranco: piso de pedra solta e calçada, joelhos e bastões. Pontos críticos: ladeira húmida de manhã, ruelas íngremes.</p>
+<hr>
+<h3>Dia 3 — Mulhacén</h3>
+<p><strong>Partida:</strong> <code>[confirmar: Alto del Chorrillo, Hoya del Portillo ou outro]</code><br><strong>Distância:</strong> 13 km · <strong>Dificuldade:</strong> médio (3/5)<br><strong>Alt. máx.:</strong> 3479 m (site: 3480 m) · <strong>Asc. acumulada:</strong> 870 m<br><strong>Dormida:</strong> Antequera <code>[confirmar]</code></p>
+<p>Circular, com subida por um eixo e descida por outro <code>[confirmar]</code>. Pedra solta, cascalho, possíveis placas de neve/gelo acima dos 3000 m. Acesso de carrinha à cota de partida depende do estado da estrada de montanha em Novembro <code>[confirmar]</code>. O ganho de +870 m sugere partida próxima de 2600 m <code>[confirmar]</code>.</p>
+<hr>
+<h3>Dia 4 — Zafra e regresso</h3>
+<p>Sem trekking. Visita a pé à cidade e estrada para norte.</p>
+<hr>
+<h3>Tabela comparativa</h3>
+<table>
+<thead>
+<tr>
+<th>Dia</th>
+<th>Tema</th>
+<th>Distância</th>
+<th>Dificuldade</th>
+<th>Alt. máx.</th>
+<th>Asc.</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>D1</td>
+<td>Via de la Plata</td>
+<td>5 km</td>
+<td>Baixo</td>
+<td>735 m</td>
+<td>78 m</td>
+</tr>
+<tr>
+<td>D2</td>
+<td>Poqueira</td>
+<td>9 km</td>
+<td>Médio baixo</td>
+<td>1494 m</td>
+<td>825 m</td>
+</tr>
+<tr>
+<td>D3</td>
+<td>Mulhacén</td>
+<td>13 km</td>
+<td>Médio</td>
+<td>3480 m</td>
+<td>870 m</td>
+</tr>
+<tr>
+<td>D4</td>
+<td>Zafra</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody></table>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://borealis.travel/viagens/serra-nevada-a-conquista-do-mulhacen-o-teto-da-iberia/">Programa Borealis</a></li>
+</ul>
+    </article>
+    <article data-id="3">
+<h1>Sierra Nevada | Parque, reserva da biosfera e regras</h1>
+<h3>Estatutos</h3>
+<p>Reserva da Biosfera UNESCO desde 1986. Parque Natural desde 1989 e Parque Nacional desde 1999, o maior de Espanha em área. Cobre as províncias de Granada e Almería. <code>[verificar áreas e anos antes de citar em voz alta]</code></p>
+<hr>
+<h3>O que a torna única</h3>
+<p>Uma ilha alpina no sul da Europa: cumes acima dos 3000 m a poucas dezenas de quilómetros do Mediterrâneo. Isso concentra fauna e flora com muitos endemismos, plantas que só existem aqui. É o ponto mais alto da Península, o Mulhacén, e o segundo, o Veleta, mesmo ao lado.</p>
+<hr>
+<h3>O que isto muda no terreno</h3>
+<ul>
+<li>Trilhos marcados, sem atalhos.</li>
+<li>Nada se recolhe: flores, pedras, restos.</li>
+<li>Lixo todo de volta, orgânico incluído.</li>
+<li>Sem fogueiras, sem drones sem autorização.</li>
+<li>Mais regras de uso público <code>[confirmar normas atuais]</code>.</li>
+</ul>
+<hr>
+<h3>Se perguntarem</h3>
+<p><strong>&quot;É Parque Nacional ou Natural?&quot;</strong> — Ambos: o Natural cobre a periferia, o Nacional a zona de maior valor.<br><strong>&quot;Há neve todo o ano?&quot;</strong> — Já não: as manchas perenes quase desapareceram. Em Novembro pode haver neve nova.</p>
+<h3>Para o grupo</h3>
+<p><em>&quot;Estamos numa reserva da biosfera. Levamos fotografias e lixo, deixamos pegadas e nada mais.&quot;</em></p>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.juntadeandalucia.es/medioambiente/portal/web/parque-nacional-sierra-nevada">Parque Nacional Sierra Nevada, Junta de Andalucía</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.unesco.org/en/mab">Reservas da Biosfera, UNESCO</a></li>
+</ul>
+    </article>
+    <article data-id="4">
+<h1>Altimetria | Serra Nevada — A conquista do Mulhacén</h1>
+<h3>Dados gerais</h3>
+<table>
+<thead>
+<tr>
+<th>Dia</th>
+<th>Distância</th>
+<th>Desnível</th>
+<th>Alt. máx.</th>
+<th>Tempo estimado</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>D1 — Via de la Plata</td>
+<td>5 km</td>
+<td>+78 m</td>
+<td>735 m</td>
+<td><em>[confirmar]</em></td>
+</tr>
+<tr>
+<td>D2 — Poqueira</td>
+<td>9 km</td>
+<td>+825 m</td>
+<td>1494 m</td>
+<td><em>[confirmar]</em></td>
+</tr>
+<tr>
+<td>D3 — Mulhacén</td>
+<td>13 km</td>
+<td>+870 m</td>
+<td>3480 m</td>
+<td><em>[confirmar]</em></td>
+</tr>
+</tbody></table>
+<hr>
+<h3>Leitura do trilho (fases)</h3>
+<p><strong>D3:</strong> partida em cota alta <em>[confirmar ponto]</em>; +870 m em 13 km indica subida contínua e moderada, sem trepada. Fases: aproximação em encosta aberta, crista final em pedra solta, cume. Acima dos 3000 m o ar rarefeito e o vento pesam mais do que o declive. Descida por eixo diferente (circular) <em>[confirmar]</em>.</p>
+<p><strong>D2:</strong> descida ao barranco e subida de volta: o desnível está concentrado em ladeiras de calçada e pedra, duro para joelhos.</p>
+<hr>
+<h3>Metabolismo e energia</h3>
+<p>Almoço volante em todos os dias, na mochila. D3: comer pouco e muitas vezes, água 2 L no mínimo, algo quente em garrafa térmica. Em Novembro a sede engana: bebem na mesma.</p>
+<hr>
+<h3>Estratégia de grupo (D3)</h3>
+<p>Hora de saída cedo, hora limite de retorno fixada antes de partir <em>[definir com luz: pôr do sol por volta das 18h local, confirmar]</em>. Paragem de reagrupamento antes da crista final. Ver <code>33-risco-altitude-novembro.md</code>.</p>
+<hr>
+<h3>Atenção</h3>
+<p>Gelo e neve em sombra, vento no cume, frio extremo com vento. Estrada de acesso à cota de partida sujeita a condições <em>[confirmar]</em>.</p>
+<h3>Pitch</h3>
+<p><em>&quot;Hoje é longo, é frio e é para ir devagar. O cume é opcional, o regresso não.&quot;</em></p>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://borealis.travel/viagens/serra-nevada-a-conquista-do-mulhacen-o-teto-da-iberia/">Programa Borealis</a></li>
+</ul>
+    </article>
+    <article data-id="5">
+<h1>Média | Imagens de referência</h1>
+<p><strong>Uso:</strong> mostrar ao grupo antes ou durante cada tema · brief de referência indicado em cada entrada</p>
+<hr>
+<h2>Por reunir</h2>
+<p>Imagens de apoio ainda por selecionar (Wikimedia Commons, licença CC ou domínio público). Sugestões por tema:</p>
+<ul>
+<li>Dólmen de Menga, interior e a Peña de los Enamorados → <code>12-dolmenes-antequera.md</code></li>
+<li>Capileira e Pampaneira, telhados de launa → <code>22-acequias-poqueira.md</code></li>
+<li>Mulhacén, vertente e cume → <code>31-mulhacen-nome-lenda.md</code></li>
+<li>Zafra, Plaza Grande e Plaza Chica → <code>41-zafra.md</code></li>
+</ul>
+<hr>
+<p><em>Fontes: Wikimedia Commons (licença CC ou domínio público). Verificar licença individual antes de reprodução impressa.</em></p>
+    </article>
+    <article data-id="6">
+<h1>Dia 1 | Via de la Plata e Antequera</h1>
+<p><strong>Data:</strong> 5 Novembro 2026<br><strong>Dificuldade:</strong> Baixo (1/5)<br><strong>Distância:</strong> 5 km · <strong>Alt. máx.:</strong> 735 m · <strong>Asc. acumulada:</strong> 78 m<br><strong>Dormida:</strong> Antequera · <strong>Regime:</strong> sem refeições incluídas <em>[confirmar]</em></p>
+<p><a class="ext-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Antequera">Google Maps</a> · <a class="ext-link" target="_blank" rel="noopener" href="https://www.meteoblue.com/en/weather/week/antequera_spain">Meteoblue</a></p>
+<hr>
+<h3>O que é este dia</h3>
+<p>Dia de estrada e aquecimento. Trilho circular curto na Via de la Plata, na etapa Monesterio a Fuente de Cantos, e viagem até Antequera. As pernas ficam livres para o resto da semana.</p>
+<hr>
+<h3>Contexto geográfico e cultural</h3>
+<p>Extremadura sul, dehesa de sobreiros e azinheiras, gado e jamón ibérico. Antequera fica no coração da Andaluzia, cruzamento histórico entre Málaga, Granada e Sevilha.</p>
+<hr>
+<h3>Pontos de interesse</h3>
+<ul>
+<li><strong>Via de la Plata</strong> — eixo norte-sul entre Sevilha e Astorga, depois Caminho de Santiago.</li>
+<li><strong>Antequera</strong> — Dólmenes de Menga, Viera e El Romeral (UNESCO).</li>
+</ul>
+<hr>
+<h3>Fio narrativo</h3>
+<p>Começa-se pelo caminho mais antigo (romano) e acaba-se na pré-história. A partir daqui a viagem só sobe.</p>
+<h3>Mensagem para o grupo</h3>
+<p><em>&quot;Hoje é só para descobrir o ritmo. Amanhã já há montanha.&quot;</em></p>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://borealis.travel/viagens/serra-nevada-a-conquista-do-mulhacen-o-teto-da-iberia/">Programa Borealis</a></li>
+</ul>
+    </article>
+    <article data-id="7">
+<h1>Via de la Plata | Do eixo romano ao Caminho de Santiago</h1>
+<p>D1 · Monesterio, Badajoz
+<a class="ext-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Monesterio">Google Maps</a> · <a class="ext-link" target="_blank" rel="noopener" href="https://www.meteoblue.com/en/weather/week/monesterio_spain">Meteoblue</a></p>
+<h3>O que é</h3>
+<p>Antiga calçada romana entre Mérida e Astorga, usada depois por rebanhos e comerciantes. O nome pode vir do árabe <em>balat</em> (caminho calcetado) e não de &quot;prata&quot;. <code>[verificar etimologia]</code></p>
+<hr>
+<h3>Hoje</h3>
+<p>Etapa Monesterio a Fuente de Cantos, em planície de dehesa. Aqui cruza o Caminho Sul de Santiago, que sobe de Sevilha para Astorga.</p>
+<hr>
+<h3>Se perguntarem</h3>
+<p><strong>&quot;Porque se chama da Prata?&quot;</strong> — Provavelmente deriva de <em>balat</em>, não do metal. Há quem defenda a prata das minas; é discutido.<br><strong>&quot;Isto vai até Santiago?&quot;</strong> — Sim, via Astorga, ligando ao Caminho Francês.</p>
+<h3>Para o grupo</h3>
+<p><em>&quot;Pisamos uma estrada com dois mil anos. Hoje com mochila ligeira.&quot;</em></p>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://borealis.travel/viagens/serra-nevada-a-conquista-do-mulhacen-o-teto-da-iberia/">Programa Borealis</a></li>
+</ul>
+    </article>
+    <article data-id="8">
+<h1>Dólmenes de Antequera | Património UNESCO</h1>
+<p>D1 · Antequera, Málaga
+<a class="ext-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Dolmenes+de+Antequera">Google Maps</a> · <a class="ext-link" target="_blank" rel="noopener" href="https://www.meteoblue.com/en/weather/week/antequera_spain">Meteoblue</a></p>
+<h3>O que veem</h3>
+<p>Três monumentos megalíticos: Menga, Viera e El Romeral. Inscritos como Património Mundial em 2016, junto com a Peña de los Enamorados e o Torcal. <code>[verificar]</code></p>
+<hr>
+<h3>Porque importa</h3>
+<p>Menga (c. 3700 a.C. <code>[verificar]</code>) é um dos maiores dólmens da Europa, com blocos de dezenas de toneladas. Está orientado para a Peña de los Enamorados, não para o nascer do sol, algo raro. Mostra que esta terra já era lugar sagrado antes de romanos e mouros.</p>
+<hr>
+<h3>Se perguntarem</h3>
+<p><strong>&quot;Quem os construiu?&quot;</strong> — Comunidades neolíticas; sem escrita, não há nomes.<br><strong>&quot;Porquê aquela montanha?&quot;</strong> — A Peña tem perfil de cabeça deitada; a orientação parece intencional.</p>
+<h3>Para o grupo</h3>
+<p><em>&quot;Antes de qualquer império, já alguém carregou aqui pedras de 150 toneladas.&quot;</em> <code>[verificar peso]</code></p>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://whc.unesco.org/en/list/1501/">Dólmenes de Antequera, UNESCO</a></li>
+</ul>
+    </article>
+    <article data-id="9">
+<h1>Dia 2 | Barranco de Poqueira e os pueblos blancos</h1>
+<p><strong>Data:</strong> 6 Novembro 2026<br><strong>Dificuldade:</strong> Médio baixo (2/5)<br><strong>Distância:</strong> 9 km · <strong>Alt. máx.:</strong> 1494 m · <strong>Asc. acumulada:</strong> 825 m<br><strong>Dormida:</strong> Granada <em>[confirmar]</em> · <strong>Regime:</strong> PA incluído</p>
+<p><a class="ext-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Capileira">Google Maps</a> · <a class="ext-link" target="_blank" rel="noopener" href="https://www.meteoblue.com/en/weather/week/capileira_spain">Meteoblue</a></p>
+<hr>
+<h3>O que é este dia</h3>
+<p>Circular pelo Barranco de Poqueira, com Capileira, Bubión e Pampaneira, e o Mulhacén no horizonte. É o dia de ver a montanha antes de a subir.</p>
+<hr>
+<h3>Contexto geográfico e cultural</h3>
+<p>Alpujarra granadina, vertente sul da Sierra Nevada. Aldeias de casas brancas e telhados planos de launa, herança mourisca.</p>
+<hr>
+<h3>Pontos de interesse</h3>
+<ul>
+<li><strong>Capileira</strong> — a aldeia mais alta do barranco.</li>
+<li><strong>Bubión e Pampaneira</strong> — os outros dois povoados.</li>
+<li><strong>Acequias</strong> — canais de rega medievais que ainda trazem água do degelo.</li>
+</ul>
+<hr>
+<h3>Fio narrativo</h3>
+<p>Os mouros fizeram desta encosta um jardim. É a mesma gente que dá nome à montanha de amanhã.</p>
+<h3>Mensagem para o grupo</h3>
+<p><em>&quot;Hoje olhamos para o Mulhacén de baixo. Amanhã olhamos de lá para cá.&quot;</em></p>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://borealis.travel/viagens/serra-nevada-a-conquista-do-mulhacen-o-teto-da-iberia/">Programa Borealis</a></li>
+</ul>
+    </article>
+    <article data-id="10">
+<h1>Alpujarra | Os pueblos blancos</h1>
+<p>D2 · Alpujarra granadina
+<a class="ext-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Pampaneira">Google Maps</a> · <a class="ext-link" target="_blank" rel="noopener" href="https://www.meteoblue.com/en/weather/week/pampaneira_spain">Meteoblue</a></p>
+<h3>O que veem</h3>
+<p>Casas caiadas de branco, ruas estreitas e inclinadas, chaminés cilíndricas, telhados planos. Pampaneira, Bubión e Capileira formam o Barranco de Poqueira.</p>
+<hr>
+<h3>Porque importa</h3>
+<p>A arquitetura segue o modelo berbere do Atlas: telhado plano de launa (argila impermeável sobre lajes), pensado para secar fruta e andar de cobertura em cobertura. A cal protege do calor e desinfeta. <code>[verificar]</code></p>
+<hr>
+<h3>Se perguntarem</h3>
+<p><strong>&quot;Porque são brancas?&quot;</strong> — Cal contra o calor e para desinfetar; tradição que ficou.<br><strong>&quot;Isto é Marrocos?&quot;</strong> — Influência direta: os mouriscos eram berberes e árabes.</p>
+<h3>Para o grupo</h3>
+<p><em>&quot;Fechem os olhos e imaginem o Atlas. Abram: estamos em Espanha.&quot;</em></p>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.turismodegranada.org/">Turismo Alpujarra</a></li>
+</ul>
+    </article>
+    <article data-id="11">
+<h1>Acequias | A água do degelo</h1>
+<p>D2 · Barranco de Poqueira
+<a class="ext-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Barranco+de+Poqueira">Google Maps</a> · <a class="ext-link" target="_blank" rel="noopener" href="https://www.meteoblue.com/en/weather/week/bubion_spain">Meteoblue</a></p>
+<h3>O que veem</h3>
+<p>Pequenos canais de pedra e terra que correm pela encosta, alimentados pelo degelo da Sierra Nevada. Ainda hoje regam hortas e pomares.</p>
+<hr>
+<h3>Porque importa</h3>
+<p>Sistema de origem medieval andalusi, mantido por comunidades de regantes. Os canais de &quot;careo&quot; infiltram água na montanha no outono para a devolver nas nascentes no verão. <code>[verificar]</code> Sem eles, a encosta seria seca.</p>
+<hr>
+<h3>Para o grupo</h3>
+<p><em>&quot;Esta água foi neve lá em cima. Os mouros desenharam o caminho e ainda funciona.&quot;</em></p>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.juntadeandalucia.es/medioambiente/portal/web/parque-nacional-sierra-nevada">Sierra Nevada, Junta de Andalucía</a></li>
+</ul>
+    </article>
+    <article data-id="12">
+<h1>Mouriscos | A rebelião de 1568</h1>
+<p>D2 · Alpujarra granadina
+<a class="ext-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Capileira">Google Maps</a> · <a class="ext-link" target="_blank" rel="noopener" href="https://www.meteoblue.com/en/weather/week/capileira_spain">Meteoblue</a></p>
+<h3>O que aconteceu</h3>
+<p>Depois da queda de Granada (1492), os muçulmanos convertidos, os mouriscos, perderam direitos. Em 1568 Filipe II proibiu língua, trajes e costumes. A rebelião da Alpujarra começou no Natal de 1568 e foi esmagada em 1570. <code>[verificar datas]</code></p>
+<hr>
+<h3>Consequências</h3>
+<p>Dispersão forçada dos mouriscos por Castela e repovoamento por cristãos do norte. A paisagem ficou, a população mudou. Em 1609 vem a expulsão geral. <code>[verificar]</code></p>
+<hr>
+<h3>Se perguntarem</h3>
+<p><strong>&quot;Foi violento?&quot;</strong> — Muito. Guerra de guerrilha nas montanhas, com massacres dos dois lados.<br><strong>&quot;Há descendentes?&quot;</strong> — Muitos espanhóis têm ascendência mourisca, sem saberem.</p>
+<h3>Para o grupo</h3>
+<p><em>&quot;Cada aldeia que vemos foi esvaziada e repovoada. O branco das paredes esconde uma história dura.&quot;</em></p>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://pt.wikipedia.org/wiki/Rebeli%C3%A3o_das_Alpujarras">Guerra de las Alpujarras, Wikipedia</a></li>
+</ul>
+    </article>
+    <article data-id="13">
+<h1>Dia 3 | Mulhacén, o teto da Península</h1>
+<p><strong>Data:</strong> 7 Novembro 2026<br><strong>Dificuldade:</strong> Médio (3/5)<br><strong>Distância:</strong> 13 km · <strong>Alt. máx.:</strong> 3480 m · <strong>Asc. acumulada:</strong> 870 m<br><strong>Dormida:</strong> Antequera <em>[confirmar]</em> · <strong>Regime:</strong> PA incluído, almoço volante</p>
+<p><a class="ext-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Mulhacen">Google Maps</a> · <a class="ext-link" target="_blank" rel="noopener" href="https://www.meteoblue.com/en/weather/week/mulhacen_spain">Meteoblue</a></p>
+<hr>
+<h3>O que é este dia</h3>
+<p>O dia da viagem. Circular até ao cume mais alto da Península Ibérica, por terreno aberto de pedra solta. Ponto de partida e traçado <code>[confirmar]</code>.</p>
+<hr>
+<h3>Contexto geográfico e cultural</h3>
+<p>Sierra Nevada, província de Granada. O nome vem de Muley Hacén, penúltimo rei nasrida de Granada, que segundo a lenda foi sepultado no cume.</p>
+<hr>
+<h3>Pontos de interesse</h3>
+<ul>
+<li><strong>Cume do Mulhacén (3479/3480 m)</strong> — a vista chega à Costa del Sol e, em dias limpos, a África <code>[verificar]</code>.</li>
+<li><strong>Lagunas de altitude</strong> — restos de circos glaciares.</li>
+<li><strong>Vertente norte</strong> — a mais fria, possivelmente com gelo em Novembro.</li>
+</ul>
+<hr>
+<h3>Fio narrativo</h3>
+<p>Tudo o que vimos nos dias anteriores está debaixo de nós. O rei mouro, a água, os caminhos.</p>
+<h3>Mensagem para o grupo</h3>
+<p><em>&quot;O cume é um convite, não uma obrigação. Subimos juntos e descemos juntos.&quot;</em></p>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://borealis.travel/viagens/serra-nevada-a-conquista-do-mulhacen-o-teto-da-iberia/">Programa Borealis</a></li>
+</ul>
+    </article>
+    <article data-id="14">
+<h1>Mulhacén | Nome e lenda</h1>
+<p>D3 · Cume do Mulhacén
+<a class="ext-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Mulhacen">Google Maps</a> · <a class="ext-link" target="_blank" rel="noopener" href="https://www.meteoblue.com/en/weather/week/mulhacen_spain">Meteoblue</a></p>
+<h3>O nome</h3>
+<p>Deriva de Muley Hacén (Abu l-Hasan Ali), rei nasrida de Granada, pai de Boabdil, o último rei. <code>[verificar]</code></p>
+<hr>
+<h3>A lenda</h3>
+<p>Diz-se que o rei pediu para ser enterrado no ponto mais alto, longe dos cristãos que se aproximavam. Nunca foi encontrado qualquer túmulo; é lenda.</p>
+<hr>
+<h3>A montanha</h3>
+<p>Altitude oficial 3479 m (o site Borealis indica 3480 m). Ponto mais alto da Península; o Veleta, segundo, tem cerca de 3396 m. <code>[verificar]</code> Rocha: micaxistos, não granito.</p>
+<hr>
+<h3>Se perguntarem</h3>
+<p><strong>&quot;O rei está mesmo lá?&quot;</strong> — Não há prova. Lenda sem base documental [verificar origem].<br><strong>&quot;Pode ver-se África?&quot;</strong> — Em dias muito limpos, diz-se que sim.</p>
+<h3>Para o grupo</h3>
+<p><em>&quot;Pisamos a sepultura de um rei que talvez nunca lá tenha estado.&quot;</em></p>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://pt.wikipedia.org/wiki/Mulhac%C3%A9n">Mulhacén, Wikipedia</a></li>
+</ul>
+    </article>
+    <article data-id="15">
+<h1>Glaciares, flora e fauna | Vida acima dos 2500 m</h1>
+<p>D3 · Alta montanha, Sierra Nevada
+<a class="ext-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Laguna+de+la+Caldera+Sierra+Nevada">Google Maps</a> · <a class="ext-link" target="_blank" rel="noopener" href="https://www.meteoblue.com/en/weather/week/mulhacen_spain">Meteoblue</a></p>
+<h3>Glaciares</h3>
+<p>Durante a última glaciação cobriram as vertentes altas. Restam circos e lagunas, entre elas a Laguna de la Caldera. Glaciares ativos: nenhum. <code>[verificar]</code></p>
+<hr>
+<h3>Flora</h3>
+<p>Muitos endemismos: plantas que só existem na Sierra Nevada, de porte rasteiro, adaptadas ao frio e ao vento. Em Novembro estão adormecidas. Não pisar fora do trilho.</p>
+<hr>
+<h3>Fauna</h3>
+<p>Cabra-montês, comum nos cumes. Águia-real e outras rapinas. <code>[verificar espécies]</code></p>
+<hr>
+<h3>Para o grupo</h3>
+<p><em>&quot;Tudo aqui é pequeno porque tem de resistir. Pisem com cuidado.&quot;</em></p>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.juntadeandalucia.es/medioambiente/portal/web/parque-nacional-sierra-nevada">Parque Nacional Sierra Nevada</a></li>
+</ul>
+    </article>
+    <article data-id="16">
+<h1>Altitude em Novembro | Risco e hora limite</h1>
+<p>D3 · Mulhacén
+<a class="ext-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Mulhacen">Google Maps</a> · <a class="ext-link" target="_blank" rel="noopener" href="https://www.meteoblue.com/en/weather/week/mulhacen_spain">Meteoblue</a></p>
+<h3>O que muda em Novembro</h3>
+<p>Dias curtos, frio, vento forte, possível gelo e neve acima dos 2800 m. Temperaturas negativas no cume são normais. <code>[verificar previsão na véspera]</code></p>
+<hr>
+<h3>Regras do dia</h3>
+<ul>
+<li><strong>Hora limite de retorno</strong> definida no briefing da manhã e cumprida mesmo perto do cume.</li>
+<li><strong>Luz:</strong> a frontal vai em todas as mochilas.</li>
+<li><strong>Vento:</strong> acima do limite que o guia fixar, não se vai ao cume.</li>
+<li><strong>Gelo:</strong> se houver placas, avalia-se material <code>[confirmar se se leva grampons leves]</code>.</li>
+<li><strong>Mal de altitude:</strong> dor de cabeça, náusea, tontura. Dizer logo.</li>
+</ul>
+<hr>
+<h3>Plano B</h3>
+<p>Cota de retorno alternativa e itinerário curto de volta <code>[definir no reconhecimento]</code>.</p>
+<h3>Para o grupo</h3>
+<p><em>&quot;Voltar sem cume também é ganhar. A montanha fica lá.&quot;</em></p>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a class="ext-link" target="_blank" rel="noopener" href="https://www.meteoblue.com/en/weather/week/mulhacen_spain">Meteoblue Mulhacén</a></li>
+</ul>
+    </article>
+    <article data-id="17">
+<h1>Dia 4 | Zafra e regresso</h1>
+<p><strong>Data:</strong> 8 Novembro 2026<br><strong>Regime:</strong> PA incluído</p>
+<p><a class="ext-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Zafra">Google Maps</a> · <a class="ext-link" target="_blank" rel="noopener" href="https://www.meteoblue.com/en/weather/week/zafra_spain">Meteoblue</a></p>
+<hr>
+<h3>O que é este dia</h3>
+<p>Passeio a pé por Zafra e estrada até casa. Horas de condução <code>[confirmar]</code>.</p>
+<hr>
+<h3>Contexto geográfico e cultural</h3>
+<p>Zafra, Extremadura, cidade na Via de la Plata. Conjunto histórico-artístico.</p>
+<hr>
+<h3>Pontos de interesse</h3>
+<ul>
+<li><strong>Plaza Grande e Plaza Chica</strong> — o coração da cidade.</li>
+<li><strong>Alcázar</strong> — hoje parador <code>[verificar]</code>.</li>
+</ul>
+<hr>
+<h3>Mensagem para o grupo</h3>
+<p><em>&quot;Três dias de altitude, uma manhã de calçada. Boa viagem a casa.&quot;</em></p>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://borealis.travel/viagens/serra-nevada-a-conquista-do-mulhacen-o-teto-da-iberia/">Programa Borealis</a></li>
+</ul>
+    </article>
+    <article data-id="18">
+<h1>Zafra | Sevilla la Chica</h1>
+<p>D4 · Zafra, Badajoz
+<a class="ext-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Zafra">Google Maps</a> · <a class="ext-link" target="_blank" rel="noopener" href="https://www.meteoblue.com/en/weather/week/zafra_spain">Meteoblue</a></p>
+<h3>O que veem</h3>
+<p>Cidade medieval de praças e arcos. Alcunha &quot;Sevilla la Chica&quot; pela semelhança com Sevilha.</p>
+<hr>
+<h3>Porque importa</h3>
+<p>Foi feira de gado importante e ponto de passagem da Via de la Plata. Os duques de Feria deixaram o alcázar. <code>[verificar]</code></p>
+<hr>
+<h3>Se perguntarem</h3>
+<p><strong>&quot;Porque Sevilla la Chica?&quot;</strong> — Pela arquitetura e pelo ambiente andaluz em terra extremenha.</p>
+<h3>Para o grupo</h3>
+<p><em>&quot;Fechamos onde abrimos: na Via de la Plata.&quot;</em></p>
+<hr>
+<p><strong>Fontes:</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://borealis.travel/viagens/serra-nevada-a-conquista-do-mulhacen-o-teto-da-iberia/">Programa Borealis</a></li>
+</ul>
+    </article>
+  </main>
+
+  <script>
+const meta = [{"f":"00-index.md","t":"00 · Índice | Mini-briefings Serra Nevada — A conquista do Mulhacén"},{"f":"01-briefing-inicial.md","t":"01 · Briefing inicial | Serra Nevada — A conquista do Mulhacén"},{"f":"02-route-details.md","t":"02 · Detalhes do percurso | Serra Nevada — A conquista do Mulhacén"},{"f":"03-sierra-nevada-parque.md","t":"03 · Sierra Nevada | Parque, reserva da biosfera e regras"},{"f":"04-altimetria.md","t":"04 · Altimetria | Serra Nevada — A conquista do Mulhacén"},{"f":"05-media.md","t":"05 · Média | Imagens de referência"},{"f":"10-d1.md","t":"10 · Dia 1 | Via de la Plata e Antequera"},{"f":"11-via-de-la-plata.md","t":"11 · Via de la Plata | Do eixo romano ao Caminho de Santiago"},{"f":"12-dolmenes-antequera.md","t":"12 · Dólmenes de Antequera | Património UNESCO"},{"f":"20-d2.md","t":"20 · Dia 2 | Barranco de Poqueira e os pueblos blancos"},{"f":"21-alpujarra-pueblos-blancos.md","t":"21 · Alpujarra | Os pueblos blancos"},{"f":"22-acequias-poqueira.md","t":"22 · Acequias | A água do degelo"},{"f":"23-moriscos-1568.md","t":"23 · Mouriscos | A rebelião de 1568"},{"f":"30-d3.md","t":"30 · Dia 3 | Mulhacén, o teto da Península"},{"f":"31-mulhacen-nome-lenda.md","t":"31 · Mulhacén | Nome e lenda"},{"f":"32-glaciares-flora-fauna.md","t":"32 · Glaciares, flora e fauna | Vida acima dos 2500 m"},{"f":"33-risco-altitude-novembro.md","t":"33 · Altitude em Novembro | Risco e hora limite"},{"f":"40-d4.md","t":"40 · Dia 4 | Zafra e regresso"},{"f":"41-zafra.md","t":"41 · Zafra | Sevilla la Chica"}];
+const KEY       = 'briefings_current';
+const THEME_KEY = 'briefings_theme';
+
+(function initTheme() {
+  const root   = document.documentElement;
+  const btn    = document.getElementById('btn-theme');
+  const saved  = localStorage.getItem(THEME_KEY);
+  const isDark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const SVG_SUN  = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 3v1"/><path d="M12 20v1"/><path d="M3 12h1"/><path d="M20 12h1"/><path d="m18.364 5.636-.707.707"/><path d="m6.343 17.657-.707.707"/><path d="m5.636 5.636.707.707"/><path d="m17.657 17.657.707.707"/></svg>';
+  const SVG_MOON = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>';
+
+  function applyTheme(dark) {
+    root.setAttribute('data-theme', dark ? 'dark' : 'light');
+    btn.innerHTML = dark ? SVG_SUN : SVG_MOON;
+    localStorage.setItem(THEME_KEY, dark ? 'dark' : 'light');
+  }
+
+  applyTheme(isDark);
+  btn.addEventListener('click', () => applyTheme(root.getAttribute('data-theme') !== 'dark'));
+})();
+
+const elMain  = document.getElementById('main');
+const elTitle = document.getElementById('bar-title-text');
+const elToc   = document.getElementById('toc-overlay');
+const arts    = elMain.querySelectorAll('article');
+const tocBtns = document.querySelectorAll('#toc-list li button');
+
+let cur = parseInt(localStorage.getItem(KEY) || '0', 10);
+if (!Number.isFinite(cur) || cur < 0 || cur >= meta.length) cur = 0;
+
+function show(idx) {
+  arts.forEach((a, i) => a.classList.toggle('visible', i === idx));
+  tocBtns.forEach((b, i) => b.classList.toggle('active', i === idx));
+  elTitle.textContent = meta[idx].t;
+  document.title = meta[idx].t;
+  elMain.scrollTo(0, 0);
+  cur = idx;
+  try { localStorage.setItem(KEY, cur); } catch (_) {}
+}
+
+function go(d) {
+  elMain.classList.add('fade-out');
+  setTimeout(() => {
+    show((cur + d + meta.length) % meta.length);
+    elMain.classList.remove('fade-out');
+  }, 80);
+}
+
+show(cur);
+
+document.getElementById('btn-prev').onclick = () => go(-1);
+document.getElementById('btn-next').onclick = () => go(1);
+
+const elTocSearch = document.getElementById('toc-search');
+const norm = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+const tocIndex = Array.from(tocBtns).map(b => {
+  const li = b.closest('li');
+  const art = arts[parseInt(b.dataset.idx, 10)];
+  const bodyText = art.textContent.replace(/\s+/g, ' ').trim();
+  return { li, preview: b.querySelector('.toc-preview'), text: norm(b.textContent + ' ' + bodyText), bodyText };
+});
+
+const escHtml = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+function snippetFor(text, q) {
+  const i = norm(text).indexOf(q);
+  if (i === -1) return '';
+  const start = Math.max(0, i - 40);
+  const end   = Math.min(text.length, i + q.length + 60);
+  const before = text.slice(start, i);
+  const match  = text.slice(i, i + q.length);
+  const after  = text.slice(i + q.length, end);
+  const prefix = start > 0 ? '…' : '';
+  const suffix = end < text.length ? '…' : '';
+  return prefix + escHtml(before) + '<mark>' + escHtml(match) + '</mark>' + escHtml(after) + suffix;
+}
+
+function filterToc() {
+  const raw = elTocSearch.value.trim();
+  const q = raw.length > 1 ? norm(raw) : '';
+  tocIndex.forEach(({ li, preview, text, bodyText }) => {
+    const match = q && text.includes(q);
+    li.hidden = q && !match;
+    preview.innerHTML = match ? snippetFor(bodyText, q) : '';
+  });
+}
+elTocSearch.addEventListener('input', filterToc);
+
+function resetTocSearch() {
+  elTocSearch.value = '';
+  tocIndex.forEach(({ li, preview }) => { li.hidden = false; preview.innerHTML = ''; });
+}
+
+const openToc = () => {
+  elToc.hidden = false;
+  const active = elToc.querySelector('button.active');
+  if (active) setTimeout(() => active.scrollIntoView({ block: 'nearest' }), 0);
+};
+document.getElementById('bar-title').onclick = openToc;
+document.getElementById('btn-toc-close').onclick = () => { elToc.hidden = true; resetTocSearch(); };
+elToc.addEventListener('click', e => { if (e.target === elToc) { elToc.hidden = true; resetTocSearch(); } });
+document.getElementById('toc-list').addEventListener('click', e => {
+  const b = e.target.closest('[data-idx]');
+  if (!b) return;
+  elToc.hidden = true;
+  resetTocSearch();
+  show(parseInt(b.dataset.idx, 10));
+});
+
+let tx = 0, ty = 0;
+elMain.addEventListener('touchstart', e => {
+  tx = e.touches[0].clientX;
+  ty = e.touches[0].clientY;
+}, { passive: true });
+elMain.addEventListener('touchend', e => {
+  const dx = e.changedTouches[0].clientX - tx;
+  const dy = e.changedTouches[0].clientY - ty;
+  if (Math.abs(dx) >= 50 && Math.abs(dy) <= 100) go(dx > 0 ? -1 : 1);
+}, { passive: true });
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowLeft')  go(-1);
+  if (e.key === 'ArrowRight') go(1);
+});
+  </script>
+</body>
+</html>
