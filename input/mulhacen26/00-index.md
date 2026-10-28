@@ -12,6 +12,7 @@
 | `03-sierra-nevada-parque.md` | Sierra Nevada: parque, reserva da biosfera e regras | ✅ |
 | `04-altimetria.md` | Altimetria | ✅ |
 | `05-media.md` | Média — imagens de referência | — (só sugestões, sem imagens) |
+| `06-contactos-e-links.md` | Contactos Uso Público e links de meteo | ✅ |
 | `10-d1.md` | Dia 1 — Via de la Plata e Antequera | ✅ |
 | `11-via-de-la-plata.md` | Via de la Plata e Caminho de Santiago | ✅ |
 | `12-dolmenes-antequera.md` | Dólmenes de Antequera | ✅ |

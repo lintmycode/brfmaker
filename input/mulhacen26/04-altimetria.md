@@ -28,7 +28,7 @@ Hora de saída cedo, hora limite de retorno fixada antes de partir *[definir com
 ---
 
 ### Atenção
-Neve antiga e gelo provável acima dos 3000 m (mínimas de -6° no cume), vento e frio. Ficha de segurança da Junta sai a 5/11. Estrada de acesso à cota de partida sujeita a condições *[confirmar]*.
+Neve antiga e possível gelo acima dos 3000 m; previsão alargada discorda (cume 0° a 9° a 7/11), neve nova possível a 4 e 5/11 e chuva a 6/11 só no ECMWF. Ver `33`. Ficha de segurança da Junta sai a 5/11. Estrada de acesso à cota de partida sujeita a condições *[confirmar]*.
 
 ### Pitch
 *"Hoje é longo, é frio e é para ir devagar. O cume é opcional, o regresso não."*

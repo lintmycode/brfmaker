@@ -28,7 +28,7 @@ Anel Capileira, Bubión, Pampaneira e regresso por caminhos de acequia `[confirm
 **Alt. máx.:** 3479 m (site: 3480 m) · **Asc. acumulada:** 870 m  
 **Dormida:** Antequera `[confirmar]`
 
-Circular, com subida por um eixo e descida por outro `[confirmar]`. Pedra solta, cascalho; neve de há duas semanas e gelo provável acima dos 3000 m (ver `33`). Acesso de carrinha à cota de partida depende do estado da estrada de montanha em Novembro `[confirmar]`. O ganho de +870 m sugere partida próxima de 2600 m `[confirmar]`.
+Circular, com subida por um eixo e descida por outro `[confirmar]`. Pedra solta, cascalho; neve de há duas semanas e gelo possível acima dos 3000 m, conforme modelo (ver `33`). Acesso de carrinha à cota de partida depende do estado da estrada de montanha em Novembro `[confirmar]`. O ganho de +870 m sugere partida próxima de 2600 m `[confirmar]`.
 
 ---
 
