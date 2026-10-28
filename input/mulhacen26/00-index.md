@@ -11,7 +11,7 @@
 | `02-route-details.md` | Detalhes do percurso | ✅ |
 | `03-sierra-nevada-parque.md` | Sierra Nevada: parque, reserva da biosfera e regras | ✅ |
 | `04-altimetria.md` | Altimetria | ✅ |
-| `05-media.md` | Média — imagens de referência | ✅ |
+| `05-media.md` | Média — imagens de referência | — (só sugestões, sem imagens) |
 | `10-d1.md` | Dia 1 — Via de la Plata e Antequera | ✅ |
 | `11-via-de-la-plata.md` | Via de la Plata e Caminho de Santiago | ✅ |
 | `12-dolmenes-antequera.md` | Dólmenes de Antequera | ✅ |
@@ -22,7 +22,7 @@
 | `30-d3.md` | Dia 3 — Mulhacén | ✅ |
 | `31-mulhacen-nome-lenda.md` | Mulhacén: nome e lenda | ✅ |
 | `32-glaciares-flora-fauna.md` | Glaciares, flora e fauna de altitude | ✅ |
-| `33-risco-altitude-novembro.md` | Altitude em Novembro: risco e hora limite | ✅ |
+| `33-risco-altitude-novembro.md` | Altitude em Novembro: risco e hora limite (com email Junta e previsão) | ✅ |
 | `40-d4.md` | Dia 4 — Zafra e regresso | ✅ |
 | `41-zafra.md` | Zafra, "Sevilla la Chica" | ✅ |
 

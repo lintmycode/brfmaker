@@ -23,12 +23,12 @@ Anel Capileira, Bubión, Pampaneira e regresso por caminhos de acequia `[confirm
 ---
 
 ### Dia 3 — Mulhacén
-**Partida:** `[confirmar: Alto del Chorrillo, Hoya del Portillo ou outro]`  
+**Partida:** Alto del Chorrillo, 2721 m `[confirmar]` (citado pela Junta; bate com +870 m)  
 **Distância:** 13 km · **Dificuldade:** médio (3/5)  
 **Alt. máx.:** 3479 m (site: 3480 m) · **Asc. acumulada:** 870 m  
 **Dormida:** Antequera `[confirmar]`
 
-Circular, com subida por um eixo e descida por outro `[confirmar]`. Pedra solta, cascalho, possíveis placas de neve/gelo acima dos 3000 m. Acesso de carrinha à cota de partida depende do estado da estrada de montanha em Novembro `[confirmar]`. O ganho de +870 m sugere partida próxima de 2600 m `[confirmar]`.
+Circular, com subida por um eixo e descida por outro `[confirmar]`. Pedra solta, cascalho; neve de há duas semanas e gelo provável acima dos 3000 m (ver `33`). Acesso de carrinha à cota de partida depende do estado da estrada de montanha em Novembro `[confirmar]`. O ganho de +870 m sugere partida próxima de 2600 m `[confirmar]`.
 
 ---
 

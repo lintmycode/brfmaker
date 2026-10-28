@@ -11,7 +11,7 @@
 ---
 
 ### Leitura do trilho (fases)
-**D3:** partida em cota alta *[confirmar ponto]*; +870 m em 13 km indica subida contínua e moderada, sem trepada. Fases: aproximação em encosta aberta, crista final em pedra solta, cume. Acima dos 3000 m o ar rarefeito e o vento pesam mais do que o declive. Descida por eixo diferente (circular) *[confirmar]*.
+**D3:** partida no Alto del Chorrillo (2721 m) *[confirmar]*; +870 m em 13 km indica subida contínua e moderada, sem trepada. Fases: aproximação em encosta aberta, crista final em pedra solta, cume. Acima dos 3000 m o ar rarefeito e o vento pesam mais do que o declive. Descida por eixo diferente (circular) *[confirmar]*.
 
 **D2:** descida ao barranco e subida de volta: o desnível está concentrado em ladeiras de calçada e pedra, duro para joelhos.
 
@@ -28,7 +28,7 @@ Hora de saída cedo, hora limite de retorno fixada antes de partir *[definir com
 ---
 
 ### Atenção
-Gelo e neve em sombra, vento no cume, frio extremo com vento. Estrada de acesso à cota de partida sujeita a condições *[confirmar]*.
+Neve antiga e gelo provável acima dos 3000 m (mínimas de -6° no cume), vento e frio. Ficha de segurança da Junta sai a 5/11. Estrada de acesso à cota de partida sujeita a condições *[confirmar]*.
 
 ### Pitch
 *"Hoje é longo, é frio e é para ir devagar. O cume é opcional, o regresso não."*

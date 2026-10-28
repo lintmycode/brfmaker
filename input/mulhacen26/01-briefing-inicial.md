@@ -19,7 +19,7 @@ Ninguém passa à frente do guia nem fica atrás do fecho. Em dúvida num cruzam
 
 No D3 há hora de retorno fixada antes de sair e respeitada mesmo a 100 m do cume. Gelo, neve e vento podem mudar o plano; a decisão é do guia no terreno. Ver `33-risco-altitude-novembro.md`.
 
-Levam: camadas, corta-vento e impermeável, luvas, gorro, lanterna frontal, bastões, água, almoço volante (não incluído). Material de gelo `[confirmar conforme previsão]`.
+Levam: camadas, corta-vento e impermeável, luvas, gorro, lanterna frontal, bastões, água, almoço volante (não incluído). Grampons leves ou crampons de bota no kit do guia (gelo provável acima dos 3000 m); ficha de segurança da Junta sai a 5/11.
 
 ---
 
