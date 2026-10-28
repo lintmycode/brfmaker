@@ -8,7 +8,7 @@ Nevou há cerca de duas semanas. A Junta de Andalucía (Uso Público) refere cam
 ---
 
 ### Previsão a 28/10 (alargada, pouco fiável)
-Modelos meteoblueAI, ECMWF e GFS, por esta ordem de linhas `[confirmar ordem e altitude]`. Os modelos de montanha (ICON) ainda não chegam a estas datas.
+Modelos meteoblueAI, ECMWF e GFS, por esta ordem de linhas (confirmado pelo guia). Ponto de previsão: cume, 3424 m (37°3'10"N, 3°18'39"O); elevação do modelo 2926 m, por isso os valores são extrapolados e podem desviar-se alguns graus. Os modelos de montanha (ICON) ainda não chegam a estas datas.
 
 | Dia | meteoblueAI | ECMWF | GFS |
 |---|---|---|---|
