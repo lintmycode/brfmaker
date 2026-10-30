@@ -20,7 +20,7 @@
 | `21-alpujarra-pueblos-blancos.md` | Alpujarra e pueblos blancos | ✅ |
 | `22-acequias-poqueira.md` | Acequias e arquitetura do Poqueira | ✅ |
 | `23-moriscos-1568.md` | Mouriscos e a rebelião de 1568 | ✅ |
-| `30-d3.md` | Dia 3 — Mulhacén | ✅ |
+| `30-d3.md` | Dia 3 — Mulhacén (com horário operacional) | ✅ |
 | `31-mulhacen-nome-lenda.md` | Mulhacén: nome e lenda | ✅ |
 | `32-glaciares-flora-fauna.md` | Glaciares, flora e fauna de altitude | ✅ |
 | `33-risco-altitude-novembro.md` | Altitude em Novembro: risco e hora limite (com email Junta e previsão) | ✅ |
