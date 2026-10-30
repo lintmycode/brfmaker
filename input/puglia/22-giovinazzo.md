@@ -1,6 +1,6 @@
 # Cultural | Giovinazzo, o borgo das persianas verdes
 D2 · Giovinazzo · 2,7 km · Dif. baixo · Asc. 14 m
-[Google Maps](https://www.google.com/maps/place/Giovinazzo) · [Meteoblue](https://www.meteoblue.com/en/weather/week/giovinazzo_italy)
+@coords 41.1875,16.6717
 
 ---
 

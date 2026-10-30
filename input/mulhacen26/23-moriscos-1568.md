@@ -1,6 +1,6 @@
 # Mouriscos | A rebelião de 1568
 D2 · Alpujarra granadina
-[Google Maps](https://www.google.com/maps/search/?api=1&query=Capileira) · [Meteoblue](https://www.meteoblue.com/en/weather/week/capileira_spain)
+@coords 37.0061,-3.3382
 
 ### O que aconteceu
 Depois da queda de Granada (1492), os muçulmanos convertidos, os mouriscos, perderam direitos. Em 1568 Filipe II proibiu língua, trajes e costumes. A rebelião da Alpujarra começou no Natal de 1568 e foi esmagada em 1570. `[verificar datas]`

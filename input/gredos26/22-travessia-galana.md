@@ -1,6 +1,6 @@
 # Travessia à Galana | Crista sobre o vale do Tormes
 D2 · Alt. 2568 m
-[Google Maps](https://www.google.com/maps/search/?api=1&query=Pico+la+Galana+Gredos) · [Meteoblue](https://www.meteoblue.com/en/weather/week/laguna-grande_spain)
+@coords 40.2563,-5.2995
 
 ### O que veem
 Do Almanzor à Galana, a crista abre-se para o vale do Tormes e para o conjunto de cumes graníticos que fecham o circo pelo lado sul — a segunda montanha mais alta da serra, 24 m abaixo do Almanzor.

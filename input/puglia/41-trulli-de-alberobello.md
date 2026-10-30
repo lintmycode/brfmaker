@@ -1,6 +1,6 @@
 # Etnográfico | Trulli de Alberobello
 D4 · Rione Monti, Alberobello
-[Google Maps](https://www.google.com/maps/place/Rione+Monti+Trulli) · [Meteoblue](https://www.meteoblue.com/en/weather/week/alberobello_italy)
+@coords 40.7817,17.2364
 
 ---
 

@@ -1,6 +1,6 @@
 # Glaciares, flora e fauna | Vida acima dos 2500 m
 D3 · Alta montanha, Sierra Nevada
-[Google Maps](https://www.google.com/maps/search/?api=1&query=Laguna+de+la+Caldera+Sierra+Nevada) · [Meteoblue](https://www.meteoblue.com/en/weather/week/mulhacen_spain)
+@coords 37.0547,-3.3294
 
 ### Glaciares
 Durante a última glaciação cobriram as vertentes altas. Restam circos e lagunas, entre elas a Laguna de la Caldera. Glaciares ativos: nenhum. `[verificar]`

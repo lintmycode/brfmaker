@@ -1,6 +1,6 @@
 # Dólmenes de Antequera | Património UNESCO
 D1 · Antequera, Málaga
-[Google Maps](https://www.google.com/maps/search/?api=1&query=Dolmenes+de+Antequera) · [Meteoblue](https://www.meteoblue.com/en/weather/week/antequera_spain)
+@coords 37.0242,-4.5483
 
 ### O que veem
 Três monumentos megalíticos: Menga, Viera e El Romeral. Inscritos como Património Mundial em 2016, junto com a Peña de los Enamorados e o Torcal. `[verificar]`

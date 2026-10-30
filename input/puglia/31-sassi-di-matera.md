@@ -1,6 +1,6 @@
 # Natural/histórico | Sassi di Matera
 D3 · Matera, Basilicata
-[Google Maps](https://www.google.com/maps/place/Sassi+di+Matera) · [Meteoblue](https://www.meteoblue.com/en/weather/week/matera_italy)
+@coords 40.6661,16.6116
 
 ---
 

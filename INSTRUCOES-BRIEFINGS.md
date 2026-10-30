@@ -85,13 +85,17 @@ Os briefings são usados em campo por guias da Borealis (ou operador equivalente
 ```
 # Tema Principal | Subtítulo Descritivo
 DN · contexto curto
-[Google Maps](URL) · [Meteoblue](URL)
+@coords LAT,LON
 ```
-**Sem emojis** — nem nesta linha de links, nem em mais nenhum sítio do brief. `[Google Maps](URL)`, não `📍 [Google Maps](URL)`.
+**Sem emojis** — nem nos links, nem em mais nenhum sítio do brief.
+
+**Links de Maps/Meteo: nunca escrever URLs à mão.** Escrever só `@coords 37.0116,-3.3050` (graus decimais, latitude primeiro, oeste negativo) numa linha própria: o `brfmaker.js` gera os dois links a partir daí. A Meteoblue responde 200 a qualquer endereço que não conheça e redireciona para a localização de quem abre o link, por isso um URL adivinhado (`/week/antequera_spain`) parece funcionar e mostra o tempo errado. O build falha se encontrar um link Meteoblue sem id numérico nem coordenadas.
+
+Coordenadas de fonte verificável: primeiro ponto do GPX, ou OpenStreetMap/Google Maps confirmando nome e altitude do ponto. Se não houver ponto certo, usar o local mais próximo confirmado e deixar `[confirmar]` no texto.
 
 O "contexto curto" é o que for mais útil para situar o tema em uma leitura rápida — localização geográfica (`D2 · Costa Basca, Gipuzkoa`) por defeito. **Se o temático for sobre o próprio trekking/percurso** (ex: `Trilho Deba–Zumaia`), o contexto passa a ser obrigatoriamente a altimetria desse troço: `D2 · 10 km · Dif. médio baixo · Alt. máx. 224 m · Asc. 401 m`. Não é preciso nos ficheiros do bloco `0X` (gerais, altimetria, media), que são transversais a vários dias, não específicos de um dia.
 
-Os links de Maps/Meteo de **cada temático apontam para o local específico desse tema** (a cascata, o miradouro, o troço do trilho) — diferente do link do resumo do dia (`N0`), que aponta para a dormida ou para o local do evento (ver regra abaixo). É normal e esperado que vários temáticos do mesmo dia apontem para locais diferentes entre si.
+Os links de Maps/Meteo de **cada temático apontam para o local específico desse tema** (a cascata, o miradouro, o troço do trilho) — diferente do resumo do dia (`N0`), que segue a regra das coordenadas do dia (ver abaixo). É normal e esperado que vários temáticos do mesmo dia apontem para locais diferentes entre si.
 
 ### Corpo
 - Secções com `###` (nunca `##` como primeiro nível de conteúdo)
@@ -180,7 +184,7 @@ Estrutura para mini-briefings de resumo de cada dia (um por dia de viagem). Segu
       - `**Dificuldade:** nível (N/5)` (linha própria) — só se o dia incluir trekking
       - `**Distância:** X km · **Alt. máx.:** X m · **Asc. acumulada:** X m` (linha própria, agrupada) — só se o dia incluir trekking
       - `**Dormida:** local · **Regime:** alimentação` (linha própria, agrupada) — **se a viagem for de um dia único (sem pernoita), omitir "Dormida" e ficar só `**Regime:** alimentação`**
-   3. **Links**: `[Google Maps](URL) · [Meteoblue](URL)` — depois dos dados técnicos, nunca antes. Local: dormida da noite (viagem de vários dias) ou local do evento (dia único, sem pernoita). Ver nota abaixo.
+   3. **Links**: linha `@coords LAT,LON` — depois dos dados técnicos, nunca antes. Ver regra das coordenadas do dia, abaixo.
 
    Exemplo real (País Basco, Dia 3 — viagem de vários dias):
    ```markdown
@@ -191,7 +195,7 @@ Estrutura para mini-briefings de resumo de cada dia (um por dia de viagem). Segu
    **Distância:** 11 km · **Alt. máx.:** 1.292 m · **Asc. acumulada:** 1.233 m  
    **Dormida:** Bilbau · **Regime:** PA incluído
 
-   [Google Maps](URL) · [Meteoblue](URL)
+   @coords LAT,LON
    ```
 
    Exemplo para viagem de um dia único (sem "Dormida"):
@@ -203,7 +207,7 @@ Estrutura para mini-briefings de resumo de cada dia (um por dia de viagem). Segu
    **Distância:** 9 km · **Alt. máx.:** 317 m · **Asc. acumulada:** 321 m  
    **Regime:** almoço volante (não incluído)
 
-   [Google Maps](URL) · [Meteoblue](URL)
+   @coords LAT,LON
    ```
 2. **O que é este dia** — Parágrafo de síntese: o que o grupo vai viver, o momento central, o porquê de este dia importar
 3. **Contexto geográfico e cultural** — Onde estamos, que território, que identidade
@@ -214,10 +218,10 @@ Estrutura para mini-briefings de resumo de cada dia (um por dia de viagem). Segu
 
 Um ficheiro `N0-dN.md` por dia de viagem. São o esqueleto de cada etapa — os briefs temáticos expandem cada ponto.
 
-**Nota sobre os links de localização do resumo do dia (N0):**
-- **Viagem de vários dias:** o local principal é a **dormida** dessa noite (cidade/base onde o grupo dorme). É o ponto estável do dia inteiro — os temáticos desse mesmo dia é que levam os seus próprios links para os locais específicos (cascata, trilho, miradouro).
-- **Evento de um único dia, sem pernoita:** não há dormida — o local principal do N0 coincide com o **local do próprio evento** (ponto de encontro, ou a zona do trekking se o dia for uma caminhada).
-- Em qualquer dos casos, escolher um único ponto ou zona, não uma lista.
+**Regra das coordenadas do dia (`@coords` do N0):**
+- **Dia com trekking:** o ponto onde começa o maior trekking do dia.
+- **Dia sem trekking:** o último local do dia, normalmente o check-in do hotel.
+- Um único ponto por dia, nunca uma lista. Os temáticos desse mesmo dia levam as suas próprias coordenadas.
 
 ### `XX-fonetica-DESTINO.md` — Fonética Local
 Ficheiro de pronúncia para guias — criado uma vez por destino com língua local distinta. Estrutura:

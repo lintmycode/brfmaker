@@ -1,6 +1,6 @@
 # Mulhacén | Nome e lenda
 D3 · Cume do Mulhacén
-[Google Maps](https://www.google.com/maps/search/?api=1&query=Mulhacen) · [Meteoblue](https://www.meteoblue.com/en/weather/week/mulhacen_spain)
+@coords 37.0534,-3.3116
 
 ### O nome
 Deriva de Muley Hacén (Abu l-Hasan Ali), rei nasrida de Granada, pai de Boabdil, o último rei. `[verificar]`

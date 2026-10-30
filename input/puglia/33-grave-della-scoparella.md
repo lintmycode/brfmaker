@@ -1,6 +1,6 @@
 # Trilho | Grave della Scoparella e Jazzo del Demonio
 D3 · Calendano, Alta Murgia · 3 km · Dif. baixo (1/5) · Alt. máx. 377 m · Asc. 50 m
-[Google Maps](https://www.google.com/maps/search/Calendano+Altamura) · [Meteoblue](https://www.meteoblue.com/en/weather/week/altamura_italy)
+@coords 41.0289,16.4254
 
 ---
 

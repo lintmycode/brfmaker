@@ -1,6 +1,6 @@
 # Geologia | Circo Glaciar de Gredos
 D1 · Circo de Gredos, Ávila
-[Google Maps](https://www.google.com/maps/search/?api=1&query=Circo+de+Gredos) · [Meteoblue](https://www.meteoblue.com/en/weather/week/laguna-grande_spain)
+@coords 40.2519,-5.2850
 
 ### O que veem
 Paredes verticais de granito, vales em U, blocos erráticos e uma lagoa de águas transparentes — a assinatura de um glaciar que já não existe, mas que moldou tudo o que se vê à volta da Laguna Grande.

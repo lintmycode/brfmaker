@@ -1,6 +1,6 @@
 # Via de la Plata | Do eixo romano ao Caminho de Santiago
 D1 · Monesterio, Badajoz
-[Google Maps](https://www.google.com/maps/search/?api=1&query=Monesterio) · [Meteoblue](https://www.meteoblue.com/en/weather/week/monesterio_spain)
+@coords 38.0876,-6.2733
 
 ### O que é
 Antiga calçada romana entre Mérida e Astorga, usada depois por rebanhos e comerciantes. O nome pode vir do árabe *balat* (caminho calcetado) e não de "prata". `[verificar etimologia]`

@@ -56,8 +56,30 @@ if (files.includes('00-index.md')) {
 
 marked.use({ gfm: true });
 
+// `@coords lat,lon` on its own line becomes the Google Maps · Meteoblue links.
+// Links are built from coordinates, never typed: Meteoblue answers 200 to any slug it does not
+// know and redirects to the visitor's own location, so a guessed URL looks fine and shows the
+// weather of wherever the reader is.
+const expandCoords = md =>
+  md.replace(/^@coords[ \t]+(-?\d+(?:\.\d+)?)[ \t]*,[ \t]*(-?\d+(?:\.\d+)?)[ \t]*$/gm, (_, lat, lon) =>
+    `[Google Maps](https://www.google.com/maps/search/?api=1&query=${lat},${lon}) · ` +
+    // Longitude keeps its sign and the E suffix (-4.56E): 4.56W also redirects away.
+    `[Meteoblue](https://www.meteoblue.com/en/weather/week/${lat}N${lon}E)`);
+
+// A Meteoblue URL only resolves with a numeric location id (_2513428) or coordinates.
+const deadMeteoblue = md =>
+  [...md.matchAll(/https?:\/\/(?:www\.)?meteoblue\.com\/[^\s)]+/g)].map(m => m[0])
+    .filter(url => !/(?:_\d+|-?\d+(?:\.\d+)?N-?\d+(?:\.\d+)?E)(?:[?#].*)?$/.test(url));
+
+const problems = [];
+
 const articles = files.map((filename, idx) => {
-  const md       = readFileSync(join(inputDir, filename), 'utf8');
+  const raw      = readFileSync(join(inputDir, filename), 'utf8');
+  const md       = expandCoords(raw);
+  if (/^@coords/m.test(md)) problems.push(`${filename}: malformed @coords line (expected: @coords 37.0116,-3.3050)`);
+  deadMeteoblue(md).forEach(url => problems.push(`${filename}: Meteoblue link redirects to the reader's location: ${url}`));
+  // N0-dN day summaries need coords; 90-altimetria and themes share the block number but not the rule
+  if (/^[1-9]0-d\d/.test(filename) && !/^@coords/m.test(raw)) console.warn(`  ${filename}: no @coords line, day has no Maps/Meteoblue links`);
   const m        = md.match(/^#\s+(.+)$/m);
   const rawTitle = m ? m[1].replace(/[*_`]/g, '').trim() : filename.replace(/\.md$/, '');
   const prefix   = filename.match(/^(\d+)/)?.[1] ?? '';
@@ -69,6 +91,9 @@ const articles = files.map((filename, idx) => {
   html = html.replace(/<a ([^>]*href="[^"]*(?:google\.com\/maps|meteoblue\.com)[^"]*"[^>]*)>/g, '<a class="ext-link" $1>');
   return { idx, filename, title, html };
 });
+
+// Stop before writing: deploy.sh rebuilds first, so a wrong link can never reach the phone.
+if (problems.length) die(problems.map(p => `✗ ${p}`).join('\n'));
 
 // ── embed external images as base64 ──────────────────────────────────────────
 // Edge (and other browsers) block external img loads from file:// pages.

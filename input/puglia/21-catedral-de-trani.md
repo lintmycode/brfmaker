@@ -1,6 +1,6 @@
 # Cultural | Catedral de Trani
 D2 · Trani, à beira-mar
-[Google Maps](https://www.google.com/maps/place/Cattedrale+di+Trani) · [Meteoblue](https://www.meteoblue.com/en/weather/week/trani_italy)
+@coords 41.2822,16.4185
 
 ---
 

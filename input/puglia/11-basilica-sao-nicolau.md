@@ -1,6 +1,6 @@
 # Cultural | Basílica de São Nicolau
 D1 · Bari Vecchia
-[Google Maps](https://www.google.com/maps/place/Basilica+di+San+Nicola) · [Meteoblue](https://www.meteoblue.com/en/weather/week/bari_italy)
+@coords 41.1303,16.8702
 
 ---
 

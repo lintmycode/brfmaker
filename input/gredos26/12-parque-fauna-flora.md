@@ -1,6 +1,6 @@
 # Parque regional, fauna e flora | Serra de Gredos
 D1 · Parque Regional da Serra de Gredos, Ávila
-[Google Maps](https://www.google.com/maps/search/?api=1&query=Parque+Regional+Sierra+de+Gredos) · [Meteoblue](https://www.meteoblue.com/en/weather/week/laguna-grande_spain)
+@coords 40.2714,-5.3493
 
 ### O parque
 O circo glaciar integra o Parque Regional da Serra de Gredos, criado em 1996, com cerca de 86 400 hectares. Objetivo: conservar a geodiversidade, a fauna endémica e o património natural da serra, incluindo vários vales e bacias fluviais de forte interesse geológico e ecológico.

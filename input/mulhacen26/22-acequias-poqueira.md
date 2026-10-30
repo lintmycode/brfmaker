@@ -1,6 +1,6 @@
 # Acequias | A água do degelo
 D2 · Barranco de Poqueira
-[Google Maps](https://www.google.com/maps/search/?api=1&query=Barranco+de+Poqueira) · [Meteoblue](https://www.meteoblue.com/en/weather/week/bubion_spain)
+@coords 36.9489,-3.3570
 
 ### O que veem
 Pequenos canais de pedra e terra que correm pela encosta, alimentados pelo degelo da Sierra Nevada. Ainda hoje regam hortas e pomares.

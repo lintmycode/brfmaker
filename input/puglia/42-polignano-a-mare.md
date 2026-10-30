@@ -1,6 +1,6 @@
 # Natural/cultural | Polignano a Mare
 D4 · Costa adriática, província de Bari
-[Google Maps](https://www.google.com/maps/place/Polignano+a+Mare) · [Meteoblue](https://www.meteoblue.com/en/weather/week/polignano_a_mare_italy)
+@coords 40.9944,17.2225
 
 ---
 

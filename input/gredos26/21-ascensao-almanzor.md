@@ -1,6 +1,6 @@
 # Ascensão ao Almanzor | Via normal
 D2 · 8 km · Dif. alto · Alt. máx. 2592 m · Asc. 900 m
-[Google Maps](https://www.google.com/maps/search/?api=1&query=Pico+Almanzor+Gredos) · [Meteoblue](https://www.meteoblue.com/en/weather/week/laguna-grande_spain)
+@coords 40.2460,-5.2975
 
 ### O que veem
 O ponto culminante de toda a Serra de Gredos — 2592 m de granito puro, alcançado por uma via que nos últimos metros deixa de ser caminhada e passa a ser escalada ligeira, mãos incluídas.

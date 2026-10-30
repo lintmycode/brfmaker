@@ -1,6 +1,6 @@
 # Zafra | Sevilla la Chica
 D4 · Zafra, Badajoz
-[Google Maps](https://www.google.com/maps/search/?api=1&query=Zafra) · [Meteoblue](https://www.meteoblue.com/en/weather/week/zafra_spain)
+@coords 38.4253,-6.4194
 
 ### O que veem
 Cidade medieval de praças e arcos. Alcunha "Sevilla la Chica" pela semelhança com Sevilha.

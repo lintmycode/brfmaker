@@ -1,6 +1,6 @@
 # Cultural | Trani, porto e Giudecca
 D2 · Trani · 5,5 km · Dif. baixo · Asc. 15 m
-[Google Maps](https://www.google.com/maps/place/Trani) · [Meteoblue](https://www.meteoblue.com/en/weather/week/trani_italy)
+@coords 41.2782,16.4186
 
 ---
 

@@ -1,6 +1,6 @@
 # Refúgio José Antonio Elola | Laguna Grande de Gredos
 D1 · 1950 m, junto à Laguna Grande
-[Google Maps](https://www.google.com/maps/search/?api=1&query=Refugio+Jose+Antonio+Elola+Laguna+Grande+Gredos) · [Meteoblue](https://www.meteoblue.com/en/weather/week/laguna-grande_spain)
+@coords 40.2506,-5.2798
 
 ### O que veem
 Um refúgio de montanha guardado, construído em 1972, encostado à Laguna Grande, com vista direta para as paredes do Almanzor e da Galana — o ponto de apoio central de toda a alta montanha de Gredos.

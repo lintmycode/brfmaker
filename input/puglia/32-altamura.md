@@ -1,6 +1,6 @@
 # Cultural | Altamura: pão, museus e o Uomo di Altamura
 D3 · Altamura, centro histórico
-[Google Maps](https://www.google.com/maps/place/Antico+Forno+Santa+Caterina+Altamura) · [Meteoblue](https://www.meteoblue.com/en/weather/week/altamura_italy)
+@coords 40.8286,16.5527
 
 ---
 

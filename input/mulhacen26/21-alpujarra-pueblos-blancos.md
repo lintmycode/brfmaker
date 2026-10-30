@@ -1,6 +1,6 @@
 # Alpujarra | Os pueblos blancos
 D2 · Alpujarra granadina
-[Google Maps](https://www.google.com/maps/search/?api=1&query=Pampaneira) · [Meteoblue](https://www.meteoblue.com/en/weather/week/pampaneira_spain)
+@coords 36.9645,-3.3868
 
 ### O que veem
 Casas caiadas de branco, ruas estreitas e inclinadas, chaminés cilíndricas, telhados planos. Pampaneira, Bubión e Capileira formam o Barranco de Poqueira.
