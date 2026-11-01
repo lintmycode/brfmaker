@@ -7,6 +7,11 @@ Nevou há cerca de duas semanas. A Junta de Andalucía (Uso Público) refere cam
 
 ---
 
+### Ficha de segurança da Junta, 30/10
+Publicada pelo Refugio Poqueira ([ficha 30/10](https://refugiopoqueira.com/wp-content/uploads/2026/10/FICHA_DE_SEGURIDAD_30_OCT_2026.pdf)). Mantêm-se zonas com camada de neve gelada, sobretudo na vertente norte (foto de 26/10 da face norte do Mulhacén e Alcazaba). AEMET para o fim de semana de 31/10 e 1/11: chuvas fracas, possíveis trovoadas, descida ligeira de temperatura, geadas nos cumes e cota de neve por volta dos 3000 m. Aviso da ficha: extremar a precaução em neve gelada, com chuva e frio a aumentar o risco de escorregar. Refugio Poqueira: zona de vivac aberta, zona guardada com abertura próxima. A ficha cobre o fim de semana anterior à viagem; a da semana do D3 ainda não saiu.
+
+---
+
 ### Previsão a 28/10 (alargada, pouco fiável)
 Modelos meteoblueAI, ECMWF e GFS, por esta ordem de linhas (confirmado pelo guia). Ponto de previsão: cume, 3424 m (37°3'10"N, 3°18'39"O); elevação do modelo 2926 m, por isso os valores são extrapolados e podem desviar-se alguns graus. Os modelos de montanha (ICON) ainda não chegam a estas datas.
 
@@ -36,7 +41,7 @@ Sábado 7 é seco nos três; vento fraco. O que varia é o que está no chão:
 Cota de retorno alternativa, por exemplo Alto del Chorrillo (2721 m), sem entrar em zonas geladas `[confirmar no reconhecimento]`.
 
 ### Decidir com
-Ficha de segurança da Junta (publicada a 5/11), modelos ICON na véspera, e telefonema ao Uso Público nos dias anteriores. Contactos em `06-contactos-e-links.md`.
+Nova ficha de segurança da Junta (esperada por volta de 5/11, publicada no site do Refugio Poqueira), modelos ICON na véspera, e telefonema ao Uso Público nos dias anteriores. Contactos em `06-contactos-e-links.md`.
 
 ### Para o grupo
 *"Voltar sem cume também é ganhar. A montanha fica lá."*
@@ -45,4 +50,5 @@ Ficha de segurança da Junta (publicada a 5/11), modelos ICON na véspera, e tel
 **Fontes:**
 - [Meteoblue, 14 dias, Mulhacén](https://www.meteoblue.com/es/tiempo/14-dias/mulhac%C3%A9n_espa%C3%B1a_2513428)
 - [AEMET, montanha (Nevada)](https://www.aemet.es/es/eltiempo/prediccion/montana?w=0&p=nev1) `[404 a 28/10]`
+- [Ficha de segurança 30/10, Refugio Poqueira](https://refugiopoqueira.com/wp-content/uploads/2026/10/FICHA_DE_SEGURIDAD_30_OCT_2026.pdf)
 - [Meteoexploration, Mulhacén](https://meteoexploration.com/es/forecasts/Mulhacen/)

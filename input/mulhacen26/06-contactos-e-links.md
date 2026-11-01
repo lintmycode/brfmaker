@@ -12,6 +12,13 @@ O email traz ainda dois QR codes (informação básica para a visita; Guia de Ec
 
 ---
 
+### Refugio Poqueira
+Publica semanalmente (quinta ou sexta) a ficha de segurança da Junta, mais webcams e meteorologia.
+- [Refugio Poqueira](https://refugiopoqueira.com/)
+- [Ficha de segurança 30/10 (PDF)](https://refugiopoqueira.com/wp-content/uploads/2026/10/FICHA_DE_SEGURIDAD_30_OCT_2026.pdf)
+- Centro administrativo do Parque: +34958980238
+- Emergência: 112
+
 ### Meteorologia
 - [Meteoblue, 14 dias, Mulhacén](https://www.meteoblue.com/es/tiempo/14-dias/mulhac%C3%A9n_espa%C3%B1a_2513428)
 - [AEMET, montanha Nevada](https://www.aemet.es/es/eltiempo/prediccion/montana?w=0&p=nev1) `[404 a 28/10]`

@@ -28,7 +28,7 @@ Hora de saída cedo, hora limite de retorno fixada antes de partir *[definir com
 ---
 
 ### Atenção
-Neve antiga e possível gelo acima dos 3000 m; previsão alargada discorda (cume 0° a 9° a 7/11), neve nova possível a 4 e 5/11 e chuva a 6/11 só no ECMWF. Ver `33`. Ficha de segurança da Junta sai a 5/11. Estrada de acesso à cota de partida sujeita a condições *[confirmar]*.
+Neve antiga e possível gelo acima dos 3000 m; previsão alargada discorda (cume 0° a 9° a 7/11), neve nova possível a 4 e 5/11 e chuva a 6/11 só no ECMWF. Ver `33`. Ficha da Junta de 30/10: neve gelada na vertente norte, cota de neve cerca de 3000 m; nova ficha por volta de 5/11. Estrada de acesso à cota de partida sujeita a condições *[confirmar]*.
 
 ### Pitch
 *"Hoje é longo, é frio e é para ir devagar. O cume é opcional, o regresso não."*
